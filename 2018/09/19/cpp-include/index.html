@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"static.yomunchan.moe","root":"/","scheme":"Pisces","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="有一回对我说道，“你读过书么？”我略略点一点头。他说，“读过书，……我便考你一考。C++的include，怎样写的？” 在我们一开始接触标准C++的时候，一定都写过这么一段话：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【C++小日常】他说，读过书，我便考你一考。C++的include，怎样写的？">
+<meta property="og:url" content="https://static.yomunchan.moe/2018/09/19/cpp-include/index.html">
+<meta property="og:site_name" content="有木桑的小圈圈">
+<meta property="og:description" content="有一回对我说道，“你读过书么？”我略略点一点头。他说，“读过书，……我便考你一考。C++的include，怎样写的？” 在我们一开始接触标准C++的时候，一定都写过这么一段话：">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-09-19T15:11:59.000Z">
+<meta property="article:modified_time" content="2020-02-28T12:06:16.686Z">
+<meta property="article:author" content="大魔王有木桑">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://static.yomunchan.moe/2018/09/19/cpp-include/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>【C++小日常】他说，读过书，我便考你一考。C++的include，怎样写的？ | 有木桑的小圈圈</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">有木桑的小圈圈</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">博客站点静态镜像</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://static.yomunchan.moe/2018/09/19/cpp-include/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="大魔王有木桑">
+      <meta itemprop="description" content="这是我的微博存放在Github Pages的一份镜像，不定期与主站同步。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="有木桑的小圈圈">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          【C++小日常】他说，读过书，我便考你一考。C++的include，怎样写的？
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-09-19 23:11:59" itemprop="dateCreated datePublished" datetime="2018-09-19T23:11:59+08:00">2018-09-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-28 20:06:16" itemprop="dateModified" datetime="2020-02-28T20:06:16+08:00">2020-02-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%96%87%E5%AD%97/" itemprop="url" rel="index"><span itemprop="name">文字</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>有一回对我说道，“你读过书么？”我略略点一点头。他说，“读过书，……我便考你一考。C++的include，怎样写的？” 在我们一开始接触标准C++的时候，一定都写过这么一段话：</p>
+<a id="more"></a>
+<blockquote>
+<p>#include <iostream></p>
+<p>using namespace std;</p>
+</blockquote>
+<p>但是有时候啊，我们又看到</p>
+<blockquote>
+<p>#include &lt;iostream.h&gt;</p>
+<p>//这里是VC++ 6.0方言版本写法</p>
+</blockquote>
+<p>那么问题来了，它们为什么是不一样的呢，我以前的解释是：“VC++ 6.0是现代C++标准推出之前的产物，属于方言”， 那么为什么会有这样的方言呢，include到底是怎么写呢，此文就来大概说道说道。为了探寻上古VC++6.0的方言是这么造成的，我们探访到了MSDN上古时期的页面，<a href="https://msdn.microsoft.com/en-us/library/aa229433" target="_blank" rel="noopener">https://msdn.microsoft.com/en-us/library/aa229433</a>(v=VS.60).aspx 这里的解释以此为参考。首先，现代标准的两句话，到底说了什么呢。 #include <iostream> 引入了一个叫输入输出流的东西，而在C++标准程序库中，所有的标识符都被定义于一个叫std的namespace中，所以，我们才会写出第二行： using namespace std; 以此引用标准库std， 而翻阅了大量上古资料之后，我们发现了VC++ 6.0的一些奇特之处。简单的说，在VC++ 6.0中，iostream这样的东西有两套。 首先#include&lt;iostream.h&gt;是方言写法没错，此外另一点就是，#include<iostream>+using和#include&lt;iostram.h&gt;并不是同一种功能的两种表达方式，而是两种不同的东西。方言写法中，并非引入整个命名空间，而是引入一个具体的、6.0特有的库文件。 现代标准的#include到底应该怎么写呢？ 我想，讨饭一样的人，也配考我么？便回过脸去，不再理会。孔乙己等了许久，很恳切的说道，“不能写罢？……我教给你，记着！这些写法应该记着。将来做程序的时候，写C++要用。”我暗想我和程序员的等级还很远呢，而且程序员也从亲自写Include,只是从Github上抄抄罢；又好笑，又不耐烦，懒懒的答他道，“谁要你教，不是井号include加头文件么？”孔乙己显出极高兴的样子，将两个指头的长指甲敲着键盘，点头说，“对呀对呀！……include有两样写法，你知道么？”我愈不耐烦了，努着嘴走远。 那么说了这么多之后，问题来了，现代标准的#include到底应该怎么写呢？ 它有两种写法： #include &lt;&gt; #include “” 其中，#include &lt;&gt;的写法，它会指示预处理程序到预定义的缺省路径下寻找文件。而预定义的缺省路径通常是在INCLUDE环境变量中指定的。 如果使用这种写法，编译程序会首先到环境变量的路径下寻找文件，如果没有找到，会到当前目录下继续寻找。 而使用双引号#include “file” 的写法，这种方法会指示预处理其先到当前目录下寻找文件，再到预定义的缺省路径下寻找文件。 好了，这个简答的问题理解了之后，下面我扩展一下，这部分用红色写的部分，算作是一些知识扩展，不一定非要掌握了。 比如说，当前目录下有个文件叫“hello.h”，当前目录下有个子目录叫“dir1”,,在dir1中有也有一个hello.h，还有一个main.c 如果说在main.c文件中，#include “hdr.h”,那么在当前目录下编译”dir1/main.c”，它包含的应该是哪个hello.h呢。 正确答案是“dir1/hello.h”，在gcc和msvc中，include””的写法说代表的“在当前目录寻找”，其实是指在使用了include的源文件的所在目录寻找，而不是编译器的当前工作目录。 实际上这种逻辑，并不在C99的规范之中，而是一种约定俗成的行业规范， 想明白这个问题之后，我们来看看下一个问题，有时候我们会看到#include &lt;string.h&gt; 而有时候我们会看到#include <string>，它们之间又是什么区别呢？ include后面什么时候加.h？加不加.h有什么区别？ 以string.h为例，简单的一句话解释是： string.h是C语言的头文件，包含C语言字符串处理函数， string 是C++头文件，包含C++字符串class。 .h是C语言的习惯，标准C++库中所有头文件都是不加.h的 这里我们引用一段《effective C++》的话，</p>
+<p>条款49: 熟悉标准库</p>
+<p>C++标准库很大。非常大。难以置信的大。怎么个大法？这么说吧：在C++标准中，关于标准库的规格说明占了密密麻麻300多页，这还不包括标准C库，后者只是 “作为参考”（老实说，原文就是用的这个词）包含在C++库中。</p>
+<p>当然，并非总是越大越好，但在现在的情况下，确实越大越好，因为大的库会包含大量的功能。标准库中的功能越多，开发自己的应用程序时能借助的功能就越多。C++库并非提供了一切（很明显的是，没有提供并发和图形用户接口的支持），但确实提供了很多。几乎任何事你都可以求助于它。</p>
+<p>在归纳标准库中有些什么之前，需要介绍一下它是如何组织的。因为标准库中东西如此之多，你（或象你一样的其他什么人）所选择的类名或函数名就很有可能和标准库中的某个名字相同。为了避免这种情况所造成的名字冲突，实际上标准库中的一切都被放在名字空间std中（参见条款28）。但这带来了一个新问题。无数现有的C++代码都依赖于使用了多年的伪标准库中的功能，例如，声明在&lt;iostream.h&gt;，&lt;complex.h&gt;，&lt;limits.h&gt;等头文件中的功能。现有软件没有针对使用名字空间（这里可能想说的是namespace）而进行设计，如果用std来包装标准库导致现有代码不能用，将是一种可耻行为。（这种釜底抽薪的做法会让现有代码的程序员说出比 “可耻” 更难听的话）</p>
+<p>慑于被激怒的程序员会产生的破坏力，标准委员会决定为包装了std的那部分标准库构件创建新的头文件名。生成新头文件的方法仅仅是将现有C++头文件名中的 .h 去掉，方法本身不重要，正如最后产生的结果不一致也并不重要一样。所以&lt;iostream.h&gt;变成了<iostream>，&lt;complex.h&gt;变成了<complex>，等等。对于C头文件，采用同样的方法，但在每个名字前还要添加一个c。所以C的&lt;string.h&gt;变成了<cstring>，&lt;stdio.h&gt;变成了<cstdio>，等等。最后一点是，旧的C++头文件是官方所反对使用的（即，明确列出不再支持），但旧的C头文件则没有（以保持对C的兼容性）。实际上，编译器制造商不会停止对客户现有软件提供支持，所以可以预计，旧的C++头文件在未来几年内还是会被支持。</p>
+<p>所以，实际来说，下面是C++头文件的现状：</p>
+<p>· 旧的C++头文件名如&lt;iostream.h&gt;将会继续被支持，尽管它们不在官方标准中。这些头文件的内容不在名字空间std中。</p>
+<p>· 新的C++头文件如<iostream>包含的基本功能和对应的旧头文件相同，但头文件的内容在名字空间std中。（在标准化的过程中，库中有些部分的细节被修改了，所以旧头文件和新头文件中的实体不一定完全对应。）</p>
+<p>· 标准C头文件如&lt;stdio.h&gt;继续被支持。头文件的内容不在std中。</p>
+<p>· 具有C库功能的新C++头文件具有如<cstdio>这样的名字。它们提供的内容和相应的旧C头文件相同，只是内容在std中。</p>
+<p>所有这些初看有点怪，但不难习惯它。最大的挑战是把字符串头文件理清楚：&lt;string.h&gt;是旧的C头文件，对应的是基于char*的字符串处理函数；<string>是包装了std的C++头文件，对应的是新的string类（看下文）；<cstring>是对应于旧C头文件的std版本。如果能掌握这些（我相信你能），其余的也就容易了。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/05/27/howtodeleteallcppcodeinue4/" rel="prev" title="把一个UE4工程里的C++全删掉">
+      <i class="fa fa-chevron-left"></i> 把一个UE4工程里的C++全删掉
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/11/11/git-something/" rel="next" title="Git（TortoiseGit）项目合作时的各种坑">
+      Git（TortoiseGit）项目合作时的各种坑 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">大魔王有木桑</p>
+  <div class="site-description" itemprop="description">这是我的微博存放在Github Pages的一份镜像，不定期与主站同步。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">nekonya.io</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.1
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

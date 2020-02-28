@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"static.yomunchan.moe","root":"/","scheme":"Pisces","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Nekopara 在游戏中，我们总是会见到上图这种剧情对话功能，它在很多尤其中，尤其是galgame中，起着重要的作用。 那么，这样的系统，要怎么做呢，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【Unity】自己动手做一个剧情对话系统吧">
+<meta property="og:url" content="https://static.yomunchan.moe/2019/02/02/unity-dialogue/index.html">
+<meta property="og:site_name" content="有木桑的小圈圈">
+<meta property="og:description" content="Nekopara 在游戏中，我们总是会见到上图这种剧情对话功能，它在很多尤其中，尤其是galgame中，起着重要的作用。 那么，这样的系统，要怎么做呢，">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1549084910549&di=f8025b31135898aa50d7fd5175e3af9c&imgtype=0&src=http%253A%252F%252Fr3.ykimg.com%252F0541040854A808F76A0A4204483A9DA8">
+<meta property="og:image" content="https://www.yomunchan.moe/wp-content/uploads/2019/02/image-6.png">
+<meta property="og:image" content="https://www.yomunchan.moe/wp-content/uploads/2019/02/image.png">
+<meta property="og:image" content="https://www.yomunchan.moe/wp-content/uploads/2019/02/image-1.png">
+<meta property="og:image" content="https://www.yomunchan.moe/wp-content/uploads/2019/02/image-2.png">
+<meta property="og:image" content="https://www.yomunchan.moe/wp-content/uploads/2019/02/image-3.png">
+<meta property="og:image" content="https://www.yomunchan.moe/wp-content/uploads/2019/02/image-4.png">
+<meta property="og:image" content="https://www.yomunchan.moe/wp-content/uploads/2019/02/image-5.png">
+<meta property="article:published_time" content="2019-02-02T03:16:43.000Z">
+<meta property="article:modified_time" content="2020-02-28T12:06:14.645Z">
+<meta property="article:author" content="大魔王有木桑">
+<meta property="article:tag" content="Unity">
+<meta property="article:tag" content="Unity3D">
+<meta property="article:tag" content="游戏">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1549084910549&di=f8025b31135898aa50d7fd5175e3af9c&imgtype=0&src=http%253A%252F%252Fr3.ykimg.com%252F0541040854A808F76A0A4204483A9DA8">
+
+<link rel="canonical" href="https://static.yomunchan.moe/2019/02/02/unity-dialogue/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>【Unity】自己动手做一个剧情对话系统吧 | 有木桑的小圈圈</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">有木桑的小圈圈</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">博客站点静态镜像</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://static.yomunchan.moe/2019/02/02/unity-dialogue/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="大魔王有木桑">
+      <meta itemprop="description" content="这是我的微博存放在Github Pages的一份镜像，不定期与主站同步。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="有木桑的小圈圈">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          【Unity】自己动手做一个剧情对话系统吧
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-02-02 11:16:43" itemprop="dateCreated datePublished" datetime="2019-02-02T11:16:43+08:00">2019-02-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-28 20:06:14" itemprop="dateModified" datetime="2020-02-28T20:06:14+08:00">2020-02-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Unity/" itemprop="url" rel="index"><span itemprop="name">Unity</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Unity/%E6%96%87%E5%AD%97/" itemprop="url" rel="index"><span itemprop="name">文字</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1549084910549&di=f8025b31135898aa50d7fd5175e3af9c&imgtype=0&src=http%3A%2F%2Fr3.ykimg.com%2F0541040854A808F76A0A4204483A9DA8" alt=""></p>
+<p>Nekopara</p>
+<p>在游戏中，我们总是会见到上图这种剧情对话功能，它在很多尤其中，尤其是galgame中，起着重要的作用。</p>
+<p>那么，这样的系统，要怎么做呢，</p>
+<a id="more"></a>
+<p>我们可以大致分为两部分：</p>
+<ol>
+<li>对话剧情的编写</li>
+<li>运行编写好的剧情内容</li>
+</ol>
+<p>其实在我看来，做这么一套系统，最大的难点，其实是在第一条：怎么设计一套编写剧情对话的东西。</p>
+<p>在我这种典型的程序员的视角来看，直接拿Lua脚本写剧情就非常棒，比如这样</p>
+<pre><code>local dialogue = {}
+local Mgr = XCore.Drama.DialogueManager;
+
+
+dialogue[1] = Mgr.Say(&quot;史莱姆&quot;,&quot;我也是个广东人，所以我们是老乡&quot;);
+dialogue[2] = Mgr.Say(&quot;哥布林&quot;,&quot;花~Q&quot;);
+dialogue[3] = Mgr.Say(&quot;史莱姆&quot;,&quot;oh, 花可U,Leather Man~&quot;);
+
+return dialogue;</code></pre><p>这样对于程序员来说，显然是最爽的，你甚至不用刻意去解析它，拿到数据之后直接就可以运行了。但是问题是，一般在做游戏的时候，都不是程序员去编写剧情脚本的，而是文案啊、策划啊之类的。你让非程序工作者去直接写Lua，先不说会不会出错，他们肯定会先想着怎么把程序员打一顿的。</p>
+<p>所以，这样是行不通的，那有没有其他方案呢。</p>
+<hr>
+<p>诶，好像我工作的公司的项目中就有对话系统，我去看看他们是怎么弄的。然后，我们看到他们把所有对话文本，都配在了Excel中。</p>
+<p><img src="https://www.yomunchan.moe/wp-content/uploads/2019/02/image-6.png" alt=""></p>
+<p>emmm，乍一看好像没问题，但是遇到选择项的时候，这么操作就非常繁琐了。</p>
+<p>比如：</p>
+<p>史莱姆：“我也是个广东人，所以我们是老乡”。</p>
+<p>请选择操作：</p>
+<ol>
+<li>“ 花~Q! ”</li>
+<li>“雷猴啊”</li>
+<li>不理她</li>
+</ol>
+<p>那么，在这样一个选项中，每个选项之后，会有不同的对话内容，甚至还有不同的选项对角色的某些属性的影响。（比如选择“ 花~Q! ”会让史莱姆对自己的好感度+10 这类的功能）</p>
+<p>这样的话，Excel配表格这种操作，就显得有很大局限性了。（那为什么我司的项目用Excel呢，我问了下，他们说游戏里不可能有太过复杂的剧情对话，但是对于做Galgame之类的情况，就完全不够用了）。</p>
+<hr>
+<p>于是，接下来，我们来看看网络上有什么不错的解决方案，然后，我找到了这个：Ink语言。</p>
+<p>ink是由inkle公司推出的一种脚本式的文字预处理语言用来编写一些对话类游戏的对话内容及流程图。 写起来大概是这样：</p>
+<pre><code>史莱姆：我也是个广东人，所以我们是老乡。
+请选择操作：
+* “花~Q!” [] oh, 花可U,Leather Man~
+* “两开花！两开花！”</code></pre><p>这套语言设计的就很棒了，功能强大，写起来也还不错，甚至，它有专门的Unity插件来解析ink语言：<a href="https://assetstore.unity.com/packages/tools/integration/ink-unity-integration-60055" target="_blank" rel="noopener">https://assetstore.unity.com/packages/tools/integration/ink-unity-integration-60055</a></p>
+<p>于是呢，我就把这玩意给拿给我们文案看了，文案表示，这个好像还是有挺高的学习成本诶，而且看着也不是很直观。有点乱乱的。</p>
+<hr>
+<p>然后，我就自己撸了一套，长这样</p>
+<p><img src="https://www.yomunchan.moe/wp-content/uploads/2019/02/image.png" alt=""></p>
+<p>嗯，利用图表节点来描述对话流程。</p>
+<p><img src="https://www.yomunchan.moe/wp-content/uploads/2019/02/image-1.png" alt=""></p>
+<p>在节点图表中，你可以直接通过连线的方向，复用之前的节点</p>
+<p>运行如下：</p>
+<p><img src="https://www.yomunchan.moe/wp-content/uploads/2019/02/image-2.png" alt=""></p>
+<p><img src="https://www.yomunchan.moe/wp-content/uploads/2019/02/image-3.png" alt=""></p>
+<p>分支选项</p>
+<p><img src="https://www.yomunchan.moe/wp-content/uploads/2019/02/image-4.png" alt=""></p>
+<p>两开花选项</p>
+<p><img src="https://www.yomunchan.moe/wp-content/uploads/2019/02/image-5.png" alt=""></p>
+<p>再次回到分支选项时，设定为“只能选择一次”的两开花选项消失</p>
+<p>此外，配合一些参数绑定的功能，和事件广播的功能，一个简单的对话系统就做好了。</p>
+<hr>
+<blockquote>
+<p>开源引用<br>CatLib: <a href="https://catlib.io/" target="_blank" rel="noopener">CatLib - 文档</a></p>
+<p>xNode : <a href="https://assetstore.unity.com/packages/tools/visual-scripting/xnode-104276" target="_blank" rel="noopener">xNode - Asset Store</a></p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Unity/" rel="tag"># Unity</a>
+              <a href="/tags/Unity3D/" rel="tag"># Unity3D</a>
+              <a href="/tags/%E6%B8%B8%E6%88%8F/" rel="tag"># 游戏</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/01/22/golang/" rel="prev" title="[Golang]搭建一个VSCode “够浪”的开发环境">
+      <i class="fa fa-chevron-left"></i> [Golang]搭建一个VSCode “够浪”的开发环境
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/02/04/happy-new-year-2019/" rel="next" title="新年快乐2019">
+      新年快乐2019 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">大魔王有木桑</p>
+  <div class="site-description" itemprop="description">这是我的微博存放在Github Pages的一份镜像，不定期与主站同步。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">nekonya.io</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.1
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

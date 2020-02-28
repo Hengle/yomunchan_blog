@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"static.yomunchan.moe","root":"/","scheme":"Pisces","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="虽说VS2019 RC发布好些天了，但也就今天周末来有时间下载下来玩玩，看看VS2019有哪些新的东西。顺便看看Visual Studio的旗舰版有啥有趣的地方。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Visual Studio 2019候选发布版体验">
+<meta property="og:url" content="https://static.yomunchan.moe/2019/03/03/visual-studio-2019-preview/index.html">
+<meta property="og:site_name" content="有木桑的小圈圈">
+<meta property="og:description" content="虽说VS2019 RC发布好些天了，但也就今天周末来有时间下载下来玩玩，看看VS2019有哪些新的东西。顺便看看Visual Studio的旗舰版有啥有趣的地方。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.yomunchan.moe/wp-content/uploads/2019/03/image.png">
+<meta property="og:image" content="https://www.yomunchan.moe/wp-content/uploads/2019/03/image-2-1024x576.png">
+<meta property="og:image" content="https://www.yomunchan.moe/wp-content/uploads/2019/03/image-3-1024x576.png">
+<meta property="og:image" content="https://www.yomunchan.moe/wp-content/uploads/2019/03/image-4.png">
+<meta property="og:image" content="https://www.yomunchan.moe/wp-content/uploads/2019/03/image-5.png">
+<meta property="og:image" content="https://www.yomunchan.moe/wp-content/uploads/2019/03/image-6.png">
+<meta property="og:image" content="https://www.yomunchan.moe/wp-content/uploads/2019/03/image-7-1024x700.png">
+<meta property="og:image" content="https://www.yomunchan.moe/wp-content/uploads/2019/03/image-8.png">
+<meta property="og:image" content="https://www.yomunchan.moe/wp-content/uploads/2019/03/image-9-1024x657.png">
+<meta property="og:image" content="https://www.yomunchan.moe/wp-content/uploads/2019/03/image-10.png">
+<meta property="og:image" content="https://www.yomunchan.moe/wp-content/uploads/2019/03/image-11.png">
+<meta property="article:published_time" content="2019-03-03T02:23:08.000Z">
+<meta property="article:modified_time" content="2020-02-28T11:59:05.907Z">
+<meta property="article:author" content="大魔王有木桑">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.yomunchan.moe/wp-content/uploads/2019/03/image.png">
+
+<link rel="canonical" href="https://static.yomunchan.moe/2019/03/03/visual-studio-2019-preview/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>Visual Studio 2019候选发布版体验 | 有木桑的小圈圈</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">有木桑的小圈圈</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">博客站点静态镜像</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://static.yomunchan.moe/2019/03/03/visual-studio-2019-preview/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="大魔王有木桑">
+      <meta itemprop="description" content="这是我的微博存放在Github Pages的一份镜像，不定期与主站同步。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="有木桑的小圈圈">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Visual Studio 2019候选发布版体验
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-03-03 10:23:08" itemprop="dateCreated datePublished" datetime="2019-03-03T10:23:08+08:00">2019-03-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-02-28 19:59:05" itemprop="dateModified" datetime="2020-02-28T19:59:05+08:00">2020-02-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%96%87%E5%AD%97/" itemprop="url" rel="index"><span itemprop="name">文字</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>虽说VS2019 RC发布好些天了，但也就今天周末来有时间下载下来玩玩，看看VS2019有哪些新的东西。顺便看看Visual Studio的旗舰版有啥有趣的地方。</p>
+<a id="more"></a>
+<p><img src="https://www.yomunchan.moe/wp-content/uploads/2019/03/image.png" alt=""></p>
+<p>vs2017是免费的贫下中农版，vs2019预览版是旗舰版</p>
+<hr>
+<p>欢迎页</p>
+<p>启动VS之后，首先感觉，欢迎页的变化很大。</p>
+<p><img src="https://www.yomunchan.moe/wp-content/uploads/2019/03/image-2-1024x576.png" alt=""></p>
+<p><img src="https://www.yomunchan.moe/wp-content/uploads/2019/03/image-3-1024x576.png" alt=""></p>
+<p>VS2017的欢迎页是一个子页签，而VS2019的欢迎页则是一个独立的窗口，（感觉很像Unity Hub)。内容上，也把一些可能从来没几个人看过的“开发人员新闻”和“入门”给弄没了。</p>
+<hr>
+<p>新建一个控制台项目试试</p>
+<p><img src="https://www.yomunchan.moe/wp-content/uploads/2019/03/image-4.png" alt=""></p>
+<p><img src="https://www.yomunchan.moe/wp-content/uploads/2019/03/image-5.png" alt=""></p>
+<p>从VS2017的菜单新建项目，在.net core分类下找到控制台项目，新建。</p>
+<p><img src="https://www.yomunchan.moe/wp-content/uploads/2019/03/image-6.png" alt=""></p>
+<p>而2019则有个巨大的新建项目按钮，不知道是不是为了突出2019一直宣传的云端协同，Git和Azure的选项放在了第一个。</p>
+<p><img src="https://www.yomunchan.moe/wp-content/uploads/2019/03/image-7-1024x700.png" alt=""></p>
+<p>不过，点进去之后的页面就很不讨喜了，各种新建项目选项胡乱堆在一起，虽然有筛选功能，但是吧，总觉得有点乱糟糟的。（而且，从菜单选项打开的新建项目界面也是这玩意。</p>
+<p><img src="https://www.yomunchan.moe/wp-content/uploads/2019/03/image-8.png" alt=""></p>
+<p>并且新建项目的时候，没有“顺便给这个项目创建git仓库”的选项了</p>
+<p><img src="https://www.yomunchan.moe/wp-content/uploads/2019/03/image-9-1024x657.png" alt=""></p>
+<p>对比两代编辑器，功能区没有什么大变化，菜单UI显得更紧凑了，原来单独占一行的项目标题跑到了菜单后面。</p>
+<p><img src="https://www.yomunchan.moe/wp-content/uploads/2019/03/image-10.png" alt=""></p>
+<p>跑hello world的时候，控制台程序结束之后，输出了如图一堆文字。虽然目前看没什么用处，但是相比之前控制塔窗口一闪而过，倒是不至于让刚入门的学生一脸懵逼了。  </p>
+<p><img src="https://www.yomunchan.moe/wp-content/uploads/2019/03/image-11.png" alt=""></p>
+<p>相较于社区版，旗舰版VS一直就有一些非常方便的小东西，比如引用的标记，Git版本的变化标记之类的</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/02/04/happy-new-year-2019/" rel="prev" title="新年快乐2019">
+      <i class="fa fa-chevron-left"></i> 新年快乐2019
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/04/02/star996icu/" rel="next" title="【科普向】如何在“996ICU”项目上点一个小星星">
+      【科普向】如何在“996ICU”项目上点一个小星星 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">大魔王有木桑</p>
+  <div class="site-description" itemprop="description">这是我的微博存放在Github Pages的一份镜像，不定期与主站同步。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">nekonya.io</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.1
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
