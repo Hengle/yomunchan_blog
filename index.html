@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"static.yomunchan.moe","root":"/","scheme":"Pisces","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"static.yomunchan.moe","root":"/","scheme":"Pisces","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="这是我的微博存放在Github Pages的一份镜像，不定期与主站同步。">
@@ -28,6 +28,11 @@
 <meta property="og:description" content="这是我的微博存放在Github Pages的一份镜像，不定期与主站同步。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="大魔王有木桑">
+<meta property="article:tag" content="有木桑">
+<meta property="article:tag" content="大魔王有木桑">
+<meta property="article:tag" content="博客">
+<meta property="article:tag" content="yomunsam">
+<meta property="article:tag" content="youmunchan">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://static.yomunchan.moe/">
@@ -161,7 +166,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/02/28/unity-engine-scriptablesingleton/" class="post-title-link" itemprop="url">unity-engine-scriptablesingleton</a>
+            <a href="/2020/02/28/unity-engine-scriptablesingleton/" class="post-title-link" itemprop="url">Unity Engine的ScriptableSingleton</a>
         </h1>
 
         <div class="post-meta">
@@ -172,7 +177,16 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-02-28 15:43:37 / 修改时间：20:14:58" itemprop="dateCreated datePublished" datetime="2020-02-28T15:43:37+08:00">2020-02-28</time>
+              <time title="创建时间：2020-02-28 14:51:49 / 修改时间：20:16:57" itemprop="dateCreated datePublished" datetime="2020-02-28T14:51:49+08:00">2020-02-28</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%96%87%E5%AD%97/" itemprop="url" rel="index"><span itemprop="name">文字</span></a>
+                </span>
             </span>
 
           
@@ -186,7 +200,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          
+          <p><code>ScriptableSingleton</code> 是我最近不小心发现的一个类，它位于UnityEditor namespace，但是并没有出现在官方的文档上。</p>
+<p>于是，好奇心来了。经过一系列的琢磨和查阅资料，发现它可能是用于编辑器内部记录数据的一个功能（能不能保存数据还不知道）</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/02/28/unity-engine-scriptablesingleton/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1046,7 +1069,7 @@
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
