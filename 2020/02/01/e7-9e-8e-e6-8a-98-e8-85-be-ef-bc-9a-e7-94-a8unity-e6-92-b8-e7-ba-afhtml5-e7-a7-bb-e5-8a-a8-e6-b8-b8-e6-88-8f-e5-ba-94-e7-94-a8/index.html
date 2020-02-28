@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html  lang="zh">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 4.2.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>瞎折腾：用Unity撸纯HTML5移动游戏/应用 - 有木桑的小圈圈</title>
+
+
+    <meta name="description" content="这两天灵机一动，大概折腾了个demo （ps: 博客站的CDN在墙外（HK），如果刷不出图的话，请尝试改变一下上网方式。）  效果上有点像Unity自己家的Project Tiny那样，Build之后得到的是一个纯HTML5的前端应用。   不过不同于Tiny，我们这里设计的还是相对传统的GameObject+组件这种开发方式：场景-&gt;GameObject-&gt;组件，而非DOTS那套。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="瞎折腾：用Unity撸纯HTML5移动游戏&#x2F;应用">
+<meta property="og:url" content="https://static.yomunchan.moe/2020/02/01/e7-9e-8e-e6-8a-98-e8-85-be-ef-bc-9a-e7-94-a8unity-e6-92-b8-e7-ba-afhtml5-e7-a7-bb-e5-8a-a8-e6-b8-b8-e6-88-8f-e5-ba-94-e7-94-a8/index.html">
+<meta property="og:site_name" content="有木桑的小圈圈">
+<meta property="og:description" content="这两天灵机一动，大概折腾了个demo （ps: 博客站的CDN在墙外（HK），如果刷不出图的话，请尝试改变一下上网方式。）  效果上有点像Unity自己家的Project Tiny那样，Build之后得到的是一个纯HTML5的前端应用。   不过不同于Tiny，我们这里设计的还是相对传统的GameObject+组件这种开发方式：场景-&gt;GameObject-&gt;组件，而非DOTS那套。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://static.yomunchan.moe/images/og_image.png">
+<meta property="article:published_time" content="2020-02-01T11:35:45.000Z">
+<meta property="article:modified_time" content="2020-02-28T07:43:37.397Z">
+<meta property="article:author" content="大魔王有木桑">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://static.yomunchan.moe/images/og_image.png">
+<meta name="twitter:creator" content="@yomunsam">
+<meta name="twitter:site" content="https:&#x2F;&#x2F;twitter.com&#x2F;yomunsam">
+
+
+
+<link rel="canonical" href="https://static.yomunchan.moe" />
+
+
+
+
+
+<link rel="icon" href="/images/favicon.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.svg" alt="瞎折腾：用Unity撸纯HTML5移动游戏/应用" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/archives">Archives</a>
+                
+                <a class="navbar-item"
+                href="/categories">Categories</a>
+                
+                <a class="navbar-item"
+                href="/tags">Tags</a>
+                
+                <a class="navbar-item"
+                href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    <a class="navbar-item" target="_blank" rel="noopener" title="My GitHub" href="https://github.com/yomunsam">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                    <a class="navbar-item" target="_blank" rel="noopener" title="My Twitter" href="https://twitter.com/yomunsam">
+                        
+                        <i class="fab fa-twitter"></i>
+                        
+                    </a>
+                    
+                    <a class="navbar-item" target="_blank" rel="noopener" title="My Zhihu" href="https://zhihu.com/people/yomunsam">
+                        
+                        <i class="fab fa-address-book"></i>
+                        
+                    </a>
+                    
+                
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-02-01T11:35:45.000Z">2020-02-01</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%E6%96%87%E5%AD%97/">文字</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    8 分钟 读完 (大约 1224 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                瞎折腾：用Unity撸纯HTML5移动游戏/应用
+            
+        </h1>
+        <div class="content">
+            <p>这两天灵机一动，大概折腾了个demo</p>
+<p><strong>（ps: 博客站的CDN在墙外（HK），如果刷不出图的话，请尝试改变一下上网方式。）</strong></p>
+<p><img src="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2020/02/20200201_174745-1024x576.jpg" alt=""></p>
+<p>效果上有点像Unity自己家的Project Tiny那样，Build之后得到的是一个纯HTML5的前端应用。</p>
+<p><img src="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2020/02/CHY8PA@JM1J9FA6EY_NIVK-1024x610.png" alt=""></p>
+<p><img src="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2020/02/F4JBKIMBJYLZS@LNP-1024x792.png" alt=""></p>
+<p>不过不同于Tiny，我们这里设计的还是相对传统的GameObject+组件这种开发方式：场景-&gt;GameObject-&gt;组件，而非DOTS那套。</p>
+<p>使用GameObject 挂在组件的方式编辑场景，编写C#代码，并在构建时导出HTML应用。</p>
+<p>因为暂时没打算把它做完，就压根没往GitHub上整，大概写点东西 算是记录一下：</p>
+<hr>
+<p>首先是大概思路：</p>
+<p>这玩意其实相当于是一个独立的引擎或者说框架了，和Unity的Runtime基本上没关系。目前大体上可以分为两个部分：</p>
+<p>一个是核心模块(core)，这部分是一个独立的、与Unity无关的独立工程，由C#和TypeScript编写。在核心模块中，有一套重新实现的GameObject和Compoment的机制。核心模块可以直接用来编写业务逻辑并构建HTML应用，不需要编辑器。</p>
+<p><img src="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2020/02/Snipaste_2020-02-01_18-54-29-1024x538.png" alt=""></p>
+<p>直接用core部分编写业务</p>
+<p>另一个部分就是针对Unity的扩展，把core部分的东西和Unity关联起来。</p>
+<p>在应用构建时，Unity的扩展部分会把在编辑器中编辑的场景、Prefabs等内容读取出来，存储成Json放进HTML应用的资源中，（我们暂时在HTML应用中把Scene、Prefabs什么的都统称为Stage），然后在浏览器中运行时，Core会把各种GameObject根据JSON加载出来并挂在Components，由Core来维护整个应用的生命周期，并把需要显示的内容绘制在Canvas上。</p>
+<p>所以，虽然说是用Unity开发HTML应用，但基本上和Unity本身没啥关系了，只是借用到了Unity的编辑器。而在应用运行时，就是个单纯的HTML应用了，就没Unity的事了（其实Tiny之前还是TypeScript的时候也是这么干的，现在不清楚，还没细看过它的实现）</p>
+<hr>
+<p>也正是因为上述的原理，所以我们在实际写业务逻辑的时候，需要把我们的业务代码和Unity的内容（UnityEngine命名空间等）明确的分隔开。同理，在编辑场景的时候，我们也不能挂载Unity提供的组件（目前Unity的Canvas等几个组件除外，导出的时候会自动忽略）。</p>
+<p>也就是说，MonoBehaviour也是不能用了。我们自己实现了一个Behaviour类，用宏定义符号做了分隔：在编辑器下，继承自MonoBehaviour，以便我们在编辑器下挂在组件和调试。而在构建HTML应用时，MonoBehaviour部分的东西就会被剥离，由Core来管理这些组件。</p>
+<p><img src="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2020/02/Snipaste_2020-02-01_19-34-50.png" alt=""></p>
+<p>重新实现的Lable组件（demo阶段，所以功能贼少）</p>
+<p>（在编辑器中调试这件事，目前的设计是用宏定义在编辑器下继承Unity的组件，比如目前的Lable在编辑器下会继承自UnityEngine.UI.Text，这样做的目前的借用Unity的Runtime来调试应用，另一方面可以直接用Unity直接的方式构建App。当然目前这个想法有没有什么坑还不知道，还没往下深入的做，没遇到坑暂时。）</p>
+<p>浏览器里运行C#的问题：</p>
+<p>折腾这玩意，最根本的目的是我想用C#写HTML5应用玩。所以浏览器里跑C#的问题就一定得解决了。</p>
+<p>常见的方法有两种，一个是WebAssembly，另一个是把C#翻译成JavaScript.</p>
+<p>权衡了各种因素，目前的实现的demo中选择了后者，我们在构建应用时把C#翻译成了JavaScript. （但其实直到现在对于两者的选择还是摇摆不定）</p>
+<p>这里使用了开源项目Bridge.NET来实现这个功能。 把C#翻译成JavaScript在目前最大的好处是包体极小，兼容性较好，GC什么的问题也不大。</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/02/28/unity-engine-scriptablesingleton/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">Unity Engine的ScriptableSingleton</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/01/03/orleans-e6-9c-80-e4-bd-b3-e5-ae-9e-e8-b7-b5/">
+                <span class="level-item">Orleans 最佳实践</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="" src="/images/avatar.png" alt="yomunsam">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        yomunsam
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        大魔王有木桑
+                    </p>
+                    
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        文章
+                    </p>
+                    <a href="/archives">
+                        <p class="title has-text-weight-normal">
+                            23
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        分类
+                    </p>
+                    <a href="/categories">
+                        <p class="title has-text-weight-normal">
+                            7
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        标签
+                    </p>
+                    <a href="/tags">
+                        <p class="title has-text-weight-normal">
+                            5
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://twitter.com/yomunsam" target="_blank" rel="noopener">
+                关注我</a>
+        </div>
+        
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Github" href="https://github.com/yomunsam">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Twitter" href="https://twitter.com/yomunsam">
+                
+                <i class="fab fa-twitter"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Zhihu" href="https://zhihu.com/people/yomunsam">
+                
+                <i class="fas fa-link"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            链接
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener">
+                    <span class="level-left">
+                        <span class="level-item">Hexo</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">hexo.io</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://github.com/ppoffice" target="_blank" rel="noopener">
+                    <span class="level-left">
+                        <span class="level-item">PPOffice</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">github.com</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                分类
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/Unity/">
+            <span class="level-start">
+                <span class="level-item">Unity</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">4</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/Unity/Unreal/">
+            <span class="level-start">
+                <span class="level-item">Unreal</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Unity/%E6%96%87%E5%AD%97/">
+            <span class="level-start">
+                <span class="level-item">文字</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/%E6%96%87%E5%AD%97/">
+            <span class="level-start">
+                <span class="level-item">文字</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">19</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/%E6%96%87%E5%AD%97/%E7%9E%8E%E6%8A%98%E8%85%BE/">
+            <span class="level-start">
+                <span class="level-item">瞎折腾</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li></ul></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            标签云
+        </h3>
+        <a href="/tags/ScriptableSingleton/" style="font-size: 10px;">ScriptableSingleton</a> <a href="/tags/Unity/" style="font-size: 20px;">Unity</a> <a href="/tags/Unity3D/" style="font-size: 15px;">Unity3D</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 10px;">游戏</a> <a href="/tags/%E7%83%AD%E6%9B%B4%E6%96%B0/" style="font-size: 10px;">热更新</a>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/02/28/unity-engine-scriptablesingleton/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Unity Engine的ScriptableSingleton">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-28T06:51:49.000Z">2020-02-28</time></div>
+                    <a href="/2020/02/28/unity-engine-scriptablesingleton/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Unity Engine的ScriptableSingleton</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E6%96%87%E5%AD%97/">文字</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/01/e7-9e-8e-e6-8a-98-e8-85-be-ef-bc-9a-e7-94-a8unity-e6-92-b8-e7-ba-afhtml5-e7-a7-bb-e5-8a-a8-e6-b8-b8-e6-88-8f-e5-ba-94-e7-94-a8/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="瞎折腾：用Unity撸纯HTML5移动游戏/应用">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-01T11:35:45.000Z">2020-02-01</time></div>
+                    <a href="/2020/02/01/e7-9e-8e-e6-8a-98-e8-85-be-ef-bc-9a-e7-94-a8unity-e6-92-b8-e7-ba-afhtml5-e7-a7-bb-e5-8a-a8-e6-b8-b8-e6-88-8f-e5-ba-94-e7-94-a8/" class="title has-link-black-ter is-size-6 has-text-weight-normal">瞎折腾：用Unity撸纯HTML5移动游戏/应用</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E6%96%87%E5%AD%97/">文字</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/01/03/orleans-e6-9c-80-e4-bd-b3-e5-ae-9e-e8-b7-b5/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Orleans 最佳实践">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-02T16:48:49.000Z">2020-01-03</time></div>
+                    <a href="/2020/01/03/orleans-e6-9c-80-e4-bd-b3-e5-ae-9e-e8-b7-b5/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Orleans 最佳实践</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E6%96%87%E5%AD%97/">文字</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/07/e6-89-8b-e5-8a-a8-e9-85-8d-e7-bd-aeunity-android-e5-bc-80-e5-8f-91-e7-8e-af-e5-a2-83-ef-bc-88windows-ef-bc-89/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="手动配置Unity/Android开发环境（Windows）">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-07T13:07:40.000Z">2019-10-07</time></div>
+                    <a href="/2019/10/07/e6-89-8b-e5-8a-a8-e9-85-8d-e7-bd-aeunity-android-e5-bc-80-e5-8f-91-e7-8e-af-e5-a2-83-ef-bc-88windows-ef-bc-89/" class="title has-link-black-ter is-size-6 has-text-weight-normal">手动配置Unity/Android开发环境（Windows）</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E6%96%87%E5%AD%97/">文字</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/06/tinax-framework-e8-87-aa-e5-8a-a8-e5-8c-96-e6-9e-84-e5-bb-ba-e5-ae-9e-e8-b7-b5/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TinaX Framework 自动化构建实践">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-06T11:26:06.000Z">2019-10-06</time></div>
+                    <a href="/2019/10/06/tinax-framework-e8-87-aa-e5-8a-a8-e5-8c-96-e6-9e-84-e5-bb-ba-e5-ae-9e-e8-b7-b5/" class="title has-link-black-ter is-size-6 has-text-weight-normal">TinaX Framework 自动化构建实践</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E6%96%87%E5%AD%97/">文字</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/10/">
+                <span class="level-start">
+                    <span class="level-item">十月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/08/">
+                <span class="level-start">
+                    <span class="level-item">八月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/07/">
+                <span class="level-start">
+                    <span class="level-item">七月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/06/">
+                <span class="level-start">
+                    <span class="level-item">六月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/05/">
+                <span class="level-start">
+                    <span class="level-item">五月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">四月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/12/">
+                <span class="level-start">
+                    <span class="level-item">十二月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/11/">
+                <span class="level-start">
+                    <span class="level-item">十一月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/09/">
+                <span class="level-start">
+                    <span class="level-item">九月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/05/">
+                <span class="level-start">
+                    <span class="level-item">五月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/12/">
+                <span class="level-start">
+                    <span class="level-item">十二月 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ScriptableSingleton/">
+                        <span class="tag">ScriptableSingleton</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Unity/">
+                        <span class="tag">Unity</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Unity3D/">
+                        <span class="tag">Unity3D</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E6%B8%B8%E6%88%8F/">
+                        <span class="tag">游戏</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E7%83%AD%E6%9B%B4%E6%96%B0/">
+                        <span class="tag">热更新</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/02/28/unity-engine-scriptablesingleton/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Unity Engine的ScriptableSingleton">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-28T06:51:49.000Z">2020-02-28</time></div>
+                    <a href="/2020/02/28/unity-engine-scriptablesingleton/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Unity Engine的ScriptableSingleton</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E6%96%87%E5%AD%97/">文字</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/01/e7-9e-8e-e6-8a-98-e8-85-be-ef-bc-9a-e7-94-a8unity-e6-92-b8-e7-ba-afhtml5-e7-a7-bb-e5-8a-a8-e6-b8-b8-e6-88-8f-e5-ba-94-e7-94-a8/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="瞎折腾：用Unity撸纯HTML5移动游戏/应用">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-01T11:35:45.000Z">2020-02-01</time></div>
+                    <a href="/2020/02/01/e7-9e-8e-e6-8a-98-e8-85-be-ef-bc-9a-e7-94-a8unity-e6-92-b8-e7-ba-afhtml5-e7-a7-bb-e5-8a-a8-e6-b8-b8-e6-88-8f-e5-ba-94-e7-94-a8/" class="title has-link-black-ter is-size-6 has-text-weight-normal">瞎折腾：用Unity撸纯HTML5移动游戏/应用</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E6%96%87%E5%AD%97/">文字</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/01/03/orleans-e6-9c-80-e4-bd-b3-e5-ae-9e-e8-b7-b5/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Orleans 最佳实践">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-02T16:48:49.000Z">2020-01-03</time></div>
+                    <a href="/2020/01/03/orleans-e6-9c-80-e4-bd-b3-e5-ae-9e-e8-b7-b5/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Orleans 最佳实践</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E6%96%87%E5%AD%97/">文字</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/07/e6-89-8b-e5-8a-a8-e9-85-8d-e7-bd-aeunity-android-e5-bc-80-e5-8f-91-e7-8e-af-e5-a2-83-ef-bc-88windows-ef-bc-89/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="手动配置Unity/Android开发环境（Windows）">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-07T13:07:40.000Z">2019-10-07</time></div>
+                    <a href="/2019/10/07/e6-89-8b-e5-8a-a8-e9-85-8d-e7-bd-aeunity-android-e5-bc-80-e5-8f-91-e7-8e-af-e5-a2-83-ef-bc-88windows-ef-bc-89/" class="title has-link-black-ter is-size-6 has-text-weight-normal">手动配置Unity/Android开发环境（Windows）</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E6%96%87%E5%AD%97/">文字</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/06/tinax-framework-e8-87-aa-e5-8a-a8-e5-8c-96-e6-9e-84-e5-bb-ba-e5-ae-9e-e8-b7-b5/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TinaX Framework 自动化构建实践">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-06T11:26:06.000Z">2019-10-06</time></div>
+                    <a href="/2019/10/06/tinax-framework-e8-87-aa-e5-8a-a8-e5-8c-96-e6-9e-84-e5-bb-ba-e5-ae-9e-e8-b7-b5/" class="title has-link-black-ter is-size-6 has-text-weight-normal">TinaX Framework 自动化构建实践</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E6%96%87%E5%AD%97/">文字</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/10/">
+                <span class="level-start">
+                    <span class="level-item">十月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/08/">
+                <span class="level-start">
+                    <span class="level-item">八月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/07/">
+                <span class="level-start">
+                    <span class="level-item">七月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/06/">
+                <span class="level-start">
+                    <span class="level-item">六月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/05/">
+                <span class="level-start">
+                    <span class="level-item">五月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">四月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/12/">
+                <span class="level-start">
+                    <span class="level-item">十二月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/11/">
+                <span class="level-start">
+                    <span class="level-item">十一月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/09/">
+                <span class="level-start">
+                    <span class="level-item">九月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/05/">
+                <span class="level-start">
+                    <span class="level-item">五月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/12/">
+                <span class="level-start">
+                    <span class="level-item">十二月 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ScriptableSingleton/">
+                        <span class="tag">ScriptableSingleton</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Unity/">
+                        <span class="tag">Unity</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Unity3D/">
+                        <span class="tag">Unity3D</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E6%B8%B8%E6%88%8F/">
+                        <span class="tag">游戏</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E7%83%AD%E6%9B%B4%E6%96%B0/">
+                        <span class="tag">热更新</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/logo.svg" alt="瞎折腾：用Unity撸纯HTML5移动游戏/应用" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2020 大魔王有木桑&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="My GitHub" href="https://github.com/yomunsam">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="My Twitter" href="https://twitter.com/yomunsam">
+                        
+                        <i class="fab fa-twitter"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="My Zhihu" href="https://zhihu.com/people/yomunsam">
+                        
+                        <i class="fab fa-address-book"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+
+<script>
+var IcarusThemeSettings = {
+    site: {
+        url: 'https://static.yomunchan.moe',
+        external_link: {"enable":true,"exclude":[]}
+    },
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+
+
+<script src="/js/animation.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>

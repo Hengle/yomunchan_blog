@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+<html  lang="zh">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 4.2.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<title>Windows 10 大陆地区生存手册-（1）入门篇 - 有木桑的小圈圈</title>
+
+
+    <meta name="description" content="这是一个面向“对计算机&#x2F;Windows 10完全不懂的群体”的科普文 今天又被人问“我电脑为什么xxx”，讲真，说不嫌烦那是假的，尽管对方会觉得很无辜，但是隔三岔五就得解释一遍这种问题，确实有点不舒服。得，统一整理整理，写点东西吧。 首先，什么是系统，什么是Windows事实上，很多普通人（指不从事计算机相关行业、切对计算机领域没有特别关注的人）对电脑的概念是很模糊的，甚至很多人是不知道什么是系统">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Windows 10 大陆地区生存手册-（1）入门篇">
+<meta property="og:url" content="https://static.yomunchan.moe/2019/08/15/windows-10-e5-a4-a7-e9-99-86-e5-9c-b0-e5-8c-ba-e7-94-9f-e5-ad-98-e6-89-8b-e5-86-8c-ef-bc-881-ef-bc-89-e5-85-a5-e9-97-a8-e7-af-87/index.html">
+<meta property="og:site_name" content="有木桑的小圈圈">
+<meta property="og:description" content="这是一个面向“对计算机&#x2F;Windows 10完全不懂的群体”的科普文 今天又被人问“我电脑为什么xxx”，讲真，说不嫌烦那是假的，尽管对方会觉得很无辜，但是隔三岔五就得解释一遍这种问题，确实有点不舒服。得，统一整理整理，写点东西吧。 首先，什么是系统，什么是Windows事实上，很多普通人（指不从事计算机相关行业、切对计算机领域没有特别关注的人）对电脑的概念是很模糊的，甚至很多人是不知道什么是系统">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://static.yomunchan.moe/images/og_image.png">
+<meta property="article:published_time" content="2019-08-15T11:44:25.000Z">
+<meta property="article:modified_time" content="2020-02-28T07:43:37.397Z">
+<meta property="article:author" content="大魔王有木桑">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://static.yomunchan.moe/images/og_image.png">
+<meta name="twitter:creator" content="@yomunsam">
+<meta name="twitter:site" content="https:&#x2F;&#x2F;twitter.com&#x2F;yomunsam">
+
+
+
+<link rel="canonical" href="https://static.yomunchan.moe" />
+
+
+
+
+
+<link rel="icon" href="/images/favicon.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.svg" alt="Windows 10 大陆地区生存手册-（1）入门篇" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/archives">Archives</a>
+                
+                <a class="navbar-item"
+                href="/categories">Categories</a>
+                
+                <a class="navbar-item"
+                href="/tags">Tags</a>
+                
+                <a class="navbar-item"
+                href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    <a class="navbar-item" target="_blank" rel="noopener" title="My GitHub" href="https://github.com/yomunsam">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                    <a class="navbar-item" target="_blank" rel="noopener" title="My Twitter" href="https://twitter.com/yomunsam">
+                        
+                        <i class="fab fa-twitter"></i>
+                        
+                    </a>
+                    
+                    <a class="navbar-item" target="_blank" rel="noopener" title="My Zhihu" href="https://zhihu.com/people/yomunsam">
+                        
+                        <i class="fab fa-address-book"></i>
+                        
+                    </a>
+                    
+                
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-08-15T11:44:25.000Z">2019-08-15</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%E6%96%87%E5%AD%97/">文字</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/%E6%96%87%E5%AD%97/%E7%9E%8E%E6%8A%98%E8%85%BE/">瞎折腾</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    24 分钟 读完 (大约 3628 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                Windows 10 大陆地区生存手册-（1）入门篇
+            
+        </h1>
+        <div class="content">
+            <p><strong>这是一个面向“对计算机/Windows 10完全不懂的群体”的科普文</strong></p>
+<p>今天又被人问“我电脑为什么xxx”，讲真，说不嫌烦那是假的，尽管对方会觉得很无辜，但是隔三岔五就得解释一遍这种问题，确实有点不舒服。得，统一整理整理，写点东西吧。</p>
+<h2 id="首先，什么是系统，什么是Windows"><a href="#首先，什么是系统，什么是Windows" class="headerlink" title="首先，什么是系统，什么是Windows"></a>首先，什么是系统，什么是Windows</h2><p>事实上，很多普通人（指不从事计算机相关行业、切对计算机领域没有特别关注的人）对电脑的概念是很模糊的，甚至很多人是不知道什么是系统的。</p>
+<p>我们从头开始说起吧，首先，在本文中，我们把电脑分为两个部分：硬件和软件。细节我们不管，类比到人类来说，“硬件”就是人类的“躯体”，包括身体发肤、骨骼内脏等的，而“软件”就是人的“思想”，有宗教信仰的读者可以理解为人的“灵魂”。而我们的电脑，就是它的“思想”在驱使着它的“身体”来完成任务。</p>
+<p>系统，完整的说叫“操作系统”，简称“OS”，就是我们电脑中所有软件的老大，它掌管着所有软件的生命和行为。有宗教信仰的读者可以理解为“系统是众多软件子民中唯一的神”。</p>
+<p>通常，人会分南方人北方人、亚洲人欧洲人，不同的群体会有不同的生活习惯、不同的语言，一个欧洲人说的话写的字给一个亚洲人大概率就看不懂。而电脑也是一样，电脑里的系统是有区别的，有好多种群的。这些系统中，最常见的有三类：Windows、OS X、GNU Linux.</p>
+<p>好的，文章中开始出现英文字母了，有的读者就懵了。但是请冷静，这几个单词就是单纯的起个名字而已，没有任何意思，你要是愿意，也可以把它们叫做“小张”、“老李”、“老赵”，意思是一样的。我们接下来，就从头开始认识一下这些小张、老王们。</p>
+<h4 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h4><p>Windows就是本文的主角了，它是一个<strong>商品</strong>，由美国微软（Microsoft）公司研发和发行。目前在售的版本叫“Windows 10”，可以被安装在电脑、手机、冰箱等各种地方。</p>
+<p>通常，如果我们什么都不知道，去超市商场随便买一台常见品牌电脑的话，比如什么戴尔、联想、惠普、小米、苏菲等等，那它大概率安装的就是Windows。</p>
+<p>通常，目前本文写出来的这个时间点（2019年），新买的电脑默认安装的是Windows 10 的“家庭版”版本，部分高端机型默认安装的是Windows 10的“专业版本（Pro版本）”。至于它们有什么区别，先不管，就当它是一样的就好了。</p>
+<h4 id="OS-X"><a href="#OS-X" class="headerlink" title="OS X"></a>OS X</h4><p>刚刚我们说，如果我们去超市商场随便买一台电脑的话，它大概率会安装Windows。但是也有一个特别的牌子，苹果（Apple）。</p>
+<p>OS X也是一个商品，由美国苹果（Apple Inc)公司研发。OS X并不像Windows那样直接出售，而只会安装在自己家的电脑产品中，跟随电脑一起发行。</p>
+<p>就像我们刚刚说的，欧洲人写的字亚洲人大概率是看不懂的，在系统之间也是一样，Windows上的软件，通常在OS X上是安装不了的，反之亦然。所以不要再问什么“为什么我的电脑下载不了英雄联盟”了，因为那些是Windwos平台独占的。</p>
+<h4 id="GNU-Linux"><a href="#GNU-Linux" class="headerlink" title="GNU Linux"></a>GNU Linux</h4><p>GNU Linux准确的说，它不是一个具体的系统，而是一堆系统的统称。GUN Linux起源于上个世纪一个芬兰的大学生，他因为觉得买个系统太贵了，于是一拍脑门：“来，我们自己做一个系统吧”</p>
+<p>然后很多人就响应了它的号召，全世界无数软硬件工程师一起参与建设了这么一个企划。（具体故事很复杂，我们不需要懂，粗略的理解就是全世界人一起用爱发电肝了个系统出来）</p>
+<p>GNU Linux的绝大多数发行版不是商品，属于自由软件。可以免费安装使用。通常，我们买的电脑很少会看到预装Linux系统的，不过也是有的，比如部分神舟机型，比如一些国企的采购任务等等。</p>
+<hr>
+<h2 id="开始使用Windows"><a href="#开始使用Windows" class="headerlink" title="开始使用Windows"></a>开始使用Windows</h2><p>大概介绍了什么是操作系统之后，我们就来好好聊聊本文的主角了，Windows。</p>
+<p>注意，本文以普通Windows消费者用户角度来介绍它的最佳使用实践，政企用户的部分内容请以各部分的要求为准。</p>
+<h3 id="Microsoft-账户"><a href="#Microsoft-账户" class="headerlink" title="Microsoft 账户"></a>Microsoft 账户</h3><p>就和很多手机一样，当我们刚把一台电脑买回来，首次开机时，系统会让我们登录或者注册一个账号（如果你电脑买回来首次开机没有要求登录或者注册账号的话，请退货，重新购买并确认包装是否完整未拆封）</p>
+<p>我们登录的这个账号就是微软账号，电脑会认为这个账号的主人是这台电脑的主人。和手机一样，只要有了这个账号，你就可以在摸不到电脑的情况下，远程定位、锁定、管理这台电脑，包括修改密码和锁死用户数据。</p>
+<p>所以请务必保管好这个账号，也不要随便在自己的电脑上登录别人的账号。</p>
+<h3 id="了解Windows的常见界面（传统电脑）"><a href="#了解Windows的常见界面（传统电脑）" class="headerlink" title="了解Windows的常见界面（传统电脑）"></a>了解Windows的常见界面（传统电脑）</h3><p>当我们解决完账号，首次打开一台新电脑时，我们会看到这样一个界面。</p>
+<p><img src="https://www.yomunchan.moe/wp-content/uploads/2019/08/image-7-1024x520.png" alt=""></p>
+<p>这就是Windows的桌面。</p>
+<p>注意，如果你的设备是平板电脑，并且系统在平板电脑模式下，默认是看不到这个样子的桌面的。具体请看后面的单独介绍</p>
+<p>整个桌面分为这么几个部分：</p>
+<h4 id="一、-托盘"><a href="#一、-托盘" class="headerlink" title="一、 托盘"></a>一、 托盘</h4><p><img src="https://www.yomunchan.moe/wp-content/uploads/2019/08/image-8-1024x521.png" alt=""></p>
+<p>托盘就是底部的深色长条，这里可以显示一些快捷图标，小工具，和系统的一些状态。（有OSX使用经验的读者可以理解为Docker栏+状态栏）</p>
+<h4 id="二、开始菜单-开始屏幕"><a href="#二、开始菜单-开始屏幕" class="headerlink" title="二、开始菜单/开始屏幕"></a>二、开始菜单/开始屏幕</h4><p>点击界面左下角的这个图标，它叫“开始按钮”</p>
+<p><img src="https://www.yomunchan.moe/wp-content/uploads/2019/08/image-9.png" alt=""></p>
+<p>我们就能看到我们的开始菜单了。</p>
+<p><img src="https://www.yomunchan.moe/wp-content/uploads/2019/08/image-10.png" alt=""></p>
+<p>整个菜单可以分为两个部分：菜单列表和磁贴区域。</p>
+<p><img src="https://www.yomunchan.moe/wp-content/uploads/2019/08/image-11.png" alt=""></p>
+<p>其中，当我们新安装了一个软件时，这个软件就会出现在菜单的“菜单列表”中，以名字的首字母顺序排序。如果我们点击下图这样的首字母分类标签</p>
+<p><img src="https://www.yomunchan.moe/wp-content/uploads/2019/08/image-12.png" alt=""></p>
+<p>就会看到这样一个界面，</p>
+<p><img src="https://www.yomunchan.moe/wp-content/uploads/2019/08/image-13.png" alt=""></p>
+<p>通过点击相应的字母，我们可以迅速定位、找到我们要打开的软件。</p>
+<p>而在磁贴区域中，则放置着一些App的“磁贴”，我们可以单击这些“磁贴”来打开相应的应用。我们也可以自己把一些常见的软件放置在磁贴区域，操作方法很简单，对任意软件右键，选择“固定到“开始”屏幕”即可。</p>
+<p><img src="https://www.yomunchan.moe/wp-content/uploads/2019/08/image-15.png" alt=""></p>
+<p>开始屏幕上的“磁贴”，和手机上、开始菜单列表、桌面上的软件图标相比，有个明显的不同之处就是，磁贴可以在不打开应用的情况下，显示部分信息。</p>
+<p><img src="https://www.yomunchan.moe/wp-content/uploads/2019/08/image-16.png" alt=""></p>
+<p>图为新闻App、天气App</p>
+<p>通过对磁贴右键，我们还可以调整它的大小，不过要注意的是，当磁贴为最小的时候，是不会显示这种动态信息的。</p>
+<p><img src="https://www.yomunchan.moe/wp-content/uploads/2019/08/image-17.png" alt=""></p>
+<p>通常，我们可以把一些常用的软件给固定到开始屏幕，并对磁贴进行简单的排序：</p>
+<p><img src="https://www.yomunchan.moe/wp-content/uploads/2019/08/image-18.png" alt=""></p>
+<p>这样一来，我们工作的时候，只需要按一下键盘上的“Win”键打开开始菜单，就可以很方便的打开一个软件。而如果你把图标都放在桌面上的话，你就不得不先把打开的窗口移开，露出桌面上的图标，然后再双击打开软件。</p>
+<h4 id="三、操作中心"><a href="#三、操作中心" class="headerlink" title="三、操作中心"></a>三、操作中心</h4><p>操作中心，通常是用来显示软件通知、并提供一些快捷操作的地方。类似于手机中的下拉菜单。点击屏幕最右下角的按钮即可打开操作中心面板。</p>
+<p><img src="https://www.yomunchan.moe/wp-content/uploads/2019/08/image-19.png" alt=""></p>
+<p><img src="https://www.yomunchan.moe/wp-content/uploads/2019/08/image-20-389x1024.png" alt=""></p>
+<p>界面呈一个列表状，点击相应的内容，即可打开对应的应用功能，这点与手机上基本一致。鼠标安装列表内容，滑动可以删除项目</p>
+<p><img src="https://www.yomunchan.moe/wp-content/uploads/2019/08/2019-08-15-18-48-07.gif" alt=""></p>
+<p>而界面下方区域，则提供了一些快捷操作按钮，</p>
+<p><img src="https://www.yomunchan.moe/wp-content/uploads/2019/08/image-21.png" alt=""></p>
+<hr>
+<h3 id="了解Windows的常见界面（移动设备）"><a href="#了解Windows的常见界面（移动设备）" class="headerlink" title="了解Windows的常见界面（移动设备）"></a>了解Windows的常见界面（移动设备）</h3><p>上面介绍了我们常见的传统电脑（台式机、笔记本）中的Windows界面，但是对于有的用户来说，看到的Windows可能就不少这样的了，比如Windows平板或手机用户。</p>
+<p>接下来，我们就对比着传统电脑，来讲讲 移动设备中的Windows.</p>
+<h4 id="锁屏界面"><a href="#锁屏界面" class="headerlink" title="锁屏界面"></a>锁屏界面</h4><p>Windows在各个平台上的锁屏界面是一致的，按电源键亮屏之后如图。</p>
+<p><img src="https://www.yomunchan.moe/wp-content/uploads/2019/08/image-22.png" alt=""></p>
+<p>Windows 手机</p>
+<p><img src="https://www.yomunchan.moe/wp-content/uploads/2019/08/image-23-1024x666.png" alt=""></p>
+<p>与电脑的“按任意键进入主屏幕”不一样的是，移动设备这玩意大多是没有键可以按的，如果你的设备支持Windows Hello的话，默认情况下是可以自动识别到指纹、面部之后进行解锁的。除此之外，你也可以通过向上滑动来进入和传统电脑一致的密码/PIN密码登录界面</p>
+<p><img src="https://www.yomunchan.moe/wp-content/uploads/2019/08/Video_20190815_075426_382.gif" alt=""></p>
+<h4 id="开始屏幕"><a href="#开始屏幕" class="headerlink" title="开始屏幕"></a>开始屏幕</h4><p>值得注意的是，在移动设备中，解锁之后是直接进入开始屏幕的，移动设备是没有传统的Windows桌面的。</p>
+<p><img src="https://www.yomunchan.moe/wp-content/uploads/2019/08/image-25-1024x686.png" alt=""></p>
+<p>Windows 平板 开始屏幕</p>
+<p><img src="https://www.yomunchan.moe/wp-content/uploads/2019/08/image-26.png" alt=""></p>
+<p>Windows 手机 开始屏幕  </p>
+<p>在平板电脑的开始屏幕界面，我们通过左上方按钮，即可进入开始菜单列表</p>
+<p><img src="https://www.yomunchan.moe/wp-content/uploads/2019/08/image-27.png" alt=""></p>
+<p>而在手机的开始屏幕界面，我们通过向左滑动来进入开始菜单列表。</p>
+<p><img src="https://www.yomunchan.moe/wp-content/uploads/2019/08/Video_20190815_075642_365.gif" alt=""></p>
+<h4 id="操作中心"><a href="#操作中心" class="headerlink" title="操作中心"></a>操作中心</h4><p>在平板电脑模式中，我们依然可以点击右下角的图标来调出操作中心面板，不过在很多情况下，托盘是被默认隐藏的，这时候我们可以通过更简单的滑动方式来呼出操作中心面板。</p>
+<p><img src="https://www.yomunchan.moe/wp-content/uploads/2019/08/Video_20190815_075123_739.gif" alt=""></p>
+<p>而手机端的操作，与其他手机一致。</p>
+<h4 id="切换应用、关闭应用等操作"><a href="#切换应用、关闭应用等操作" class="headerlink" title="切换应用、关闭应用等操作"></a>切换应用、关闭应用等操作</h4><p>我们发现，在移动设备中，应用都是全屏的，和隔壁iPad一样。如果是习惯了传统电脑的用户就不熟悉了，我要怎么关掉一个应用，或者切换后台呢，如图：</p>
+<p><img src="https://www.yomunchan.moe/wp-content/uploads/2019/08/Video_20190815_080516_557.gif" alt=""></p>
+<p><img src="https://www.yomunchan.moe/wp-content/uploads/2019/08/Video_20190815_080619_51.gif" alt=""></p>
+<p>从屏幕顶部向下滑动，可以关闭一个应用，从屏幕左边向右滑动，可以打开Windows时间轴。</p>
+<p>如果要使用分屏显示功能的话，则从顶部下滑拖拽窗口之后，向需要贴靠的方向移动。</p>
+<p><img src="https://www.yomunchan.moe/wp-content/uploads/2019/08/Video_20190815_080848_619.gif" alt=""></p>
+<h4 id="平板模式切换到桌面模式"><a href="#平板模式切换到桌面模式" class="headerlink" title="平板模式切换到桌面模式"></a>平板模式切换到桌面模式</h4><p>如果说，我想在平板电脑上也像传统电脑一样使用桌面模式操作，那也是可以的。在操作中心中，我们可以看到切换平板模式的小开关，点一下即可。</p>
+<p><img src="https://www.yomunchan.moe/wp-content/uploads/2019/08/Video_20190815_081151_617.gif" alt=""></p>
+<p>另外，对于大部分平板电脑设备，你当你给它插上键盘的时候，它也会自动进入桌面模式。</p>
+<p><img src="https://www.yomunchan.moe/wp-content/uploads/2019/08/Video_20190815_081630_667.gif" alt=""></p>
+<p>此外，还有一个我买了平板很久之后才发现的事：微软的Surface系列平板电脑，当键盘叠在背面的时候，不需要拆下键盘，也会进入平板模式。</p>
+<p><img src="https://www.yomunchan.moe/wp-content/uploads/2019/08/Video_20190815_081819_925.gif" alt=""></p>
+<hr>
+<p>嘛，以上就是Windows一些基础操作的介绍，如果不鸽的话，下一篇我们来介绍一下，如何在Windows中安全、科学、高效的下载安装和使用软件。</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/10/06/tinax-framework-e8-87-aa-e5-8a-a8-e5-8c-96-e6-9e-84-e5-bb-ba-e5-ae-9e-e8-b7-b5/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">TinaX Framework 自动化构建实践</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/08/06/e6-80-8e-e4-b9-88-e7-90-86-e8-a7-a3-e6-b8-b8-e6-88-8f-e7-83-ad-e6-9b-b4-e6-96-b0-e4-b8-ad-e7-9a-84-e6-af-8d-e5-8c-85-e5-92-8c-e8-a1-a5-e4-b8-81/">
+                <span class="level-item">怎么理解游戏热更新中的“母包”和“补丁”</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="" src="/images/avatar.png" alt="yomunsam">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        yomunsam
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        大魔王有木桑
+                    </p>
+                    
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        文章
+                    </p>
+                    <a href="/archives">
+                        <p class="title has-text-weight-normal">
+                            23
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        分类
+                    </p>
+                    <a href="/categories">
+                        <p class="title has-text-weight-normal">
+                            7
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        标签
+                    </p>
+                    <a href="/tags">
+                        <p class="title has-text-weight-normal">
+                            5
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://twitter.com/yomunsam" target="_blank" rel="noopener">
+                关注我</a>
+        </div>
+        
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Github" href="https://github.com/yomunsam">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Twitter" href="https://twitter.com/yomunsam">
+                
+                <i class="fab fa-twitter"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Zhihu" href="https://zhihu.com/people/yomunsam">
+                
+                <i class="fas fa-link"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            链接
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener">
+                    <span class="level-left">
+                        <span class="level-item">Hexo</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">hexo.io</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://github.com/ppoffice" target="_blank" rel="noopener">
+                    <span class="level-left">
+                        <span class="level-item">PPOffice</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">github.com</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                分类
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/Unity/">
+            <span class="level-start">
+                <span class="level-item">Unity</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">4</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/Unity/Unreal/">
+            <span class="level-start">
+                <span class="level-item">Unreal</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Unity/%E6%96%87%E5%AD%97/">
+            <span class="level-start">
+                <span class="level-item">文字</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/%E6%96%87%E5%AD%97/">
+            <span class="level-start">
+                <span class="level-item">文字</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">19</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/%E6%96%87%E5%AD%97/%E7%9E%8E%E6%8A%98%E8%85%BE/">
+            <span class="level-start">
+                <span class="level-item">瞎折腾</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li></ul></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            标签云
+        </h3>
+        <a href="/tags/ScriptableSingleton/" style="font-size: 10px;">ScriptableSingleton</a> <a href="/tags/Unity/" style="font-size: 20px;">Unity</a> <a href="/tags/Unity3D/" style="font-size: 15px;">Unity3D</a> <a href="/tags/%E6%B8%B8%E6%88%8F/" style="font-size: 10px;">游戏</a> <a href="/tags/%E7%83%AD%E6%9B%B4%E6%96%B0/" style="font-size: 10px;">热更新</a>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/02/28/unity-engine-scriptablesingleton/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Unity Engine的ScriptableSingleton">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-28T06:51:49.000Z">2020-02-28</time></div>
+                    <a href="/2020/02/28/unity-engine-scriptablesingleton/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Unity Engine的ScriptableSingleton</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E6%96%87%E5%AD%97/">文字</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/01/e7-9e-8e-e6-8a-98-e8-85-be-ef-bc-9a-e7-94-a8unity-e6-92-b8-e7-ba-afhtml5-e7-a7-bb-e5-8a-a8-e6-b8-b8-e6-88-8f-e5-ba-94-e7-94-a8/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="瞎折腾：用Unity撸纯HTML5移动游戏/应用">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-01T11:35:45.000Z">2020-02-01</time></div>
+                    <a href="/2020/02/01/e7-9e-8e-e6-8a-98-e8-85-be-ef-bc-9a-e7-94-a8unity-e6-92-b8-e7-ba-afhtml5-e7-a7-bb-e5-8a-a8-e6-b8-b8-e6-88-8f-e5-ba-94-e7-94-a8/" class="title has-link-black-ter is-size-6 has-text-weight-normal">瞎折腾：用Unity撸纯HTML5移动游戏/应用</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E6%96%87%E5%AD%97/">文字</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/01/03/orleans-e6-9c-80-e4-bd-b3-e5-ae-9e-e8-b7-b5/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Orleans 最佳实践">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-02T16:48:49.000Z">2020-01-03</time></div>
+                    <a href="/2020/01/03/orleans-e6-9c-80-e4-bd-b3-e5-ae-9e-e8-b7-b5/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Orleans 最佳实践</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E6%96%87%E5%AD%97/">文字</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/07/e6-89-8b-e5-8a-a8-e9-85-8d-e7-bd-aeunity-android-e5-bc-80-e5-8f-91-e7-8e-af-e5-a2-83-ef-bc-88windows-ef-bc-89/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="手动配置Unity/Android开发环境（Windows）">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-07T13:07:40.000Z">2019-10-07</time></div>
+                    <a href="/2019/10/07/e6-89-8b-e5-8a-a8-e9-85-8d-e7-bd-aeunity-android-e5-bc-80-e5-8f-91-e7-8e-af-e5-a2-83-ef-bc-88windows-ef-bc-89/" class="title has-link-black-ter is-size-6 has-text-weight-normal">手动配置Unity/Android开发环境（Windows）</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E6%96%87%E5%AD%97/">文字</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/06/tinax-framework-e8-87-aa-e5-8a-a8-e5-8c-96-e6-9e-84-e5-bb-ba-e5-ae-9e-e8-b7-b5/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TinaX Framework 自动化构建实践">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-06T11:26:06.000Z">2019-10-06</time></div>
+                    <a href="/2019/10/06/tinax-framework-e8-87-aa-e5-8a-a8-e5-8c-96-e6-9e-84-e5-bb-ba-e5-ae-9e-e8-b7-b5/" class="title has-link-black-ter is-size-6 has-text-weight-normal">TinaX Framework 自动化构建实践</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E6%96%87%E5%AD%97/">文字</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/10/">
+                <span class="level-start">
+                    <span class="level-item">十月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/08/">
+                <span class="level-start">
+                    <span class="level-item">八月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/07/">
+                <span class="level-start">
+                    <span class="level-item">七月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/06/">
+                <span class="level-start">
+                    <span class="level-item">六月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/05/">
+                <span class="level-start">
+                    <span class="level-item">五月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">四月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/12/">
+                <span class="level-start">
+                    <span class="level-item">十二月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/11/">
+                <span class="level-start">
+                    <span class="level-item">十一月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/09/">
+                <span class="level-start">
+                    <span class="level-item">九月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/05/">
+                <span class="level-start">
+                    <span class="level-item">五月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/12/">
+                <span class="level-start">
+                    <span class="level-item">十二月 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ScriptableSingleton/">
+                        <span class="tag">ScriptableSingleton</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Unity/">
+                        <span class="tag">Unity</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Unity3D/">
+                        <span class="tag">Unity3D</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E6%B8%B8%E6%88%8F/">
+                        <span class="tag">游戏</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E7%83%AD%E6%9B%B4%E6%96%B0/">
+                        <span class="tag">热更新</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2020/02/28/unity-engine-scriptablesingleton/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Unity Engine的ScriptableSingleton">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-28T06:51:49.000Z">2020-02-28</time></div>
+                    <a href="/2020/02/28/unity-engine-scriptablesingleton/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Unity Engine的ScriptableSingleton</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E6%96%87%E5%AD%97/">文字</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/02/01/e7-9e-8e-e6-8a-98-e8-85-be-ef-bc-9a-e7-94-a8unity-e6-92-b8-e7-ba-afhtml5-e7-a7-bb-e5-8a-a8-e6-b8-b8-e6-88-8f-e5-ba-94-e7-94-a8/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="瞎折腾：用Unity撸纯HTML5移动游戏/应用">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-01T11:35:45.000Z">2020-02-01</time></div>
+                    <a href="/2020/02/01/e7-9e-8e-e6-8a-98-e8-85-be-ef-bc-9a-e7-94-a8unity-e6-92-b8-e7-ba-afhtml5-e7-a7-bb-e5-8a-a8-e6-b8-b8-e6-88-8f-e5-ba-94-e7-94-a8/" class="title has-link-black-ter is-size-6 has-text-weight-normal">瞎折腾：用Unity撸纯HTML5移动游戏/应用</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E6%96%87%E5%AD%97/">文字</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2020/01/03/orleans-e6-9c-80-e4-bd-b3-e5-ae-9e-e8-b7-b5/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Orleans 最佳实践">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-01-02T16:48:49.000Z">2020-01-03</time></div>
+                    <a href="/2020/01/03/orleans-e6-9c-80-e4-bd-b3-e5-ae-9e-e8-b7-b5/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Orleans 最佳实践</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E6%96%87%E5%AD%97/">文字</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/07/e6-89-8b-e5-8a-a8-e9-85-8d-e7-bd-aeunity-android-e5-bc-80-e5-8f-91-e7-8e-af-e5-a2-83-ef-bc-88windows-ef-bc-89/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="手动配置Unity/Android开发环境（Windows）">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-07T13:07:40.000Z">2019-10-07</time></div>
+                    <a href="/2019/10/07/e6-89-8b-e5-8a-a8-e9-85-8d-e7-bd-aeunity-android-e5-bc-80-e5-8f-91-e7-8e-af-e5-a2-83-ef-bc-88windows-ef-bc-89/" class="title has-link-black-ter is-size-6 has-text-weight-normal">手动配置Unity/Android开发环境（Windows）</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E6%96%87%E5%AD%97/">文字</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/10/06/tinax-framework-e8-87-aa-e5-8a-a8-e5-8c-96-e6-9e-84-e5-bb-ba-e5-ae-9e-e8-b7-b5/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="TinaX Framework 自动化构建实践">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-10-06T11:26:06.000Z">2019-10-06</time></div>
+                    <a href="/2019/10/06/tinax-framework-e8-87-aa-e5-8a-a8-e5-8c-96-e6-9e-84-e5-bb-ba-e5-ae-9e-e8-b7-b5/" class="title has-link-black-ter is-size-6 has-text-weight-normal">TinaX Framework 自动化构建实践</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/%E6%96%87%E5%AD%97/">文字</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/10/">
+                <span class="level-start">
+                    <span class="level-item">十月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/08/">
+                <span class="level-start">
+                    <span class="level-item">八月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/07/">
+                <span class="level-start">
+                    <span class="level-item">七月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/06/">
+                <span class="level-start">
+                    <span class="level-item">六月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/05/">
+                <span class="level-start">
+                    <span class="level-item">五月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">四月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/12/">
+                <span class="level-start">
+                    <span class="level-item">十二月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/11/">
+                <span class="level-start">
+                    <span class="level-item">十一月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/09/">
+                <span class="level-start">
+                    <span class="level-item">九月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/05/">
+                <span class="level-start">
+                    <span class="level-item">五月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/12/">
+                <span class="level-start">
+                    <span class="level-item">十二月 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/ScriptableSingleton/">
+                        <span class="tag">ScriptableSingleton</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Unity/">
+                        <span class="tag">Unity</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Unity3D/">
+                        <span class="tag">Unity3D</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E6%B8%B8%E6%88%8F/">
+                        <span class="tag">游戏</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/%E7%83%AD%E6%9B%B4%E6%96%B0/">
+                        <span class="tag">热更新</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/logo.svg" alt="Windows 10 大陆地区生存手册-（1）入门篇" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2020 大魔王有木桑&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="My GitHub" href="https://github.com/yomunsam">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="My Twitter" href="https://twitter.com/yomunsam">
+                        
+                        <i class="fab fa-twitter"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="My Zhihu" href="https://zhihu.com/people/yomunsam">
+                        
+                        <i class="fab fa-address-book"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+
+<script>
+var IcarusThemeSettings = {
+    site: {
+        url: 'https://static.yomunchan.moe',
+        external_link: {"enable":true,"exclude":[]}
+    },
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+
+
+<script src="/js/animation.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>
