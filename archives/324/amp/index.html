@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html amp lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"><title>å¯»æ&#137;¾Adobeå&#133;¨å®¶æ¡¶ç&#154;&#132;æ&#155;¿ä»£å&#147;&#129;ã&#128;&#144;é&#149;¿æ&#156;&#159;æ&#155;´æ&#150;°ã&#128;&#145; – æ&#156;&#137;æ&#156;¨é&#133;±ç&#154;&#132;å°&#143;å±&#139;</title><script type="text/javascript" src="https://cdn.ampproject.org/v0.js" async></script><script type="text/javascript" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js" async custom-element="amp-anim"></script><style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style></head><body><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>	<script type="application/ld+json">{"@context":"http:\/\/schema.org","publisher":{"@type":"Organization","name":"æ&#156;&#137;æ&#156;¨é&#133;±ç&#154;&#132;å°&#143;å±&#139;","logo":"https:\/\/yomunchan-blog.oss-cn-hongkong.aliyuncs.com\/wp-content\/uploads\/2019\/10\/cropped-yomunchan_icon.png"},"@type":"BlogPosting","mainEntityOfPage":"https:\/\/static.yomunchan.moe\/archives\/324","headline":"å¯»æ&#137;¾Adobeå&#133;¨å®¶æ¡¶ç&#154;&#132;æ&#155;¿ä»£å&#147;&#129;ã&#128;&#144;é&#149;¿æ&#156;&#159;æ&#155;´æ&#150;°ã&#128;&#145;","datePublished":"2019-06-20T14:33:01+00:00","dateModified":"2019-10-06T13:43:12+00:00","author":{"@type":"Person","name":"yomunsam"},"image":"https:\/\/yomunchan-blog.oss-cn-hongkong.aliyuncs.com\/wp-content\/uploads\/2019\/06\/image-7.png"}</script><style amp-custom>
+		/* Generic WP styling */
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+
+.aligncenter {
+	display: block;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.amp-wp-enforced-sizes {
+	/** Our sizes fallback is 100vw, and we have a padding on the container; the max-width here prevents the element from overflowing. **/
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+
+/*
+ * Prevent cases of amp-img converted from img to appear with stretching by using object-fit to scale.
+ * See <https://github.com/ampproject/amphtml/issues/21371#issuecomment-475443219>.
+ * Also use object-fit:contain in worst case scenario when we can't figure out dimensions for an image.
+ * Additionally, in side of \AMP_Img_Sanitizer::determine_dimensions() it could $amp_img->setAttribute( 'object-fit', 'contain' )
+ * so that the following rules wouldn't be needed.
+ */
+amp-img.amp-wp-enforced-sizes[layout="intrinsic"] > img,
+amp-anim.amp-wp-enforced-sizes[layout="intrinsic"] > img {
+	object-fit: contain;
+}
+
+amp-fit-text blockquote,
+amp-fit-text h1,
+amp-fit-text h2,
+amp-fit-text h3,
+amp-fit-text h4,
+amp-fit-text h5,
+amp-fit-text h6 {
+	font-size: inherit;
+}
+
+/**
+ * Override a style rule in Twenty Sixteen and Twenty Seventeen.
+ * It set display:none for audio elements.
+ * This selector is the same, though it adds body and uses amp-audio instead of audio.
+ */
+body amp-audio:not([controls]) {
+	display: inline-block;
+	height: auto;
+}
+
+/*
+ * Style the default template messages for submit-success, submit-error, and submitting. These elements are inserted
+ * by the form sanitizer when a POST form lacks the action-xhr attribute.
+ */
+.amp-wp-default-form-message > p {
+	margin: 1em 0;
+	padding: 0.5em;
+}
+
+.amp-wp-default-form-message[submitting] > p,
+.amp-wp-default-form-message[submit-success] > p.amp-wp-form-redirecting {
+	font-style: italic;
+}
+
+.amp-wp-default-form-message[submit-success] > p:not(.amp-wp-form-redirecting) {
+	border: solid 1px #008000;
+	background-color: #90ee90;
+	color: #000;
+}
+
+.amp-wp-default-form-message[submit-error] > p {
+	border: solid 1px #f00;
+	background-color: #ffb6c1;
+	color: #000;
+}
+
+/* Prevent showing empty success message in the case of an AMP-Redirect-To response header. */
+.amp-wp-default-form-message[submit-success] > p:empty {
+	display: none;
+}
+
+/* Template Styles */
+
+.amp-wp-content,
+.amp-wp-title-bar div {
+		margin: 0 auto;
+	max-width: 600px;
+	}
+
+html {
+	background: #0a89c0;
+}
+
+body {
+	background: #0a0a0a;
+	color: #dedede;
+	font-family: Georgia, 'Times New Roman', Times, Serif;
+	font-weight: 300;
+	line-height: 1.75em;
+}
+
+p,
+ol,
+ul,
+figure {
+	margin: 0 0 1em;
+	padding: 0;
+}
+
+a,
+a:visited {
+	color: #0a89c0;
+}
+
+a:hover,
+a:active,
+a:focus {
+	color: #dedede;
+}
+
+/* Quotes */
+
+blockquote {
+	color: #dedede;
+	background: rgba(127,127,127,.125);
+	border-left: 2px solid #0a89c0;
+	margin: 8px 0 24px 0;
+	padding: 16px;
+}
+
+blockquote p:last-child {
+	margin-bottom: 0;
+}
+
+/* UI Fonts */
+
+.amp-wp-meta,
+.amp-wp-header div,
+.amp-wp-title,
+.wp-caption-text,
+.amp-wp-tax-category,
+.amp-wp-tax-tag,
+.amp-wp-comments-link,
+.amp-wp-footer p,
+.back-to-top {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+}
+
+/* Header */
+
+.amp-wp-header {
+	background-color: #0a89c0;
+}
+
+.amp-wp-header div {
+	color: #fff;
+	font-size: 1em;
+	font-weight: 400;
+	margin: 0 auto;
+	max-width: calc(840px - 32px);
+	padding: .875em 16px;
+	position: relative;
+}
+
+.amp-wp-header a {
+	color: #fff;
+	text-decoration: none;
+}
+
+
+.amp-wp-header .amp-wp-site-icon {
+	/** site icon is 32px **/
+	background-color: #fff;
+	border: 1px solid #fff;
+	border-radius: 50%;
+	position: absolute;
+	right: 18px;
+	top: 10px;
+}
+
+/* Article */
+
+.amp-wp-article {
+	color: #dedede;
+	font-weight: 400;
+	margin: 1.5em auto;
+	max-width: 840px;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+}
+
+/* Article Header */
+
+.amp-wp-article-header {
+	align-items: center;
+	align-content: stretch;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 1.5em 16px 0;
+}
+
+.amp-wp-title {
+	color: #dedede;
+	display: block;
+	flex: 1 0 100%;
+	font-weight: 900;
+	margin: 0 0 .625em;
+	width: 100%;
+}
+
+/* Article Meta */
+
+.amp-wp-meta {
+	color: #b1b1b1;
+	display: inline-block;
+	flex: 2 1 50%;
+	font-size: .875em;
+	line-height: 1.5em;
+	margin: 0 0 1.5em;
+	padding: 0;
+}
+
+.amp-wp-article-header .amp-wp-meta:last-of-type {
+	text-align: right;
+}
+
+.amp-wp-article-header .amp-wp-meta:first-of-type {
+	text-align: left;
+}
+
+.amp-wp-byline amp-img,
+.amp-wp-byline .amp-wp-author {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.amp-wp-byline amp-img {
+	border: 1px solid #0a89c0;
+	border-radius: 50%;
+	position: relative;
+	margin-right: 6px;
+}
+
+.amp-wp-posted-on {
+	text-align: right;
+}
+
+/* Featured image */
+
+.amp-wp-article-featured-image {
+	margin: 0 0 1em;
+}
+.amp-wp-article-featured-image amp-img {
+	margin: 0 auto;
+}
+.amp-wp-article-featured-image.wp-caption .wp-caption-text {
+	margin: 0 18px;
+}
+
+/* Article Content */
+
+.amp-wp-article-content {
+	margin: 0 16px;
+}
+
+.amp-wp-article-content ul,
+.amp-wp-article-content ol {
+	margin-left: 1em;
+}
+
+.amp-wp-article-content .wp-caption {
+	max-width: 100%;
+}
+
+.amp-wp-article-content amp-img {
+	margin: 0 auto;
+}
+
+.amp-wp-article-content amp-img.alignright {
+	margin: 0 0 1em 16px;
+}
+
+.amp-wp-article-content amp-img.alignleft {
+	margin: 0 16px 1em 0;
+}
+
+/* Captions */
+
+.wp-caption {
+	padding: 0;
+}
+
+.wp-caption.alignleft {
+	margin-right: 16px;
+}
+
+.wp-caption.alignright {
+	margin-left: 16px;
+}
+
+.wp-caption .wp-caption-text {
+	border-bottom: 1px solid #707070;
+	color: #b1b1b1;
+	font-size: .875em;
+	line-height: 1.5em;
+	margin: 0;
+	padding: .66em 10px .75em;
+}
+
+/* AMP Media */
+
+.alignwide,
+.alignfull {
+	clear: both;
+}
+
+amp-carousel {
+	background: #707070;
+	margin: 0 -16px 1.5em;
+}
+amp-iframe,
+amp-youtube,
+amp-instagram,
+amp-vine {
+	background: #707070;
+	margin: 0 -16px 1.5em;
+}
+
+.amp-wp-article-content amp-carousel amp-img {
+	border: none;
+}
+
+amp-carousel > amp-img > img {
+	object-fit: contain;
+}
+
+.amp-wp-iframe-placeholder {
+	background: #707070 url( https://static.yomunchan.moe/wp-content/plugins/amp/assets/images/placeholder-icon.png ) no-repeat center 40%;
+	background-size: 48px 48px;
+	min-height: 48px;
+}
+
+/* Article Footer Meta */
+
+.amp-wp-article-footer .amp-wp-meta {
+	display: block;
+}
+
+.amp-wp-tax-category,
+.amp-wp-tax-tag {
+	color: #b1b1b1;
+	font-size: .875em;
+	line-height: 1.5em;
+	margin: 1.5em 16px;
+}
+
+.amp-wp-comments-link {
+	color: #b1b1b1;
+	font-size: .875em;
+	line-height: 1.5em;
+	text-align: center;
+	margin: 2.25em 0 1.5em;
+}
+
+.amp-wp-comments-link a {
+	border-style: solid;
+	border-color: #707070;
+	border-width: 1px 1px 2px;
+	border-radius: 4px;
+	background-color: transparent;
+	color: #0a89c0;
+	cursor: pointer;
+	display: block;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 18px;
+	margin: 0 auto;
+	max-width: 200px;
+	padding: 11px 16px;
+	text-decoration: none;
+	width: 50%;
+	-webkit-transition: background-color 0.2s ease;
+			transition: background-color 0.2s ease;
+}
+
+/* AMP Footer */
+
+.amp-wp-footer {
+	border-top: 1px solid #707070;
+	margin: calc(1.5em - 1px) 0 0;
+}
+
+.amp-wp-footer div {
+	margin: 0 auto;
+	max-width: calc(840px - 32px);
+	padding: 1.25em 16px 1.25em;
+	position: relative;
+}
+
+.amp-wp-footer h2 {
+	font-size: 1em;
+	line-height: 1.375em;
+	margin: 0 0 .5em;
+}
+
+.amp-wp-footer p {
+	color: #b1b1b1;
+	font-size: .8em;
+	line-height: 1.5em;
+	margin: 0 85px 0 0;
+}
+
+.amp-wp-footer a {
+	text-decoration: none;
+}
+
+.back-to-top {
+	bottom: 1.275em;
+	font-size: .8em;
+	font-weight: 600;
+	line-height: 2em;
+	position: absolute;
+	right: 16px;
+}
+			</style><header id="top" class="amp-wp-header"><div>
+		<a href="https://static.yomunchan.moe/">
+										<amp-img src="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/10/cropped-yomunchan_icon-32x32.png" width="32" height="32" class="amp-wp-site-icon"></amp-img><span class="amp-site-title">
+				æ&#156;&#137;æ&#156;¨é&#133;±ç&#154;&#132;å°&#143;å±&#139;			</span>
+		</a>
+
+					</div>
+</header><article class="amp-wp-article"><header class="amp-wp-article-header"><h1 class="amp-wp-title">å¯»æ&#137;¾Adobeå&#133;¨å®¶æ¡¶ç&#154;&#132;æ&#155;¿ä»£å&#147;&#129;ã&#128;&#144;é&#149;¿æ&#156;&#159;æ&#155;´æ&#150;°ã&#128;&#145;</h1>
+			<div class="amp-wp-meta amp-wp-byline">
+					<amp-img src="https://secure.gravatar.com/avatar/45019eb1dd8b43e939d42804cb2e3269?s=24&d=mm&r=g" alt="yomunsam" width="24" height="24" layout="fixed"></amp-img><span class="amp-wp-author author vcard">yomunsam</span>
+	</div>
+<div class="amp-wp-meta amp-wp-posted-on">
+	<time datetime="2019-06-20T22:33:01+00:00">
+		9æ&#156;&#136; ago	</time></div>
+	</header><div class="amp-wp-article-content">
+		
+<p>Adobeç³»å&#136;&#151;å¤§å¤&#154;ç»&#143;å&#142;&#134;äº&#134;å&#141;&#129;å&#135; äº&#140;å&#141;&#129;å¤&#154;å¹´ç&#154;&#132;å&#143;&#145;å±&#149;ï¼&#140;å&#159;ºæ&#156;¬ä¸&#138;å·²ç»&#143;æ&#152;¯è¡&#140;ä¸&#154;äº&#139;å®&#158;æ &#135;å&#135;&#134;ç&#154;&#132;å&#156;°ä½&#141;äº&#134;ã&#128;&#130;Adobeç³»å&#136;&#151;ç&#154;&#132;è½¯ä»¶é&#131;½æ&#140;ºå¥½ç&#154;&#132;ï¼&#140;å&#143;¯å°±æ&#152;¯æ&#156;&#137;ä¸&#128;ä¸ªé&#151;®é¢&#152;ï¼&#154;è´µ</p>
+
+
+
+
+
+
+
+<p>è´µï¼&#140;ä»¤äººæ&#151; æ³&#149;å¿&#141;å&#143;&#151;ç&#154;&#132;è´µã&#128;&#130;äº&#142;æ&#152;¯ï¼&#140;å°±æ&#156;&#137;äº&#134;è¿&#153;ç¯&#135;æ&#150;&#135;å­&#151;ï¼&#140;è®©æ&#136;&#145;ä»¬æ&#157;¥ç&#156;&#139;ç&#156;&#139;ï¼&#140;Adobeç³»ç&#154;&#132;ä¸&#156;è¥¿ï¼&#140;é&#131;½å&#136;&#134;å&#136;«æ&#156;&#137;å&#147;ªäº&#155;æ&#155;¿ä»£å&#147;&#129;ã&#128;&#130;</p>
+
+
+
+<h3>ç&#155;®å½&#149;</h3>
+
+
+
+<ul><li>Adobe PhotoShop</li><li>Adobe Permiere Pro</li><li>Adobe illustrator</li><li>Adobe Flash</li></ul><h2>Adobe PhotoShop</h2>
+
+
+
+<p>å&#148;®ä»·20.99ç¾&#142;å&#133;&#131;/æ&#156;&#136;ã&#128;&#130;</p>
+
+
+
+<h3>å¹³é&#157;¢è®¾è®¡ç&#148;¨é&#128;&#148;ï¼&#154;</h3>
+
+
+
+<h4>Affinity Photo</h4>
+
+
+
+<figure class="wp-block-image"><a href="https://static.yomunchan.moe/wp-content/uploads/2019/06/image-6.png" data-fancybox="images" target="_blank" rel="noreferrer noopener"><amp-img src="https://static.yomunchan.moe/wp-content/uploads/2019/06/image-6-1024x646.png" alt="" class="wp-image-342 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height amp-wp-enforced-sizes" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-6-1024x646.png 1024w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-6-150x95.png 150w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-6-300x189.png 300w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-6-768x484.png 768w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-6.png 1204w" object-fit="contain" width="600" height="400" layout="intrinsic"><noscript><img src="https://static.yomunchan.moe/wp-content/uploads/2019/06/image-6-1024x646.png" alt="" class="wp-image-342 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height" sizes="(max-width: 1024px) 100vw, 1024px" width="600" height="400"></noscript></amp-img></a><figcaption>Affinity Photo (Microsoft Store ç&#137;&#136;æ&#156;¬)</figcaption></figure><p></p>
+
+
+
+<p>Affinity Photoæ&#152;¯ä¸&#128;ä¸ªä¸&#128;å¼&#128;å§&#139;å°±å¥&#148;ç&#157;&#128;PSå&#142;»ç&#154;&#132;è½¯ä»¶,ç&#148;&#154;è&#135;³å&#156;¨é&#131;¨å&#136;&#134;å&#138;&#159;è&#131;½ä¸&#138;å¯¹PSå¼¯é&#129;&#147;è¶&#133;è½¦ï¼&#140;å&#156;¨ä½¿ç&#148;¨ä¸&#138;ï¼&#140;æ&#156;&#137;PSä½¿ç&#148;¨ç»&#143;éª&#140;ç&#154;&#132;è&#137;ºæ&#156;¯å®¶å&#143;¯ä»¥å&#156;¨å¿«é&#128;&#159;ä¸&#138;æ&#137;&#139;APã&#128;&#130; <br>Affinity Photoå&#143;¯ä»¥ç&#155;´æ&#142;¥å&#156;¨å®&#152;ç½&#145;è´­ä¹° ï¼&#140;ä¹&#159;å&#143;¯ä»¥å&#156;¨Microsoft Storeå&#146;&#140; Mac App Storeä¸&#138;è´­ä¹°ï¼&#136;åº&#148;ç&#148;¨å&#149;&#134;åº&#151;ç&#154;&#132;ä¸&#139;è½½é&#128;&#159;åº¦å¯¹å&#155;½å&#134;&#133;å&#143;&#139;å¥½ï¼&#137;ã&#128;&#130;</p>
+
+
+
+<p>APå&#133;¼å®¹PSæ ¼å¼&#143;(psd)ï¼&#140;æ&#148;¯æ&#140;&#129;Windows / Macå&#143;&#140;å¹³å&#143;°ï¼&#140;å&#133;¼å®¹PSç&#154;&#132;æ&#143;&#146;ä»¶ï¼&#140;å&#143;¯å&#156;¨å&#155;¢é&#152;&#159;å&#134;&#133;é&#131;¨å¹³æ»&#145;è¿&#135;æ¸¡ã&#128;&#130;  </p>
+
+
+
+<p>è&#128;&#140;ä¸&#148;APç&#154;&#132;ä»·æ ¼ä¹&#159;ç®&#151;ç¾&#142;ä¸½ï¼&#154;</p>
+
+
+
+<ul><li>Windows / Mac ï¼&#154;328å&#133;&#131;  æ°¸ä¹&#133; </li><li>iOSï¼&#154;128 å&#133;&#131; æ°¸ä¹&#133;</li></ul><p>æ&#142;¨è&#141;&#144;å&#136;&#134;æ&#149;°ï¼&#154;5</p>
+
+
+
+<h4>Pixelmator Pro</h4>
+
+
+
+<figure class="wp-block-image"><amp-img src="https://static.yomunchan.moe/wp-content/uploads/2019/06/image-1-1024x550.png" alt="" class="wp-image-326 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height amp-wp-enforced-sizes" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-1-1024x550.png 1024w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-1-150x81.png 150w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-1-300x161.png 300w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-1-768x413.png 768w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-1.png 1453w" object-fit="contain" width="600" height="400" layout="intrinsic"><noscript><img src="https://static.yomunchan.moe/wp-content/uploads/2019/06/image-1-1024x550.png" alt="" class="wp-image-326 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height" sizes="(max-width: 1024px) 100vw, 1024px" width="600" height="400"></noscript></amp-img><figcaption>å&#155;¾ç&#137;&#135;æ&#157;¥è&#135;ªå®&#152;ç½&#145;ï¼&#136;æ&#135;&#146;å¾&#151;ä»&#142;æ&#159;&#156;å­&#144;é&#135;&#140;æ&#137;¾macå&#135;ºæ&#157;¥å&#133;&#133;ç&#148;µç&#132;¶å&#144;&#142;æ&#136;ªå&#155;¾äº&#134;</figcaption></figure><p>Pixelmator Pro ä¹&#159;æ&#152;¯ä¸&#128;ä¸ªå&#138;&#159;è&#131;½ä¸&#138;å&#146;&#140;PSå·®ä¸&#141;å¤&#154;ç&#154;&#132;å¹³é&#157;¢è®¾è®¡è½¯ä»¶ï¼&#140;æ&#147;&#141;ä½&#156;é&#128;»è¾&#145;è&#135;ªæ&#136;&#144;ä¸&#128;ä½&#147;ï¼&#140;ä»&#142;PSè½¬ç§»è¿&#135;æ&#157;¥ä¼&#154;æ&#156;&#137;ä¸&#128;å®&#154;ä¸&#141;é&#128;&#130;æ&#132;&#159;ã&#128;&#130;ä½&#134;ç&#134;&#159;æ&#130;&#137;ä¹&#139;å&#144;&#142;ï¼&#140;æ&#132;&#159;è§&#137;è¿&#152;è¡&#140;ã&#128;&#130;</p>
+
+
+
+<p>Pixelmator Proä»&#133;æ&#148;¯æ&#140;&#129;Macå¹³å&#143;°ï¼&#140;å¦&#130;æ&#158;&#156;å&#155;¢é&#152;&#159;å&#134;&#133;æ&#156;&#137;ä¾&#157;èµ&#150;PSç&#154;&#132;è&#135;ªå&#138;¨å&#140;&#150;å·¥å&#133;·ã&#128;&#129;æ&#136;&#150;è&#128;&#133;å&#155;¢é&#152;&#159;å&#134;&#133;æ&#156;&#137;Windowsç&#154;&#132;è¯&#157;ï¼&#140;å&#143;¯è&#131;½æ²¡æ³&#149;å¾&#136;æ&#132;&#137;å¿«ç&#154;&#132;æ&#141;¢å·¥å&#133;·ã&#128;&#130;</p>
+
+
+
+<p>å&#148;®ä»·ï¼&#154; 39.99 ç¾&#142;å&#133;&#131; ï¼&#136;ä»&#133;é&#153;&#144;Macå¹³å&#143;°</p>
+
+
+
+<p>æ&#142;¨è&#141;&#144;å&#136;&#134;æ&#149;°ï¼&#154;4</p>
+
+
+
+<h4>Gimp</h4>
+
+
+
+<figure class="wp-block-image"><amp-img src="https://static.yomunchan.moe/wp-content/uploads/2019/06/image-5-1024x544.png" alt="" class="wp-image-339 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height amp-wp-enforced-sizes" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-5-1024x544.png 1024w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-5-150x80.png 150w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-5-300x159.png 300w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-5-768x408.png 768w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-5.png 1505w" object-fit="contain" width="600" height="400" layout="intrinsic"><noscript><img src="https://static.yomunchan.moe/wp-content/uploads/2019/06/image-5-1024x544.png" alt="" class="wp-image-339 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height" sizes="(max-width: 1024px) 100vw, 1024px" width="600" height="400"></noscript></amp-img><figcaption>GIMP Windows</figcaption></figure><p>è¯´å®&#158;è¯&#157;ï¼&#140;æ&#136;&#145;è§&#137;å¾&#151;Gimpæ&#156;&#137;ç&#130;¹å&#136;«æ&#137;­ï¼&#140;ä½&#134;å®&#131;å&#128;¼å¾&#151;æ&#139;¥æ&#156;&#137;å§&#147;å&#144;&#141;ã&#128;&#130;GIMPæ&#152;¯ä¸&#128;ä¸ªç&#148;±å¼&#128;æº&#144;ç¤¾å&#140;ºç»´æ&#138;¤ç&#154;&#132;å¼&#128;æº&#144;è½¯ä»¶ã&#128;&#130;ä»¥å&#137;&#141;ç&#154;&#132;GIMPå&#133;¶å®&#158;å¾&#136;å&#136;«æ&#137;­ï¼&#140;ä½&#134;æ&#152;¯æ&#156;&#128;è¿&#145;GIMPä¹&#159;æ&#152;&#142;æ&#152;¾å&#129;&#154;ç&#154;&#132;è¶&#138;æ&#157;¥è¶&#138;å¥½äº&#134;ã&#128;&#130;</p>
+
+
+
+<p>GIMPå&#133;¼å®¹PSæ ¼å¼&#143;ï¼&#140;ä½&#134;å¯¹äº&#142;é&#157;&#158;æ &#133;æ ¼å&#140;&#150;ç&#154;&#132;å&#155;¾å±&#130;ç&#154;&#132;å&#133;¼å®¹æ&#156;&#137;ä¸&#128;å®&#154;é&#151;®é¢&#152;ï¼&#140;ä¸&#141;å»ºè®®å&#155;¢é&#152;&#159;å&#134;&#133;å&#144;&#140;æ&#151;¶ä½¿ç&#148;¨GIMPå&#146;&#140;PSã&#128;&#130;æ&#143;&#146;ä»¶æ&#150;¹é&#157;¢GIMPè&#135;ªæ&#136;&#144;ä¸&#128;ä½&#147;ï¼&#140;è&#128;&#140;ä¸&#148;æ&#140;ºä¸°å¯&#140;ç&#154;&#132;ã&#128;&#130;ï¼&#136;ä½&#134;æ&#152;¯ä¾&#157;æ&#137;&#152;äº&#142;å¼&#128;æº&#144;ç¤¾å&#140;ºç&#154;&#132;ç&#148;&#159;æ&#128;&#129;å&#143;¯è&#131;½å¯¹è®¾è®¡å¸&#136;ä¸&#141;å¤ªå&#143;&#139;å¥½</p>
+
+
+
+<p>å&#148;®ä»·ï¼&#154; å&#133;&#141;è´¹ ï¼&#136;Windows / GNU Linux / OS X</p>
+
+
+
+<p>æ&#142;¨è&#141;&#144;å&#136;&#134;æ&#149;°ï¼&#154;3.5</p>
+
+
+
+<p></p>
+
+
+
+<h3>ç»&#152;ç&#148;»ç&#148;¨é&#128;&#148;</h3>
+
+
+
+<h4>Clip Studio Paintï¼&#136;CSPï¼&#137;</h4>
+
+
+
+<figure class="wp-block-image"><amp-img src="https://static.yomunchan.moe/wp-content/uploads/2019/06/ScreenShotCut-1024x683.jpg" alt="" class="wp-image-327 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height amp-wp-enforced-sizes" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/ScreenShotCut-1024x683.jpg 1024w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/ScreenShotCut-150x100.jpg 150w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/ScreenShotCut-300x200.jpg 300w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/ScreenShotCut-768x512.jpg 768w" object-fit="contain" width="600" height="400" layout="intrinsic"><noscript><img src="https://static.yomunchan.moe/wp-content/uploads/2019/06/ScreenShotCut-1024x683.jpg" alt="" class="wp-image-327 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height" sizes="(max-width: 1024px) 100vw, 1024px" width="600" height="400"></noscript></amp-img><figcaption>CSP å&#155;½å&#134;&#133;ä»£ç&#144;&#134;ç&#137;&#136;ï¼&#136;ä¼&#152;å&#138;¨æ¼« PAINTï¼&#137;</figcaption></figure><p>å&#133;¶å®&#158;å&#128;&#146;æ&#152;¯ä¸&#141;å­&#152;å&#156;¨CSPæ&#152;¯PSå&#156;¨ç»&#152;ç&#148;»é¢&#134;å&#159;&#159;ç&#154;&#132;æ&#155;¿ä»£å&#147;&#129;è¿&#153;ç§&#141;è¯´æ³&#149;ï¼&#140;å&#155; ä¸ºå&#156;¨ä¸&#141;å°&#145;ç&#148;»å®¶ç&#156;¼ä¸­ï¼&#140;CSPæ&#156;¬æ&#157;¥å°±æ&#152;¯â&#128;&#156;å&#144;&#138;æ&#137;&#147;â&#128;&#157;PSç&#154;&#132;å­&#152;å&#156;¨ã&#128;&#130;å®&#158;é&#153;&#133;ä½&#147;éª&#140;ä¸&#138;ï¼&#140;CSPè¯¥æ&#156;&#137;ç&#154;&#132;é&#131;½æ&#156;&#137;äº&#134;ã&#128;&#130;</p>
+
+
+
+<p>CSPæ&#148;¯æ&#140;&#129;Windows / Macå¹³å&#143;°ï¼&#140;å&#155;½å&#134;&#133;ä»£ç&#144;&#134;è½¯ä»¶å&#144;&#141;ä¸ºâ&#128;&#156;ä¼&#152;å&#138;¨æ¼« PAINTâ&#128;&#157;ï¼&#140;å&#144;¬èµ·æ&#157;¥æ&#156;&#137;ç&#130;¹è ¢</p>
+
+
+
+<p>å&#148;®ä»·ï¼&#154;ï¼&#136;å&#155;½å&#134;&#133;ä»£ç&#144;&#134;ç&#137;&#136;æ&#156;¬ï¼&#137;</p>
+
+
+
+<ul><li>ä¸ªäººç&#137;&#136;ï¼&#154;258å&#133;&#131;</li><li>EXç&#137;&#136;ï¼&#154;1158å&#133;&#131;</li></ul><p>æ&#142;¨è&#141;&#144;å&#136;&#134;æ&#149;°ï¼&#154;5</p>
+
+
+
+<h4>PaintTool SAI ï¼&#136;SAIï¼&#137;</h4>
+
+
+
+<figure class="wp-block-image"><amp-img src="https://static.yomunchan.moe/wp-content/uploads/2019/06/image-2-1024x563.png" alt="" class="wp-image-328 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height amp-wp-enforced-sizes" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-2-1024x563.png 1024w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-2-150x83.png 150w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-2-300x165.png 300w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-2-768x423.png 768w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-2.png 1385w" object-fit="contain" width="600" height="400" layout="intrinsic"><noscript><img src="https://static.yomunchan.moe/wp-content/uploads/2019/06/image-2-1024x563.png" alt="" class="wp-image-328 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height" sizes="(max-width: 1024px) 100vw, 1024px" width="600" height="400"></noscript></amp-img><figcaption>ç¬¬ä¸&#137;æ&#150;¹æ±&#137;å&#140;&#150;ç&#137;&#136;</figcaption></figure><p>è¯´å&#136;°ç»&#152;ç&#148;»ï¼&#140;åº&#148;è¯¥æ²¡äººä¸&#141;ç&#159;¥é&#129;&#147;SAIäº&#134;ï¼&#140;ç»&#143;å&#133;¸ç&#154;&#132;è&#128;&#129;ç&#137;&#140;ç»&#152;ç&#148;»è½¯ä»¶ï¼&#140;å&#156;¨ç»&#152;ç&#148;»é¢&#134;å&#159;&#159;æ&#156;&#137;ç&#157;&#128;ä¸¾è¶³è½»é&#135;&#141;ç&#154;&#132;å&#156;°ä½&#141;å&#146;&#140;â&#128;&#156;å&#157;&#154;ä¿¡å&#143;¯ä»¥å&#144;&#138;æ&#137;&#147;PSâ&#128;&#157;ç&#154;&#132;å¤§é&#135;&#143;å¿ å®&#158;ç&#148;¨æ&#136;·ã&#128;&#130;ä¸ªäººä½&#147;éª&#140;ä¸&#138;æ&#132;&#159;è§&#137;æ²¡å&#149;¥é&#151;®é¢&#152;ï¼&#140;ä¹&#139;å&#137;&#141;é&#151;®ä¸&#128;ä¸ªç&#148;»å¸&#136;æ&#156;&#139;å&#143;&#139;è¯´æ&#156;&#137;ç&#154;&#132;å&#138;&#159;è&#131;½ä¸&#138;æ¯&#148;PSæ&#156;&#137;æ&#137;&#128;æ¬ ç¼ºã&#128;&#130;</p>
+
+
+
+<p>ä¸&#141;è¿&#135;ï¼&#140;ä¸ªäººä½&#147;éª&#140;æ&#157;¥ç&#156;&#139;ï¼&#140;SAIç&#155;®å&#137;&#141;å¯¹è§¦å±&#143;è®¾å¤&#135;æ&#148;¯æ&#140;&#129;è¾&#131;å·®ï¼&#154;å®&#131;å¥½å&#131;&#143;ä¸&#141;è&#131;½å¾&#136;å¥½ç&#154;&#132;å&#136;&#134;è¾¨å&#147;ªä¸ªæ&#152;¯ç¬&#148;ï¼&#140;å&#147;ªä¸ªæ&#152;¯æ&#148;¾å&#156;¨å±&#143;å¹&#149;ä¸&#138;ç&#154;&#132;æ&#137;&#139;ã&#128;&#130;æ&#142;¨è&#141;&#144;ä½¿ç&#148;¨æ&#149;°ä½&#141;æ&#157;¿é&#133;&#141;å&#144;&#136;ç»&#152;ç&#148;»ã&#128;&#130;</p>
+
+
+
+<p>é¡ºå¸¦ä¸&#128;è¯´ï¼&#140;SAIå®&#152;ç½&#145;å¥½å&#131;&#143;å¹¶æ²¡æ&#156;&#137;å&#143;&#145;ç&#142;°macå¹³å&#143;°æ&#148;¯æ&#140;&#129;ç&#154;&#132;ä¿¡æ&#129;¯ï¼&#140;ä½&#134;æ&#152;¯æ&#144;&#156;ç´¢å¼&#149;æ&#147;&#142;ä¸­å¥½å&#131;&#143;æ&#156;&#137;å&#133;³äº&#142;macç&#137;&#136;ç&#154;&#132;å&#134;&#133;å®¹ï¼&#140;ä¸&#141;ç&#159;¥é&#129;&#147;æ&#128;&#142;ä¹&#136;å&#155;&#158;äº&#139;ï¼&#140;è¿&#153;é&#135;&#140;ä»¥å®&#152;ç½&#145;ä¸ºå&#135;&#134;ï¼&#140;è®¤ä¸ºå®&#131;ä¸&#141;æ&#148;¯æ&#140;&#129;macå¹³å&#143;°å&#144;§ã&#128;&#130;</p>
+
+
+
+<p>å&#148;®ä»·ï¼&#154; Windows ï¼&#154;5400 å&#134;&#134;ï¼&#136;æ&#151;¥å&#133;&#131;ï¼&#137;</p>
+
+
+
+<p>æ&#142;¨è&#141;&#144;å&#136;&#134;æ&#149;°ï¼&#154;4.8</p>
+
+
+
+<h4>Affinity Photo</h4>
+
+
+
+<p>å¥½äº&#134;å&#143;&#136;è§&#129;é&#157;¢äº&#134;ï¼&#140;APã&#128;&#130;æ­£å¦&#130;ä¹&#139;å&#137;&#141;æ&#137;&#128;è¯´ï¼&#140;Affinity Photoä¸&#128;å¼&#128;å§&#139;å°±æ&#152;¯å¥&#148;ç&#157;&#128;PSå&#142;»ç&#154;&#132;ï¼&#140;è¿&#153;å&#133;¶ä¸­ä¹&#159;å&#140;&#133;æ&#139;¬äº&#134;ç»&#152;ç&#148;»å&#138;&#159;è&#131;½.</p>
+
+
+
+<p>Affinity Photo è&#135;ªå¸¦äº&#134;è¾&#131;ä¸ºä¸°å¯&#140;ç&#154;&#132;ç&#148;»ç¬&#148;ï¼&#140;å¹¶å&#143;¯ä»¥å¯¼å&#133;¥.abrç&#148;»å&#136;·æ&#150;&#135;ä»¶ï¼&#140;å&#144;&#140;æ&#151;¶ï¼&#140;å®&#131;æ&#143;&#144;ä¾&#155;äº&#134;Surface Dial ç&#154;&#132;æ&#148;¯æ&#140;&#129;ã&#128;&#130;</p>
+
+
+
+<p>ä¸&#141;è¿&#135;å¾&#151;æ&#143;&#144;ä¸&#128;å&#143;¥ç&#154;&#132;æ&#152;¯ï¼&#140;å&#156;¨Surface Goç­&#137;ä½&#142;é&#133;&#141;ç½®è®¾é&#133;&#141;ä¸­ï¼&#140;Affinity Photoç&#154;&#132;ç&#148;»ç¬&#148;å»¶è¿&#159;å¾&#136;é«&#152;ï¼&#140;å&#159;ºæ&#156;¬æ²¡æ³&#149;ç&#148;¨ã&#128;&#130;ä¸&#141;ç&#159;¥é&#129;&#147;æ&#152;¯ä¸&#141;æ&#152;¯è®¾ç½®é&#151;®é¢&#152;ã&#128;&#130;</p>
+
+
+
+<p>æ&#142;¨è&#141;&#144;å&#136;&#134;æ&#149;°ï¼&#154;4.5</p>
+
+
+
+<h4>Autodesk SketchBook</h4>
+
+
+
+<figure class="wp-block-image"><amp-img src="https://static.yomunchan.moe/wp-content/uploads/2019/06/ScreenShotCut1-1024x683.jpg" alt="" class="wp-image-329 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height amp-wp-enforced-sizes" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/ScreenShotCut1-1024x683.jpg 1024w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/ScreenShotCut1-150x100.jpg 150w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/ScreenShotCut1-300x200.jpg 300w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/ScreenShotCut1-768x512.jpg 768w" object-fit="contain" width="600" height="400" layout="intrinsic"><noscript><img src="https://static.yomunchan.moe/wp-content/uploads/2019/06/ScreenShotCut1-1024x683.jpg" alt="" class="wp-image-329 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height" sizes="(max-width: 1024px) 100vw, 1024px" width="600" height="400"></noscript></amp-img><figcaption>Autodesk SketchBook Windows Uwpç&#137;&#136;</figcaption></figure><p>å&#156;¨Windows/Macè¿&#153;ç±»æ¡&#140;é&#157;¢å¹³å&#143;°ï¼&#140;SketchBookå¯¹æ¯&#148;èµ·CSPã&#128;&#129;SAIè¿&#153;äº&#155;å¤§ä½¬çº§è½¯ä»¶æ&#152;¾å¾&#151;æ²¡ä»&#128;ä¹&#136;å­&#152;å&#156;¨æ&#132;&#159;ï¼&#140;ç&#132;¶è&#128;&#140;æ&#148;¾å&#156;¨ç§»å&#138;¨å¹³å&#143;°ä¸&#138;ç&#156;&#139;ï¼&#140;SketchBookå&#141;´æ&#152;¯æ&#149;°ä¸&#128;æ&#149;°äº&#140;ç&#154;&#132;å­&#152;å&#156;¨äº&#134;ã&#128;&#130;ä»&#142;æ&#136;ªå&#155;¾ä¹&#159;å&#143;¯ä»¥ç&#156;&#139;å&#135;ºï¼&#140;SketchBookç&#156;&#139;èµ·æ&#157;¥å°±æ&#152;¯ä¸&#147;é&#151;¨ä¸ºè§¦å±&#143;è®¾è®¡ã&#128;&#130;</p>
+
+
+
+<p>å&#156;¨iPad 2018ã&#128;&#129;iPad Proã&#128;&#129;Samsung Galaxy Noteã&#128;&#129;Surface Goç­&#137;é&#133;&#141;æ&#156;&#137;å&#142;&#139;æ&#132;&#159;ç¬&#148;ç&#154;&#132;ç§»å&#138;¨è®¾å¤&#135;ä¸­å&#157;&#135;æ&#156;&#137;ä¸&#141;é&#148;&#153;ç&#154;&#132;ä½&#147;éª&#140;ã&#128;&#130; ä¸&#141;è¿&#135;å&#156;¨å®&#158;é&#153;&#133;ä½&#147;éª&#140;ä¸­ï¼&#140;Surface Goé&#133;&#141;å&#144;&#136;SketchBookå­&#152;å&#156;¨é&#152;²æ&#138;&#150;ä¿®æ­£æ&#156;&#137;æ&#151;¶å¤±æ&#149;&#136;ç&#154;&#132;é&#151;®é¢&#152;ã&#128;&#130;</p>
+
+
+
+<p>å&#148;®ä»·ï¼&#154;å&#133;&#141;è´¹ ï¼&#136;Autodesk å®¶é&#154;¾å¾&#151;ä¸&#141;è¦&#129;é&#146;±ç&#154;&#132;</p>
+
+
+
+<p>æ&#142;¨è&#141;&#144;å&#136;&#134;æ&#149;°ï¼&#154;4.5</p>
+
+
+
+<h4>Sketchable</h4>
+
+
+
+<figure class="wp-block-image"><amp-img src="https://static.yomunchan.moe/wp-content/uploads/2019/06/ScreenShotCut2-1024x683.jpg" alt="" class="wp-image-330 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height amp-wp-enforced-sizes" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/ScreenShotCut2-1024x683.jpg 1024w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/ScreenShotCut2-150x100.jpg 150w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/ScreenShotCut2-300x200.jpg 300w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/ScreenShotCut2-768x512.jpg 768w" object-fit="contain" width="600" height="400" layout="intrinsic"><noscript><img src="https://static.yomunchan.moe/wp-content/uploads/2019/06/ScreenShotCut2-1024x683.jpg" alt="" class="wp-image-330 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height" sizes="(max-width: 1024px) 100vw, 1024px" width="600" height="400"></noscript></amp-img></figure><p>è¿&#153;ä¸ªä¸&#141;ç®&#151;æ­£å¼&#143;ç&#154;&#132;æ&#142;¨è&#141;&#144;ï¼&#140;ä½&#134;æ&#152;¯å¦&#130;æ&#158;&#156;ä½ æ&#156;&#137;Surface Proã&#128;&#129;Surface Bookæ&#136;&#150;è&#128;&#133;Surface Studioç&#154;&#132;è¯&#157;ï¼&#140;å°±ä¸&#128;å®&#154;å¾&#151;æ&#142;¨è&#141;&#144;ä½&#147;éª&#140;ä¸&#128;ä¸&#139;Sketchableã&#128;&#130;å¦&#130;æ&#158;&#156;æ&#156;&#137;ç&#156;&#139;è¿&#135;Surface Studioå®£ä¼ ç&#137;&#135;ä¸&#138;ç&#154;&#132;è¯&#157;ï¼&#140;é&#130;£ä¸ªé&#133;&#141;å&#144;&#136;å°&#143;æ&#151;&#139;é&#146;®ï¼&#136;surface dial)ç&#154;&#132;å¥&#135;å¦&#153;æ&#149;&#136;æ&#158;&#156;ç&#154;&#132;ä¸&#156;è¥¿å°±æ&#152;¯Sketchableã&#128;&#130;</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><amp-anim src="https://static.yomunchan.moe/wp-content/uploads/2019/06/timg.gif" alt="" class="wp-image-331 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height amp-wp-enforced-sizes" object-fit="contain" width="600" height="400" layout="intrinsic"><noscript><img src="https://static.yomunchan.moe/wp-content/uploads/2019/06/timg.gif" alt="" class="wp-image-331 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height" width="600" height="400"></noscript></amp-anim></figure></div>
+
+
+
+<p>å&#148;®ä»·ï¼&#154;å&#133;&#141;è´¹ï¼&#136;å&#159;ºç¡&#128;ç&#137;&#136;æ&#156;¬)/ 179å&#133;&#131;ï¼&#136;Sketchable Premiumï¼&#137;</p>
+
+
+
+<p>æ&#142;¨è&#141;&#144;å&#136;&#134;æ&#149;°ï¼&#154;4</p>
+
+
+
+<p></p>
+
+
+
+<h2>Adobe Permiere Pro</h2>
+
+
+
+<p>Adobe Permiere Proï¼&#140;ä¹&#159;å°±æ&#152;¯ä¿&#151;ç§°ç&#154;&#132;PRï¼&#140;æ&#152;¯ä¸&#128;ä¸ªæ&#140;ºå¸¸è§&#129;ç&#154;&#132;è§&#134;é¢&#145;å&#137;ªè¾&#145;è½¯ä»¶ã&#128;&#130;å&#148;®ä»·20.99ç¾&#142;å&#133;&#131;/æ&#156;&#136;</p>
+
+
+
+<h4>SONY Vegas</h4>
+
+
+
+<figure class="wp-block-image"><amp-img src="https://static.yomunchan.moe/wp-content/uploads/2019/06/233-1024x614.png" alt="" class="wp-image-334 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height amp-wp-enforced-sizes" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/233-1024x614.png 1024w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/233-150x90.png 150w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/233-300x180.png 300w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/233-768x460.png 768w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/233.png 1348w" object-fit="contain" width="600" height="400" layout="intrinsic"><noscript><img src="https://static.yomunchan.moe/wp-content/uploads/2019/06/233-1024x614.png" alt="" class="wp-image-334 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height" sizes="(max-width: 1024px) 100vw, 1024px" width="600" height="400"></noscript></amp-img><figcaption>å&#155;&#155;å¹´å&#137;&#141;ç&#137;&#136;æ&#156;¬ç&#154;&#132;Vegasï¼&#140;ç&#142;°å&#156;¨ç&#154;&#132;æ&#150;°ç&#137;&#136;æ&#156;¬å&#155; ä¸ºSteamå&#155;½å&#140;ºä¹°ä¸&#141;å&#136;°äº&#134;å°±ç´¢æ&#128;§æ²¡ä¹°ï¼&#140;å&#143;&#141;æ­£å&#143;&#136;ä¸&#141;æ&#152;¯ä¸&#141;è&#131;½ç&#148;¨</figcaption></figure><p>è¯´å&#136;°å&#137;ªè¾&#145;è½¯ä»¶ï¼&#140;å°±ä¸&#141;å¾&#151;ä¸&#141;æ&#143;&#144;Sony Vegasäº&#134;ã&#128;&#130;Vegasæ&#152;¯ä¸ªå¾&#136;å&#135;ºè&#137;²ç&#154;&#132;ï¼&#140;æ&#139;¥æ&#156;&#137;å¾&#136;å¤&#154;ç&#148;¨æ&#136;·ç&#154;&#132;è§&#134;é¢&#145;å&#137;ªè¾&#145;è½¯ä»¶ï¼&#140;æ¯&#148;å¦&#130;Bç«&#153;å¤§å¤&#154;æ&#149;°ï¼&#136;å&#135; ä¹&#142;æ&#137;&#128;æ&#156;&#137;ï¼&#137;ç&#154;&#132;é¬¼ç&#149;&#156;è§&#134;é¢&#145;é&#131;½æ&#152;¯Vegaså&#129;&#154;å&#135;ºæ&#157;¥ç&#154;&#132;ï¼&#140;ä¸­æ&#151;¥é&#159;©ç&#154;&#132;å¾&#136;å¤&#154;ç»¼è&#137;ºè&#138;&#130;ç&#155;®å&#159;ºæ&#156;¬ä¸&#138;ä¹&#159;æ&#152;¯Vegaså&#137;ªç&#154;&#132;ã&#128;&#130;</p>
+
+
+
+<p>ä¸&#141;è¿&#135;Vegaså¾&#136;å°&#145;ä¼&#154;è¿&#155;å&#133;¥é&#153;¢æ ¡è¯¾ç¨&#139;ï¼&#140;å&#155; æ­¤å¯¹äº&#142;å¤§é&#131;¨ä»½æ&#153;®é&#128;&#154;äººæ&#157;¥è¯´ï¼&#140;ä¼&#154;æ&#156;&#137;ç&#130;¹é&#153;&#140;ç&#148;&#159;ï¼&#140;æ&#143;&#144;å&#136;°è§&#134;é¢&#145;å&#137;ªè¾&#145;è½¯ä»¶å&#143;ªç&#159;¥é&#129;&#147;PRã&#128;&#130;ï¼&#136;<del>å&#143;&#141;æ­£ä½ ä»¬å°±è®¤è¯&#134;ä¸ªæ&#156;&#128;è´µç&#154;&#132;</del></p>
+
+
+
+<p>å®&#158;é&#153;&#133;ä¸&#138;ï¼&#140;å¯¹äº&#142;å¤§é&#131;¨ä»½äººæ&#157;¥è¯´ï¼&#140;Vegasæ&#152;¯ä¸&#128;ä¸ªä½¿ç&#148;¨è¿&#135;ä¸&#128;æ¬¡å°±ä¼&#154;ç&#136;±ä¸&#138;ç&#154;&#132;è½¯ä»¶ã&#128;&#130;</p>
+
+
+
+<p>å&#143;¦å¤&#150;é&#156;&#128;è¦&#129;è¯´æ&#152;&#142;ç&#154;&#132;æ&#152;¯ï¼&#140;Sony Vegaså&#155;½å&#134;&#133;è¢«æ&#159;&#144;è&#135;­å&#144;&#141;æ&#152;­è&#145;&#151;ç&#154;&#132;ç&#137;&#136;æ&#157;&#131;æµ&#129;æ°&#147;å&#133;¬å&#143;¸â&#128;&#156;ä»£ç&#144;&#134;â&#128;&#157;äº&#134;ï¼&#140;è¯·å°½é&#135;&#143;å&#137;&#141;å¾&#128;ç&#156;&#159;æ­£ç&#154;&#132;å®&#152;ç½&#145;æ&#136;&#150;ï¼&#136; <a href="https://www.vegascreativesoftware.com/us/vegas-pro/">https://www.vegascreativesoftware.com/us/vegas-pro/</a> ï¼&#137;Steamï¼&#136;é&#157;&#158;å&#155;½å&#140;ºï¼&#137;è´­ä¹°ã&#128;&#130;æ³¨æ&#132;&#143;ï¼&#154;Vegasæ²¡æ&#156;&#137;mac/Linuxç&#137;&#136;æ&#156;¬</p>
+
+
+
+<p>å®&#152;ç½&#145;å&#148;®ä»·ï¼&#154;249ç¾&#142;å&#133;&#131; èµ·ï¼&#136;æ&#156;&#137;å¤&#154;ä¸ªå&#148;®ä»·ç&#137;&#136;æ&#156;¬</p>
+
+
+
+<p>æ&#142;¨è&#141;&#144;å&#136;&#134;æ&#149;°ï¼&#154;5</p>
+
+
+
+<h4>Final Cut Pro X</h4>
+
+
+
+<figure class="wp-block-image"><amp-img src="https://static.yomunchan.moe/wp-content/uploads/2019/06/image-3.png" alt="" class="wp-image-335 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height amp-wp-enforced-sizes" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-3.png 848w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-3-150x101.png 150w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-3-300x202.png 300w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-3-768x516.png 768w" object-fit="contain" width="600" height="400" layout="intrinsic"><noscript><img src="https://static.yomunchan.moe/wp-content/uploads/2019/06/image-3.png" alt="" class="wp-image-335 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height" sizes="(max-width: 848px) 100vw, 848px" width="600" height="400"></noscript></amp-img><figcaption>å®&#152;ç½&#145;æ&#137;&#146;ç&#154;&#132;å&#155;¾ï¼&#140;å&#155; ä¸ºè¿&#153;ç&#142;©æ&#132;&#143;æ&#136;&#145;æ²¡ä¹°</figcaption></figure><p>Final Cut Pro X å&#146;&#140;Vegasä¸&#128;æ ·ï¼&#140;ä¸&#128;ç&#155;´ä»¥æ&#157;¥å°±æ&#152;¯å&#146;&#140;PRé&#146;&#136;é&#148;&#139;ç&#155;¸å¯¹ç&#154;&#132;äº§å&#147;&#129;ï¼&#140;ä¹&#159;æ&#152;¯Macå¹³å&#143;°æ&#156;&#128;ä½³è§&#134;é¢&#145;å&#137;ªè¾&#145;è½¯ä»¶ä¹&#139;ä¸&#128;ã&#128;&#130;å¾&#136;å¤&#154;å&#149;&#134;ä¸&#154;å&#133;¬å&#143;¸ç&#155;´æ&#142;¥é»&#152;è®¤å°±æ&#152;¯Mac + Final Cut Pro Xç&#154;&#132;æ &#135;é&#133;&#141;ï¼&#140;æ&#137;&#128;ä»¥è&#153;½ç&#132;¶å®&#131;ä¹&#159;æ&#152;¯Macå¹³å&#143;°ç&#139;¬å&#141; ç&#154;&#132;ï¼&#140;ä½&#134;å¹¶æ²¡æ&#156;&#137;ä»&#128;ä¹&#136;é&#151;®é¢&#152;ã&#128;&#130;</p>
+
+
+
+<p>å&#144;&#140;æ ·å&#155; ä¸ºè¿&#153;ç&#142;©æ&#132;&#143;å¾&#136;å°&#145;è¿&#155;å&#133;¥é&#153;¢æ ¡è¯¾ç¨&#139;ï¼&#140;å¯¹äº&#142;å¤§é&#131;¨ä»½äººæ&#157;¥è¯´æ&#156;&#137;ç&#130;¹é&#153;&#140;ç&#148;&#159;ã&#128;&#130;</p>
+
+
+
+<p>å&#148;®ä»·ï¼&#154; 1998å&#133;&#131;</p>
+
+
+
+<p>æ&#142;¨è&#141;&#144;å&#136;&#134;æ&#149;°ï¼&#154;5</p>
+
+
+
+<h4>iMovie</h4>
+
+
+
+<figure class="wp-block-image"><amp-img src="https://static.yomunchan.moe/wp-content/uploads/2019/06/TIM%E5%9B%BE%E7%89%8720190620233056-1024x640.jpg" alt="" class="wp-image-336 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height amp-wp-enforced-sizes" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/TIMå&#155;¾ç&#137;&#135;20190620233056-1024x640.jpg 1024w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/TIMå&#155;¾ç&#137;&#135;20190620233056-150x94.jpg 150w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/TIMå&#155;¾ç&#137;&#135;20190620233056-300x188.jpg 300w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/TIMå&#155;¾ç&#137;&#135;20190620233056-768x480.jpg 768w" object-fit="contain" width="600" height="400" layout="intrinsic"><noscript><img src="https://static.yomunchan.moe/wp-content/uploads/2019/06/TIM%E5%9B%BE%E7%89%8720190620233056-1024x640.jpg" alt="" class="wp-image-336 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height" sizes="(max-width: 1024px) 100vw, 1024px" width="600" height="400"></noscript></amp-img><figcaption>å®&#158;å&#156;¨æ²¡æ&#137;¾å&#136;°æ¸&#133;æ&#153;°ç&#154;&#132;å&#155;¾ï¼&#140;æ&#131;³äº&#134;æ&#131;³ï¼&#140;è¿&#152;æ&#152;¯æ&#138;&#138;macæ&#142;&#143;å&#135;ºæ&#157;¥æ&#136;ªå&#155;¾äº&#134;</figcaption></figure><figure class="wp-block-image"><amp-img src="https://static.yomunchan.moe/wp-content/uploads/2019/06/img_0144-1024x768.png" alt="" class="wp-image-337 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height amp-wp-enforced-sizes" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/img_0144-1024x768.png 1024w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/img_0144-150x113.png 150w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/img_0144-300x225.png 300w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/img_0144-768x576.png 768w" object-fit="contain" width="600" height="400" layout="intrinsic"><noscript><img src="https://static.yomunchan.moe/wp-content/uploads/2019/06/img_0144-1024x768.png" alt="" class="wp-image-337 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height" sizes="(max-width: 1024px) 100vw, 1024px" width="600" height="400"></noscript></amp-img><figcaption>iOS ç&#137;&#136;æ&#156;¬ ï¼&#136;iPadï¼&#137;</figcaption></figure><p>iMovieæ&#152;¯ä¸&#128;ä¸ªOS Xç³»ç»&#159;å&#146;&#140;iOSç³»ç»&#159;è&#135;ªå¸¦ç&#154;&#132;<strong>ç®&#128;å&#141;&#149;ç&#154;&#132;</strong>è§&#134;é¢&#145;å&#137;ªè¾&#145;å·¥å&#133;·ï¼&#140;ä¸&#142;Vegasä¹&#139;ç±»ç&#154;&#132;ä¸&#147;ä¸&#154;å·¥å&#133;·ç&#155;¸æ¯&#148;ï¼&#140;iMovieæ&#155;´å&#131;&#143;æ&#152;¯ç»&#152;å£°ç»&#152;å½±ä¹&#139;ç±»ç&#154;&#132;ç&#142;©å&#133;·çº§å&#137;ªè¾&#145;å·¥å&#133;·ï¼&#136;æ­£å¼&#143;ç&#130;¹è¯´å&#143;«â&#128;&#156;å®¶åº­å¨±ä¹&#144;çº§å&#136;«å&#137;ªè¾&#145;å·¥å&#133;·â&#128;&#157;ï¼&#140;é&#128;&#154;ä¿&#151;ç&#130;¹è¯´ï¼&#154;â&#128;&#156;å&#143;&#136;ä¸&#141;æ&#152;¯ä¸&#141;è&#131;½ç&#148;¨â&#128;&#157;ï¼&#137;</p>
+
+
+
+<p>æ&#138;&#138;è¿&#153;ç§&#141;ç&#142;©å&#133;·çº§è½¯ä»¶æ&#148;¾å&#156;¨â&#128;&#156;Adobeç&#154;&#132;æ&#155;¿ä»£å&#147;&#129;æ&#142;¨è&#141;&#144;â&#128;&#157;ç&#154;&#132;æ&#150;&#135;ç« é&#135;&#140;ï¼&#140;ç&#156;&#139;èµ·æ&#157;¥æ&#156;&#137;ç&#130;¹å¥&#135;å¦&#153;ï¼&#140;ä¸»è¦&#129;è¿&#152;æ&#152;¯å&#155; ä¸ºå¾&#136;å¤&#154;äººâ&#128;&#156;ä¸&#141;ç®¡ä»&#128;ä¹&#136;ç&#148;¨é&#128;&#148;ç&#154;&#132;è§&#134;é¢&#145;å&#137;ªè¾&#145;ï¼&#140;ä½ ä»¬å°±è®¤è¯&#134;ä¸ªæ&#156;&#128;è´µç&#154;&#132;PRâ&#128;&#157;ï¼&#140;æ&#136;&#145;è&#135;ªå·±è§&#129;å&#136;°ç&#154;&#132;å°±æ&#156;&#137;å¾&#136;å¤&#154;äº&#134;ï¼&#140;æ&#152;&#142;æ&#152;&#142;æ&#152;¯ä¸ªå°&#143;ä½&#156;ä¸&#154;é&#156;&#128;è¦&#129;ä¸&#128;æ®µè§&#134;é¢&#145;å±&#149;ç¤ºï¼&#140;å°±æ&#152;¯ç®&#128;å&#141;&#149;ç&#154;&#132;å&#137;ªä¸&#128;å&#137;ªé&#133;&#141;ä¸ªBGMç&#154;&#132;äº&#139;ï¼&#140;å°±ç&#159;¥é&#129;&#147;ä¸ªPRï¼&#140;é&#157;&#158;è¦&#129;å&#142;»ä¸&#139;ä¸ªPRï¼&#140;ç&#132;¶å&#144;&#142;å&#156;¨å&#144;&#132;ç§&#141;å¥&#135;å¦&#153;é&#133;&#141;ç½®ç&#154;&#132;ç¬&#148;è®°æ&#156;¬ä¸&#138;è&#137;°é&#154;¾ç&#154;&#132;è·&#145;ç&#157;&#128;å&#141;¡å¾&#151;è·&#159;ä»&#128;ä¹&#136;ä¼¼ç&#154;&#132;PRã&#128;&#130;å&#151;¯</p>
+
+
+
+<p>ä»·æ ¼ï¼&#154;å&#133;&#141;è´¹</p>
+
+
+
+<p>æ&#142;¨è&#141;&#144;å&#136;&#134;æ&#149;°ï¼&#154;4</p>
+
+
+
+<h4>ç&#133;§ç&#137;&#135;</h4>
+
+
+
+<figure class="wp-block-image"><amp-img src="https://static.yomunchan.moe/wp-content/uploads/2019/06/image-4-1024x678.png" alt="" class="wp-image-338 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height amp-wp-enforced-sizes" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-4-1024x678.png 1024w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-4-150x99.png 150w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-4-300x199.png 300w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-4-768x509.png 768w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-4.png 1178w" object-fit="contain" width="600" height="400" layout="intrinsic"><noscript><img src="https://static.yomunchan.moe/wp-content/uploads/2019/06/image-4-1024x678.png" alt="" class="wp-image-338 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height" sizes="(max-width: 1024px) 100vw, 1024px" width="600" height="400"></noscript></amp-img><figcaption>Windows 10 1809 ç&#137;&#136;æ&#156;¬ ç&#133;§ç&#137;&#135;</figcaption></figure><p>å&#144;&#141;å­&#151;å¥&#135;æ&#128;ªæ&#152;¯å¥&#135;æ&#128;ªäº&#134;ï¼&#140;å®&#131;å°±å&#143;«ç&#133;§ç&#137;&#135;æ&#136;&#145;ä¹&#159;æ²¡å&#138;&#158;æ³&#149;ã&#128;&#130;è¿&#153;ä¸ªæ&#152;¯Windows 10 1803ä¹&#139;å&#144;&#142;ç&#154;&#132;ç&#137;&#136;æ&#156;¬è&#135;ªå¸¦ç&#154;&#132;é&#130;£ä¸ªâ&#128;&#156;ç&#133;§ç&#137;&#135;â&#128;&#157;Appé&#135;&#140;ç&#154;&#132;è§&#134;é¢&#145;å&#137;ªè¾&#145;å·¥å&#133;·ã&#128;&#130;å¤§ä½&#147;ä¸&#138;å&#138;&#159;è&#131;½å&#146;&#140;å®&#154;ä½&#141;ç±»ä¼¼äº&#142;ä¸&#138;è¿°ç&#154;&#132;iMovieï¼&#140;å±&#158;äº&#142;â&#128;&#156;å&#143;&#136;ä¸&#141;æ&#152;¯ä¸&#141;è&#131;½ç&#148;¨â&#128;&#157;ç&#154;&#132;ç&#142;©å&#133;·çº§è§&#134;é¢&#145;å&#137;ªè¾&#145;è½¯ä»¶ã&#128;&#130;ä½&#134;æ&#152;¯å&#143;&#141;æ­£å¸¸è§&#129;ç&#154;&#132;å&#138;&#159;è&#131;½é&#131;½æ&#156;&#137;äº&#134;ï¼&#140;è&#128;&#140;ä¸&#148;é&#133;&#141;ä¹&#144;ã&#128;&#129;å&#137;ªè¾&#145;å&#146;&#140;å¯¼å&#135;ºæµ&#129;ç¨&#139;é&#131;½å¤&#132;ç&#144;&#134;å¾&#151;å¾&#136;ç®&#128;å&#141;&#149;ã&#128;&#130;</p>
+
+
+
+<p>ä»·æ ¼ï¼&#154;å&#133;&#141;è´¹</p>
+
+
+
+<p>æ&#142;¨è&#141;&#144;å&#136;&#134;æ&#149;°ï¼&#154;4</p>
+
+
+
+<blockquote class="wp-block-quote"><p>PSï¼&#154;ä¸ºä»&#128;ä¹&#136;æ&#136;&#145;ä¸&#141;è¯´ç»&#152;å£°ç»&#152;å½±å&#145;¢ï¼&#140;å&#155; ä¸ºæ&#153;®é&#128;&#154;äººä¹°ä¸&#141;å&#136;°ã&#128;&#130;å&#155;½å&#134;&#133;è¢«æ&#159;&#144;ä¸ªè&#135;­å&#144;&#141;æ&#152;­è&#145;&#151;ç&#154;&#132;è&#145;&#151;å&#144;&#141;ç&#137;&#136;æ&#157;&#131;æµ&#129;æ°&#147;å&#133;¬å&#143;¸ä»£ç&#144;&#134;äº&#134;ï¼&#140;ç&#156;&#159;æ­£ç&#154;&#132;å®&#152;ç½&#145;ä¸&#141;è&#138;±ç&#130;¹å&#138;&#159;å¤«è¿&#152;ç&#156;&#159;æ&#144;&#156;ä¸&#141;å&#136;°ã&#128;&#130;</p><cite><br></cite></blockquote>
+
+
+
+<h4>DaVinci Resolve</h4>
+
+
+
+<figure class="wp-block-image"><amp-img src="https://static.yomunchan.moe/wp-content/uploads/2019/06/image-9-1024x668.png" alt="" class="wp-image-346 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height amp-wp-enforced-sizes" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-9-1024x668.png 1024w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-9-150x98.png 150w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-9-300x196.png 300w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-9-768x501.png 768w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-9.png 1359w" object-fit="contain" width="600" height="400" layout="intrinsic"><noscript><img src="https://static.yomunchan.moe/wp-content/uploads/2019/06/image-9-1024x668.png" alt="" class="wp-image-346 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height" sizes="(max-width: 1024px) 100vw, 1024px" width="600" height="400"></noscript></amp-img><figcaption>è¾¾è&#138;¬å¥&#135; å&#133;&#141;è´¹ç&#137;&#136;</figcaption></figure><p></p>
+
+
+
+<p>è¿&#153;ä¸ªå°±æ&#152;¯ä¼ è¯´ä¸­å¤§å&#144;&#141;é¼&#142;é¼&#142;ç&#154;&#132;â&#128;&#156;è¾¾è&#138;¬å¥&#135;â&#128;&#157;ï¼&#140;ä½ æ&#136;&#150;å¤&#154;æ&#136;&#150;å°&#145;å&#143;¯è&#131;½å&#144;¬å&#136;°è¿&#135;æ&#156;&#137;äººè£&#133;é&#128;¼è¯´ï¼&#154;â&#128;&#156;PRä»&#128;ä¹&#136;è¾£é¸¡è½¯ä»¶ï¼&#140;ç&#156;&#159;æ­£ç&#154;&#132;ç&#148;µå½±å&#133;¬å&#143;¸é&#131;½ç&#148;¨è¾¾è&#138;¬å¥&#135;â&#128;&#157;ï¼&#140;è¯´ç&#154;&#132;å°±æ&#152;¯è¿&#153;ä¸ªè½¯ä»¶ã&#128;&#130;</p>
+
+
+
+<p>è¾¾è&#138;¬å¥&#135;æ&#152;¯ä¸ªå¾&#136;å¼ºå¤§ç&#154;&#132;è½¯ä»¶ï¼&#140;ä½&#134;æ&#152;¯ä¸ºå&#149;¥å&#146;±æ&#138;&#138;æ&#142;¨è&#141;&#144;ä¼&#152;å&#133;&#136;çº§æ&#148;¾å&#156;¨æ&#156;&#128;å&#144;&#142;å&#145;¢ï¼&#140;å&#155; ä¸ºè¿&#153;ä¸ªè½¯ä»¶å¤ªå¼ºå¤§ä¸&#148;å¤&#141;æ&#157;&#130;äº&#134;ï¼&#140;ä¸&#138;æ&#137;&#139;é&#154;¾åº¦é«&#152;ã&#128;&#129;è&#128;&#140;ä¸&#148;ç»&#157;å¤§å¤&#154;æ&#149;°å&#138;&#159;è&#131;½æ&#152;¯æ&#153;®é&#128;&#154;äººç&#148;¨ä¸&#141;å&#136;°ç&#154;&#132;ã&#128;&#130;ï¼&#136;å¦&#130;æ&#158;&#156;ä½ å·¥ä½&#156;ä¸­ç&#148;¨å¾&#151;å&#136;°è¿&#153;ä¸ªè½¯ä»¶ï¼&#140;ä½ æ ¹æ&#156;¬ä¸&#141;ä¼&#154;å&#142;»æ&#137;¾â&#128;&#156;æ&#136;&#145;æ&#157;¥ç&#156;&#139;ç&#156;&#139;PRæ&#156;&#137;ä»&#128;ä¹&#136;æ&#155;¿ä»£å&#147;&#129;â&#128;&#157;ï¼&#137;ã&#128;&#130;ä½&#134;ç¡®å®&#158;æ&#152;¯ä¸&#141;é&#148;&#153;ç&#154;&#132;è½¯ä»¶ï¼&#140;å¾&#151;æ&#142;¨è&#141;&#144;ä¸&#128;ä¸&#139;ã&#128;&#130;</p>
+
+
+
+<p>è¾¾è&#138;¬å¥&#135;æ&#152;¯å&#156;¨åº§ç&#154;&#132;å&#144;&#132;ä½&#141;è§&#134;é¢&#145;å&#137;ªè¾&#145;è½¯ä»¶ä¸­å&#148;¯ä¸&#128;ä¸&#128;ä¸ªå&#144;&#140;æ&#151;¶æ&#148;¯æ&#140;&#129;Windows / GNU Linux / Macä¸&#137;ä¸ªå¹³å&#143;°ç&#154;&#132;ã&#128;&#130;å¹¶ä¸&#148;æ&#156;&#137;å&#133;&#141;è´¹ç&#137;&#136;æ&#156;¬ã&#128;&#130;</p>
+
+
+
+<p>å&#148;®ä»·ï¼&#154;å&#133;&#141;è´¹ / 299ç¾&#142;å&#133;&#131;</p>
+
+
+
+<p>æ&#142;¨è&#141;&#144;å&#136;&#134;æ&#149;°ï¼&#154;5</p>
+
+
+
+<p></p>
+
+
+
+<h2>Adobe illustrator</h2>
+
+
+
+<p>Adobe illustratorï¼&#140;é&#128;&#154;å¸¸ç®&#128;ç§°â&#128;&#156;AIâ&#128;&#157;ï¼&#140;ä¹&#159;æ&#152;¯ç¾&#142;æ&#156;¯äººå&#145;&#152;ç&#154;&#132;è&#128;&#129;æ&#156;&#139;å&#143;&#139;äº&#134;ã&#128;&#130;ä¹&#141;ä¸&#128;ç&#156;&#139;å&#146;&#140;PSæ&#156;&#137;ç&#130;¹å&#131;&#143;ï¼&#140;å&#140;ºå&#136;«æ&#152;¯å®&#131;ä¿©ä¸­PSæ&#152;¯è´&#159;è´£ä½&#141;å&#155;¾ï¼&#136;å&#131;&#143;ç´ ç&#130;¹é&#152;µå&#155;¾ï¼&#137;ç&#154;&#132;ï¼&#140;å&#143;¦ä¸&#128;ä¸ªAIæ&#152;¯è´&#159;è´£ç&#159;¢é&#135;&#143;å&#155;¾ç&#154;&#132;ã&#128;&#130;</p>
+
+
+
+<p>ä»·æ ¼20.99ç¾&#142;å&#133;&#131;/æ&#156;&#136;</p>
+
+
+
+<h4>Affinity Designer</h4>
+
+
+
+<figure class="wp-block-image"><amp-img src="https://static.yomunchan.moe/wp-content/uploads/2019/06/image-7-1024x555.png" alt="" class="wp-image-344 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height amp-wp-enforced-sizes" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-7-1024x555.png 1024w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-7-150x81.png 150w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-7-300x163.png 300w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-7-768x416.png 768w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-7.png 1401w" object-fit="contain" width="600" height="400" layout="intrinsic"><noscript><img src="https://static.yomunchan.moe/wp-content/uploads/2019/06/image-7-1024x555.png" alt="" class="wp-image-344 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height" sizes="(max-width: 1024px) 100vw, 1024px" width="600" height="400"></noscript></amp-img><figcaption>Affinity Design , å®&#152;ç½&#145;ä¸&#139;ç&#154;&#132;è¯&#149;ç&#148;¨ç&#137;&#136;ï¼&#140;è¿&#153;ä¸ªå¤§æ¦&#130;ç&#142;&#135;ç&#148;¨ä¸&#141;å&#136;°æ&#136;&#145;å°±æ²¡ä¹°</figcaption></figure><p>å&#143;&#136;ç&#156;&#139;å&#136;°Affinityäº&#134;ï¼&#140;Affinity Designeræ&#152;¯Affinityç³»å&#136;&#151;ç&#154;&#132;å&#143;¦ä¸&#128;ä¸ªè½¯ä»¶ã&#128;&#130;å°±å¥½å&#131;&#143;APæ&#152;¯å&#134;²ç&#157;&#128;PSå&#142;»ç&#154;&#132;ä¸&#128;æ ·ï¼&#140;ADå¯¹åº&#148;ç&#154;&#132;å°±æ&#152;¯Adobeå®¶ç&#154;&#132;AIã&#128;&#130;</p>
+
+
+
+<p>å®&#158;é&#153;&#133;ä¸&#138;ï¼&#140;ç&#159;¢é&#135;&#143;å&#155;¾è¿&#153;å&#157;&#151;æ&#136;&#145;å·¥ä½&#156;ä¸­å&#159;ºæ&#156;¬ç&#148;¨ä¸&#141;å&#136;°ï¼&#140;å¯¹AIä¹&#159;ä¸&#141;äº&#134;è§£ã&#128;&#130;æ&#136;&#145;æ&#152;¯ç&#156;&#139;ç&#157;&#128;Affinity Photoè¿&#152;æ&#140;ºä¸&#141;é&#148;&#153;ä¹&#139;å&#144;&#142;ï¼&#140;å°±æ&#138;&#138;Affinity Designerå®&#137;å&#136;©ç»&#153;æ&#144;&#158;å¹¿å&#145;&#138;å¹³é&#157;¢ç&#154;&#132;æ&#156;&#139;å&#143;&#139;è¯&#149;äº&#134;ä¸&#139;ã&#128;&#130;</p>
+
+
+
+<p>å¾&#151;å&#136;°ç&#154;&#132;å&#143;&#141;é¦&#136;æ&#128;»ä½&#147;å¥½è¯&#132;ï¼&#140;æ&#156;&#137;ä¼&#152;ç&#130;¹ä¹&#159;æ&#156;&#137;ä¸&#141;è¶³ï¼&#140;é¦&#150;å&#133;&#136;æ&#152;¯ä¸&#141;ä¹ æ&#131;¯ï¼&#136;åº&#159;è¯&#157;ï¼&#137;ï¼&#140;ç&#132;¶å&#144;&#142;å&#133;¶å®&#158;å¿«æ&#141;·é&#148;®å&#146;&#140;Adobeä»&#128;ä¹&#136;ç&#154;&#132;æ¯&#148;è¾&#131;ç±»ä¼¼ï¼&#140;å­¦ä¹ æ&#136;&#144;æ&#156;¬ä¸&#141;ç®&#151;é«&#152;ã&#128;&#130;ADæ&#156;&#137;ä¸&#137;ä¸ªæ¨¡å¼&#143;å&#136;&#135;æ&#141;¢ï¼&#140;æ&#152;¯æ&#140;ºå¥½ç&#154;&#132;å&#138;&#159;è&#131;½</p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><amp-img src="https://static.yomunchan.moe/wp-content/uploads/2019/06/image-8.png" alt="" class="wp-image-345 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height amp-wp-enforced-sizes" object-fit="contain" width="600" height="400" layout="intrinsic"><noscript><img src="https://static.yomunchan.moe/wp-content/uploads/2019/06/image-8.png" alt="" class="wp-image-345 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height" width="600" height="400"></noscript></amp-img></figure></div>
+
+
+
+<p>å¹³æ&#151;¶æ&#147;&#141;ä½&#156;å&#156;¨è®¾è®¡è§&#146;è&#137;²ï¼&#136;ç&#159;¢é&#135;&#143;å&#155;¾æ¨¡å¼&#143;ï¼&#137;ä¸&#139;ï¼&#140;å¦&#130;æ&#158;&#156;é&#156;&#128;è¦&#129;å¤&#132;ç&#144;&#134;å·²æ &#133;æ ¼å&#140;&#150;ç&#154;&#132;ä¸&#156;è¥¿ï¼&#140;å°±é&#156;&#128;è¦&#129;å&#136;&#135;æ&#141;¢å&#136;°â&#128;&#156;å&#131;&#143;ç´ è§&#146;è&#137;²â&#128;&#157;ï¼&#140;ç&#132;¶å&#144;&#142;å°±æ&#136;&#144;äº&#134;ä¸&#128;ä¸ªè¿·ä½ ç&#137;&#136;ç&#154;&#132;PSã&#128;&#130;è¿&#152;æ&#156;&#137;ä¸ªâ&#128;&#156;å¯¼å&#135;ºè§&#146;è&#137;²â&#128;&#157;æ&#152;¯ç&#148;¨æ&#157;¥å&#136;&#135;ç&#137;&#135;å¯¼å&#135;ºç&#148;¨ç&#154;&#132;ã&#128;&#130;</p>
+
+
+
+<p>å&#144;¬èµ·æ&#157;¥å¥½å&#131;&#143;å¾&#136;å&#142;&#137;å®³ï¼&#140;å&#143;&#141;æ­£æ&#136;&#145;ä»¿ä½&#155;å&#144;¬æ&#135;&#130;äº&#134;ï¼&#140;é&#154;&#148;å£&#129;AIæ&#136;&#145;å&#144;¬å&#136;«äººè®²ä¸&#128;é&#129;&#141;æ&#136;&#145;è¿&#152;æ&#152;¯ä¸&#141;ä¼&#154;ç&#142;©ã&#128;&#130;</p>
+
+
+
+<p>å&#148;®ä»·æ&#150;¹é&#157;¢å&#146;&#140;Affinity Photoä¸&#128;æ ·ï¼&#154;</p>
+
+
+
+<ul><li>Windows / Mac ï¼&#154;328å&#133;&#131; æ°¸ä¹&#133;</li><li>iOSï¼&#154;128 å&#133;&#131; æ°¸ä¹&#133;</li></ul><p><em>æ&#143;&#146;å&#143;¥é¢&#152;å¤&#150;è¯&#157;ï¼&#154;æ&#136;&#145;ä¸&#139;è½½ADç&#142;©ç&#154;&#132;æ&#151;¶å&#128;&#153;å&#143;&#145;ç&#142;°å®&#131;é&#135;&#140;é&#157;¢è&#135;ªå¸¦äº&#134;ä¸&#128;å¥&#151;UIç´ æ&#157;&#144;ï¼&#140;å&#143;¯æ&#152;¯æ&#136;&#145;å¹³æ&#151;¶å·¥ä½&#156;ä¸­å¯¹æ&#142;¥ç&#154;&#132;å&#144;&#132;ç§&#141;UIä»&#150;ä»¬ç&#148;¨ç&#154;&#132;é&#131;½æ&#152;¯PSå&#149;&#138;ï¼&#140;æ&#152;¯ä¸&#141;æ&#152;¯æ¸¸æ&#136;&#143;UIå&#146;&#140;å&#136;«ç&#154;&#132;è¡&#140;ä¸&#154;ç&#154;&#132;UIè®¾è®¡è¿&#152;ä¸&#141;ä¸&#128;æ ·ï¼&#159;æ&#156;&#137;æ&#135;&#130;è¿&#153;ä¸ªç&#154;&#132;å¤§ä½¬ä¹&#136;æ±&#130;ç§&#145;æ&#153;®ï¼&#159;</em></p>
+
+
+
+<h4>InkSpace</h4>
+
+
+
+<p>ç±»ä¼¼äº&#142;GIMPç&#154;&#132;å½¢å¼&#143;ï¼&#140;InkSpaceä¹&#159;æ&#152;¯ä¸ªå¼&#128;æº&#144;è½¯ä»¶ï¼&#140;ä¸&#147;æ³¨äº&#142;ç&#159;¢é&#135;&#143;å&#155;¾å¤&#132;ç&#144;&#134;ã&#128;&#130;</p>
+
+
+
+<p>è¿&#153;ä¸ªæ&#136;&#145;è¿&#152;ç&#156;&#159;ç&#148;¨è¿&#135;ï¼&#140;ä»¥å&#137;&#141;æ&#156;&#137;ä¸ªå¥&#135;å¦&#153;ç&#154;&#132;ç&#148;²æ&#150;¹ï¼&#140;è®©ä»&#150;ä»¬ç&#154;&#132;å¹³é&#157;¢è®¾è®¡å¸&#136;ç»&#153;æ&#136;&#145;ä»¬å&#135;ºäº&#134;ä¸&#128;ä»½UIè®¾è®¡ç¨¿ï¼&#140;ç&#132;¶å&#144;&#142;é&#130;£ä¸ªè®¾è®¡æ ¹æ&#156;¬æ²¡å&#129;&#154;è¿&#135;UIï¼&#140;ä¹&#159;ä¸&#141;ä¼&#154;å&#136;&#135;å&#155;¾ã&#128;&#130;å¾&#151;ï¼&#140;æ&#136;&#145;å¯»æ&#128;&#157;ä½ è¦&#129;ä¸&#141;æ&#138;&#138;å·¥ç¨&#139;å&#143;&#145;æ&#136;&#145;æ&#136;&#145;è&#135;ªå·±æ&#157;¥å&#136;&#135;å&#144;§ï¼&#140;ç&#132;¶å&#144;&#142;æ&#136;&#145;å°±æ&#148;¶å&#136;°äº&#134;ä¸&#128;å &#134;AIæ&#150;&#135;ä»¶ã&#128;&#130;å½&#147;æ&#151;¶ä¸&#141;ç&#159;¥é&#129;&#147;Affinity Designerï¼&#140;äº&#142;æ&#152;¯ç½&#145;ä¸&#138;æ&#137;¾äº&#134;æ&#137;¾å&#143;&#145;ç&#142;°æ&#156;&#137;ä¸ªInkSpaceï¼&#140;ä¸&#139;è½½ä¸&#139;æ&#157;¥è¯&#149;è¯&#149;å&#144;§ã&#128;&#130;</p>
+
+
+
+<p>è&#135;³äº&#142;ä½&#147;éª&#140;ç&#154;&#132;è¯&#157;ï¼&#140;è¿&#153;ä¹&#136;è¯´å&#144;§ï¼&#154;æ&#156;&#128;å&#144;&#142;æ&#136;&#145;æ&#138;&#138;è¿&#153;è½¯ä»¶å&#136; äº&#134;å&#142;»adobeä¸&#139;è½½äº&#134;aiç&#154;&#132;è¯&#149;ç&#148;¨ç&#137;&#136;ï¼&#140;ç&#132;¶å&#144;&#142;å&#145;&#138;è¯&#137;ç&#148;²æ&#150;¹ï¼&#154;â&#128;&#156;å&#156;¨æ&#136;&#145;è¯&#149;ç&#148;¨ç&#137;&#136;å&#136;°æ&#156;&#159;ä¹&#139;å&#137;&#141;ä½ å&#143;¯ä»¥æ&#148;¹è®¾è®¡ï¼&#140;14å¤©ä¹&#139;å&#144;&#142;å°±æ&#148;¹ä¸&#141;äº&#134;äº&#134;â&#128;&#157;ã&#128;&#130;</p>
+
+
+
+<p>å&#133;·ä½&#147;ç&#154;&#132;ä½¿ç&#148;¨ä½&#147;éª&#140;ï¼&#140;æ&#156;&#137;å&#133;´è¶£ç&#154;&#132;è&#135;ªå·±ä¸&#139;è½½äº&#134;ä½&#147;éª&#140;ä¸&#139;å&#145;&#151;ã&#128;&#130;</p>
+
+
+
+<p></p>
+
+
+
+<h2>Adobe Flash</h2>
+
+
+
+<p>Adobe Flashæ&#155;¾ç»&#143;æ&#152;¯äº&#146;è&#129;&#148;ç½&#145;ä¸­é&#135;&#141;è¦&#129;ç&#154;&#132;å¤&#154;åª&#146;ä½&#147;å&#136;¶ä½&#156;å·¥å&#133;·ï¼&#140;å°&#143;å&#136;°ç½&#145;ç«&#153;å°&#143;å¹¿å&#145;&#138;ï¼&#140;å¤§å&#136;°é¡µæ¸¸ï¼&#140;é&#131;½è&#131;½è§&#129;å&#136;°Flashç&#154;&#132;èº«å½±ï¼&#140;æ&#155;¾ç»&#143;å¤§çº¢å¤§ç´«ç&#154;&#132;æ&#145;©å°&#148;åº&#132;å&#155;­ã&#128;&#129;å¥¥æ¯&#148;å²&#155;ç­&#137;æ¸¸æ&#136;&#143;å°±æ&#152;¯å&#159;ºäº&#142;Flashå&#136;¶ä½&#156;ç&#154;&#132;ã&#128;&#130;</p>
+
+
+
+<p>å¦&#130;ä»&#138;Flashå&#156;¨Webé¢&#134;å&#159;&#159;å&#159;ºæ&#156;¬å·²ç»&#143;æ¶&#136;å¤±äº&#134;ï¼&#136;å&#155;½å&#134;&#133;å¥&#135;å¦&#153;ç&#142;¯å¢&#131;é&#153;¤å¤&#150;ï¼&#137;ï¼&#140;è&#128;&#140;å&#156;¨äº&#140;ç»´å&#138;¨ç&#148;»é¢&#134;å&#159;&#159;ï¼&#140;Flashè¿&#152;æ&#152;¯æ&#156;&#137;ç&#157;&#128;æ¯&#148;è¾&#131;å¤§ç&#154;&#132;å¸&#130;å&#156;ºç&#154;&#132;ï¼&#140;è&#145;&#151;å&#144;&#141;å&#138;¨ç&#148;»ã&#128;&#138;ç½&#151;å°&#143;é»&#145;æ&#136;&#152;è®°ã&#128;&#139;ã&#128;&#129;ã&#128;&#138;æ½&#156;è¡&#140;å&#144;§ï¼&#129;å¥&#136;äº&#154;å­&#144;ã&#128;&#139;ã&#128;&#129;ã&#128;&#138;å¤§é±¼æµ·æ£ ã&#128;&#139;ç­&#137;æ&#151;©æ&#156;&#159;å°±æ&#152;¯ä½¿ç&#148;¨Flashå&#136;¶ä½&#156;ï¼&#140;ç&#142;°å&#156;¨ä½ ä»&#141;ç&#132;¶è&#131;½å&#156;¨å&#156;°é&#147;&#129;ã&#128;&#129;å&#133;¬äº¤è½¦ä¸&#138;ç&#156;&#139;å&#136;°ä¸&#128;äº&#155;å¤&#150;å&#140;&#133;å&#133;¬å&#143;¸å&#136;¶ä½&#156;ç&#154;&#132;å&#133;¬ç&#155;&#138;å¹¿å&#145;&#138;æ&#152;¯ç&#148;¨Flashå&#136;¶ä½&#156;ç&#154;&#132;ã&#128;&#130; <br>ï¼&#136;æ&#141;®è¯´å±±ä¸&#139;æ¸&#133;æ&#130;&#159;å°±æ&#152;¯ç&#148;¨flashæ&#138;&#138;ç&#129;«å½±387è¯&#157;æ&#144;&#158;å´©å&#157;&#143;ç&#154;&#132; ï¼&#137;</p>
+
+
+
+<p><del>å½&#147;ç&#132;¶ä¹&#159;æ&#156;&#137;äº&#155;å¤´é&#147;&#129;ç&#154;&#132;å¤§ä½¬ä¼&#154;ç&#148;¨PowerPointä¹&#139;ç±»ç&#154;&#132;è½¯ä»¶å&#129;&#154;äº&#140;ç»´å&#138;¨ç&#148;»ï¼&#140;æ¯&#148;å¦&#130;ç&#159;¥å&#144;&#141;é&#159;³ä¹&#144;ã&#128;&#138;æ&#153;®é&#128;&#154;Discoã&#128;&#139;ç&#154;&#132;mv</del></p>
+
+
+
+<p>é¢&#152;å¤&#150;è¯&#157;ï¼&#154;ä½ ç&#148;&#154;è&#135;³å&#143;¯ä»¥æ&#139;¿txtæ&#150;&#135;æ¡£å&#129;&#154;ä¸ªå&#138;¨ç&#148;»å&#135;ºæ&#157;¥ï¼&#154; <br><a href="https://www.bilibili.com/video/av237442">https://www.bilibili.com/video/av237442</a> </p>
+
+
+
+<h3>Webåº&#148;ç&#148;¨é¢&#134;å&#159;&#159;ç&#148;¨é&#128;&#148;</h3>
+
+
+
+<h4>HTML5</h4>
+
+
+
+<p>è&#153;½ç&#132;¶ç&#156;&#139;èµ·æ&#157;¥ï¼&#140;HTML5æ&#152;¯å&#146;&#140;Flashå&#133;«ç«¿å­&#144;æ&#137;&#147;ä¸&#141;ç&#157;&#128;ç&#154;&#132;ä¸&#156;è¥¿ï¼&#140;ä½&#134;ç¡®å®&#158;å®&#158;æ&#151;¶å°±æ&#152;¯ï¼&#140;Webé¢&#134;å&#159;&#159;ä¸­ï¼&#140;HTML5å¹²æ&#142;&#137;äº&#134;Flashï¼&#140;å¦&#130;ä»&#138;ç&#154;&#132;å&#144;&#132;ç§&#141;Webå¤&#154;åª&#146;ä½&#147;åº&#148;ç&#148;¨ï¼&#140;é&#131;½æ&#152;¯å&#159;ºäº&#142;æ&#136;&#150;é&#151;´æ&#142;¥å&#159;ºäº&#142;Html5å&#136;¶ä½&#156;ç&#154;&#132;ã&#128;&#130;</p>
+
+
+
+<h4>Unity</h4>
+
+
+
+<figure class="wp-block-image"><amp-img src="https://static.yomunchan.moe/wp-content/uploads/2019/06/image-12-1024x632.png" alt="" class="wp-image-349 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height amp-wp-enforced-sizes" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-12-1024x632.png 1024w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-12-150x93.png 150w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-12-300x185.png 300w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-12-768x474.png 768w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-12.png 1368w" object-fit="contain" width="600" height="400" layout="intrinsic"><noscript><img src="https://static.yomunchan.moe/wp-content/uploads/2019/06/image-12-1024x632.png" alt="" class="wp-image-349 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height" sizes="(max-width: 1024px) 100vw, 1024px" width="600" height="400"></noscript></amp-img><figcaption>å&#155;¾ä¸ºUnity 2019</figcaption></figure><p>å¦&#130;ä»&#138;ç&#154;&#132;Unityæ&#155;´å¤&#154;æ&#152;¯ä»¥æ¸¸æ&#136;&#143;å¼&#149;æ&#147;&#142;ç&#154;&#132;èº«ä»½å&#135;ºç&#142;°å&#156;¨ä¼&#151;äººç&#154;&#132;è§&#134;é&#135;&#142;ä¸­ï¼&#140;ä½&#134;å®&#158;é&#153;&#133;ä¸&#138;ï¼&#140;Unityä¸&#128;ç&#155;´é&#131;½æ²¡è¯´è&#135;ªå·±æ&#152;¯æ¸¸æ&#136;&#143;å¼&#149;æ&#147;&#142;ï¼&#140;è&#128;&#140;æ&#152;¯â&#128;&#156;å&#136;¶ä½&#156;äº&#146;å&#138;¨å¤&#154;åª&#146;ä½&#147;å&#134;&#133;å®¹â&#128;&#157;ç&#154;&#132;å¼&#149;æ&#147;&#142;ã&#128;&#130;æ&#156;&#137;äº&#155;ä¸&#138;äº&#134;å²&#129;æ&#149;°ç&#154;&#132;äººå&#143;¯è&#131;½è®°å¾&#151;ï¼&#140;å&#143;¤æ&#151;¶å&#128;&#153;ç¬¬ä¸&#128;ä¸ªç«&#153;å&#135;ºæ&#157;¥æ&#140;&#145;æ&#136;&#152;Flashå&#156;¨æµ&#143;è§&#136;å&#153;¨ä¸­ç&#154;&#132;ç»&#159;æ²»å&#156;°ä½&#141;ç&#154;&#132;ï¼&#140;æ­£æ&#152;¯Unityã&#128;&#130;</p>
+
+
+
+<p>å&#143;¤æ&#151;¶å&#128;&#153;ç&#154;&#132;Unityå&#136;¶ä½&#156;ç&#154;&#132;ç½&#145;ç»&#156;å&#134;&#133;å®¹ï¼&#140;å&#146;&#140;Flashä¸&#128;æ ·é&#156;&#128;è¦&#129;å&#156;¨ç&#148;µè&#132;&#145;ä¸&#138;å®&#137;è£&#133;ä¸&#128;ä¸ªæ&#146;­æ&#148;¾å&#153;¨</p>
+
+
+
+<figure class="wp-block-image"><amp-img src="https://static.yomunchan.moe/wp-content/uploads/2019/06/image-10.png" alt="" class="wp-image-347 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height amp-wp-enforced-sizes" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-10.png 866w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-10-150x105.png 150w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-10-300x210.png 300w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-10-768x537.png 768w" object-fit="contain" width="600" height="400" layout="intrinsic"><noscript><img src="https://static.yomunchan.moe/wp-content/uploads/2019/06/image-10.png" alt="" class="wp-image-347 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height" sizes="(max-width: 866px) 100vw, 866px" width="600" height="400"></noscript></amp-img><figcaption>å&#155;¾ä¸ºä¸&#128;ä¸ªæ&#151;©æ&#156;&#159;ç&#154;&#132;Unityåª&#146;ä½&#147;å&#134;&#133;å®¹ï¼&#140;æ&#143;&#144;ç¤ºè¦&#129;å®&#137;è£&#133;æ&#146;­æ&#148;¾å&#153;¨ï¼&#136;è¿&#153;ä¸&#156;è¥¿ç&#148;&#154;è&#135;³æ²¡æ³&#149;å&#156;¨å¤§å¤&#154;æ&#149;°ç&#142;°ä»£ç&#154;&#132;æµ&#143;è§&#136;å&#153;¨ä¸&#138;è¢«æ&#137;&#147;å¼&#128;</figcaption></figure><p>å&#134;&#141;å&#144;&#142;æ&#157;¥ï¼&#140;Unityæ&#144;&#158;äº&#134;ä¸ªWebGLæ¨¡å¼&#143;ï¼&#140;è¿&#153;ç&#142;©æ&#132;&#143;æ&#136;&#145;ä»¬è&#135;³ä»&#138;ä»&#141;ç&#132;¶è&#131;½ç&#156;&#139;å&#136;°ã&#128;&#130;</p>
+
+
+
+<figure class="wp-block-image"><amp-img src="https://static.yomunchan.moe/wp-content/uploads/2019/06/image-11.png" alt="" class="wp-image-348 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height amp-wp-enforced-sizes" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-11.png 992w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-11-150x131.png 150w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-11-300x262.png 300w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-11-768x670.png 768w" object-fit="contain" width="600" height="400" layout="intrinsic"><noscript><img src="https://static.yomunchan.moe/wp-content/uploads/2019/06/image-11.png" alt="" class="wp-image-348 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height" sizes="(max-width: 992px) 100vw, 992px" width="600" height="400"></noscript></amp-img><figcaption>webglç&#154;&#132;unityåº&#148;ç&#148;¨ä¼&#154;å¸¸è§&#129;è¿&#153;æ ·ä¸&#128;ä¸ªå&#138; è½½é¡µé&#157;¢ï¼&#136;å&#133;¶å®&#158;ä¹&#159;æ&#152;¯å¤&#149;é&#152;³çº¢æ&#138;&#128;æ&#156;¯</figcaption></figure><p>å&#133;¶å®&#158;æ&#156;&#137;ä¸ªå¾&#136;æ&#156;&#137;è¶£ç&#154;&#132;äº&#139;ï¼&#140;æ&#156;&#128;æ&#151;©æ&#144;&#158;Unityç&#154;&#132;ä¸&#141;å°&#145;äººï¼&#140;å°±æ&#152;¯ä»&#142;Flashç&#154;&#132;actionscriptè½¬å&#136;°Unityç&#154;&#132;é­&#148;æ&#148;¹ç&#137;&#136;JavaScriptç&#154;&#132;ï¼&#140;<del>ï¼&#136;ç&#132;¶å&#144;&#142;å&#137;&#141;ä¸¤å¹´Unityå¤§å&#136;&#128;é&#131;¨å°±æ&#138;&#138;jsæ&#148;¯æ&#140;&#129;æ&#149;´ä¸ªç &#141;äº&#134;ï¼&#140;æ±&#130;è¿&#153;ç¾¤äººå¿&#131;ç&#144;&#134;é&#152;´å½±é&#157;¢ç§¯</del></p>
+
+
+
+<h4>Unity Tiny Mode (DOTS)</h4>
+
+
+
+<figure class="wp-block-image"><amp-img src="https://static.yomunchan.moe/wp-content/uploads/2019/06/image-13.png" alt="" class="wp-image-350 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height amp-wp-enforced-sizes" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-13.png 595w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-13-150x60.png 150w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-13-300x121.png 300w" object-fit="contain" width="600" height="400" layout="intrinsic"><noscript><img src="https://static.yomunchan.moe/wp-content/uploads/2019/06/image-13.png" alt="" class="wp-image-350 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height" sizes="(max-width: 595px) 100vw, 595px" width="600" height="400"></noscript></amp-img></figure><p></p>
+
+
+
+<p>å&#155; ä¸ºUnityå®¶æ&#150;°æ&#144;&#158;å&#135;ºæ&#157;¥ç&#154;&#132;ç&#154;&#132;DOTSä¸&#128;å¥&#151;å&#146;&#140;å½&#147;å&#137;&#141;ç&#154;&#132;Unityæ¯&#148;èµ·æ&#157;¥å®&#158;å&#156;¨æ&#152;¯é&#157;¢ç&#155;®å&#133;¨é&#157;&#158;ï¼&#140;æ&#136;&#145;è¿&#152;æ&#152;¯ä¹ æ&#131;¯äº&#142;æ&#138;&#138;å®&#131;å½&#147;æ&#136;&#144;æ&#152;¯ä¸¤ç§&#141;ä¸&#141;å&#144;&#140;ç&#154;&#132;ä¸&#156;è¥¿æ&#157;¥è¯´ã&#128;&#130;</p>
+
+
+
+<p>Unity Tiny Modeæ&#152;¯å&#159;ºäº&#142;Unityå®¶æ&#150;°æ&#144;&#158;å&#135;ºæ&#157;¥ç&#154;&#132;DOTSæ&#138;&#128;æ&#156;¯ç&#154;&#132;H5å¼&#149;æ&#147;&#142;ï¼&#140;<del>ï¼&#136;è¦&#129;æ&#152;¯é&#157;&#158;è¦&#129;é&#151;®å&#146;&#140;ç&#142;°å&#156;¨ç&#154;&#132;Unityæ&#156;&#137;å&#149;¥å&#133;³ç³»ç&#154;&#132;è¯&#157;ï¼&#140;å&#143;ªè&#131;½è¯´é&#153;¤äº&#134;å&#133;±ç&#148;¨äº&#134;ä¸&#128;å¥&#151;ç¼&#150;è¾&#145;å&#153;¨ï¼&#140;å&#137;©ä¸&#139;ç&#154;&#132;å&#159;ºæ&#156;¬å°±æ&#152;¯é&#155;·é&#148;&#139;å&#146;&#140;é&#155;·å³°å¡&#148;ç&#154;&#132;å&#133;³ç³»ï¼&#140;å&#141;¡å·´æ&#150;¯å&#159;ºå&#146;&#140;å·´å&#159;ºæ&#150;¯å&#157;¦ç&#154;&#132;å&#133;³ç³»ï¼&#137;</del></p>
+
+
+
+<p>Unity Tiny Modeå&#159;ºäº&#142;ECSè®¾è®¡æ¡&#134;æ&#158;¶ï¼&#140;ä½¿ç&#148;¨TypeScript æ&#136;&#150;C# ä½&#156;ä¸ºå¼&#128;å&#143;&#145;è¯­è¨&#128;ï¼&#140;å&#136;¶ä½&#156;ç&#154;&#132;å¤&#154;åª&#146;ä½&#147;å&#134;&#133;å®¹å&#143;¯ç&#155;´æ&#142;¥è¾&#147;å&#135;ºä¸ºHTML/ CSS / WebAssemblyç&#154;&#132;æµ&#143;è§&#136;å&#153;¨å¤&#154;åª&#146;ä½&#147;æ ¼å¼&#143;ï¼&#140;ç&#142;°å&#156;¨å¸¸è§&#129;ç&#154;&#132;ç½&#145;é¡µå°&#143;æ¸¸æ&#136;&#143;ã&#128;&#129;å°&#143;ç¨&#139;åº&#143;ä»&#128;ä¹&#136;ç&#154;&#132;ï¼&#140;é&#131;½æ&#152;¯å&#143;¯ä»¥ç&#148;¨Tiny Modeå&#136;¶ä½&#156;ç&#154;&#132;ã&#128;&#130;</p>
+
+
+
+<h4>LayaAir (LayaBox)</h4>
+
+
+
+<figure class="wp-block-image"><amp-img src="https://static.yomunchan.moe/wp-content/uploads/2019/06/image-14.png" alt="" class="wp-image-352 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height amp-wp-enforced-sizes" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-14.png 858w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-14-150x115.png 150w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-14-300x230.png 300w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-14-768x588.png 768w" object-fit="contain" width="600" height="400" layout="intrinsic"><noscript><img src="https://static.yomunchan.moe/wp-content/uploads/2019/06/image-14.png" alt="" class="wp-image-352 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height" sizes="(max-width: 858px) 100vw, 858px" width="600" height="400"></noscript></amp-img></figure><p>Layaæ&#152;¯ä¼´é&#154;&#143;ç&#157;&#128;ç§»å&#138;¨ç«¯H5ç&#129;«èµ·æ&#157;¥ç&#154;&#132;ã&#128;&#129;ä¸»è¦&#129;é&#146;&#136;å¯¹HTML5ç&#154;&#132;å¤&#154;åª&#146;ä½&#147;å¼&#128;å&#143;&#145;å¼&#149;æ&#147;&#142;ï¼&#136;æ¡&#134;æ&#158;¶ï¼&#137;ä»¥å&#143;&#138;ä¸&#128;ç³»å&#136;&#151;å·¥å&#133;·ã&#128;&#130;è&#128;&#140;ç&#155;¸å¯¹äº&#142;Flashæ&#157;¥è¯´ï¼&#140;Layaå&#144;&#140;æ ·æ&#148;¯æ&#140;&#129;ä½¿ç&#148;¨actionscriptæ&#157;¥ç¼&#150;å&#134;&#153;é&#128;»è¾&#145;ï¼&#136;å½&#147;ç&#132;¶è¿&#152;æ&#148;¯æ&#140;&#129;jså&#146;&#140;tsï¼&#137;</p>
+
+
+
+<h4>cocosï¼&#154; é&#130;£æ&#136;&#145;å&#145;¢ï¼&#159;</h4>
+
+
+
+<h3 id="mce_13">äº&#140;ç»´å&#138;¨ç&#148;»é¢&#134;å&#159;&#159; (adobe animate)</h3>
+
+
+
+<h4>Retas </h4>
+
+
+
+<p>å&#143;¯è&#131;½æ&#142;¥è§¦å­¦è¿&#135;å¤&#154;åª&#146;ä½&#147;ä¸&#147;ä¸&#154;ç&#154;&#132;å&#144;&#140;å­¦ï¼&#140;å­¦æ ¡æ&#149;&#153;ç&#154;&#132;é&#131;½æ&#152;¯Flashå&#138;¨ç&#148;»ï¼&#140;è¿&#153;ä¸ªadobe animateï¼&#140;å&#133;¶å®&#158;ä¹&#159;å°±æ&#152;¯flashå&#144;&#142;æ&#157;¥æ&#141;¢ä¸ªé©¬ç&#148;²ã&#128;&#130;animateå&#146;&#140;flashï¼&#140;å&#156;¨æ¬§ç¾&#142;å&#138;¨ç&#148;»ä¸­æ&#140;ºå¸¸è§&#129;ï¼&#140;å&#144;&#140;æ&#151;¶ä¹&#159;æ&#152;¯å&#132;¿ç«¥ç&#148;µè§&#134;å&#138;¨ç&#148;»ç&#154;&#132;å¸¸å®¢ï¼&#140;æ&#141;®è¯´è¶&#133;å¨&#129;è&#147;&#157;ç&#140;«ä¹&#159;æ&#152;¯animateå&#129;&#154;ç&#154;&#132;</p>
+
+
+
+<p>é&#130;£Retaså&#143;&#136;æ&#152;¯ä¸ªå&#149;¥å&#145;¢ï¼&#140;Retasæ&#152;¯æ&#157;¥è&#135;ªCELSYSæ ªå¼&#143;ä¼&#154;ç¤¾ï¼&#136;ps: å&#133;¶å®&#158;CSPä¹&#159;æ&#152;¯è¿&#153;ä¸ªå&#133;¬å&#143;¸ç&#154;&#132;ï¼&#137;ç&#154;&#132;å&#138;¨ç&#148;»å&#136;¶ä½&#156;è½¯ä»¶ï¼&#140;å&#156;¨å&#155;½å&#134;&#133;é&#153;¤äº&#134;â&#128;&#156;å&#156;&#136;å&#134;&#133;äººå£«â&#128;&#157;å¾&#136;å°&#145;æ&#156;&#137;äººå&#144;¬è¯´è¿&#135;ï¼&#140;è&#128;&#140;å&#156;¨æ&#151;¥æ&#156;¬å&#135; ä¹&#142;æ&#152;¯è¡&#140;ä¸&#154;å¿&#133;å¤&#135;ï¼&#140;ä½ ç&#155;®å&#137;&#141;ç&#156;&#139;ç&#154;&#132;å&#144;&#132;ç§&#141;ç&#149;ªå¤§é&#131;¨ä»½é&#131;½æ&#152;¯ç&#148;¨è¿&#153;ç&#142;©æ&#132;&#143;å&#129;&#154;ç&#154;&#132;ã&#128;&#130;</p>
+
+
+
+<p>ï¼&#136;é&#130;£ä¸ºå&#149;¥æ&#136;&#145;ä¼&#154;ç&#159;¥é&#129;&#147;è¿&#153;ç&#142;©æ&#132;&#143;å&#145;¢ï¼&#140;å&#155; ä¸ºæ&#136;&#145;ä¹&#139;å&#137;&#141;æ&#137;&#147;ç®&#151;ç»&#153;è&#135;ªå·±ç&#139;¬ç«&#139;æ¸¸æ&#136;&#143;å&#138; ä¸ªäº&#140;ç»´å&#138;¨ç&#148;»ç&#154;&#132;ç&#137;&#135;å¤´å&#146;&#140;è¿&#135;å&#156;ºæ&#157;¥ç&#157;&#128;ï¼&#140;ç&#132;¶å&#144;&#142;å&#142;»äº&#134;è§£äº&#134;ä¸&#128;ä¸&#139;ï¼&#140;ç&#132;¶å&#144;&#142;å&#143;&#145;ç&#142;°è¿&#153;ç&#142;©æ&#132;&#143;å¤ªxxä¸&#147;ä¸&#154;äº&#134;ï¼&#140;æ ¹æ&#156;¬ç&#142;©ä¸&#141;æ&#135;&#130;â&#128;¦â&#128;¦</p>
+
+
+
+<h4 id="mce_26">Clip Studio Paintï¼&#136;CSPï¼&#137;</h4>
+
+
+
+<p><del>(æ&#128;&#142;ä¹&#136;å&#143;&#136;æ&#152;¯ä½ )Â </del> å°±å&#131;&#143;æ&#136;&#145;ä»¬ä¹&#139;å&#137;&#141;ä»&#139;ç»&#141;ç&#154;&#132;ï¼&#140;CSPæ&#152;¯ä¸&#128;ä¸ªç»&#152;ç&#148;»è½¯ä»¶ï¼&#140;é&#130;£å®&#131;ä¸ºå&#149;¥å&#143;&#136;è&#131;½å&#129;&#154;äº&#140;ç»´å&#138;¨ç&#148;»å&#152;&#158;ï¼&#140;å&#146;±æ&#157;¥ç&#156;&#139;ç&#156;&#139;ä¸­æ&#150;&#135;å®&#152;ç½&#145;ç&#154;&#132;ä»&#139;ç»&#141;ï¼&#154;</p>
+
+
+
+<figure class="wp-block-image"><amp-img src="https://static.yomunchan.moe/wp-content/uploads/2019/06/image-15-1024x722.png" alt="" class="wp-image-353 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height amp-wp-enforced-sizes" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-15-1024x722.png 1024w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-15-150x106.png 150w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-15-300x211.png 300w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-15-768x541.png 768w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-15.png 1199w" object-fit="contain" width="600" height="400" layout="intrinsic"><noscript><img src="https://static.yomunchan.moe/wp-content/uploads/2019/06/image-15-1024x722.png" alt="" class="wp-image-353 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height" sizes="(max-width: 1024px) 100vw, 1024px" width="600" height="400"></noscript></amp-img></figure><p>å&#138;¨ç&#148;»è¿&#153;ç&#142;©æ&#132;&#143;å&#152;&#155;ï¼&#140;æ&#156;¬è´¨ä¸&#138;å°±æ&#152;¯ä¸&#128;å &#134;è¿&#158;ç»­ç&#154;&#132;é&#157;&#153;æ&#128;&#129;å&#155;¾ç&#137;&#135;ã&#128;&#130;æ&#156;&#137;å&#129;&#154;è¿&#135;äº&#140;ç»´å&#138;¨ç&#148;»æ&#136;&#150;è&#128;&#133;å¤&#150;å&#140;&#133;ç»&#153;å&#136;«äººå&#129;&#154;è¿&#135;äº&#140;ç»´å&#138;¨ç&#148;»ç&#154;&#132;å&#144;&#140;å­¦åº&#148;è¯¥ç&#159;¥é&#129;&#147;ï¼&#140;å&#138;¨ç&#148;»è¿&#153;ç&#142;©æ&#132;&#143;é&#131;½æ&#152;¯æ&#140;&#137;ç§&#146;ç®&#151;é&#146;±ç&#154;&#132;ï¼&#140;ä¸&#128;ä¸ªæ¸¸æ&#136;&#143;ç&#137;&#135;å¤´å&#138;¨è¾&#132;å&#135; å&#141;&#129;ä¸&#135;ä¸&#138;ç&#153;¾ä¸&#135;ï¼&#140;æ&#138;&#138;å£°ä¼&#152;ç&#154;&#132;è´¹ç&#148;¨å&#136;¨æ&#142;&#137;ä¹&#139;å&#144;&#142;çº¯å&#138;¨ç&#148;»ä¹&#159;å¾&#151;å¥½å&#135; å&#141;&#129;ä¸&#135;ã&#128;&#130;å®&#131;è´µå°±è´µå&#156;¨è¿&#153;å&#132;¿äº&#134;ï¼&#140;ä½ å¾&#151;ä¸&#128;å¸§ä¸&#128;å¸§ç&#154;&#132;ç&#148;»è¿&#153;ç&#142;©æ&#132;&#143;ã&#128;&#130;</p>
+
+
+
+<p>â&#128;&#156;è¿&#153;å&#146;&#140;æ&#136;&#145;è®¤è¯&#134;ç&#154;&#132;äº&#140;ç»´å&#138;¨ç&#148;»ä¸&#141;ä¸&#128;æ ·å&#149;&#138;ï¼&#140;æ&#136;&#145;å­¦flashç&#154;&#132;æ&#151;¶å&#128;&#153;ï¼&#140;å°±å&#129;&#154;ä¸ªç&#159;¢é&#135;&#143;å&#133;³é&#148;®å¸§å°±å¥½äº&#134;å&#149;&#138;ï¼&#140;å&#137;©ä¸&#139;é&#131;½æ&#152;¯flashè&#135;ªå·±è¡¥å¸§ç&#154;&#132;å&#145;&#128;ã&#128;&#130;â&#128;&#157; å&#151;¯ï¼&#140;è¿&#153;å°±æ&#152;¯ä¸ºä»&#128;ä¹&#136;å¾&#136;å¤&#154;å¤&#150;å&#140;&#133;å&#133;¬å&#143;¸æ&#144;&#158;ç&#154;&#132;flashå&#138;¨ç&#148;»ç&#156;&#139;ç&#157;&#128;å°±ç&#137;¹å&#136;«è ¢ç&#154;&#132;ä¸»è¦&#129;å&#142;&#159;å&#155; ä¹&#139;ä¸&#128;ã&#128;&#130;</p>
+
+
+
+<p>â&#128;&#156;å&#143;¯æ&#152;¯æ&#136;&#145;å°±æ&#152;¯ä¸&#141;æ&#131;³é&#128;&#144;å¸§ç&#148;»å&#146;&#139;å&#138;&#158;â&#128;&#157;ï¼&#140;å&#133;¶å®&#158;æ&#150;¹æ³&#149;ä¹&#159;å¤&#154;äº&#134;å&#142;»äº&#134;ã&#128;&#130;æ¯&#148;å¦&#130;ä¸&#139;é&#157;¢è¿&#153;ä¸ª</p>
+
+
+
+<h4>Unity + Spine</h4>
+
+
+
+<p>å¦&#130;æ&#158;&#156;æ&#136;&#145;ä»¬å&#143;ªæ&#131;³è¦&#129;é&#130;£ç§&#141;å¾&#136;è ¢ç&#154;&#132;ä½&#142;æ&#136;&#144;æ&#156;¬äº&#140;ç»´å&#138;¨ç&#148;»ç&#154;&#132;è¯&#157;ï¼&#140;Unity + Spineå&#128;&#146;æ&#152;¯ç¡®å®&#158;æ&#152;¯ä¸ªå¥½é&#128;&#137;æ&#139;©ã&#128;&#130;æ&#156;&#128;ç®&#128;å&#141;&#149;ç&#154;&#132;æ&#150;¹æ³&#149;æ&#152;¯å&#133;&#136;ç&#148;¨Spineå®&#140;æ&#136;&#144;å&#159;ºç¡&#128;ç&#154;&#132;ä¸&#156;è¥¿ï¼&#140;æ¯&#148;å¦&#130;Kå&#138;¨ä½&#156;ã&#128;&#129;è¡¨æ&#131;&#133;ä»&#128;ä¹&#136;ç&#154;&#132;ï¼&#140;ç&#132;¶å&#144;&#142;å&#137;©ä¸&#139;ç&#154;&#132;äº¤ç»&#153;Unity 2017æ&#150;°å&#135;ºç&#154;&#132;å¤§å®&#157;è´&#157;ï¼&#154;Unity Timelineã&#128;&#130;</p>
+
+
+
+<p>å½&#147;ç&#132;¶ï¼&#140;Timelineå&#142;&#159;ç&#148;&#159;å&#143;ªæ&#148;¯æ&#140;&#129;Unityè&#135;ªå·±ç&#154;&#132;å&#138;¨ç&#148;»æ ¼å¼&#143;ï¼&#140;æ&#152;¯ä¸&#141;æ&#148;¯æ&#140;&#129;Spineç&#154;&#132;ï¼&#140;ä½&#134;æ&#152;¯ä¹&#159;ä¸&#141;å¤&#141;æ&#157;&#130;ï¼&#140;è&#135;ªå·±æ&#137;©å±&#149;ä¸&#128;ä¸&#139;å°±å¥½äº&#134;ï¼&#140;å&#134;&#153;ä¸&#128;ä¸ªç»§æ&#137;¿è&#135;ª PlayableAssetç&#154;&#132;ç±»ï¼&#140;ç&#148;¨äº&#142;å¤&#132;ç&#144;&#134;Spineç&#154;&#132;æ&#146;­æ&#148;¾ã&#128;&#130;</p>
+
+
+
+<figure class="wp-block-image"><amp-img src="https://static.yomunchan.moe/wp-content/uploads/2019/06/image-17-1024x619.png" alt="" class="wp-image-355 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height amp-wp-enforced-sizes" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-17-1024x619.png 1024w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-17-150x91.png 150w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-17-300x181.png 300w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/06/image-17-768x465.png 768w" object-fit="contain" width="600" height="400" layout="intrinsic"><noscript><img src="https://static.yomunchan.moe/wp-content/uploads/2019/06/image-17-1024x619.png" alt="" class="wp-image-355 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height" sizes="(max-width: 1024px) 100vw, 1024px" width="600" height="400"></noscript></amp-img><figcaption>å&#155;¾ç&#137;&#135;ä¸&#142;å®&#158;ç&#137;©æ&#151; å&#133;³.jpg</figcaption></figure><p> </p>
+
+
+
+<p>å¾&#133;ç»­â&#128;¦â&#128;¦</p>
+
+
+
+<p></p>
+	</div>
+
+	<footer class="amp-wp-article-footer"><div class="amp-wp-meta amp-wp-tax-category">
+		Categories: <a href="https://static.yomunchan.moe/corala/emmm" rel="category tag">æ&#150;&#135;å­&#151;</a>, <a href="https://static.yomunchan.moe/corala/emmm/balabala" rel="category tag">ç&#158;&#142;æ&#138;&#152;è&#133;¾</a>	</div>
+
+		<div class="amp-wp-meta amp-wp-comments-link">
+		<a href="https://static.yomunchan.moe/archives/324#respond">
+			Leave a Comment		</a>
+	</div>
+	</footer></article><footer class="amp-wp-footer"><div>
+		<h2>æ&#156;&#137;æ&#156;¨é&#133;±ç&#154;&#132;å°&#143;å±&#139;</h2>
+		<a href="#top" class="back-to-top">Back to top</a>
+	</div>
+</footer></body></html>
