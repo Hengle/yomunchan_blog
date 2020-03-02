@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html amp lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"><title>Orleans æ&#156;&#128;ä½³å®&#158;è·µ – æ&#156;&#137;æ&#156;¨é&#133;±ç&#154;&#132;å°&#143;å±&#139;</title><script type="text/javascript" src="https://cdn.ampproject.org/v0.js" async></script><style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style></head><body><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>	<script type="application/ld+json">{"@context":"http:\/\/schema.org","publisher":{"@type":"Organization","name":"æ&#156;&#137;æ&#156;¨é&#133;±ç&#154;&#132;å°&#143;å±&#139;","logo":"https:\/\/yomunchan-blog.oss-cn-hongkong.aliyuncs.com\/wp-content\/uploads\/2019\/10\/cropped-yomunchan_icon.png"},"@type":"BlogPosting","mainEntityOfPage":"https:\/\/static.yomunchan.moe\/archives\/469","headline":"Orleans æ&#156;&#128;ä½³å®&#158;è·µ","datePublished":"2020-01-02T16:48:49+00:00","dateModified":"2020-01-02T16:48:49+00:00","author":{"@type":"Person","name":"yomunsam"}}</script><style amp-custom>
+		/* Generic WP styling */
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+
+.aligncenter {
+	display: block;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.amp-wp-enforced-sizes {
+	/** Our sizes fallback is 100vw, and we have a padding on the container; the max-width here prevents the element from overflowing. **/
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+
+/*
+ * Prevent cases of amp-img converted from img to appear with stretching by using object-fit to scale.
+ * See <https://github.com/ampproject/amphtml/issues/21371#issuecomment-475443219>.
+ * Also use object-fit:contain in worst case scenario when we can't figure out dimensions for an image.
+ * Additionally, in side of \AMP_Img_Sanitizer::determine_dimensions() it could $amp_img->setAttribute( 'object-fit', 'contain' )
+ * so that the following rules wouldn't be needed.
+ */
+amp-img.amp-wp-enforced-sizes[layout="intrinsic"] > img,
+amp-anim.amp-wp-enforced-sizes[layout="intrinsic"] > img {
+	object-fit: contain;
+}
+
+amp-fit-text blockquote,
+amp-fit-text h1,
+amp-fit-text h2,
+amp-fit-text h3,
+amp-fit-text h4,
+amp-fit-text h5,
+amp-fit-text h6 {
+	font-size: inherit;
+}
+
+/**
+ * Override a style rule in Twenty Sixteen and Twenty Seventeen.
+ * It set display:none for audio elements.
+ * This selector is the same, though it adds body and uses amp-audio instead of audio.
+ */
+body amp-audio:not([controls]) {
+	display: inline-block;
+	height: auto;
+}
+
+/*
+ * Style the default template messages for submit-success, submit-error, and submitting. These elements are inserted
+ * by the form sanitizer when a POST form lacks the action-xhr attribute.
+ */
+.amp-wp-default-form-message > p {
+	margin: 1em 0;
+	padding: 0.5em;
+}
+
+.amp-wp-default-form-message[submitting] > p,
+.amp-wp-default-form-message[submit-success] > p.amp-wp-form-redirecting {
+	font-style: italic;
+}
+
+.amp-wp-default-form-message[submit-success] > p:not(.amp-wp-form-redirecting) {
+	border: solid 1px #008000;
+	background-color: #90ee90;
+	color: #000;
+}
+
+.amp-wp-default-form-message[submit-error] > p {
+	border: solid 1px #f00;
+	background-color: #ffb6c1;
+	color: #000;
+}
+
+/* Prevent showing empty success message in the case of an AMP-Redirect-To response header. */
+.amp-wp-default-form-message[submit-success] > p:empty {
+	display: none;
+}
+
+/* Template Styles */
+
+.amp-wp-content,
+.amp-wp-title-bar div {
+		margin: 0 auto;
+	max-width: 600px;
+	}
+
+html {
+	background: #0a89c0;
+}
+
+body {
+	background: #0a0a0a;
+	color: #dedede;
+	font-family: Georgia, 'Times New Roman', Times, Serif;
+	font-weight: 300;
+	line-height: 1.75em;
+}
+
+p,
+ol,
+ul,
+figure {
+	margin: 0 0 1em;
+	padding: 0;
+}
+
+a,
+a:visited {
+	color: #0a89c0;
+}
+
+a:hover,
+a:active,
+a:focus {
+	color: #dedede;
+}
+
+/* Quotes */
+
+blockquote {
+	color: #dedede;
+	background: rgba(127,127,127,.125);
+	border-left: 2px solid #0a89c0;
+	margin: 8px 0 24px 0;
+	padding: 16px;
+}
+
+blockquote p:last-child {
+	margin-bottom: 0;
+}
+
+/* UI Fonts */
+
+.amp-wp-meta,
+.amp-wp-header div,
+.amp-wp-title,
+.wp-caption-text,
+.amp-wp-tax-category,
+.amp-wp-tax-tag,
+.amp-wp-comments-link,
+.amp-wp-footer p,
+.back-to-top {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+}
+
+/* Header */
+
+.amp-wp-header {
+	background-color: #0a89c0;
+}
+
+.amp-wp-header div {
+	color: #fff;
+	font-size: 1em;
+	font-weight: 400;
+	margin: 0 auto;
+	max-width: calc(840px - 32px);
+	padding: .875em 16px;
+	position: relative;
+}
+
+.amp-wp-header a {
+	color: #fff;
+	text-decoration: none;
+}
+
+
+.amp-wp-header .amp-wp-site-icon {
+	/** site icon is 32px **/
+	background-color: #fff;
+	border: 1px solid #fff;
+	border-radius: 50%;
+	position: absolute;
+	right: 18px;
+	top: 10px;
+}
+
+/* Article */
+
+.amp-wp-article {
+	color: #dedede;
+	font-weight: 400;
+	margin: 1.5em auto;
+	max-width: 840px;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+}
+
+/* Article Header */
+
+.amp-wp-article-header {
+	align-items: center;
+	align-content: stretch;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 1.5em 16px 0;
+}
+
+.amp-wp-title {
+	color: #dedede;
+	display: block;
+	flex: 1 0 100%;
+	font-weight: 900;
+	margin: 0 0 .625em;
+	width: 100%;
+}
+
+/* Article Meta */
+
+.amp-wp-meta {
+	color: #b1b1b1;
+	display: inline-block;
+	flex: 2 1 50%;
+	font-size: .875em;
+	line-height: 1.5em;
+	margin: 0 0 1.5em;
+	padding: 0;
+}
+
+.amp-wp-article-header .amp-wp-meta:last-of-type {
+	text-align: right;
+}
+
+.amp-wp-article-header .amp-wp-meta:first-of-type {
+	text-align: left;
+}
+
+.amp-wp-byline amp-img,
+.amp-wp-byline .amp-wp-author {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.amp-wp-byline amp-img {
+	border: 1px solid #0a89c0;
+	border-radius: 50%;
+	position: relative;
+	margin-right: 6px;
+}
+
+.amp-wp-posted-on {
+	text-align: right;
+}
+
+/* Featured image */
+
+.amp-wp-article-featured-image {
+	margin: 0 0 1em;
+}
+.amp-wp-article-featured-image amp-img {
+	margin: 0 auto;
+}
+.amp-wp-article-featured-image.wp-caption .wp-caption-text {
+	margin: 0 18px;
+}
+
+/* Article Content */
+
+.amp-wp-article-content {
+	margin: 0 16px;
+}
+
+.amp-wp-article-content ul,
+.amp-wp-article-content ol {
+	margin-left: 1em;
+}
+
+.amp-wp-article-content .wp-caption {
+	max-width: 100%;
+}
+
+.amp-wp-article-content amp-img {
+	margin: 0 auto;
+}
+
+.amp-wp-article-content amp-img.alignright {
+	margin: 0 0 1em 16px;
+}
+
+.amp-wp-article-content amp-img.alignleft {
+	margin: 0 16px 1em 0;
+}
+
+/* Captions */
+
+.wp-caption {
+	padding: 0;
+}
+
+.wp-caption.alignleft {
+	margin-right: 16px;
+}
+
+.wp-caption.alignright {
+	margin-left: 16px;
+}
+
+.wp-caption .wp-caption-text {
+	border-bottom: 1px solid #707070;
+	color: #b1b1b1;
+	font-size: .875em;
+	line-height: 1.5em;
+	margin: 0;
+	padding: .66em 10px .75em;
+}
+
+/* AMP Media */
+
+.alignwide,
+.alignfull {
+	clear: both;
+}
+
+amp-carousel {
+	background: #707070;
+	margin: 0 -16px 1.5em;
+}
+amp-iframe,
+amp-youtube,
+amp-instagram,
+amp-vine {
+	background: #707070;
+	margin: 0 -16px 1.5em;
+}
+
+.amp-wp-article-content amp-carousel amp-img {
+	border: none;
+}
+
+amp-carousel > amp-img > img {
+	object-fit: contain;
+}
+
+.amp-wp-iframe-placeholder {
+	background: #707070 url( https://static.yomunchan.moe/wp-content/plugins/amp/assets/images/placeholder-icon.png ) no-repeat center 40%;
+	background-size: 48px 48px;
+	min-height: 48px;
+}
+
+/* Article Footer Meta */
+
+.amp-wp-article-footer .amp-wp-meta {
+	display: block;
+}
+
+.amp-wp-tax-category,
+.amp-wp-tax-tag {
+	color: #b1b1b1;
+	font-size: .875em;
+	line-height: 1.5em;
+	margin: 1.5em 16px;
+}
+
+.amp-wp-comments-link {
+	color: #b1b1b1;
+	font-size: .875em;
+	line-height: 1.5em;
+	text-align: center;
+	margin: 2.25em 0 1.5em;
+}
+
+.amp-wp-comments-link a {
+	border-style: solid;
+	border-color: #707070;
+	border-width: 1px 1px 2px;
+	border-radius: 4px;
+	background-color: transparent;
+	color: #0a89c0;
+	cursor: pointer;
+	display: block;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 18px;
+	margin: 0 auto;
+	max-width: 200px;
+	padding: 11px 16px;
+	text-decoration: none;
+	width: 50%;
+	-webkit-transition: background-color 0.2s ease;
+			transition: background-color 0.2s ease;
+}
+
+/* AMP Footer */
+
+.amp-wp-footer {
+	border-top: 1px solid #707070;
+	margin: calc(1.5em - 1px) 0 0;
+}
+
+.amp-wp-footer div {
+	margin: 0 auto;
+	max-width: calc(840px - 32px);
+	padding: 1.25em 16px 1.25em;
+	position: relative;
+}
+
+.amp-wp-footer h2 {
+	font-size: 1em;
+	line-height: 1.375em;
+	margin: 0 0 .5em;
+}
+
+.amp-wp-footer p {
+	color: #b1b1b1;
+	font-size: .8em;
+	line-height: 1.5em;
+	margin: 0 85px 0 0;
+}
+
+.amp-wp-footer a {
+	text-decoration: none;
+}
+
+.back-to-top {
+	bottom: 1.275em;
+	font-size: .8em;
+	font-weight: 600;
+	line-height: 2em;
+	position: absolute;
+	right: 16px;
+}
+			</style><header id="top" class="amp-wp-header"><div>
+		<a href="https://static.yomunchan.moe/">
+										<amp-img src="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/10/cropped-yomunchan_icon-32x32.png" width="32" height="32" class="amp-wp-site-icon"></amp-img><span class="amp-site-title">
+				æ&#156;&#137;æ&#156;¨é&#133;±ç&#154;&#132;å°&#143;å±&#139;			</span>
+		</a>
+
+					</div>
+</header><article class="amp-wp-article"><header class="amp-wp-article-header"><h1 class="amp-wp-title">Orleans æ&#156;&#128;ä½³å®&#158;è·µ</h1>
+			<div class="amp-wp-meta amp-wp-byline">
+					<amp-img src="https://secure.gravatar.com/avatar/45019eb1dd8b43e939d42804cb2e3269?s=24&d=mm&r=g" alt="yomunsam" width="24" height="24" layout="fixed"></amp-img><span class="amp-wp-author author vcard">yomunsam</span>
+	</div>
+<div class="amp-wp-meta amp-wp-posted-on">
+	<time datetime="2020-01-03T00:48:49+00:00">
+		2æ&#156;&#136; ago	</time></div>
+	</header><div class="amp-wp-article-content">
+		
+<p>å&#134;&#133;å®¹æ&#157;¥è&#135;ªäº&#142;å¾®è½¯ç&#154;&#132;å®&#152;æ&#150;¹æ&#150;&#135;æ¡£ <a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/Orleans20Best20Practices.pdf">https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/Orleans20Best20Practices.pdf</a></p>
+
+
+
+<p>ï¼&#136;å&#143;¯è&#131;½æ&#156;&#137;ç&#130;¹æ&#151;§ï¼&#140;æ&#152;¯ä¸&#137;å&#155;&#155;å¹´å&#137;&#141;ç&#154;&#132;èµ&#132;æ&#150;&#153;äº&#134;ï¼&#137;ï¼&#136;ä½&#134;æ&#152;¯ä¸­æ&#150;&#135;é¢&#134;å&#159;&#159;æ²¡æ&#137;¾å&#136;°ï¼&#140;æ&#136;&#145;å°±ç»&#153;æ&#144;¬è¿&#135;æ&#157;¥äº&#134;ï¼&#137;</p>
+
+
+
+
+
+
+
+<h2>Scenarios & General Fit</h2>
+
+
+
+<h3>ä»&#128;ä¹&#136;æ&#151;¶å&#128;&#153;æ&#136;&#145;ä»¬é&#156;&#128;è¦&#129;è¯&#149;è¯&#149;ç&#156;&#139;Orleans</h3>
+
+
+
+<ul><li>æ&#139;¥æ&#156;&#137;å¤§é&#135;&#143;ï¼&#136;æ&#136;&#144;ç&#153;¾ä¸&#138;å&#141;&#131;ä¸&#135;ç&#154;&#132;ï¼&#137;ä½&#142;è&#128;¦å&#144;&#136;ç&#154;&#132;å®&#158;ä½&#147;</li><li>å®&#158;ä½&#147;è¶³å¤&#159;å°&#143;å&#136;°å&#143;¯ä»¥å&#156;¨å&#141;&#149;ä¸&#128;çº¿ç¨&#139;ä¸&#138;å®&#140;æ&#136;&#144;å·¥ä½&#156;</li><li>ä»¥â&#128;&#156;è¯·æ±&#130;â&#128;&#147;å&#147;&#141;åº&#148;â&#128;&#157;æ&#136;&#150;â&#128;&#156;å&#144;¯å&#138;¨â&#128;&#147;ç&#155;&#145;æµ&#139;â&#128;&#147;å®&#140;æ&#136;&#144;â&#128;&#157;ç&#154;&#132;äº¤äº&#146;æ&#150;¹å¼&#143;å·¥ä½&#156;ç&#154;&#132;</li><li>é&#156;&#128;è¦&#129;æ&#136;&#150;å&#143;¯è&#131;½é&#156;&#128;è¦&#129;å&#156;¨ä¸&#141;æ­¢ä¸&#128;å&#143;°æ&#156;&#141;å&#138;¡å&#153;¨ä¸&#138;å&#141;&#143;å&#144;&#140;å·¥ä½&#156;ï¼&#136;é&#155;&#134;ç¾¤ï¼&#137;</li><li>ä¸&#128;æ¬¡å&#143;ªé&#156;&#128;è¦&#129;å&#156;¨å&#135; ä¸ªå®&#158;ä½&#147;ä¹&#139;é&#151;´è¿&#155;è¡&#140;å&#141;&#143;è°&#131;å·¥ä½&#156;ï¼&#140;è&#128;&#140;ä¸&#141;é&#156;&#128;è¦&#129;æ&#149;´ä½&#147;ç&#154;&#132;å&#141;&#143;è°&#131;å·¥ä½&#156;ã&#128;&#130;</li><li>å&#156;¨ä¸&#141;å&#144;&#140;äº&#139;ä»¶ä½¿ç&#148;¨ä¸&#141;å&#144;&#140;ç&#154;&#132;å®&#158;ä½&#147;ã&#128;&#130;ï¼&#136;è§&#134;å&#133;·ä½&#147;æ&#131;&#133;å&#134;µï¼&#137;</li></ul><h3>ä¸&#141;é&#128;&#130;ç&#148;¨äº&#142;ä»¥ä¸&#139;æ&#131;&#133;å&#134;µ</h3>
+
+
+
+<ul><li>å®&#158;ä½&#147;é&#156;&#128;è¦&#129;ç&#155;´æ&#142;¥å&#142;»è®¿é&#151;®å½¼æ­¤ç&#154;&#132;å&#134;&#133;å­&#152;ã&#128;&#130;</li><li>æ&#149;°é&#135;&#143;å°&#145;ï¼&#140;ä½&#134;æ&#152;¯å&#141;&#149;ä½&#147;åº&#158;å¤§ç&#154;&#132;ã&#128;&#129;é&#156;&#128;è¦&#129;å&#156;¨å¤&#154;çº¿ç¨&#139;ä¸&#139;å·¥ä½&#156;ç&#154;&#132;å®&#158;ä½&#147;</li><li>é&#156;&#128;è¦&#129;æ&#149;´ä½&#147;ç&#154;&#132;å&#141;&#143;è°&#131;å&#146;&#140;ä¸&#128;è&#135;´æ&#128;§</li><li>é&#149;¿æ&#156;&#159;ä¸&#128;ç&#155;´è¿&#144;è¡&#140;ç&#154;&#132;æ&#147;&#141;ä½&#156;ã&#128;&#129;æ&#137;¹å¤&#132;ç&#144;&#134;æ&#136;&#150;SIMDï¼&#136;è§&#134;å&#133;·ä½&#147;æ&#131;&#133;å&#134;µï¼&#137;</li></ul><hr class="wp-block-separator"><h2>è®¾è®¡Grains</h2>
+
+
+
+<ul><li><strong>Actor å¹¶ä¸&#141;æ&#152;¯å¹³æ&#151;¶ç&#144;&#134;è§£ç&#154;&#132;Object , å°½ç®¡å®&#131;ä»¬é&#157;&#158;å¸¸ç&#155;¸ä¼¼ã&#128;&#130;</strong></li><li><strong>ä½&#142;è&#128;¦å&#144;&#136;ã&#128;&#129;å&#159;ºæ&#156;¬ç&#139;¬ç«&#139;</strong><ul><li>ç&#139;¬ç«&#139;äº&#142;å&#133;¶ä»&#150;ç&#154;&#132;Grainså&#142;»å°&#129;è£&#133;å&#146;&#140;ç®¡ç&#144;&#134;å®&#131;ä»¬ç&#154;&#132;ç&#138;¶æ&#128;&#129;ã&#128;&#130;</li><li>å&#143;¯ä»¥å&#141;&#149;ç&#139;¬å&#135;ºæ&#149;&#133;é&#154;&#156;ï¼&#136;è&#135;ªé&#151;­å&#143;¯ä»¥ï¼&#140;ä½&#134;ä¸&#141;è¦&#129;å½±å&#147;&#141;å&#133;¶ä»&#150;Grainsç»§ç»­å·¥ä½&#156;ï¼&#137;</li></ul></li><li><strong>é&#129;¿å&#133;&#141;Grainsä¹&#139;é&#151;´æ&#156;&#137;é¢&#145;ç¹&#129;ç&#154;&#132;äº¤æµ&#129;</strong><ul><li>æ¶&#136;æ&#129;¯ä¼ é&#128;&#146;ç&#155;¸è¾&#131;äº&#142;ç&#155;´æ&#142;¥è®¿é&#151;®å&#134;&#133;å­&#152;ç&#154;&#132;æ&#150;¹å¼&#143;ï¼&#140;æ&#128;§è&#131;½å¼&#128;é&#148;&#128;ç&#154;&#132;ä»£ä»·è¦&#129;å¤§å¾&#151;å¤&#154;</li><li>å¦&#130;æ&#158;&#156;ä¸¤ä¸ªGrainsä¹&#139;é&#151;´ä¸&#128;ç&#155;´æ&#156;&#137;é¢&#145;ç¹&#129;ç&#154;&#132;äº&#146;è°&#131;ç&#148;¨ï¼&#140;ä¹&#159;è®¸åº&#148;è¯¥è&#128;&#131;è&#153;&#145;æ&#152;¯ä¸&#141;æ&#152;¯åº&#148;è¯¥æ&#138;&#138;å®&#131;ä¸¤è®¾è®¡å&#144;&#136;å¹¶æ&#136;&#144;ä¸&#128;ä¸ªGrains</li><li>è¦&#129;è&#128;&#131;è&#153;&#145;å&#143;&#130;æ&#149;°ç&#154;&#132;å°ºå¯¸å&#146;&#140;å¤&#141;æ&#157;&#130;åº¦ï¼&#140;ä»¥å&#143;&#138;åº&#143;å&#136;&#151;å&#140;&#150;é&#151;®é¢&#152;ã&#128;&#130;<ul><li>æ&#156;&#137;æ&#151;¶å&#128;&#153;ï¼&#140;é&#135;&#141;å&#143;&#145;ä¸&#128;ä¸ªäº&#140;è¿&#155;å&#136;¶æ¶&#136;æ&#129;¯å¹¶å&#143;&#141;åº&#143;å&#136;&#151;å&#140;&#150;ä¸¤æ¬¡ç&#154;&#132;å¼&#128;é&#148;&#128;æ&#152;¯æ¯&#148;è¾&#131;å°&#143;ç&#154;&#132;ã&#128;&#130;</li></ul></li></ul></li><li><strong>é&#129;¿å&#133;&#141;Grainsç&#154;&#132;ç&#147;¶é¢&#136;</strong><ul><li>å&#141;&#149;ä¸&#128;ç&#154;&#132;è°&#131;åº¦è&#128;&#133;ã&#128;&#129;ç&#153;»è®°å¤&#132;æ&#136;&#150;ç&#155;&#145;æµ&#139;å&#153;¨</li><li>å¦&#130;æ&#158;&#156;æ&#156;&#137;å¿&#133;è¦&#129;ç&#154;&#132;è¯&#157;ï¼&#140;è¿&#155;è¡&#140;å&#136;&#134;æ®µç&#154;&#132;è&#129;&#154;å&#144;&#136;</li></ul></li></ul><hr class="wp-block-separator"><h2>å®&#158;ç&#142;°Grains â&#128;&#148;â&#128;&#148; å¼&#130;æ­¥</h2>
+
+
+
+<ul><li>ä¸&#128;å&#136;&#135;é&#131;½åº&#148;è¯¥æ&#152;¯å¼&#130;æ­¥ç&#154;&#132;ï¼&#136;TPLï¼&#137;ï¼&#140;ä¸&#141;è¦&#129;æ&#156;&#137;å µå¡&#158;çº¿ç¨&#139;ç&#154;&#132;æ&#147;&#141;ä½&#156;</li><li>æ&#156;&#128;ä½³ç&#154;&#132;å®&#158;è·µæ&#156;ºå&#136;¶æ&#152;¯ async/await</li></ul><h4>ç»&#143;å&#133;¸æ¡&#136;ä¾&#139;ï¼&#154;</h4>
+
+
+
+<p>è¿&#148;<strong>å&#155;&#158;ä¸&#128;ä¸ªå&#133;·ä½&#147;ç&#154;&#132;å&#128;¼</strong>ï¼&#154;</p>
+
+
+<p>return Task.FromResult(value);</p>
+
+
+
+<p></p>
+
+
+
+<p><strong>è¿&#148;å&#155;&#158;ä¸&#128;ä¸ªå&#144;&#140;ç±»å&#158;&#139;ç&#154;&#132;Task</strong></p>
+
+
+<p>return foo.Bar();</p>
+
+
+
+<p></p>
+
+
+
+<p><strong>await ä¸&#128;ä¸ª Taskä¹&#139;å&#144;&#142;ç»§ç»­æ&#137;§è¡&#140;ç&#130;¹ä»&#128;ä¹&#136;</strong></p>
+
+
+<p>var x = await bar.Foo();<br>
+var y = DoSomething(x);<br>
+return y;</p>
+
+
+
+<p></p>
+
+
+
+<p><strong>Fan-out</strong>: </p>
+
+
+<p>var tasks = new List();<br>
+foreach(var grain in grains)<br>
+    tasks.Add(grain.Foo());<br>
+await Task.WhenAll(tasks);<br>
+DoMore();</p>
+
+
+
+<hr class="wp-block-separator"><h2>å®&#158;ç&#142;°Grains</h2>
+
+
+
+<p><strong>ä»&#128;ä¹&#136;æ&#151;¶å&#128;&#153;ä½¿ç&#148;¨</strong><code><strong>[StatelessWorker]</strong></code></p>
+
+
+
+<ul><li>å&#138;&#159;è&#131;½æ&#147;&#141;ä½&#156;ï¼&#154; è§£ç &#129;ã&#128;&#129;è§£å&#142;&#139;ç¼©ï¼&#140;ç&#132;¶å&#144;&#142;è½¬å&#143;&#145;å¤&#132;ç&#144;&#134;</li><li>å¤&#154;æ¬¡æ¿&#128;æ´»ï¼&#140;å¹¶ä¸&#148;æ&#128;»æ&#152;¯å&#156;¨æ&#156;¬å&#156;°ç&#154;&#132;</li><li>æ¯&#148;å¦&#130;ï¼&#154;è&#137;¯å¥½ç&#154;&#132;å&#136;&#134;æ®µè&#129;&#154;å&#144;&#136;ï¼&#136;é¦&#150;å&#133;&#136;å&#156;¨æ&#156;¬å&#156;°ï¼&#140;ä¸&#141;å&#156;¨Siloä¸­ï¼&#137;</li></ul><p><strong>é»&#152;è®¤æ&#131;&#133;å&#134;µä¸&#139;ï¼&#140;Grainsæ&#152;¯ä¸&#141;å&#143;¯ä»¥é&#135;&#141;å&#133;¥ç&#154;&#132;ï¼&#136;æ&#132;&#143;æ&#128;&#157;åº&#148;è¯¥æ&#152;¯ä¸&#141;å&#143;¯ä»¥é&#128;&#146;å½&#146;ï¼&#137;</strong></p>
+
+
+
+<ul><li>å&#156;¨è°&#131;ç&#148;¨å&#145;¨æ&#156;&#159;ä¸­ä¼&#154;å&#135;ºç&#142;°æ­»é&#148;&#129;ï¼&#140; æ¯&#148;å¦&#130;è°&#131;ç&#148;¨è&#135;ªèº«</li><li>æ­»é&#148;&#129;ä¼&#154;å&#155; ä¸ºè¶&#133;æ&#151;¶è&#128;&#140;è&#135;ªå&#138;¨ä¸­æ­¢ã&#128;&#130;</li><li>ä½¿ç&#148;¨<code>[Reentrant]</code>å±&#158;æ&#128;§ï¼&#136;attributeï¼&#137;æ&#157;¥ä½¿ä¸&#128;ä¸ªGrainç±»å&#143;¯é&#135;&#141;å&#133;¥ã&#128;&#130;</li><li>é&#135;&#141;å&#133;¥å°&#134;ä¾&#157;ç&#132;¶æ&#152;¯å&#141;&#149;çº¿ç¨&#139;ä¸&#139;ç&#154;&#132;ï¼&#140;ä½&#134;æ&#152;¯å&#143;¯è&#131;½ä¼&#154;äº¤å&#143;&#137;ã&#128;&#130;</li><li>å¤&#132;ç&#144;&#134;äº¤å&#143;&#137;é&#151;®é¢&#152;å®¹æ&#152;&#147;å&#135;ºé&#148;&#153;ã&#128;&#130;</li></ul><p><strong>ç»§æ&#137;¿</strong></p>
+
+
+
+<ul><li>ç»§æ&#137;¿ä¸&#128;ä¸ªGrainç&#154;&#132;æ&#142;¥å&#143;£ï¼&#136;interfaceï¼&#137;æ&#152;¯ç®&#128;å&#141;&#149;ç&#154;&#132;</li><li>å½&#147;å¤&#154;ä¸ªGrainç±»ç»§æ&#137;¿äº&#134;ç&#155;¸å&#144;&#140;ç&#154;&#132;æ&#142;¥å&#143;£æ&#151;¶ï¼&#140;å&#143;¯è&#131;½é&#156;&#128;è¦&#129;æ¶&#136;é&#153;¤æ­§ä¹&#137;ã&#128;&#130;</li><li>Grainç±»ç&#154;&#132;ç»§æ&#137;¿æ&#152;¯æ&#156;&#137;é&#153;&#144;ç&#154;&#132;<ul><li>æ&#140;&#129;ä¹&#133;å&#140;&#150;å£°æ&#152;&#142;ä¼&#154;ä¸­æ&#150;­ç»§æ&#137;¿</li></ul></li></ul><p><strong>æ³&#155;å&#158;&#139;æ&#152;¯è¢«æ&#148;¯æ&#140;&#129;ç&#154;&#132;</strong></p>
+
+
+
+<hr class="wp-block-separator"><h2>å&#133;³äº&#142;Grainsæ&#140;&#129;ä¹&#133;å&#140;&#150;ç&#154;&#132;æ¦&#130;è¿°</h2>
+
+
+
+<p>Orleansç&#154;&#132;Grainç&#154;&#132;ç&#138;¶æ&#128;&#129;æ&#140;&#129;ä¹&#133;å&#140;&#150;APIè¢«è®¾è®¡ç&#148;¨æ&#157;¥æ&#143;&#144;ä¾&#155;æ&#152;&#147;äº&#142;ä½¿ç&#148;¨ç&#154;&#132;å&#143;¯æ&#137;©å±&#149;ç&#154;&#132;å­&#152;å&#130;¨å&#138;&#159;è&#131;½ã&#128;&#130;</p>
+
+
+
+<h3>Grainç&#154;&#132;ç&#138;¶æ&#128;&#129;æ&#140;&#129;ä¹&#133;å&#140;&#150;</h3>
+
+
+
+<ul><li>å®&#154;ä¹&#137;ä¸&#128;ä¸ªæ&#142;¥å&#143;£ï¼&#136;<code>interface</code>ï¼&#137;ç»§æ&#137;¿è&#135;ª<code>Orleans.IGrainState</code>, å¹¶å&#156;¨è¯¥æ&#142;¥å&#143;£ä¸­å&#140;&#133;å&#144;«Grainé&#135;&#140;é&#156;&#128;è¦&#129;æ&#140;&#129;ä¹&#133;å&#140;&#150;ç&#154;&#132;å­&#151;æ®µã&#128;&#130;</li><li>Grainç±»é&#156;&#128;è¦&#129;ç»§æ&#137;¿ <code>GrainBase<T></code> å¹¶å&#156;¨Grainç&#154;&#132;å&#159;ºç¡&#128;ç±»ä¸­æ·»å&#138; å¼ºç±»å&#158;&#139;Stateå­&#151;æ®µ</li></ul></div>
+
+	<footer class="amp-wp-article-footer"><div class="amp-wp-meta amp-wp-tax-category">
+		Categories: <a href="https://static.yomunchan.moe/corala/emmm" rel="category tag">æ&#150;&#135;å­&#151;</a>	</div>
+
+		<div class="amp-wp-meta amp-wp-comments-link">
+		<a href="https://static.yomunchan.moe/archives/469#respond">
+			Leave a Comment		</a>
+	</div>
+	</footer></article><footer class="amp-wp-footer"><div>
+		<h2>æ&#156;&#137;æ&#156;¨é&#133;±ç&#154;&#132;å°&#143;å±&#139;</h2>
+		<a href="#top" class="back-to-top">Back to top</a>
+	</div>
+</footer></body></html>
