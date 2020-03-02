@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html amp lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"><title>ç&#158;&#142;æ&#138;&#152;è&#133;¾ï¼&#154;ç&#148;¨Unityæ&#146;¸çº¯HTML5ç§»å&#138;¨æ¸¸æ&#136;&#143;/åº&#148;ç&#148;¨ – æ&#156;&#137;æ&#156;¨é&#133;±ç&#154;&#132;å°&#143;å±&#139;</title><script type="text/javascript" src="https://cdn.ampproject.org/v0.js" async></script><style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style></head><body><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>	<script type="application/ld+json">{"@context":"http:\/\/schema.org","publisher":{"@type":"Organization","name":"æ&#156;&#137;æ&#156;¨é&#133;±ç&#154;&#132;å°&#143;å±&#139;","logo":"https:\/\/yomunchan-blog.oss-cn-hongkong.aliyuncs.com\/wp-content\/uploads\/2019\/10\/cropped-yomunchan_icon.png"},"@type":"BlogPosting","mainEntityOfPage":"https:\/\/static.yomunchan.moe\/archives\/480","headline":"ç&#158;&#142;æ&#138;&#152;è&#133;¾ï¼&#154;ç&#148;¨Unityæ&#146;¸çº¯HTML5ç§»å&#138;¨æ¸¸æ&#136;&#143;\/åº&#148;ç&#148;¨","datePublished":"2020-02-01T11:35:45+00:00","dateModified":"2020-02-01T11:50:20+00:00","author":{"@type":"Person","name":"yomunsam"},"image":"https:\/\/yomunchan-blog.oss-cn-hongkong.aliyuncs.com\/wp-content\/uploads\/2020\/02\/Snipaste_2020-02-01_19-34-50.png"}</script><style amp-custom>
+		/* Generic WP styling */
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+
+.aligncenter {
+	display: block;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.amp-wp-enforced-sizes {
+	/** Our sizes fallback is 100vw, and we have a padding on the container; the max-width here prevents the element from overflowing. **/
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+
+/*
+ * Prevent cases of amp-img converted from img to appear with stretching by using object-fit to scale.
+ * See <https://github.com/ampproject/amphtml/issues/21371#issuecomment-475443219>.
+ * Also use object-fit:contain in worst case scenario when we can't figure out dimensions for an image.
+ * Additionally, in side of \AMP_Img_Sanitizer::determine_dimensions() it could $amp_img->setAttribute( 'object-fit', 'contain' )
+ * so that the following rules wouldn't be needed.
+ */
+amp-img.amp-wp-enforced-sizes[layout="intrinsic"] > img,
+amp-anim.amp-wp-enforced-sizes[layout="intrinsic"] > img {
+	object-fit: contain;
+}
+
+amp-fit-text blockquote,
+amp-fit-text h1,
+amp-fit-text h2,
+amp-fit-text h3,
+amp-fit-text h4,
+amp-fit-text h5,
+amp-fit-text h6 {
+	font-size: inherit;
+}
+
+/**
+ * Override a style rule in Twenty Sixteen and Twenty Seventeen.
+ * It set display:none for audio elements.
+ * This selector is the same, though it adds body and uses amp-audio instead of audio.
+ */
+body amp-audio:not([controls]) {
+	display: inline-block;
+	height: auto;
+}
+
+/*
+ * Style the default template messages for submit-success, submit-error, and submitting. These elements are inserted
+ * by the form sanitizer when a POST form lacks the action-xhr attribute.
+ */
+.amp-wp-default-form-message > p {
+	margin: 1em 0;
+	padding: 0.5em;
+}
+
+.amp-wp-default-form-message[submitting] > p,
+.amp-wp-default-form-message[submit-success] > p.amp-wp-form-redirecting {
+	font-style: italic;
+}
+
+.amp-wp-default-form-message[submit-success] > p:not(.amp-wp-form-redirecting) {
+	border: solid 1px #008000;
+	background-color: #90ee90;
+	color: #000;
+}
+
+.amp-wp-default-form-message[submit-error] > p {
+	border: solid 1px #f00;
+	background-color: #ffb6c1;
+	color: #000;
+}
+
+/* Prevent showing empty success message in the case of an AMP-Redirect-To response header. */
+.amp-wp-default-form-message[submit-success] > p:empty {
+	display: none;
+}
+
+/* Template Styles */
+
+.amp-wp-content,
+.amp-wp-title-bar div {
+		margin: 0 auto;
+	max-width: 600px;
+	}
+
+html {
+	background: #0a89c0;
+}
+
+body {
+	background: #0a0a0a;
+	color: #dedede;
+	font-family: Georgia, 'Times New Roman', Times, Serif;
+	font-weight: 300;
+	line-height: 1.75em;
+}
+
+p,
+ol,
+ul,
+figure {
+	margin: 0 0 1em;
+	padding: 0;
+}
+
+a,
+a:visited {
+	color: #0a89c0;
+}
+
+a:hover,
+a:active,
+a:focus {
+	color: #dedede;
+}
+
+/* Quotes */
+
+blockquote {
+	color: #dedede;
+	background: rgba(127,127,127,.125);
+	border-left: 2px solid #0a89c0;
+	margin: 8px 0 24px 0;
+	padding: 16px;
+}
+
+blockquote p:last-child {
+	margin-bottom: 0;
+}
+
+/* UI Fonts */
+
+.amp-wp-meta,
+.amp-wp-header div,
+.amp-wp-title,
+.wp-caption-text,
+.amp-wp-tax-category,
+.amp-wp-tax-tag,
+.amp-wp-comments-link,
+.amp-wp-footer p,
+.back-to-top {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+}
+
+/* Header */
+
+.amp-wp-header {
+	background-color: #0a89c0;
+}
+
+.amp-wp-header div {
+	color: #fff;
+	font-size: 1em;
+	font-weight: 400;
+	margin: 0 auto;
+	max-width: calc(840px - 32px);
+	padding: .875em 16px;
+	position: relative;
+}
+
+.amp-wp-header a {
+	color: #fff;
+	text-decoration: none;
+}
+
+
+.amp-wp-header .amp-wp-site-icon {
+	/** site icon is 32px **/
+	background-color: #fff;
+	border: 1px solid #fff;
+	border-radius: 50%;
+	position: absolute;
+	right: 18px;
+	top: 10px;
+}
+
+/* Article */
+
+.amp-wp-article {
+	color: #dedede;
+	font-weight: 400;
+	margin: 1.5em auto;
+	max-width: 840px;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+}
+
+/* Article Header */
+
+.amp-wp-article-header {
+	align-items: center;
+	align-content: stretch;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 1.5em 16px 0;
+}
+
+.amp-wp-title {
+	color: #dedede;
+	display: block;
+	flex: 1 0 100%;
+	font-weight: 900;
+	margin: 0 0 .625em;
+	width: 100%;
+}
+
+/* Article Meta */
+
+.amp-wp-meta {
+	color: #b1b1b1;
+	display: inline-block;
+	flex: 2 1 50%;
+	font-size: .875em;
+	line-height: 1.5em;
+	margin: 0 0 1.5em;
+	padding: 0;
+}
+
+.amp-wp-article-header .amp-wp-meta:last-of-type {
+	text-align: right;
+}
+
+.amp-wp-article-header .amp-wp-meta:first-of-type {
+	text-align: left;
+}
+
+.amp-wp-byline amp-img,
+.amp-wp-byline .amp-wp-author {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.amp-wp-byline amp-img {
+	border: 1px solid #0a89c0;
+	border-radius: 50%;
+	position: relative;
+	margin-right: 6px;
+}
+
+.amp-wp-posted-on {
+	text-align: right;
+}
+
+/* Featured image */
+
+.amp-wp-article-featured-image {
+	margin: 0 0 1em;
+}
+.amp-wp-article-featured-image amp-img {
+	margin: 0 auto;
+}
+.amp-wp-article-featured-image.wp-caption .wp-caption-text {
+	margin: 0 18px;
+}
+
+/* Article Content */
+
+.amp-wp-article-content {
+	margin: 0 16px;
+}
+
+.amp-wp-article-content ul,
+.amp-wp-article-content ol {
+	margin-left: 1em;
+}
+
+.amp-wp-article-content .wp-caption {
+	max-width: 100%;
+}
+
+.amp-wp-article-content amp-img {
+	margin: 0 auto;
+}
+
+.amp-wp-article-content amp-img.alignright {
+	margin: 0 0 1em 16px;
+}
+
+.amp-wp-article-content amp-img.alignleft {
+	margin: 0 16px 1em 0;
+}
+
+/* Captions */
+
+.wp-caption {
+	padding: 0;
+}
+
+.wp-caption.alignleft {
+	margin-right: 16px;
+}
+
+.wp-caption.alignright {
+	margin-left: 16px;
+}
+
+.wp-caption .wp-caption-text {
+	border-bottom: 1px solid #707070;
+	color: #b1b1b1;
+	font-size: .875em;
+	line-height: 1.5em;
+	margin: 0;
+	padding: .66em 10px .75em;
+}
+
+/* AMP Media */
+
+.alignwide,
+.alignfull {
+	clear: both;
+}
+
+amp-carousel {
+	background: #707070;
+	margin: 0 -16px 1.5em;
+}
+amp-iframe,
+amp-youtube,
+amp-instagram,
+amp-vine {
+	background: #707070;
+	margin: 0 -16px 1.5em;
+}
+
+.amp-wp-article-content amp-carousel amp-img {
+	border: none;
+}
+
+amp-carousel > amp-img > img {
+	object-fit: contain;
+}
+
+.amp-wp-iframe-placeholder {
+	background: #707070 url( https://static.yomunchan.moe/wp-content/plugins/amp/assets/images/placeholder-icon.png ) no-repeat center 40%;
+	background-size: 48px 48px;
+	min-height: 48px;
+}
+
+/* Article Footer Meta */
+
+.amp-wp-article-footer .amp-wp-meta {
+	display: block;
+}
+
+.amp-wp-tax-category,
+.amp-wp-tax-tag {
+	color: #b1b1b1;
+	font-size: .875em;
+	line-height: 1.5em;
+	margin: 1.5em 16px;
+}
+
+.amp-wp-comments-link {
+	color: #b1b1b1;
+	font-size: .875em;
+	line-height: 1.5em;
+	text-align: center;
+	margin: 2.25em 0 1.5em;
+}
+
+.amp-wp-comments-link a {
+	border-style: solid;
+	border-color: #707070;
+	border-width: 1px 1px 2px;
+	border-radius: 4px;
+	background-color: transparent;
+	color: #0a89c0;
+	cursor: pointer;
+	display: block;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 18px;
+	margin: 0 auto;
+	max-width: 200px;
+	padding: 11px 16px;
+	text-decoration: none;
+	width: 50%;
+	-webkit-transition: background-color 0.2s ease;
+			transition: background-color 0.2s ease;
+}
+
+/* AMP Footer */
+
+.amp-wp-footer {
+	border-top: 1px solid #707070;
+	margin: calc(1.5em - 1px) 0 0;
+}
+
+.amp-wp-footer div {
+	margin: 0 auto;
+	max-width: calc(840px - 32px);
+	padding: 1.25em 16px 1.25em;
+	position: relative;
+}
+
+.amp-wp-footer h2 {
+	font-size: 1em;
+	line-height: 1.375em;
+	margin: 0 0 .5em;
+}
+
+.amp-wp-footer p {
+	color: #b1b1b1;
+	font-size: .8em;
+	line-height: 1.5em;
+	margin: 0 85px 0 0;
+}
+
+.amp-wp-footer a {
+	text-decoration: none;
+}
+
+.back-to-top {
+	bottom: 1.275em;
+	font-size: .8em;
+	font-weight: 600;
+	line-height: 2em;
+	position: absolute;
+	right: 16px;
+}
+			</style><header id="top" class="amp-wp-header"><div>
+		<a href="https://static.yomunchan.moe/">
+										<amp-img src="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/10/cropped-yomunchan_icon-32x32.png" width="32" height="32" class="amp-wp-site-icon"></amp-img><span class="amp-site-title">
+				æ&#156;&#137;æ&#156;¨é&#133;±ç&#154;&#132;å°&#143;å±&#139;			</span>
+		</a>
+
+					</div>
+</header><article class="amp-wp-article"><header class="amp-wp-article-header"><h1 class="amp-wp-title">ç&#158;&#142;æ&#138;&#152;è&#133;¾ï¼&#154;ç&#148;¨Unityæ&#146;¸çº¯HTML5ç§»å&#138;¨æ¸¸æ&#136;&#143;/åº&#148;ç&#148;¨</h1>
+			<div class="amp-wp-meta amp-wp-byline">
+					<amp-img src="https://secure.gravatar.com/avatar/45019eb1dd8b43e939d42804cb2e3269?s=24&d=mm&r=g" alt="yomunsam" width="24" height="24" layout="fixed"></amp-img><span class="amp-wp-author author vcard">yomunsam</span>
+	</div>
+<div class="amp-wp-meta amp-wp-posted-on">
+	<time datetime="2020-02-01T19:35:45+00:00">
+		1æ&#156;&#136; ago	</time></div>
+	</header><div class="amp-wp-article-content">
+		
+<p></p>
+
+
+
+<p> è¿&#153;ä¸¤å¤©ç&#129;µæ&#156;ºä¸&#128;å&#138;¨ï¼&#140;å¤§æ¦&#130;æ&#138;&#152;è&#133;¾äº&#134;ä¸ªdemo </p>
+
+
+
+<p><strong>ï¼&#136;ps: å&#141;&#154;å®¢ç«&#153;ç&#154;&#132;CDNå&#156;¨å¢&#153;å¤&#150;ï¼&#136;HKï¼&#137;ï¼&#140;å¦&#130;æ&#158;&#156;å&#136;·ä¸&#141;å&#135;ºå&#155;¾ç&#154;&#132;è¯&#157;ï¼&#140;è¯·å°&#157;è¯&#149;æ&#148;¹å&#143;&#152;ä¸&#128;ä¸&#139;ä¸&#138;ç½&#145;æ&#150;¹å¼&#143;ã&#128;&#130;ï¼&#137;</strong></p>
+
+
+
+<figure class="wp-block-image"><amp-img src="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2020/02/20200201_174745-1024x576.jpg" alt="" class="wp-image-481 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height amp-wp-enforced-sizes" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2020/02/20200201_174745-1024x576.jpg 1024w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2020/02/20200201_174745-150x84.jpg 150w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2020/02/20200201_174745-300x169.jpg 300w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2020/02/20200201_174745-768x432.jpg 768w" object-fit="contain" width="600" height="400" layout="intrinsic"><noscript><img src="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2020/02/20200201_174745-1024x576.jpg" alt="" class="wp-image-481 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height" sizes="(max-width: 1024px) 100vw, 1024px" width="600" height="400"></noscript></amp-img></figure><p> æ&#149;&#136;æ&#158;&#156;ä¸&#138;æ&#156;&#137;ç&#130;¹å&#131;&#143;Unityè&#135;ªå·±å®¶ç&#154;&#132;Project Tinyé&#130;£æ ·ï¼&#140;Buildä¹&#139;å&#144;&#142;å¾&#151;å&#136;°ç&#154;&#132;æ&#152;¯ä¸&#128;ä¸ªçº¯HTML5ç&#154;&#132;å&#137;&#141;ç«¯åº&#148;ç&#148;¨ã&#128;&#130; </p>
+
+
+
+<figure class="wp-block-image"><amp-img src="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2020/02/CHY8PA@JM1J9FA6EY_NIVK-1024x610.png" alt="" class="wp-image-482 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height amp-wp-enforced-sizes" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2020/02/CHY8PA@JM1J9FA6EY_NIVK-1024x610.png 1024w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2020/02/CHY8PA@JM1J9FA6EY_NIVK-150x89.png 150w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2020/02/CHY8PA@JM1J9FA6EY_NIVK-300x179.png 300w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2020/02/CHY8PA@JM1J9FA6EY_NIVK-768x457.png 768w" object-fit="contain" width="600" height="400" layout="intrinsic"><noscript><img src="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2020/02/CHY8PA@JM1J9FA6EY_NIVK-1024x610.png" alt="" class="wp-image-482 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height" sizes="(max-width: 1024px) 100vw, 1024px" width="600" height="400"></noscript></amp-img></figure><figure class="wp-block-image"><amp-img src="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2020/02/F4JBKIMBJYLZS@LNP-1024x792.png" alt="" class="wp-image-483 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height amp-wp-enforced-sizes" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2020/02/F4JBKIMBJYLZS@LNP-1024x792.png 1024w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2020/02/F4JBKIMBJYLZS@LNP-150x116.png 150w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2020/02/F4JBKIMBJYLZS@LNP-300x232.png 300w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2020/02/F4JBKIMBJYLZS@LNP-768x594.png 768w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2020/02/F4JBKIMBJYLZS@LNP.png 1579w" object-fit="contain" width="600" height="400" layout="intrinsic"><noscript><img src="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2020/02/F4JBKIMBJYLZS@LNP-1024x792.png" alt="" class="wp-image-483 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height" sizes="(max-width: 1024px) 100vw, 1024px" width="600" height="400"></noscript></amp-img></figure><p>ä¸&#141;è¿&#135;ä¸&#141;å&#144;&#140;äº&#142;Tinyï¼&#140;æ&#136;&#145;ä»¬è¿&#153;é&#135;&#140;è®¾è®¡ç&#154;&#132;è¿&#152;æ&#152;¯ç&#155;¸å¯¹ä¼ ç»&#159;ç&#154;&#132;GameObject+ç»&#132;ä»¶è¿&#153;ç§&#141;å¼&#128;å&#143;&#145;æ&#150;¹å¼&#143;ï¼&#154;å&#156;ºæ&#153;¯->GameObject->ç»&#132;ä»¶ï¼&#140;è&#128;&#140;é&#157;&#158;DOTSé&#130;£å¥&#151;ã&#128;&#130;</p>
+
+
+
+<p>ä½¿ç&#148;¨GameObject æ&#140;&#130;å&#156;¨ç»&#132;ä»¶ç&#154;&#132;æ&#150;¹å¼&#143;ç¼&#150;è¾&#145;å&#156;ºæ&#153;¯ï¼&#140;ç¼&#150;å&#134;&#153;C#ä»£ç &#129;ï¼&#140;å¹¶å&#156;¨æ&#158;&#132;å»ºæ&#151;¶å¯¼å&#135;ºHTMLåº&#148;ç&#148;¨ã&#128;&#130;</p>
+
+
+
+<p>å&#155; ä¸ºæ&#154;&#130;æ&#151;¶æ²¡æ&#137;&#147;ç®&#151;æ&#138;&#138;å®&#131;å&#129;&#154;å®&#140;ï¼&#140;å°±å&#142;&#139;æ ¹æ²¡å¾&#128;GitHubä¸&#138;æ&#149;´ï¼&#140;å¤§æ¦&#130;å&#134;&#153;ç&#130;¹ä¸&#156;è¥¿ ç®&#151;æ&#152;¯è®°å½&#149;ä¸&#128;ä¸&#139;ï¼&#154;</p>
+
+
+
+<hr class="wp-block-separator"><p>é¦&#150;å&#133;&#136;æ&#152;¯å¤§æ¦&#130;æ&#128;&#157;è·¯ï¼&#154;</p>
+
+
+
+<p>è¿&#153;ç&#142;©æ&#132;&#143;å&#133;¶å®&#158;ç&#155;¸å½&#147;äº&#142;æ&#152;¯ä¸&#128;ä¸ªç&#139;¬ç«&#139;ç&#154;&#132;å¼&#149;æ&#147;&#142;æ&#136;&#150;è&#128;&#133;è¯´æ¡&#134;æ&#158;¶äº&#134;ï¼&#140;å&#146;&#140;Unityç&#154;&#132;Runtimeå&#159;ºæ&#156;¬ä¸&#138;æ²¡å&#133;³ç³»ã&#128;&#130;ç&#155;®å&#137;&#141;å¤§ä½&#147;ä¸&#138;å&#143;¯ä»¥å&#136;&#134;ä¸ºä¸¤ä¸ªé&#131;¨å&#136;&#134;ï¼&#154;</p>
+
+
+
+<p>ä¸&#128;ä¸ªæ&#152;¯æ ¸å¿&#131;æ¨¡å&#157;&#151;(core)ï¼&#140;è¿&#153;é&#131;¨å&#136;&#134;æ&#152;¯ä¸&#128;ä¸ªç&#139;¬ç«&#139;ç&#154;&#132;ã&#128;&#129;ä¸&#142;Unityæ&#151; å&#133;³ç&#154;&#132;ç&#139;¬ç«&#139;å·¥ç¨&#139;ï¼&#140;ç&#148;±C#å&#146;&#140;TypeScriptç¼&#150;å&#134;&#153;ã&#128;&#130;å&#156;¨æ ¸å¿&#131;æ¨¡å&#157;&#151;ä¸­ï¼&#140;æ&#156;&#137;ä¸&#128;å¥&#151;é&#135;&#141;æ&#150;°å®&#158;ç&#142;°ç&#154;&#132;GameObjectå&#146;&#140;Compomentç&#154;&#132;æ&#156;ºå&#136;¶ã&#128;&#130;æ ¸å¿&#131;æ¨¡å&#157;&#151;å&#143;¯ä»¥ç&#155;´æ&#142;¥ç&#148;¨æ&#157;¥ç¼&#150;å&#134;&#153;ä¸&#154;å&#138;¡é&#128;»è¾&#145;å¹¶æ&#158;&#132;å»ºHTMLåº&#148;ç&#148;¨ï¼&#140;ä¸&#141;é&#156;&#128;è¦&#129;ç¼&#150;è¾&#145;å&#153;¨ã&#128;&#130;</p>
+
+
+
+<figure class="wp-block-image"><amp-img src="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2020/02/Snipaste_2020-02-01_18-54-29-1024x538.png" alt="" class="wp-image-484 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height amp-wp-enforced-sizes" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2020/02/Snipaste_2020-02-01_18-54-29-1024x538.png 1024w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2020/02/Snipaste_2020-02-01_18-54-29-150x79.png 150w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2020/02/Snipaste_2020-02-01_18-54-29-300x158.png 300w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2020/02/Snipaste_2020-02-01_18-54-29-768x403.png 768w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2020/02/Snipaste_2020-02-01_18-54-29.png 1171w" object-fit="contain" width="600" height="400" layout="intrinsic"><noscript><img src="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2020/02/Snipaste_2020-02-01_18-54-29-1024x538.png" alt="" class="wp-image-484 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height" sizes="(max-width: 1024px) 100vw, 1024px" width="600" height="400"></noscript></amp-img><figcaption> ç&#155;´æ&#142;¥ç&#148;¨coreé&#131;¨å&#136;&#134;ç¼&#150;å&#134;&#153;ä¸&#154;å&#138;¡ </figcaption></figure><p>å&#143;¦ä¸&#128;ä¸ªé&#131;¨å&#136;&#134;å°±æ&#152;¯é&#146;&#136;å¯¹Unityç&#154;&#132;æ&#137;©å±&#149;ï¼&#140;æ&#138;&#138;coreé&#131;¨å&#136;&#134;ç&#154;&#132;ä¸&#156;è¥¿å&#146;&#140;Unityå&#133;³è&#129;&#148;èµ·æ&#157;¥ã&#128;&#130;</p>
+
+
+
+<p>å&#156;¨åº&#148;ç&#148;¨æ&#158;&#132;å»ºæ&#151;¶ï¼&#140;Unityç&#154;&#132;æ&#137;©å±&#149;é&#131;¨å&#136;&#134;ä¼&#154;æ&#138;&#138;å&#156;¨ç¼&#150;è¾&#145;å&#153;¨ä¸­ç¼&#150;è¾&#145;ç&#154;&#132;å&#156;ºæ&#153;¯ã&#128;&#129;Prefabsç­&#137;å&#134;&#133;å®¹è¯»å&#143;&#150;å&#135;ºæ&#157;¥ï¼&#140;å­&#152;å&#130;¨æ&#136;&#144;Jsonæ&#148;¾è¿&#155;HTMLåº&#148;ç&#148;¨ç&#154;&#132;èµ&#132;æº&#144;ä¸­ï¼&#140;ï¼&#136;æ&#136;&#145;ä»¬æ&#154;&#130;æ&#151;¶å&#156;¨HTMLåº&#148;ç&#148;¨ä¸­æ&#138;&#138;Sceneã&#128;&#129;Prefabsä»&#128;ä¹&#136;ç&#154;&#132;é&#131;½ç»&#159;ç§°ä¸ºStageï¼&#137;ï¼&#140;ç&#132;¶å&#144;&#142;å&#156;¨æµ&#143;è§&#136;å&#153;¨ä¸­è¿&#144;è¡&#140;æ&#151;¶ï¼&#140;Coreä¼&#154;æ&#138;&#138;å&#144;&#132;ç§&#141;GameObjectæ ¹æ&#141;®JSONå&#138; è½½å&#135;ºæ&#157;¥å¹¶æ&#140;&#130;å&#156;¨Componentsï¼&#140;ç&#148;±Coreæ&#157;¥ç»´æ&#138;¤æ&#149;´ä¸ªåº&#148;ç&#148;¨ç&#154;&#132;ç&#148;&#159;å&#145;½å&#145;¨æ&#156;&#159;ï¼&#140;å¹¶æ&#138;&#138;é&#156;&#128;è¦&#129;æ&#152;¾ç¤ºç&#154;&#132;å&#134;&#133;å®¹ç»&#152;å&#136;¶å&#156;¨Canvasä¸&#138;ã&#128;&#130;</p>
+
+
+
+<p>æ&#137;&#128;ä»¥ï¼&#140;è&#153;½ç&#132;¶è¯´æ&#152;¯ç&#148;¨Unityå¼&#128;å&#143;&#145;HTMLåº&#148;ç&#148;¨ï¼&#140;ä½&#134;å&#159;ºæ&#156;¬ä¸&#138;å&#146;&#140;Unityæ&#156;¬èº«æ²¡å&#149;¥å&#133;³ç³»äº&#134;ï¼&#140;å&#143;ªæ&#152;¯å&#128;&#159;ç&#148;¨å&#136;°äº&#134;Unityç&#154;&#132;ç¼&#150;è¾&#145;å&#153;¨ã&#128;&#130;è&#128;&#140;å&#156;¨åº&#148;ç&#148;¨è¿&#144;è¡&#140;æ&#151;¶ï¼&#140;å°±æ&#152;¯ä¸ªå&#141;&#149;çº¯ç&#154;&#132;HTMLåº&#148;ç&#148;¨äº&#134;ï¼&#140;å°±æ²¡Unityç&#154;&#132;äº&#139;äº&#134;ï¼&#136;å&#133;¶å®&#158;Tinyä¹&#139;å&#137;&#141;è¿&#152;æ&#152;¯TypeScriptç&#154;&#132;æ&#151;¶å&#128;&#153;ä¹&#159;æ&#152;¯è¿&#153;ä¹&#136;å¹²ç&#154;&#132;ï¼&#140;ç&#142;°å&#156;¨ä¸&#141;æ¸&#133;æ¥&#154;ï¼&#140;è¿&#152;æ²¡ç»&#134;ç&#156;&#139;è¿&#135;å®&#131;ç&#154;&#132;å®&#158;ç&#142;°ï¼&#137;</p>
+
+
+
+<hr class="wp-block-separator"><p>ä¹&#159;æ­£æ&#152;¯å&#155; ä¸ºä¸&#138;è¿°ç&#154;&#132;å&#142;&#159;ç&#144;&#134;ï¼&#140;æ&#137;&#128;ä»¥æ&#136;&#145;ä»¬å&#156;¨å®&#158;é&#153;&#133;å&#134;&#153;ä¸&#154;å&#138;¡é&#128;»è¾&#145;ç&#154;&#132;æ&#151;¶å&#128;&#153;ï¼&#140;é&#156;&#128;è¦&#129;æ&#138;&#138;æ&#136;&#145;ä»¬ç&#154;&#132;ä¸&#154;å&#138;¡ä»£ç &#129;å&#146;&#140;Unityç&#154;&#132;å&#134;&#133;å®¹ï¼&#136;UnityEngineå&#145;½å&#144;&#141;ç©ºé&#151;´ç­&#137;ï¼&#137;æ&#152;&#142;ç¡®ç&#154;&#132;å&#136;&#134;é&#154;&#148;å¼&#128;ã&#128;&#130;å&#144;&#140;ç&#144;&#134;ï¼&#140;å&#156;¨ç¼&#150;è¾&#145;å&#156;ºæ&#153;¯ç&#154;&#132;æ&#151;¶å&#128;&#153;ï¼&#140;æ&#136;&#145;ä»¬ä¹&#159;ä¸&#141;è&#131;½æ&#140;&#130;è½½Unityæ&#143;&#144;ä¾&#155;ç&#154;&#132;ç»&#132;ä»¶ï¼&#136;ç&#155;®å&#137;&#141;Unityç&#154;&#132;Canvasç­&#137;å&#135; ä¸ªç»&#132;ä»¶é&#153;¤å¤&#150;ï¼&#140;å¯¼å&#135;ºç&#154;&#132;æ&#151;¶å&#128;&#153;ä¼&#154;è&#135;ªå&#138;¨å¿½ç&#149;¥ï¼&#137;ã&#128;&#130;</p>
+
+
+
+<p>ä¹&#159;å°±æ&#152;¯è¯´ï¼&#140;MonoBehaviourä¹&#159;æ&#152;¯ä¸&#141;è&#131;½ç&#148;¨äº&#134;ã&#128;&#130;æ&#136;&#145;ä»¬è&#135;ªå·±å®&#158;ç&#142;°äº&#134;ä¸&#128;ä¸ªBehaviourç±»ï¼&#140;ç&#148;¨å®&#143;å®&#154;ä¹&#137;ç¬¦å&#143;·å&#129;&#154;äº&#134;å&#136;&#134;é&#154;&#148;ï¼&#154;å&#156;¨ç¼&#150;è¾&#145;å&#153;¨ä¸&#139;ï¼&#140;ç»§æ&#137;¿è&#135;ªMonoBehaviourï¼&#140;ä»¥ä¾¿æ&#136;&#145;ä»¬å&#156;¨ç¼&#150;è¾&#145;å&#153;¨ä¸&#139;æ&#140;&#130;å&#156;¨ç»&#132;ä»¶å&#146;&#140;è°&#131;è¯&#149;ã&#128;&#130;è&#128;&#140;å&#156;¨æ&#158;&#132;å»ºHTMLåº&#148;ç&#148;¨æ&#151;¶ï¼&#140;MonoBehaviouré&#131;¨å&#136;&#134;ç&#154;&#132;ä¸&#156;è¥¿å°±ä¼&#154;è¢«å&#137;¥ç¦»ï¼&#140;ç&#148;±Coreæ&#157;¥ç®¡ç&#144;&#134;è¿&#153;äº&#155;ç»&#132;ä»¶ã&#128;&#130;</p>
+
+
+
+<figure class="wp-block-image"><amp-img src="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2020/02/Snipaste_2020-02-01_19-34-50.png" alt="" class="wp-image-485 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height amp-wp-enforced-sizes" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2020/02/Snipaste_2020-02-01_19-34-50.png 759w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2020/02/Snipaste_2020-02-01_19-34-50-150x54.png 150w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2020/02/Snipaste_2020-02-01_19-34-50-300x109.png 300w" object-fit="contain" width="600" height="400" layout="intrinsic"><noscript><img src="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2020/02/Snipaste_2020-02-01_19-34-50.png" alt="" class="wp-image-485 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height" sizes="(max-width: 759px) 100vw, 759px" width="600" height="400"></noscript></amp-img><figcaption> é&#135;&#141;æ&#150;°å®&#158;ç&#142;°ç&#154;&#132;Lableç»&#132;ä»¶ï¼&#136;demoé&#152;¶æ®µï¼&#140;æ&#137;&#128;ä»¥å&#138;&#159;è&#131;½è´¼å°&#145;ï¼&#137; </figcaption></figure><p> ï¼&#136;å&#156;¨ç¼&#150;è¾&#145;å&#153;¨ä¸­è°&#131;è¯&#149;è¿&#153;ä»¶äº&#139;ï¼&#140;ç&#155;®å&#137;&#141;ç&#154;&#132;è®¾è®¡æ&#152;¯ç&#148;¨å®&#143;å®&#154;ä¹&#137;å&#156;¨ç¼&#150;è¾&#145;å&#153;¨ä¸&#139;ç»§æ&#137;¿Unityç&#154;&#132;ç»&#132;ä»¶ï¼&#140;æ¯&#148;å¦&#130;ç&#155;®å&#137;&#141;ç&#154;&#132;Lableå&#156;¨ç¼&#150;è¾&#145;å&#153;¨ä¸&#139;ä¼&#154;ç»§æ&#137;¿è&#135;ªUnityEngine.UI.Textï¼&#140;è¿&#153;æ ·å&#129;&#154;ç&#154;&#132;ç&#155;®å&#137;&#141;ç&#154;&#132;å&#128;&#159;ç&#148;¨Unityç&#154;&#132;Runtimeæ&#157;¥è°&#131;è¯&#149;åº&#148;ç&#148;¨ï¼&#140;å&#143;¦ä¸&#128;æ&#150;¹é&#157;¢å&#143;¯ä»¥ç&#155;´æ&#142;¥ç&#148;¨Unityç&#155;´æ&#142;¥ç&#154;&#132;æ&#150;¹å¼&#143;æ&#158;&#132;å»ºAppã&#128;&#130;å½&#147;ç&#132;¶ç&#155;®å&#137;&#141;è¿&#153;ä¸ªæ&#131;³æ³&#149;æ&#156;&#137;æ²¡æ&#156;&#137;ä»&#128;ä¹&#136;å&#157;&#145;è¿&#152;ä¸&#141;ç&#159;¥é&#129;&#147;ï¼&#140;è¿&#152;æ²¡å¾&#128;ä¸&#139;æ·±å&#133;¥ç&#154;&#132;å&#129;&#154;ï¼&#140;æ²¡é&#129;&#135;å&#136;°å&#157;&#145;æ&#154;&#130;æ&#151;¶ã&#128;&#130;ï¼&#137; </p>
+
+
+
+<p>æµ&#143;è§&#136;å&#153;¨é&#135;&#140;è¿&#144;è¡&#140;C#ç&#154;&#132;é&#151;®é¢&#152;ï¼&#154;</p>
+
+
+
+<p>æ&#138;&#152;è&#133;¾è¿&#153;ç&#142;©æ&#132;&#143;ï¼&#140;æ&#156;&#128;æ ¹æ&#156;¬ç&#154;&#132;ç&#155;®ç&#154;&#132;æ&#152;¯æ&#136;&#145;æ&#131;³ç&#148;¨C#å&#134;&#153;HTML5åº&#148;ç&#148;¨ç&#142;©ã&#128;&#130;æ&#137;&#128;ä»¥æµ&#143;è§&#136;å&#153;¨é&#135;&#140;è·&#145;C#ç&#154;&#132;é&#151;®é¢&#152;å°±ä¸&#128;å®&#154;å¾&#151;è§£å&#134;³äº&#134;ã&#128;&#130;</p>
+
+
+
+<p>å¸¸è§&#129;ç&#154;&#132;æ&#150;¹æ³&#149;æ&#156;&#137;ä¸¤ç§&#141;ï¼&#140;ä¸&#128;ä¸ªæ&#152;¯WebAssemblyï¼&#140;å&#143;¦ä¸&#128;ä¸ªæ&#152;¯æ&#138;&#138;C#ç¿»è¯&#145;æ&#136;&#144;JavaScript.</p>
+
+
+
+<p>æ&#157;&#131;è¡¡äº&#134;å&#144;&#132;ç§&#141;å&#155; ç´ ï¼&#140;ç&#155;®å&#137;&#141;ç&#154;&#132;å®&#158;ç&#142;°ç&#154;&#132;demoä¸­é&#128;&#137;æ&#139;©äº&#134;å&#144;&#142;è&#128;&#133;ï¼&#140;æ&#136;&#145;ä»¬å&#156;¨æ&#158;&#132;å»ºåº&#148;ç&#148;¨æ&#151;¶æ&#138;&#138;C#ç¿»è¯&#145;æ&#136;&#144;äº&#134;JavaScript. ï¼&#136;ä½&#134;å&#133;¶å®&#158;ç&#155;´å&#136;°ç&#142;°å&#156;¨å¯¹äº&#142;ä¸¤è&#128;&#133;ç&#154;&#132;é&#128;&#137;æ&#139;©è¿&#152;æ&#152;¯æ&#145;&#135;æ&#145;&#134;ä¸&#141;å®&#154;ï¼&#137;</p>
+
+
+
+<p>è¿&#153;é&#135;&#140;ä½¿ç&#148;¨äº&#134;å¼&#128;æº&#144;é¡¹ç&#155;®Bridge.NETæ&#157;¥å®&#158;ç&#142;°è¿&#153;ä¸ªå&#138;&#159;è&#131;½ã&#128;&#130; æ&#138;&#138;C#ç¿»è¯&#145;æ&#136;&#144;JavaScriptå&#156;¨ç&#155;®å&#137;&#141;æ&#156;&#128;å¤§ç&#154;&#132;å¥½å¤&#132;æ&#152;¯å&#140;&#133;ä½&#147;æ&#158;&#129;å°&#143;ï¼&#140;å&#133;¼å®¹æ&#128;§è¾&#131;å¥½ï¼&#140;GCä»&#128;ä¹&#136;ç&#154;&#132;é&#151;®é¢&#152;ä¹&#159;ä¸&#141;å¤§ã&#128;&#130;</p>
+	</div>
+
+	<footer class="amp-wp-article-footer"><div class="amp-wp-meta amp-wp-tax-category">
+		Categories: <a href="https://static.yomunchan.moe/corala/emmm" rel="category tag">æ&#150;&#135;å­&#151;</a>	</div>
+
+		<div class="amp-wp-meta amp-wp-comments-link">
+		<a href="https://static.yomunchan.moe/archives/480#respond">
+			Leave a Comment		</a>
+	</div>
+	</footer></article><footer class="amp-wp-footer"><div>
+		<h2>æ&#156;&#137;æ&#156;¨é&#133;±ç&#154;&#132;å°&#143;å±&#139;</h2>
+		<a href="#top" class="back-to-top">Back to top</a>
+	</div>
+</footer></body></html>
