@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html amp lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"><title>å&#156;¨Unity Editorä¸­è°&#131;è¯&#149;TinaXç&#154;&#132;AssetBundle – æ&#156;&#137;æ&#156;¨é&#133;±ç&#154;&#132;å°&#143;å±&#139;</title><script type="text/javascript" src="https://cdn.ampproject.org/v0.js" async></script><style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style></head><body><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>	<script type="application/ld+json">{"@context":"http:\/\/schema.org","publisher":{"@type":"Organization","name":"æ&#156;&#137;æ&#156;¨é&#133;±ç&#154;&#132;å°&#143;å±&#139;","logo":"https:\/\/yomunchan-blog.oss-cn-hongkong.aliyuncs.com\/wp-content\/uploads\/2019\/10\/cropped-yomunchan_icon.png"},"@type":"BlogPosting","mainEntityOfPage":"https:\/\/static.yomunchan.moe\/archives\/357","headline":"å&#156;¨Unity Editorä¸­è°&#131;è¯&#149;TinaXç&#154;&#132;AssetBundle","datePublished":"2019-07-28T20:26:58+00:00","dateModified":"2019-07-28T20:26:59+00:00","author":{"@type":"Person","name":"yomunsam"},"image":"https:\/\/yomunchan-blog.oss-cn-hongkong.aliyuncs.com\/wp-content\/uploads\/2019\/07\/image.png"}</script><style amp-custom>
+		/* Generic WP styling */
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+
+.aligncenter {
+	display: block;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.amp-wp-enforced-sizes {
+	/** Our sizes fallback is 100vw, and we have a padding on the container; the max-width here prevents the element from overflowing. **/
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+
+/*
+ * Prevent cases of amp-img converted from img to appear with stretching by using object-fit to scale.
+ * See <https://github.com/ampproject/amphtml/issues/21371#issuecomment-475443219>.
+ * Also use object-fit:contain in worst case scenario when we can't figure out dimensions for an image.
+ * Additionally, in side of \AMP_Img_Sanitizer::determine_dimensions() it could $amp_img->setAttribute( 'object-fit', 'contain' )
+ * so that the following rules wouldn't be needed.
+ */
+amp-img.amp-wp-enforced-sizes[layout="intrinsic"] > img,
+amp-anim.amp-wp-enforced-sizes[layout="intrinsic"] > img {
+	object-fit: contain;
+}
+
+amp-fit-text blockquote,
+amp-fit-text h1,
+amp-fit-text h2,
+amp-fit-text h3,
+amp-fit-text h4,
+amp-fit-text h5,
+amp-fit-text h6 {
+	font-size: inherit;
+}
+
+/**
+ * Override a style rule in Twenty Sixteen and Twenty Seventeen.
+ * It set display:none for audio elements.
+ * This selector is the same, though it adds body and uses amp-audio instead of audio.
+ */
+body amp-audio:not([controls]) {
+	display: inline-block;
+	height: auto;
+}
+
+/*
+ * Style the default template messages for submit-success, submit-error, and submitting. These elements are inserted
+ * by the form sanitizer when a POST form lacks the action-xhr attribute.
+ */
+.amp-wp-default-form-message > p {
+	margin: 1em 0;
+	padding: 0.5em;
+}
+
+.amp-wp-default-form-message[submitting] > p,
+.amp-wp-default-form-message[submit-success] > p.amp-wp-form-redirecting {
+	font-style: italic;
+}
+
+.amp-wp-default-form-message[submit-success] > p:not(.amp-wp-form-redirecting) {
+	border: solid 1px #008000;
+	background-color: #90ee90;
+	color: #000;
+}
+
+.amp-wp-default-form-message[submit-error] > p {
+	border: solid 1px #f00;
+	background-color: #ffb6c1;
+	color: #000;
+}
+
+/* Prevent showing empty success message in the case of an AMP-Redirect-To response header. */
+.amp-wp-default-form-message[submit-success] > p:empty {
+	display: none;
+}
+
+/* Template Styles */
+
+.amp-wp-content,
+.amp-wp-title-bar div {
+		margin: 0 auto;
+	max-width: 600px;
+	}
+
+html {
+	background: #0a89c0;
+}
+
+body {
+	background: #0a0a0a;
+	color: #dedede;
+	font-family: Georgia, 'Times New Roman', Times, Serif;
+	font-weight: 300;
+	line-height: 1.75em;
+}
+
+p,
+ol,
+ul,
+figure {
+	margin: 0 0 1em;
+	padding: 0;
+}
+
+a,
+a:visited {
+	color: #0a89c0;
+}
+
+a:hover,
+a:active,
+a:focus {
+	color: #dedede;
+}
+
+/* Quotes */
+
+blockquote {
+	color: #dedede;
+	background: rgba(127,127,127,.125);
+	border-left: 2px solid #0a89c0;
+	margin: 8px 0 24px 0;
+	padding: 16px;
+}
+
+blockquote p:last-child {
+	margin-bottom: 0;
+}
+
+/* UI Fonts */
+
+.amp-wp-meta,
+.amp-wp-header div,
+.amp-wp-title,
+.wp-caption-text,
+.amp-wp-tax-category,
+.amp-wp-tax-tag,
+.amp-wp-comments-link,
+.amp-wp-footer p,
+.back-to-top {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+}
+
+/* Header */
+
+.amp-wp-header {
+	background-color: #0a89c0;
+}
+
+.amp-wp-header div {
+	color: #fff;
+	font-size: 1em;
+	font-weight: 400;
+	margin: 0 auto;
+	max-width: calc(840px - 32px);
+	padding: .875em 16px;
+	position: relative;
+}
+
+.amp-wp-header a {
+	color: #fff;
+	text-decoration: none;
+}
+
+
+.amp-wp-header .amp-wp-site-icon {
+	/** site icon is 32px **/
+	background-color: #fff;
+	border: 1px solid #fff;
+	border-radius: 50%;
+	position: absolute;
+	right: 18px;
+	top: 10px;
+}
+
+/* Article */
+
+.amp-wp-article {
+	color: #dedede;
+	font-weight: 400;
+	margin: 1.5em auto;
+	max-width: 840px;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+}
+
+/* Article Header */
+
+.amp-wp-article-header {
+	align-items: center;
+	align-content: stretch;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 1.5em 16px 0;
+}
+
+.amp-wp-title {
+	color: #dedede;
+	display: block;
+	flex: 1 0 100%;
+	font-weight: 900;
+	margin: 0 0 .625em;
+	width: 100%;
+}
+
+/* Article Meta */
+
+.amp-wp-meta {
+	color: #b1b1b1;
+	display: inline-block;
+	flex: 2 1 50%;
+	font-size: .875em;
+	line-height: 1.5em;
+	margin: 0 0 1.5em;
+	padding: 0;
+}
+
+.amp-wp-article-header .amp-wp-meta:last-of-type {
+	text-align: right;
+}
+
+.amp-wp-article-header .amp-wp-meta:first-of-type {
+	text-align: left;
+}
+
+.amp-wp-byline amp-img,
+.amp-wp-byline .amp-wp-author {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.amp-wp-byline amp-img {
+	border: 1px solid #0a89c0;
+	border-radius: 50%;
+	position: relative;
+	margin-right: 6px;
+}
+
+.amp-wp-posted-on {
+	text-align: right;
+}
+
+/* Featured image */
+
+.amp-wp-article-featured-image {
+	margin: 0 0 1em;
+}
+.amp-wp-article-featured-image amp-img {
+	margin: 0 auto;
+}
+.amp-wp-article-featured-image.wp-caption .wp-caption-text {
+	margin: 0 18px;
+}
+
+/* Article Content */
+
+.amp-wp-article-content {
+	margin: 0 16px;
+}
+
+.amp-wp-article-content ul,
+.amp-wp-article-content ol {
+	margin-left: 1em;
+}
+
+.amp-wp-article-content .wp-caption {
+	max-width: 100%;
+}
+
+.amp-wp-article-content amp-img {
+	margin: 0 auto;
+}
+
+.amp-wp-article-content amp-img.alignright {
+	margin: 0 0 1em 16px;
+}
+
+.amp-wp-article-content amp-img.alignleft {
+	margin: 0 16px 1em 0;
+}
+
+/* Captions */
+
+.wp-caption {
+	padding: 0;
+}
+
+.wp-caption.alignleft {
+	margin-right: 16px;
+}
+
+.wp-caption.alignright {
+	margin-left: 16px;
+}
+
+.wp-caption .wp-caption-text {
+	border-bottom: 1px solid #707070;
+	color: #b1b1b1;
+	font-size: .875em;
+	line-height: 1.5em;
+	margin: 0;
+	padding: .66em 10px .75em;
+}
+
+/* AMP Media */
+
+.alignwide,
+.alignfull {
+	clear: both;
+}
+
+amp-carousel {
+	background: #707070;
+	margin: 0 -16px 1.5em;
+}
+amp-iframe,
+amp-youtube,
+amp-instagram,
+amp-vine {
+	background: #707070;
+	margin: 0 -16px 1.5em;
+}
+
+.amp-wp-article-content amp-carousel amp-img {
+	border: none;
+}
+
+amp-carousel > amp-img > img {
+	object-fit: contain;
+}
+
+.amp-wp-iframe-placeholder {
+	background: #707070 url( https://static.yomunchan.moe/wp-content/plugins/amp/assets/images/placeholder-icon.png ) no-repeat center 40%;
+	background-size: 48px 48px;
+	min-height: 48px;
+}
+
+/* Article Footer Meta */
+
+.amp-wp-article-footer .amp-wp-meta {
+	display: block;
+}
+
+.amp-wp-tax-category,
+.amp-wp-tax-tag {
+	color: #b1b1b1;
+	font-size: .875em;
+	line-height: 1.5em;
+	margin: 1.5em 16px;
+}
+
+.amp-wp-comments-link {
+	color: #b1b1b1;
+	font-size: .875em;
+	line-height: 1.5em;
+	text-align: center;
+	margin: 2.25em 0 1.5em;
+}
+
+.amp-wp-comments-link a {
+	border-style: solid;
+	border-color: #707070;
+	border-width: 1px 1px 2px;
+	border-radius: 4px;
+	background-color: transparent;
+	color: #0a89c0;
+	cursor: pointer;
+	display: block;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 18px;
+	margin: 0 auto;
+	max-width: 200px;
+	padding: 11px 16px;
+	text-decoration: none;
+	width: 50%;
+	-webkit-transition: background-color 0.2s ease;
+			transition: background-color 0.2s ease;
+}
+
+/* AMP Footer */
+
+.amp-wp-footer {
+	border-top: 1px solid #707070;
+	margin: calc(1.5em - 1px) 0 0;
+}
+
+.amp-wp-footer div {
+	margin: 0 auto;
+	max-width: calc(840px - 32px);
+	padding: 1.25em 16px 1.25em;
+	position: relative;
+}
+
+.amp-wp-footer h2 {
+	font-size: 1em;
+	line-height: 1.375em;
+	margin: 0 0 .5em;
+}
+
+.amp-wp-footer p {
+	color: #b1b1b1;
+	font-size: .8em;
+	line-height: 1.5em;
+	margin: 0 85px 0 0;
+}
+
+.amp-wp-footer a {
+	text-decoration: none;
+}
+
+.back-to-top {
+	bottom: 1.275em;
+	font-size: .8em;
+	font-weight: 600;
+	line-height: 2em;
+	position: absolute;
+	right: 16px;
+}
+			</style><header id="top" class="amp-wp-header"><div>
+		<a href="https://static.yomunchan.moe/">
+										<amp-img src="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/10/cropped-yomunchan_icon-32x32.png" width="32" height="32" class="amp-wp-site-icon"></amp-img><span class="amp-site-title">
+				æ&#156;&#137;æ&#156;¨é&#133;±ç&#154;&#132;å°&#143;å±&#139;			</span>
+		</a>
+
+					</div>
+</header><article class="amp-wp-article"><header class="amp-wp-article-header"><h1 class="amp-wp-title">å&#156;¨Unity Editorä¸­è°&#131;è¯&#149;TinaXç&#154;&#132;AssetBundle</h1>
+			<div class="amp-wp-meta amp-wp-byline">
+					<amp-img src="https://secure.gravatar.com/avatar/45019eb1dd8b43e939d42804cb2e3269?s=24&d=mm&r=g" alt="yomunsam" width="24" height="24" layout="fixed"></amp-img><span class="amp-wp-author author vcard">yomunsam</span>
+	</div>
+<div class="amp-wp-meta amp-wp-posted-on">
+	<time datetime="2019-07-29T04:26:58+00:00">
+		7æ&#156;&#136; ago	</time></div>
+	</header><div class="amp-wp-article-content">
+		
+<p>å&#156;¨TinaX Frameworkä¸­ï¼&#140;æ&#136;&#145;ä»¬ä½¿ç&#148;¨VFSï¼&#136;è&#153;&#154;æ&#139;&#159;æ&#150;&#135;ä»¶ç³»ç»&#159;ï¼&#137;æ&#157;¥è¿&#155;è¡&#140;èµ&#132;æº&#144;ç&#154;&#132;ç®¡ç&#144;&#134;ä¸&#142;å&#138; è½½ã&#128;&#130;ä½&#134;å®&#158;é&#153;&#133;ä¸&#138;ï¼&#140;VFSå&#156;¨ç¼&#150;è¾&#145;å&#153;¨ä¸&#139;å¹¶ä¸&#141;ä¼&#154;å®&#158;é&#153;&#133;æ&#137;&#147;å&#140;&#133;å&#146;&#140;å&#138; è½½AssetBundleï¼&#140;è&#128;&#140;æ&#152;¯ç&#155;´æ&#142;¥ä½¿ç&#148;¨UnityEditor.AssetDatabaseè¿&#155;è¡&#140;å&#138; è½½ã&#128;&#130;ä½&#134;æ&#152;¯è¿&#153;æ ·ä¸&#128;æ&#157;¥ï¼&#140;æ&#156;&#137;äº&#155;å&#156;¨ç&#156;&#159;æ­£ä½¿ç&#148;¨AssetBundleæ&#151;¶å&#128;&#153;æ&#137;&#141;ä¼&#154;é&#129;&#135;å&#136;°ç&#154;&#132;å&#157;&#145;å°±æ²¡æ³&#149;å&#156;¨å¼&#128;å&#143;&#145;ç&#154;&#132;æ&#151;¶å&#128;&#153;æµ&#139;è¯&#149;å&#146;&#140;æ&#142;&#146;æ&#159;¥äº&#134;ã&#128;&#130;</p>
+
+
+
+
+
+
+
+<p>é&#130;£æ&#128;&#142;ä¹&#136;å&#138;&#158;å&#145;¢ï¼&#140;æ&#136;&#145;ä»¬å¾&#151;å&#156;¨ç¼&#150;è¾&#145;å&#153;¨ä¸&#138;ç&#156;&#159;å®&#158;ç&#154;&#132;å&#142;»æ&#137;&#147;å&#140;&#133;å¹¶å&#138; è½½AssetBundleè¿&#155;è¡&#140;æµ&#139;è¯&#149;ã&#128;&#130;</p>
+
+
+
+<h2>æ&#137;&#147;å&#140;&#133;</h2>
+
+
+
+<p>ç¬¬ä¸&#128;æ­¥ï¼&#140;å½&#147;ç&#132;¶å&#133;&#136;æ&#138;&#138;Assetbundleå&#140;&#133;æ&#137;&#147;å&#135;ºæ&#157;¥ã&#128;&#130;å&#156;¨è&#143;&#156;å&#141;&#149;ä¸­æ&#137;&#147;å¼&#128;èµ&#132;æº&#144;æ&#137;&#147;å&#140;&#133;é&#157;¢æ&#157;¿ã&#128;&#130;</p>
+
+
+
+<figure class="wp-block-image"><amp-img src="https://static.yomunchan.moe/wp-content/uploads/2019/07/image.png" alt="" class="wp-image-358 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height amp-wp-enforced-sizes" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/07/image.png 332w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/07/image-150x90.png 150w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/07/image-300x180.png 300w" object-fit="contain" width="600" height="400" layout="intrinsic"><noscript><img src="https://static.yomunchan.moe/wp-content/uploads/2019/07/image.png" alt="" class="wp-image-358 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height" sizes="(max-width: 332px) 100vw, 332px" width="600" height="400"></noscript></amp-img></figure><p>ç&#132;¶å&#144;&#142;ï¼&#140;é&#128;&#137;æ&#139;©å½&#147;å&#137;&#141;ç¼&#150;è¾&#145;å&#153;¨æ&#137;&#128;å&#156;¨ç&#154;&#132;å¹³å&#143;°å¯¹å·¥ç¨&#139;è¿&#155;è¡&#140;å&#133;¨é&#131;¨æ&#137;&#147;å&#140;&#133;ï¼&#140;</p>
+
+
+
+<figure class="wp-block-image"><amp-img src="https://static.yomunchan.moe/wp-content/uploads/2019/07/image-1.png" alt="" class="wp-image-359 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height amp-wp-enforced-sizes" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/07/image-1.png 400w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/07/image-1-150x120.png 150w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/07/image-1-300x240.png 300w" object-fit="contain" width="600" height="400" layout="intrinsic"><noscript><img src="https://static.yomunchan.moe/wp-content/uploads/2019/07/image-1.png" alt="" class="wp-image-359 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height" sizes="(max-width: 400px) 100vw, 400px" width="600" height="400"></noscript></amp-img></figure><figure class="wp-block-image"><amp-img src="https://static.yomunchan.moe/wp-content/uploads/2019/07/image-2.png" alt="" class="wp-image-360 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height amp-wp-enforced-sizes" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/07/image-2.png 359w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/07/image-2-150x36.png 150w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/07/image-2-300x73.png 300w" object-fit="contain" width="600" height="400" layout="intrinsic"><noscript><img src="https://static.yomunchan.moe/wp-content/uploads/2019/07/image-2.png" alt="" class="wp-image-360 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height" sizes="(max-width: 359px) 100vw, 359px" width="600" height="400"></noscript></amp-img><figcaption>ç&#150;¯ç&#139;&#130;è¯»æ&#157;¡</figcaption></figure><p>æ&#137;&#147;å&#140;&#133;å®&#140;æ&#136;&#144;å&#144;&#142;ï¼&#140;æ&#136;&#145;ä»¬æ&#138;&#138;èµ&#132;æº&#144;ç§»å&#138;¨å&#136;°Unityç&#154;&#132;å·¥ç¨&#139;ä¸&#139;ï¼&#140;é¦&#150;å&#133;&#136;ç&#130;¹å&#135;»é&#157;¢æ&#157;¿ä¸&#139;æ&#150;¹ç&#154;&#132;â&#128;&#156;ç®¡ç&#144;&#134;VFSèµ&#132;æº&#144;â&#128;&#157;ã&#128;&#130;</p>
+
+
+
+<figure class="wp-block-image"><amp-img src="https://static.yomunchan.moe/wp-content/uploads/2019/07/image-3.png" alt="" class="wp-image-361 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height amp-wp-enforced-sizes" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/07/image-3.png 401w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/07/image-3-150x126.png 150w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/07/image-3-300x251.png 300w" object-fit="contain" width="600" height="400" layout="intrinsic"><noscript><img src="https://static.yomunchan.moe/wp-content/uploads/2019/07/image-3.png" alt="" class="wp-image-361 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height" sizes="(max-width: 401px) 100vw, 401px" width="600" height="400"></noscript></amp-img></figure><p>ç&#130;¹å&#135;»é&#128;&#137;æ&#139;©å&#136;&#154;å&#136;&#154;æ&#137;&#147;å&#140;&#133;ç&#154;&#132;èµ&#132;æº&#144;ã&#128;&#130;</p>
+
+
+
+<figure class="wp-block-image"><amp-img src="https://static.yomunchan.moe/wp-content/uploads/2019/07/image-4.png" alt="" class="wp-image-362 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height amp-wp-enforced-sizes" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/07/image-4.png 540w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/07/image-4-150x89.png 150w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/07/image-4-300x178.png 300w" object-fit="contain" width="600" height="400" layout="intrinsic"><noscript><img src="https://static.yomunchan.moe/wp-content/uploads/2019/07/image-4.png" alt="" class="wp-image-362 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height" sizes="(max-width: 540px) 100vw, 540px" width="600" height="400"></noscript></amp-img></figure><p>ç&#130;¹å&#135;»â&#128;&#156;ç§»å&#138;¨å&#136;°StreamingAssetsâ&#128;&#157;</p>
+
+
+
+<figure class="wp-block-image"><amp-img src="https://static.yomunchan.moe/wp-content/uploads/2019/07/image-5.png" alt="" class="wp-image-363 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height amp-wp-enforced-sizes" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/07/image-5.png 540w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/07/image-5-150x89.png 150w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/07/image-5-300x178.png 300w" object-fit="contain" width="600" height="400" layout="intrinsic"><noscript><img src="https://static.yomunchan.moe/wp-content/uploads/2019/07/image-5.png" alt="" class="wp-image-363 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height" sizes="(max-width: 540px) 100vw, 540px" width="600" height="400"></noscript></amp-img></figure><p>ç­&#137;Unityä¸&#128;é&#128;&#154;è¯»æ&#157;¡å&#144;&#142;ï¼&#140;æ&#137;&#147;å&#140;&#133;å·¥ä½&#156;å®&#140;æ&#136;&#144;ã&#128;&#130;</p>
+
+
+
+<h2>å&#156;¨ç¼&#150;è¾&#145;å&#153;¨ä¸&#139;ä½¿ç&#148;¨AssetBundleå&#138; è½½èµ&#132;æº&#144;</h2>
+
+
+
+<p>å&#139;¾é&#128;&#137;ä¸&#139;å&#155;¾æ&#137;&#128;ç¤ºç&#154;&#132;è&#143;&#156;å&#141;&#149;ä¸­ç&#154;&#132;â&#128;&#156;ä»&#142;èµ&#132;æº&#144;å&#140;&#133;å&#138; è½½â&#128;&#157;é&#128;&#137;é¡¹å&#144;&#142;ï¼&#140;è¿&#144;è¡&#140;æ¸¸æ&#136;&#143;æ&#151;¶ï¼&#140;TinaXä¼&#154;ç&#155;´æ&#142;¥å&#138; è½½Assetbundleèµ&#132;æº&#144;</p>
+
+
+
+<figure class="wp-block-image"><amp-img src="https://static.yomunchan.moe/wp-content/uploads/2019/07/image-6.png" alt="" class="wp-image-364 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height amp-wp-enforced-sizes" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/07/image-6.png 525w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/07/image-6-150x53.png 150w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/07/image-6-300x107.png 300w" object-fit="contain" width="600" height="400" layout="intrinsic"><noscript><img src="https://static.yomunchan.moe/wp-content/uploads/2019/07/image-6.png" alt="" class="wp-image-364 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height" sizes="(max-width: 525px) 100vw, 525px" width="600" height="400"></noscript></amp-img></figure><p>è¿&#153;é&#135;&#140;è¦&#129;æ³¨æ&#132;&#143;ç&#154;&#132;æ&#151;¶ï¼&#140;å¦&#130;æ&#158;&#156;ä½ ä½¿ç&#148;¨luaè¯­è¨&#128;å¼&#128;å&#143;&#145;æ¸¸æ&#136;&#143;ç&#154;&#132;è¯&#157;ï¼&#140;luaè¯­è¨&#128;æ&#150;&#135;ä»¶ä¹&#159;ä¼&#154;è¢«æ&#137;&#147;æ&#136;&#144;assetbundleå&#140;&#133;ï¼&#140;è¿&#153;å°±æ&#132;&#143;å&#145;³ç&#157;&#128;ï¼&#140;ä¿®æ&#148;¹å®&#140;luaä»£ç &#129;å&#144;&#142;è¦&#129;é&#135;&#141;æ&#150;°æ&#137;&#147;å&#140;&#133;å&#144;&#142;è¿&#144;è¡&#140;æ&#137;&#141;ä¼&#154;ç&#148;&#159;æ&#149;&#136;ã&#128;&#130;</p>
+
+
+
+<p></p>
+
+
+
+<h2>æ&#159;¥ç&#156;&#139;å·²å&#138; è½½èµ&#132;æº&#144;</h2>
+
+
+
+<p>æ­¤æ&#151;¶ï¼&#140;è¿&#144;è¡&#140;æ¸¸æ&#136;&#143;æ&#151;¶ï¼&#140;æ&#136;&#145;ä»¬å&#143;¯ä»¥é&#128;&#154;è¿&#135;è&#143;&#156;å&#141;&#149;â&#128;&#156;TinaX->ç¼&#150;è¾&#145;å&#153;¨->èµ&#132;æº&#144;ç³»ç»&#159;->ABèµ&#132;æº&#144;å&#138; è½½æ£&#128;æµ&#139;â&#128;&#157;æ&#157;¥æ&#159;¥ç&#156;&#139;å½&#147;å&#137;&#141;ç&#154;&#132;assetbundleå&#140;&#133;ç&#154;&#132;ä½¿ç&#148;¨æ&#131;&#133;å&#134;µ</p>
+
+
+
+<figure class="wp-block-image"><amp-img src="https://static.yomunchan.moe/wp-content/uploads/2019/07/image-7.png" alt="" class="wp-image-365 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height amp-wp-enforced-sizes" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/07/image-7.png 613w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/07/image-7-150x133.png 150w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/07/image-7-300x266.png 300w" object-fit="contain" width="600" height="400" layout="intrinsic"><noscript><img src="https://static.yomunchan.moe/wp-content/uploads/2019/07/image-7.png" alt="" class="wp-image-365 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height" sizes="(max-width: 613px) 100vw, 613px" width="600" height="400"></noscript></amp-img></figure><p>å&#156;¨å&#136;&#151;å&#135;ºç&#154;&#132;å&#134;&#133;å®¹ä¸­ï¼&#140;â&#128;&#156;[1]assets/xxx/xxxâ&#128;&#157;, å&#133;¶ä¸­ä¸­æ&#139;¬å&#143;·ä¸­ç&#154;&#132;æ&#149;°å­&#151;æ&#152;¯å½&#147;å&#137;&#141;è¯¥èµ&#132;æº&#144;å&#140;&#133;è¢«å¼&#149;ç&#148;¨ç&#154;&#132;æ¬¡æ&#149;°ã&#128;&#130;æ&#149;°å­&#151;ä¸º0æ&#151;¶ï¼&#140;ä»£è¡¨å½&#147;å&#137;&#141;èµ&#132;æº&#144;å&#140;&#133;ç&#155;®å&#137;&#141;ä»&#141;ç&#132;¶å&#156;¨å&#134;&#133;å­&#152;ä¸­ï¼&#140;ä½&#134;æ&#152;¯å¹¶æ²¡æ&#156;&#137;è¢«ä»»ä½&#149;å&#138;&#159;è&#131;½ä½¿ç&#148;¨ï¼&#140;è¿&#153;ç±»èµ&#132;æº&#144;å°&#134;å&#156;¨ä¸&#139;æ¬¡è°&#131;ç&#148;¨GCæ&#150;¹æ³&#149;æ&#151;¶è¢«é&#135;&#138;æ&#148;¾ã&#128;&#130;</p>
+	</div>
+
+	<footer class="amp-wp-article-footer"><div class="amp-wp-meta amp-wp-tax-category">
+		Categories: <a href="https://static.yomunchan.moe/corala/emmm/unity" rel="category tag">Unity</a>, <a href="https://static.yomunchan.moe/corala/emmm" rel="category tag">æ&#150;&#135;å­&#151;</a>	</div>
+
+		<div class="amp-wp-meta amp-wp-comments-link">
+		<a href="https://static.yomunchan.moe/archives/357#respond">
+			Leave a Comment		</a>
+	</div>
+	</footer></article><footer class="amp-wp-footer"><div>
+		<h2>æ&#156;&#137;æ&#156;¨é&#133;±ç&#154;&#132;å°&#143;å±&#139;</h2>
+		<a href="#top" class="back-to-top">Back to top</a>
+	</div>
+</footer></body></html>
