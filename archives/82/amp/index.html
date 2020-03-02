@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html amp lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"><title>Raspberry Pi 3B+ç³»ç»&#159;å®&#137;è£&#133;å®&#140;å&#133;¨è¯¦è§£ – æ&#156;&#137;æ&#156;¨é&#133;±ç&#154;&#132;å°&#143;å±&#139;</title><script type="text/javascript" src="https://cdn.ampproject.org/v0.js" async></script><style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style></head><body><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>	<script type="application/ld+json">{"@context":"http:\/\/schema.org","publisher":{"@type":"Organization","name":"æ&#156;&#137;æ&#156;¨é&#133;±ç&#154;&#132;å°&#143;å±&#139;","logo":"https:\/\/yomunchan-blog.oss-cn-hongkong.aliyuncs.com\/wp-content\/uploads\/2019\/10\/cropped-yomunchan_icon.png"},"@type":"BlogPosting","mainEntityOfPage":"https:\/\/static.yomunchan.moe\/archives\/82","headline":"Raspberry Pi 3B+ç³»ç»&#159;å®&#137;è£&#133;å®&#140;å&#133;¨è¯¦è§£","datePublished":"2017-12-05T15:27:14+00:00","dateModified":"2017-12-05T15:27:14+00:00","author":{"@type":"Person","name":"yomunsam"},"image":"https:\/\/yomunchan-blog.oss-cn-hongkong.aliyuncs.com\/wp-content\/uploads\/2017\/12\/ghoxkfdql4h5pp4a7n4.png"}</script><style amp-custom>
+		/* Generic WP styling */
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+
+.aligncenter {
+	display: block;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.amp-wp-enforced-sizes {
+	/** Our sizes fallback is 100vw, and we have a padding on the container; the max-width here prevents the element from overflowing. **/
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+
+/*
+ * Prevent cases of amp-img converted from img to appear with stretching by using object-fit to scale.
+ * See <https://github.com/ampproject/amphtml/issues/21371#issuecomment-475443219>.
+ * Also use object-fit:contain in worst case scenario when we can't figure out dimensions for an image.
+ * Additionally, in side of \AMP_Img_Sanitizer::determine_dimensions() it could $amp_img->setAttribute( 'object-fit', 'contain' )
+ * so that the following rules wouldn't be needed.
+ */
+amp-img.amp-wp-enforced-sizes[layout="intrinsic"] > img,
+amp-anim.amp-wp-enforced-sizes[layout="intrinsic"] > img {
+	object-fit: contain;
+}
+
+amp-fit-text blockquote,
+amp-fit-text h1,
+amp-fit-text h2,
+amp-fit-text h3,
+amp-fit-text h4,
+amp-fit-text h5,
+amp-fit-text h6 {
+	font-size: inherit;
+}
+
+/**
+ * Override a style rule in Twenty Sixteen and Twenty Seventeen.
+ * It set display:none for audio elements.
+ * This selector is the same, though it adds body and uses amp-audio instead of audio.
+ */
+body amp-audio:not([controls]) {
+	display: inline-block;
+	height: auto;
+}
+
+/*
+ * Style the default template messages for submit-success, submit-error, and submitting. These elements are inserted
+ * by the form sanitizer when a POST form lacks the action-xhr attribute.
+ */
+.amp-wp-default-form-message > p {
+	margin: 1em 0;
+	padding: 0.5em;
+}
+
+.amp-wp-default-form-message[submitting] > p,
+.amp-wp-default-form-message[submit-success] > p.amp-wp-form-redirecting {
+	font-style: italic;
+}
+
+.amp-wp-default-form-message[submit-success] > p:not(.amp-wp-form-redirecting) {
+	border: solid 1px #008000;
+	background-color: #90ee90;
+	color: #000;
+}
+
+.amp-wp-default-form-message[submit-error] > p {
+	border: solid 1px #f00;
+	background-color: #ffb6c1;
+	color: #000;
+}
+
+/* Prevent showing empty success message in the case of an AMP-Redirect-To response header. */
+.amp-wp-default-form-message[submit-success] > p:empty {
+	display: none;
+}
+
+/* Template Styles */
+
+.amp-wp-content,
+.amp-wp-title-bar div {
+		margin: 0 auto;
+	max-width: 600px;
+	}
+
+html {
+	background: #0a89c0;
+}
+
+body {
+	background: #0a0a0a;
+	color: #dedede;
+	font-family: Georgia, 'Times New Roman', Times, Serif;
+	font-weight: 300;
+	line-height: 1.75em;
+}
+
+p,
+ol,
+ul,
+figure {
+	margin: 0 0 1em;
+	padding: 0;
+}
+
+a,
+a:visited {
+	color: #0a89c0;
+}
+
+a:hover,
+a:active,
+a:focus {
+	color: #dedede;
+}
+
+/* Quotes */
+
+blockquote {
+	color: #dedede;
+	background: rgba(127,127,127,.125);
+	border-left: 2px solid #0a89c0;
+	margin: 8px 0 24px 0;
+	padding: 16px;
+}
+
+blockquote p:last-child {
+	margin-bottom: 0;
+}
+
+/* UI Fonts */
+
+.amp-wp-meta,
+.amp-wp-header div,
+.amp-wp-title,
+.wp-caption-text,
+.amp-wp-tax-category,
+.amp-wp-tax-tag,
+.amp-wp-comments-link,
+.amp-wp-footer p,
+.back-to-top {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+}
+
+/* Header */
+
+.amp-wp-header {
+	background-color: #0a89c0;
+}
+
+.amp-wp-header div {
+	color: #fff;
+	font-size: 1em;
+	font-weight: 400;
+	margin: 0 auto;
+	max-width: calc(840px - 32px);
+	padding: .875em 16px;
+	position: relative;
+}
+
+.amp-wp-header a {
+	color: #fff;
+	text-decoration: none;
+}
+
+
+.amp-wp-header .amp-wp-site-icon {
+	/** site icon is 32px **/
+	background-color: #fff;
+	border: 1px solid #fff;
+	border-radius: 50%;
+	position: absolute;
+	right: 18px;
+	top: 10px;
+}
+
+/* Article */
+
+.amp-wp-article {
+	color: #dedede;
+	font-weight: 400;
+	margin: 1.5em auto;
+	max-width: 840px;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+}
+
+/* Article Header */
+
+.amp-wp-article-header {
+	align-items: center;
+	align-content: stretch;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 1.5em 16px 0;
+}
+
+.amp-wp-title {
+	color: #dedede;
+	display: block;
+	flex: 1 0 100%;
+	font-weight: 900;
+	margin: 0 0 .625em;
+	width: 100%;
+}
+
+/* Article Meta */
+
+.amp-wp-meta {
+	color: #b1b1b1;
+	display: inline-block;
+	flex: 2 1 50%;
+	font-size: .875em;
+	line-height: 1.5em;
+	margin: 0 0 1.5em;
+	padding: 0;
+}
+
+.amp-wp-article-header .amp-wp-meta:last-of-type {
+	text-align: right;
+}
+
+.amp-wp-article-header .amp-wp-meta:first-of-type {
+	text-align: left;
+}
+
+.amp-wp-byline amp-img,
+.amp-wp-byline .amp-wp-author {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.amp-wp-byline amp-img {
+	border: 1px solid #0a89c0;
+	border-radius: 50%;
+	position: relative;
+	margin-right: 6px;
+}
+
+.amp-wp-posted-on {
+	text-align: right;
+}
+
+/* Featured image */
+
+.amp-wp-article-featured-image {
+	margin: 0 0 1em;
+}
+.amp-wp-article-featured-image amp-img {
+	margin: 0 auto;
+}
+.amp-wp-article-featured-image.wp-caption .wp-caption-text {
+	margin: 0 18px;
+}
+
+/* Article Content */
+
+.amp-wp-article-content {
+	margin: 0 16px;
+}
+
+.amp-wp-article-content ul,
+.amp-wp-article-content ol {
+	margin-left: 1em;
+}
+
+.amp-wp-article-content .wp-caption {
+	max-width: 100%;
+}
+
+.amp-wp-article-content amp-img {
+	margin: 0 auto;
+}
+
+.amp-wp-article-content amp-img.alignright {
+	margin: 0 0 1em 16px;
+}
+
+.amp-wp-article-content amp-img.alignleft {
+	margin: 0 16px 1em 0;
+}
+
+/* Captions */
+
+.wp-caption {
+	padding: 0;
+}
+
+.wp-caption.alignleft {
+	margin-right: 16px;
+}
+
+.wp-caption.alignright {
+	margin-left: 16px;
+}
+
+.wp-caption .wp-caption-text {
+	border-bottom: 1px solid #707070;
+	color: #b1b1b1;
+	font-size: .875em;
+	line-height: 1.5em;
+	margin: 0;
+	padding: .66em 10px .75em;
+}
+
+/* AMP Media */
+
+.alignwide,
+.alignfull {
+	clear: both;
+}
+
+amp-carousel {
+	background: #707070;
+	margin: 0 -16px 1.5em;
+}
+amp-iframe,
+amp-youtube,
+amp-instagram,
+amp-vine {
+	background: #707070;
+	margin: 0 -16px 1.5em;
+}
+
+.amp-wp-article-content amp-carousel amp-img {
+	border: none;
+}
+
+amp-carousel > amp-img > img {
+	object-fit: contain;
+}
+
+.amp-wp-iframe-placeholder {
+	background: #707070 url( https://static.yomunchan.moe/wp-content/plugins/amp/assets/images/placeholder-icon.png ) no-repeat center 40%;
+	background-size: 48px 48px;
+	min-height: 48px;
+}
+
+/* Article Footer Meta */
+
+.amp-wp-article-footer .amp-wp-meta {
+	display: block;
+}
+
+.amp-wp-tax-category,
+.amp-wp-tax-tag {
+	color: #b1b1b1;
+	font-size: .875em;
+	line-height: 1.5em;
+	margin: 1.5em 16px;
+}
+
+.amp-wp-comments-link {
+	color: #b1b1b1;
+	font-size: .875em;
+	line-height: 1.5em;
+	text-align: center;
+	margin: 2.25em 0 1.5em;
+}
+
+.amp-wp-comments-link a {
+	border-style: solid;
+	border-color: #707070;
+	border-width: 1px 1px 2px;
+	border-radius: 4px;
+	background-color: transparent;
+	color: #0a89c0;
+	cursor: pointer;
+	display: block;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 18px;
+	margin: 0 auto;
+	max-width: 200px;
+	padding: 11px 16px;
+	text-decoration: none;
+	width: 50%;
+	-webkit-transition: background-color 0.2s ease;
+			transition: background-color 0.2s ease;
+}
+
+/* AMP Footer */
+
+.amp-wp-footer {
+	border-top: 1px solid #707070;
+	margin: calc(1.5em - 1px) 0 0;
+}
+
+.amp-wp-footer div {
+	margin: 0 auto;
+	max-width: calc(840px - 32px);
+	padding: 1.25em 16px 1.25em;
+	position: relative;
+}
+
+.amp-wp-footer h2 {
+	font-size: 1em;
+	line-height: 1.375em;
+	margin: 0 0 .5em;
+}
+
+.amp-wp-footer p {
+	color: #b1b1b1;
+	font-size: .8em;
+	line-height: 1.5em;
+	margin: 0 85px 0 0;
+}
+
+.amp-wp-footer a {
+	text-decoration: none;
+}
+
+.back-to-top {
+	bottom: 1.275em;
+	font-size: .8em;
+	font-weight: 600;
+	line-height: 2em;
+	position: absolute;
+	right: 16px;
+}
+			</style><header id="top" class="amp-wp-header"><div>
+		<a href="https://static.yomunchan.moe/">
+										<amp-img src="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/10/cropped-yomunchan_icon-32x32.png" width="32" height="32" class="amp-wp-site-icon"></amp-img><span class="amp-site-title">
+				æ&#156;&#137;æ&#156;¨é&#133;±ç&#154;&#132;å°&#143;å±&#139;			</span>
+		</a>
+
+					</div>
+</header><article class="amp-wp-article"><header class="amp-wp-article-header"><h1 class="amp-wp-title">Raspberry Pi 3B+ç³»ç»&#159;å®&#137;è£&#133;å®&#140;å&#133;¨è¯¦è§£</h1>
+			<div class="amp-wp-meta amp-wp-byline">
+					<amp-img src="https://secure.gravatar.com/avatar/45019eb1dd8b43e939d42804cb2e3269?s=24&d=mm&r=g" alt="yomunsam" width="24" height="24" layout="fixed"></amp-img><span class="amp-wp-author author vcard">yomunsam</span>
+	</div>
+<div class="amp-wp-meta amp-wp-posted-on">
+	<time datetime="2017-12-05T23:27:14+00:00">
+		2å¹´ ago	</time></div>
+	</header><figure class="amp-wp-article-featured-image wp-caption"><amp-img width="1024" height="576" src="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2017/12/ghoxkfdql4h5pp4a7n4-1024x576.png" class="attachment-large size-large wp-post-image amp-wp-enforced-sizes" alt="" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2017/12/ghoxkfdql4h5pp4a7n4-1024x576.png 1024w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2017/12/ghoxkfdql4h5pp4a7n4-300x169.png 300w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2017/12/ghoxkfdql4h5pp4a7n4-768x432.png 768w" layout="intrinsic"><noscript><img width="1024" height="576" src="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2017/12/ghoxkfdql4h5pp4a7n4-1024x576.png" class="attachment-large size-large wp-post-image" alt="" sizes="(max-width: 1024px) 100vw, 1024px"></noscript></amp-img></figure><div class="amp-wp-article-content">
+		<p><strong>è¿&#153;æ&#152;¯ä¸&#128;ä¸ªå&#134;&#153;ç»&#153;å®&#140;å&#133;¨æ²¡æ&#142;¥è§¦è¿&#135;RaspberryPiï¼&#136;æ &#145;è&#142;&#147;æ´¾ï¼&#137;ç&#154;&#132;è¯»è&#128;&#133;ã&#128;&#130;</strong></p>
+<p>æ &#145;è&#142;&#147;æ´¾æ&#152;¯ä¸&#128;ä¸ªç»&#147;æ&#158;&#132;å®&#140;æ&#149;´ç&#154;&#132;å¾®å&#158;&#139;ç¡¬ä»¶å¼&#128;å&#143;&#145;æ&#157;¿ï¼&#140;æ&#136;&#145;ä»¬å&#133;&#136;å&#136;«ç®¡ä¸&#138;é&#157;¢è¿&#153;å&#143;¥è¯&#157;æ&#152;¯ä»&#128;ä¹&#136;æ&#132;&#143;æ&#128;&#157;ï¼&#140;å&#133;&#136;è¿&#153;ä¹&#136;ç&#144;&#134;è§£ï¼&#154;è¿&#153;æ&#152;¯ä¸&#128;å&#143;°ç&#137;¹æ®&#138;ç&#154;&#132;å°&#143;ç&#148;µè&#132;&#145;ã&#128;&#130;å¥½äº&#134;ï¼&#140;é&#130;£ä¹&#136;è¿&#153;ç¯&#135;æ&#150;&#135;å­&#151;è¦&#129;è¯´ç&#154;&#132;å°±æ&#152;¯ï¼&#140;æ&#128;&#142;ä¹&#136;ç»&#153;è¿&#153;ä¸ªå°&#143;ç&#148;µè&#132;&#145;è£&#133;ä¸&#138;ä¸&#128;ä¸ªæ&#147;&#141;ä½&#156;ç³»ç»&#159;ã&#128;&#130;è¿&#153;æ&#152;¯ä½¿ç&#148;¨æ &#145;è&#142;&#147;æ´¾ç&#154;&#132;ç¬¬ä¸&#128;æ­¥ã&#128;&#130;</p>
+<p></p>
+<h2>å&#135;&#134;å¤&#135;å·¥ä½&#156;</h2>
+<p>å&#156;¨å¼&#128;å§&#139;ç»&#153;å®&#131;å®&#137;è£&#133;ç³»ç»&#159;ä¹&#139;å&#137;&#141;ï¼&#140;æ&#136;&#145;ä»¬é&#156;&#128;è¦&#129;å&#135;&#134;å¤&#135;ä¸&#128;äº&#155;å&#133;¶ä»&#150;ç&#154;&#132;ä¸&#156;è¥¿ã&#128;&#130;å¦&#130;æ&#158;&#156;ä½ å&#143;ªæ&#156;&#137;ä¸&#128;ä¸ªå&#133;&#137;ç§&#131;ç§&#131;ç&#154;&#132;æ &#145;è&#142;&#147;æ´¾å¼&#128;å&#143;&#145;æ&#157;¿ç&#154;&#132;è¯&#157;ï¼&#140;é&#130;£ä¹&#136;å¾&#136;é«&#152;å&#133;´ç&#154;&#132;é&#128;&#154;ç&#159;¥ä½ ï¼&#140;ä½ ç&#142;©ä¸&#141;äº&#134;ã&#128;&#130;æ&#156;¬ç&#157;&#128;å°½å&#143;¯è&#131;½é&#129;¿å&#133;&#141;â&#128;&#156;è®©å¯¹ç&#148;µè&#132;&#145;ä¸&#141;ç&#134;&#159;æ&#130;&#137;ç&#154;&#132;äººç&#156;&#139;ä¸&#141;æ&#135;&#130;â&#128;&#157;ï¼&#140;å&#156;¨ä»&#139;ç»&#141;å&#135;&#134;å¤&#135;å·¥ä½&#156;ç&#154;&#132;æ&#151;¶å&#128;&#153;ï¼&#140;æ&#136;&#145;å°±å°½é&#135;&#143;é&#129;¿å&#133;&#141;ä»&#139;ç»&#141;å&#133;·ä½&#147;ç&#154;&#132;å&#158;&#139;å&#143;·å&#146;&#140;å&#143;&#130;æ&#149;°äº&#134;ã&#128;&#130;å¦&#130;æ&#158;&#156;ä½ è§&#137;å¾&#151;è¿&#153;ä¸ªå&#134;&#153;ç&#154;&#132;å¤ªç®&#128;å&#141;&#149;äº&#134;ä¸&#141;é&#128;&#130;å&#144;&#136;ä½ ï¼&#140;æ¬¢è¿&#142;å&#135;ºé&#151;¨å&#143;³è½¬å&#136;°â&#128;&#156;æ &#145;è&#142;&#147;æ´¾å®&#158;éª&#140;å®¤http://shumeipai.nxez.comâ&#128;&#157;</p>
+<ol><li>å&#135;&#134;å¤&#135;ä¸&#128;ä¸ª100å&#157;&#151;é&#146;±ä»¥ä¸&#138;ç&#154;&#132;è¯»å&#141;¡å&#153;¨ã&#128;&#130;</li>
+</ol><p><amp-img class="alignnone size-full wp-image-58 amp-wp-enforced-sizes" src="https://www.zerorstudio.com/wp-content/uploads/2017/12/time688aae59bbe20171205223428.png" alt="TIMæ&#136;ªå&#155;¾20171205223428" width="577" height="583" layout="intrinsic"><noscript><img class="alignnone size-full wp-image-58" src="https://www.zerorstudio.com/wp-content/uploads/2017/12/time688aae59bbe20171205223428.png" alt="TIMæ&#136;ªå&#155;¾20171205223428" width="577" height="583"></noscript></amp-img></p>
+<p>2. å&#135;&#134;å¤&#135;ä¸&#128;ä¸ª150å&#157;&#151;é&#146;±ä»¥ä¸&#138;ç&#154;&#132;é&#135;&#145;å£«é¡¿æ&#136;&#150;è&#128;&#133;é&#151;ªè¿ªç&#137;&#140;ç&#154;&#132;å&#130;¨å­&#152;å&#141;¡ã&#128;&#130;å¤§å°&#143;ç&#154;&#132;è¯&#157;å°±æ&#152;¯æ&#143;&#146;MP3é&#135;&#140;é&#130;£ä¹&#136;å¤§ç&#154;&#132;é&#130;£ç§&#141;</p>
+<p><amp-img class="alignnone size-full wp-image-59 amp-wp-enforced-sizes" src="https://www.zerorstudio.com/wp-content/uploads/2017/12/time688aae59bbe20171205224818.png" alt="TIMæ&#136;ªå&#155;¾20171205224818" width="925" height="689" layout="intrinsic"><noscript><img class="alignnone size-full wp-image-59" src="https://www.zerorstudio.com/wp-content/uploads/2017/12/time688aae59bbe20171205224818.png" alt="TIMæ&#136;ªå&#155;¾20171205224818" width="925" height="689"></noscript></amp-img></p>
+<p>3. å&#135;&#134;å¤&#135;ä¸&#128;ä¸ª50å&#157;&#151;é&#146;±ä»¥ä¸&#138;ç&#154;&#132;HDMIè§&#134;é¢&#145;çº¿</p>
+<p>4.å&#135;&#134;å¤&#135;ä¸&#128;ä¸ªä¸&#141;æ&#152;¯ä¸&#137;æ&#152;&#159;ç&#137;&#140;ç&#154;&#132;æ&#152;¾ç¤ºå&#153;¨</p>
+<p>5.å&#135;&#134;å¤&#135;ä¸&#128;å¥&#151;é&#154;&#143;ä¾¿å¤&#154;å°&#145;é&#146;±ç&#154;&#132;é&#148;®ç&#155;&#152;å&#146;&#140;é¼ æ &#135;ï¼&#140;è¦&#129;USBæ&#142;¥å&#143;£ç&#154;&#132;</p>
+<p>ç&#132;¶å&#144;&#142;ï¼&#140;æ &#145;è&#142;&#147;æ´¾å®&#152;æ&#150;¹æ&#142;¨è&#141;&#144;ç&#154;&#132;æ&#147;&#141;ä½&#156;ç³»ç»&#159;å&#143;«â&#128;&#157;Raspbianâ&#128;&#157;ï¼&#140;æ&#152;¯ä¸&#128;ä¸ªDebianç&#154;&#132;é­&#148;æ&#148;¹ç&#137;&#136;ã&#128;&#130;è¿&#153;é&#135;&#140;ç&#154;&#132;è¯&#157;ï¼&#140;æ&#136;&#145;ä¸&#141;æ&#128;&#142;ä¹&#136;å&#150;&#156;æ¬¢è¿&#153;ä¸ªç³»ç»&#159;ï¼&#140;è&#128;&#140;æ&#136;&#145;æ¯&#148;è¾&#131;å&#150;&#156;æ¬¢â&#128;&#156;Ubuntuâ&#128;&#157;ï¼&#140;æ&#137;&#128;ä»¥å°±å&#142;»å&#135;&#134;å¤&#135;ä¸&#128;ä¸ªUbuntuç&#154;&#132;imgé&#149;&#156;å&#131;&#143;æ&#150;&#135;ä»¶ã&#128;&#130;</p>
+<p>Ubuntu å&#143;¯ä»¥ä»&#142;è¿&#153;é&#135;&#140;ä¸&#139;è½½ï¼&#140;é&#128;&#137;æ&#139;©é&#128;&#130;å&#144;&#136;æ &#145;è&#142;&#147;æ´¾ç&#154;&#132;ç&#137;&#136;æ&#156;¬ï¼&#154;ubuntu-mate.org</p>
+<p>ï¼&#136;å¦&#130;æ&#158;&#156;æ&#137;&#147;å¼&#128;ç½&#145;ç«&#153;ä¸&#141;ç&#159;¥é&#129;&#147;å&#156;¨å&#147;ªä¸&#139;è½½ç&#154;&#132;è¯&#157;ï¼&#140;å°±æ&#138;&#138;ç½&#145;ç«&#153;ä¸&#138;æ¯&#143;ä¸&#128;ä¸ªå­&#151;é&#131;½è¯»ä¸&#128;é&#129;&#141;ï¼&#140;è¯»å&#135;ºå£°ï¼&#140;è¯»å®&#140;äº&#134;è¿&#152;ä¸&#141;ç&#159;¥é&#129;&#147;ç&#154;&#132;è¯&#157;å°±å&#134;&#141;è¯»ä¸&#128;é&#129;&#141;ã&#128;&#130;ï¼&#137;</p>
+<p>æ­¤å¤&#150;ï¼&#140;è¿&#152;é&#156;&#128;è¦&#129;ä¸&#128;ä¸ªSDå&#141;¡æ ¼å¼&#143;å&#140;&#150;å·¥å&#133;·SD Formatter<a href="https://www.sdcard.org/downloads/formatter_4/" target="_blank" rel="noopener">Â </a>å&#146;&#140;é&#149;&#156;å&#131;&#143;å&#134;&#153;å&#133;¥å·¥å&#133;·USB Image Tools</p>
+<p>USB Image Tools:Â <a href="https://pan.baidu.com/share/link?shareid=4232180688&uk=605377859" target="_blank" rel="noopener">ç&#130;¹å&#135;»ä¸&#139;è½½</a></p>
+<p>SD Formatter:Â <a href="https://www.sdcard.org/downloads/formatter_4/" target="_blank" rel="noopener">ç&#130;¹å&#135;»ä¸&#139;è½½</a></p>
+<p>Â </p>
+<h2>å¼&#128;å§&#139;å®&#137;è£&#133;</h2>
+<p>é¦&#150;å&#133;&#136;ï¼&#140;ä»&#142;Ubuntuå®&#152;ç½&#145;ä¸&#139;è½½ç&#154;&#132;ç³»ç»&#159;æ&#152;¯ä¸&#128;ä¸ª.xzç&#154;&#132;å&#142;&#139;ç¼©æ&#150;&#135;ä»¶æ ¼å¼&#143;</p>
+<p><amp-img class="alignnone size-full wp-image-60 amp-wp-enforced-sizes" src="https://www.zerorstudio.com/wp-content/uploads/2017/12/time688aae59bbe20171205225745.png" alt="TIMæ&#136;ªå&#155;¾20171205225745" width="870" height="278" layout="intrinsic"><noscript><img class="alignnone size-full wp-image-60" src="https://www.zerorstudio.com/wp-content/uploads/2017/12/time688aae59bbe20171205225745.png" alt="TIMæ&#136;ªå&#155;¾20171205225745" width="870" height="278"></noscript></amp-img></p>
+<p>æ&#136;&#145;ä»¬å&#143;¯ä»¥ä½¿ç&#148;¨7zipæ&#136;&#150;è&#128;&#133;Bandizipå·¥å&#133;·å°&#134;å&#133;¶è§£å&#142;&#139;æ&#136;&#144;Imgæ ¼å¼&#143;æ&#150;&#135;ä»¶ã&#128;&#130;<strong>æ³¨æ&#132;&#143;ä¸&#141;è¦&#129;ä½¿ç&#148;¨å¥½å&#142;&#139;ã&#128;&#129;360å&#142;&#139;ç¼©å&#146;&#140;å¿«å&#142;&#139;ã&#128;&#130;</strong></p>
+<p>ç&#132;¶å&#144;&#142;å°&#134;å&#130;¨å­&#152;å&#141;¡æ&#143;&#146;å&#133;¥è¯»å&#141;¡å&#153;¨ï¼&#140;ä½¿ç&#148;¨æ ¼å¼&#143;å&#140;&#150;å·¥å&#133;·SD Formatterå°&#134;å&#133;¶è¿&#155;è¡&#140;æ ¼å¼&#143;å&#140;&#150;ã&#128;&#130;</p>
+<p><amp-img class="alignnone size-full wp-image-63 amp-wp-enforced-sizes" src="https://www.zerorstudio.com/wp-content/uploads/2017/12/time688aae59bbe20171205230937.png" alt="TIMæ&#136;ªå&#155;¾20171205230937" width="395" height="407" layout="intrinsic"><noscript><img class="alignnone size-full wp-image-63" src="https://www.zerorstudio.com/wp-content/uploads/2017/12/time688aae59bbe20171205230937.png" alt="TIMæ&#136;ªå&#155;¾20171205230937" width="395" height="407"></noscript></amp-img></p>
+<p>ç&#132;¶å&#144;&#142;æ&#137;&#147;å¼&#128;USB Image Toolï¼&#140;é&#128;&#137;æ&#139;©SDå&#141;¡è®¾å¤&#135;ã&#128;&#130;</p>
+<p>ç&#130;¹å&#135;»â&#128;&#156;Restoreâ&#128;&#157;ï¼&#140;é&#128;&#137;æ&#139;©å&#136;&#154;æ&#137;&#141;è§£å&#142;&#139;å¥½ç&#154;&#132;imgæ ¼å¼&#143;æ&#150;&#135;ä»¶ã&#128;&#130;</p>
+<p><amp-img class="alignnone size-full wp-image-64 amp-wp-enforced-sizes" src="https://www.zerorstudio.com/wp-content/uploads/2017/12/time688aae59bbe20171205231108.png" alt="TIMæ&#136;ªå&#155;¾20171205231108" width="636" height="425" layout="intrinsic"><noscript><img class="alignnone size-full wp-image-64" src="https://www.zerorstudio.com/wp-content/uploads/2017/12/time688aae59bbe20171205231108.png" alt="TIMæ&#136;ªå&#155;¾20171205231108" width="636" height="425"></noscript></amp-img><amp-img class="alignnone size-full wp-image-65 amp-wp-enforced-sizes" src="https://www.zerorstudio.com/wp-content/uploads/2017/12/time688aae59bbe20171205231125.png" alt="TIMæ&#136;ªå&#155;¾20171205231125" width="801" height="534" layout="intrinsic"><noscript><img class="alignnone size-full wp-image-65" src="https://www.zerorstudio.com/wp-content/uploads/2017/12/time688aae59bbe20171205231125.png" alt="TIMæ&#136;ªå&#155;¾20171205231125" width="801" height="534"></noscript></amp-img></p>
+<p>ç&#132;¶å&#144;&#142;é&#157;&#153;é&#157;&#153;ç&#154;&#132;ç­&#137;å¾&#133;å®&#131;å®&#137;è£&#133;é&#149;&#156;å&#131;&#143;å°±å&#143;¯ä»¥äº&#134;ã&#128;&#130;</p>
+<p><amp-img class="alignnone size-full wp-image-66 amp-wp-enforced-sizes" src="https://www.zerorstudio.com/wp-content/uploads/2017/12/time688aae59bbe20171205231332.png" alt="TIMæ&#136;ªå&#155;¾20171205231332" width="636" height="425" layout="intrinsic"><noscript><img class="alignnone size-full wp-image-66" src="https://www.zerorstudio.com/wp-content/uploads/2017/12/time688aae59bbe20171205231332.png" alt="TIMæ&#136;ªå&#155;¾20171205231332" width="636" height="425"></noscript></amp-img></p>
+<p>å®&#137;è£&#133;å¥½ä¹&#139;å&#144;&#142;ï¼&#140;è¿&#153;ä¸ªç³»ç»&#159;å°±å&#129;&#154;å¥½äº&#134;ï¼&#140;é&#130;£ä¹&#136;æ&#152;¯ä¸&#141;æ&#152;¯å°±å&#143;¯ä»¥å¼&#128;æ&#156;ºäº&#134;å&#145;¢ï¼&#140;å&#128;&#146;ä¹&#159;ä¸&#141;æ&#152;¯ï¼&#140;è¿&#152;å·®ä¸&#128;ä¸ªé&#135;&#141;è¦&#129;æ­¥éª¤â&#128;&#148;â&#128;&#148;è®¾ç½®å±&#143;å¹&#149;å&#136;&#134;è¾¨ç&#142;&#135;ã&#128;&#130;</p>
+<p>å&#156;¨å®&#137;è£&#133;å®&#140;é&#149;&#156;å&#131;&#143;ä¹&#139;å&#144;&#142;ï¼&#140;æ&#136;&#145;ä»¬å&#143;&#145;ç&#142;°ï¼&#140;SDå&#141;¡è¢«å&#136;&#134;æ&#136;&#144;äº&#134;ä¸¤ä¸ªå&#136;&#134;å&#140;ºï¼&#140;å&#133;¶ä¸­æ&#156;&#137;ä¸&#128;ä¸ªç&#137;¹å&#136;«å°&#143;ç&#154;&#132;å&#143;«â&#128;&#156;PI_BOOTâ&#128;&#157;ï¼&#140;è¿&#152;æ&#156;&#137;ä¸&#128;ä¸ªæ&#137;&#147;ä¸&#141;å¼&#128;ï¼&#136;å°±åº&#148;è¯¥æ&#137;&#147;ä¸&#141;å¼&#128;ï¼&#140;ä¹&#159;ä¸&#141;è¦&#129;å¼ºè¡&#140;æ&#137;&#147;å¼&#128;ï¼&#137;ã&#128;&#130;</p>
+<p><amp-img class="alignnone size-full wp-image-68 amp-wp-enforced-sizes" src="https://www.zerorstudio.com/wp-content/uploads/2017/12/time688aae59bbe20171205231925.png" alt="TIMæ&#136;ªå&#155;¾20171205231925" width="665" height="291" layout="intrinsic"><noscript><img class="alignnone size-full wp-image-68" src="https://www.zerorstudio.com/wp-content/uploads/2017/12/time688aae59bbe20171205231925.png" alt="TIMæ&#136;ªå&#155;¾20171205231925" width="665" height="291"></noscript></amp-img></p>
+<p>å&#156;¨PI_BOOTè¿&#153;ä¸ªå&#136;&#134;å&#140;ºç&#154;&#132;æ ¹ç&#155;®å½&#149;ä¸&#139;ï¼&#140;æ&#156;&#137;ä¸&#128;ä¸ªå&#143;«config.txtç&#154;&#132;æ&#150;&#135;ä»¶ï¼&#140;è¿&#153;ä¸ªå°±æ&#152;¯æ &#145;è&#142;&#147;æ´¾ç&#154;&#132;ç¡¬ä»¶é&#133;&#141;ç½®æ&#150;&#135;ä»¶ï¼&#136;ç±»ä¼¼äº&#142;å®¶ç&#148;¨ç&#148;µè&#132;&#145;ä¸»æ&#157;¿ç&#154;&#132;BIOSï¼&#137;</p>
+<p>ä½¿ç&#148;¨Notepad++ã&#128;&#129;sublime Textã&#128;&#129;VIMã&#128;&#129;geditä¹&#139;ç±»ç&#154;&#132;ä¸&#147;ä¸&#154;æ&#150;&#135;æ&#156;¬ç¼&#150;è¾&#145;å&#153;¨æ&#137;&#147;å¼&#128;å®&#131;ï¼&#140;ä¸&#141;è¦&#129;ä½¿ç&#148;¨è®°äº&#139;æ&#156;¬ä¹&#139;ç±»ç&#154;&#132;ã&#128;&#130;</p>
+<p>å&#156;¨ä»»ä½&#149;ç©ºç&#153;½ä½&#141;ç½®è¾&#147;å&#133;¥ä¸¤è¡&#140;æ&#150;&#135;æ&#156;¬ï¼&#154;</p>
+<blockquote><p>hdmi_group=1<br>
+hdmi_mode=16</p></blockquote>
+<p>è¿&#153;ä¸ªæ&#152;¯é&#146;&#136;å¯¹HDMI ã&#128;&#129;1080p 60hzç&#154;&#132;æ&#152;¾ç¤ºå&#153;¨ç&#154;&#132;è®¾ç½®ã&#128;&#130;</p>
+<p>è®¾ç½®å®&#140;æ&#136;&#144;ä¹&#139;å&#144;&#142;ä¿&#157;å­&#152;ï¼&#140;å¼¹å&#135;ºSDå&#141;¡ï¼&#140;å¹¶æ&#143;&#146;å&#133;¥æ &#145;è&#142;&#147;æ´¾ï¼&#140;å¼&#128;æ&#156;ºã&#128;&#130;</p>
+<p>â&#128;&#148;â&#128;&#148;â&#128;&#148;â&#128;&#148;â&#128;&#148;â&#128;&#148;â&#128;&#148;â&#128;&#148;â&#128;&#148;â&#128;&#148;â&#128;&#148;â&#128;&#148;</p>
+<p>æ&#143;&#146;ä¸&#138;é&#148;®é¼ å&#146;&#140;æ&#152;¾ç¤ºå&#153;¨ï¼&#140;ç¨&#141;ç­&#137;ç&#137;&#135;å&#136;»ï¼&#140;å°±ä¼&#154;ç&#156;&#139;å&#136;°ç&#134;&#159;æ&#130;&#137;ç&#154;&#132;Ubuntué£&#142;æ ¼ç&#154;&#132;ç&#149;&#140;é&#157;¢ã&#128;&#130;</p>
+<p>é¦&#150;å&#133;&#136;æ&#152;¯è¯­è¨&#128;é&#128;&#137;æ&#139;©ï¼&#140;</p>
+<p><amp-img class="alignnone size-full wp-image-71 amp-wp-enforced-sizes" src="https://www.zerorstudio.com/wp-content/uploads/2017/12/time688aae59bbe20171205233544.png" alt="TIMæ&#136;ªå&#155;¾20171205233544" width="1015" height="757" layout="intrinsic"><noscript><img class="alignnone size-full wp-image-71" src="https://www.zerorstudio.com/wp-content/uploads/2017/12/time688aae59bbe20171205233544.png" alt="TIMæ&#136;ªå&#155;¾20171205233544" width="1015" height="757"></noscript></amp-img></p>
+<p>ç&#132;¶å&#144;&#142;æ³¨æ&#132;&#143;è¿&#153;é&#135;&#140;æ&#152;¯é&#128;&#137;æ&#139;©æ&#151;¶å&#140;ºä¸&#141;æ&#152;¯å&#156;°å&#140;ºï¼&#129;é»&#152;è®¤æ&#152;¯ä¸&#138;æµ·å°±å¯¹äº&#134;ï¼&#140;ä¸&#141;ç&#148;¨æ&#148;¹å&#136;«ç&#154;&#132;ã&#128;&#130;</p>
+<p><amp-img class="alignnone size-full wp-image-72 amp-wp-enforced-sizes" src="https://www.zerorstudio.com/wp-content/uploads/2017/12/22.png" alt="22" width="910" height="706" layout="intrinsic"><noscript><img class="alignnone size-full wp-image-72" src="https://www.zerorstudio.com/wp-content/uploads/2017/12/22.png" alt="22" width="910" height="706"></noscript></amp-img></p>
+<p>ç&#132;¶å&#144;&#142;æ&#152;¯é&#148;®ç&#155;&#152;è®¾ç½®ï¼&#140;å¦&#130;æ&#158;&#156;ä½ ä¸&#141;æ&#135;&#130;è¿&#153;ä¸ªé&#128;&#137;é¡¹æ&#152;¯å¹²å&#152;&#155;ç&#154;&#132;ï¼&#140;é»&#152;è®¤é&#128;&#137;æ&#139;©â&#128;&#156;è&#139;±è¯­ï¼&#136;ç¾&#142;å&#155;½ï¼&#137;â&#128;&#157;ï¼&#140;ä¸&#141;è¦&#129;é&#128;&#137;å&#136;«ç&#154;&#132;ä¸&#156;è¥¿ã&#128;&#130;</p>
+<p><amp-img class="alignnone size-full wp-image-73 amp-wp-enforced-sizes" src="https://www.zerorstudio.com/wp-content/uploads/2017/12/time688aae59bbe20171205233911.png" alt="TIMæ&#136;ªå&#155;¾20171205233911" width="1010" height="686" layout="intrinsic"><noscript><img class="alignnone size-full wp-image-73" src="https://www.zerorstudio.com/wp-content/uploads/2017/12/time688aae59bbe20171205233911.png" alt="TIMæ&#136;ªå&#155;¾20171205233911" width="1010" height="686"></noscript></amp-img></p>
+<p>æ&#156;&#128;å&#144;&#142;è®¾ç½®ç&#148;¨æ&#136;·ä¿¡æ&#129;¯ï¼&#140;å®&#137;è£&#133;å®&#140;æ&#136;&#144;ã&#128;&#130;</p>
+<hr><h2>å&#129;&#154;ç&#130;¹æ&#155;´å¥½ç&#154;&#132;</h2>
+<p>é¦&#150;å&#133;&#136;ç¬¬ä¸&#128;æ­¥ï¼&#140;æ&#140;&#137;ctrl+alt+tå&#145;¼å&#135;ºç»&#136;ç«¯ï¼&#140;å&#133;»æ&#136;&#144;ä¸&#128;ä¸ªä¹ æ&#131;¯ï¼&#140;æ&#150;°ç³»ç»&#159;ç&#154;&#132;ç¬¬ä¸&#128;ä¸ªå&#145;½ä»¤åº&#148;è¯¥æ&#152;¯</p>
+<blockquote><p>sudo apt update</p></blockquote>
+<p>ä¸ºäº&#134;è¿&#153;ä¸ªä¸&#156;è¥¿å&#141;&#149;ç&#139;¬ç&#139;¬å&#141; ä¸&#128;å¥&#151;é&#148;®ç&#155;&#152;é¼ æ &#135;å&#128;&#146;æ&#152;¯è¿&#152;è¡&#140;ï¼&#140;ä½&#134;æ&#152;¯ä¸ºä¸&#128;ä¸ªä¸&#128;ä¸¤å&#157;&#151;å&#157;&#151;é&#146;±ç&#154;&#132;æ&#157;¿å­&#144;ï¼&#140;è&#128;&#151;ä¸&#128;ä¸ªå&#135; å&#141;&#131;å&#157;&#151;é&#146;±ç&#154;&#132;æ&#152;¾ç¤ºå&#153;¨å°±å&#136;&#146;ä¸&#141;æ&#157;¥äº&#134;ã&#128;&#130;</p>
+<p>æ&#137;&#128;ä»¥æ&#136;&#145;è¿&#153;é&#135;&#140;å&#133;¶å®&#158;ä½¿ç&#148;¨ç&#154;&#132;æ&#152;¯å&#143;°å¼&#143;æ&#156;ºç&#154;&#132;æ&#152;¾ç¤ºå&#153;¨ï¼&#140;ä¹&#159;å°±æ&#152;¯è¯´æ&#136;&#145;ä¸&#141;å&#143;¯è&#131;½æ&#128;»æ&#138;&#138;æ&#152;¾ç¤ºå&#153;¨æ&#143;&#146;å&#156;¨ä¸&#138;é&#157;¢ç&#154;&#132;ã&#128;&#130;é&#130;£ä¹&#136;å°±æ&#156;&#137;äº&#134;ä¸&#128;ä¸ªé&#156;&#128;æ±&#130;ï¼&#140;æ&#136;&#145;è&#131;½ä¸&#141;è&#131;½é&#128;&#154;è¿&#135;ç½&#145;ç»&#156;å&#142;»è¿&#156;ç¨&#139;è®¿é&#151;®è¿&#153;ä¸ªã&#128;&#130;</p>
+<p>æ&#137;&#128;ä»¥ï¼&#140;æ&#136;&#145;ä»¬æ&#157;¥å®&#137;è£&#133;ä¸&#128;ä¸ªå°&#143;ä¸&#156;è¥¿ï¼&#140;å&#156;¨ç»&#136;ç«¯ä¸&#139;è¿&#144;è¡&#140;</p>
+<blockquote><p>sudo apt install xrdp</p></blockquote>
+<p>ç&#132;¶å&#144;&#142;å°±å&#143;¯ä»¥ä½¿ç&#148;¨Windowsç&#154;&#132;è¿&#156;ç¨&#139;æ¡&#140;é&#157;¢ç®¡ç&#144;&#134;å·¥å&#133;·ç&#153;»å½&#149;äº&#134;ã&#128;&#130;</p>
+<p><amp-img class="alignnone size-full wp-image-74 amp-wp-enforced-sizes" src="https://www.zerorstudio.com/wp-content/uploads/2017/12/time688aae59bbe20171205235556.png" alt="TIMæ&#136;ªå&#155;¾20171205235556" width="413" height="237" layout="intrinsic"><noscript><img class="alignnone size-full wp-image-74" src="https://www.zerorstudio.com/wp-content/uploads/2017/12/time688aae59bbe20171205235556.png" alt="TIMæ&#136;ªå&#155;¾20171205235556" width="413" height="237"></noscript></amp-img><amp-img class="alignnone size-full wp-image-75 amp-wp-enforced-sizes" src="https://www.zerorstudio.com/wp-content/uploads/2017/12/time688aae59bbe20171205235601.png" alt="TIMæ&#136;ªå&#155;¾20171205235601" width="489" height="328" layout="intrinsic"><noscript><img class="alignnone size-full wp-image-75" src="https://www.zerorstudio.com/wp-content/uploads/2017/12/time688aae59bbe20171205235601.png" alt="TIMæ&#136;ªå&#155;¾20171205235601" width="489" height="328"></noscript></amp-img></p>
+<p>Â </p>
+<p>å¤§å&#138;&#159;å&#145;&#138;æ&#136;&#144;ï¼&#140;å°½æ&#131;&#133;äº«ç&#148;¨Ubuntuå&#146;&#140;æ &#145;è&#142;&#147;æ´¾</p>
+<p><amp-img class="alignnone size-full wp-image-76 amp-wp-enforced-sizes" src="https://www.zerorstudio.com/wp-content/uploads/2017/12/ghoxkfdql4h5pp4a7n4.png" alt="$G~HOXKFDQL~4H5)PP4A7N4" width="1920" height="1080" layout="intrinsic"><noscript><img class="alignnone size-full wp-image-76" src="https://www.zerorstudio.com/wp-content/uploads/2017/12/ghoxkfdql4h5pp4a7n4.png" alt="$G~HOXKFDQL~4H5)PP4A7N4" width="1920" height="1080"></noscript></amp-img></p>
+	</div>
+
+	<footer class="amp-wp-article-footer"><div class="amp-wp-meta amp-wp-tax-category">
+		Categories: <a href="https://static.yomunchan.moe/corala/emmm" rel="category tag">æ&#150;&#135;å­&#151;</a>	</div>
+
+		<div class="amp-wp-meta amp-wp-comments-link">
+		<a href="https://static.yomunchan.moe/archives/82#respond">
+			Leave a Comment		</a>
+	</div>
+	</footer></article><footer class="amp-wp-footer"><div>
+		<h2>æ&#156;&#137;æ&#156;¨é&#133;±ç&#154;&#132;å°&#143;å±&#139;</h2>
+		<a href="#top" class="back-to-top">Back to top</a>
+	</div>
+</footer></body></html>
