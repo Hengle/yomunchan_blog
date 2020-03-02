@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html amp lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"><title>TinaX Framework è&#135;ªå&#138;¨å&#140;&#150;æ&#158;&#132;å»ºå®&#158;è·µ – æ&#156;&#137;æ&#156;¨é&#133;±ç&#154;&#132;å°&#143;å±&#139;</title><script type="text/javascript" src="https://cdn.ampproject.org/v0.js" async></script><style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style></head><body><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>	<script type="application/ld+json">{"@context":"http:\/\/schema.org","publisher":{"@type":"Organization","name":"æ&#156;&#137;æ&#156;¨é&#133;±ç&#154;&#132;å°&#143;å±&#139;","logo":"https:\/\/yomunchan-blog.oss-cn-hongkong.aliyuncs.com\/wp-content\/uploads\/2019\/10\/cropped-yomunchan_icon.png"},"@type":"BlogPosting","mainEntityOfPage":"https:\/\/static.yomunchan.moe\/archives\/427","headline":"TinaX Framework è&#135;ªå&#138;¨å&#140;&#150;æ&#158;&#132;å»ºå®&#158;è·µ","datePublished":"2019-10-06T11:26:06+00:00","dateModified":"2019-10-07T15:05:15+00:00","author":{"@type":"Person","name":"yomunsam"},"image":"https:\/\/yomunchan-blog.oss-cn-hongkong.aliyuncs.com\/wp-content\/uploads\/2019\/10\/Snipaste_2019-10-06_19-33-03.png"}</script><style amp-custom>
+		/* Generic WP styling */
+
+.alignright {
+	float: right;
+}
+
+.alignleft {
+	float: left;
+}
+
+.aligncenter {
+	display: block;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.amp-wp-enforced-sizes {
+	/** Our sizes fallback is 100vw, and we have a padding on the container; the max-width here prevents the element from overflowing. **/
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+
+/*
+ * Prevent cases of amp-img converted from img to appear with stretching by using object-fit to scale.
+ * See <https://github.com/ampproject/amphtml/issues/21371#issuecomment-475443219>.
+ * Also use object-fit:contain in worst case scenario when we can't figure out dimensions for an image.
+ * Additionally, in side of \AMP_Img_Sanitizer::determine_dimensions() it could $amp_img->setAttribute( 'object-fit', 'contain' )
+ * so that the following rules wouldn't be needed.
+ */
+amp-img.amp-wp-enforced-sizes[layout="intrinsic"] > img,
+amp-anim.amp-wp-enforced-sizes[layout="intrinsic"] > img {
+	object-fit: contain;
+}
+
+amp-fit-text blockquote,
+amp-fit-text h1,
+amp-fit-text h2,
+amp-fit-text h3,
+amp-fit-text h4,
+amp-fit-text h5,
+amp-fit-text h6 {
+	font-size: inherit;
+}
+
+/**
+ * Override a style rule in Twenty Sixteen and Twenty Seventeen.
+ * It set display:none for audio elements.
+ * This selector is the same, though it adds body and uses amp-audio instead of audio.
+ */
+body amp-audio:not([controls]) {
+	display: inline-block;
+	height: auto;
+}
+
+/*
+ * Style the default template messages for submit-success, submit-error, and submitting. These elements are inserted
+ * by the form sanitizer when a POST form lacks the action-xhr attribute.
+ */
+.amp-wp-default-form-message > p {
+	margin: 1em 0;
+	padding: 0.5em;
+}
+
+.amp-wp-default-form-message[submitting] > p,
+.amp-wp-default-form-message[submit-success] > p.amp-wp-form-redirecting {
+	font-style: italic;
+}
+
+.amp-wp-default-form-message[submit-success] > p:not(.amp-wp-form-redirecting) {
+	border: solid 1px #008000;
+	background-color: #90ee90;
+	color: #000;
+}
+
+.amp-wp-default-form-message[submit-error] > p {
+	border: solid 1px #f00;
+	background-color: #ffb6c1;
+	color: #000;
+}
+
+/* Prevent showing empty success message in the case of an AMP-Redirect-To response header. */
+.amp-wp-default-form-message[submit-success] > p:empty {
+	display: none;
+}
+
+/* Template Styles */
+
+.amp-wp-content,
+.amp-wp-title-bar div {
+		margin: 0 auto;
+	max-width: 600px;
+	}
+
+html {
+	background: #0a89c0;
+}
+
+body {
+	background: #0a0a0a;
+	color: #dedede;
+	font-family: Georgia, 'Times New Roman', Times, Serif;
+	font-weight: 300;
+	line-height: 1.75em;
+}
+
+p,
+ol,
+ul,
+figure {
+	margin: 0 0 1em;
+	padding: 0;
+}
+
+a,
+a:visited {
+	color: #0a89c0;
+}
+
+a:hover,
+a:active,
+a:focus {
+	color: #dedede;
+}
+
+/* Quotes */
+
+blockquote {
+	color: #dedede;
+	background: rgba(127,127,127,.125);
+	border-left: 2px solid #0a89c0;
+	margin: 8px 0 24px 0;
+	padding: 16px;
+}
+
+blockquote p:last-child {
+	margin-bottom: 0;
+}
+
+/* UI Fonts */
+
+.amp-wp-meta,
+.amp-wp-header div,
+.amp-wp-title,
+.wp-caption-text,
+.amp-wp-tax-category,
+.amp-wp-tax-tag,
+.amp-wp-comments-link,
+.amp-wp-footer p,
+.back-to-top {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+}
+
+/* Header */
+
+.amp-wp-header {
+	background-color: #0a89c0;
+}
+
+.amp-wp-header div {
+	color: #fff;
+	font-size: 1em;
+	font-weight: 400;
+	margin: 0 auto;
+	max-width: calc(840px - 32px);
+	padding: .875em 16px;
+	position: relative;
+}
+
+.amp-wp-header a {
+	color: #fff;
+	text-decoration: none;
+}
+
+
+.amp-wp-header .amp-wp-site-icon {
+	/** site icon is 32px **/
+	background-color: #fff;
+	border: 1px solid #fff;
+	border-radius: 50%;
+	position: absolute;
+	right: 18px;
+	top: 10px;
+}
+
+/* Article */
+
+.amp-wp-article {
+	color: #dedede;
+	font-weight: 400;
+	margin: 1.5em auto;
+	max-width: 840px;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+}
+
+/* Article Header */
+
+.amp-wp-article-header {
+	align-items: center;
+	align-content: stretch;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 1.5em 16px 0;
+}
+
+.amp-wp-title {
+	color: #dedede;
+	display: block;
+	flex: 1 0 100%;
+	font-weight: 900;
+	margin: 0 0 .625em;
+	width: 100%;
+}
+
+/* Article Meta */
+
+.amp-wp-meta {
+	color: #b1b1b1;
+	display: inline-block;
+	flex: 2 1 50%;
+	font-size: .875em;
+	line-height: 1.5em;
+	margin: 0 0 1.5em;
+	padding: 0;
+}
+
+.amp-wp-article-header .amp-wp-meta:last-of-type {
+	text-align: right;
+}
+
+.amp-wp-article-header .amp-wp-meta:first-of-type {
+	text-align: left;
+}
+
+.amp-wp-byline amp-img,
+.amp-wp-byline .amp-wp-author {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.amp-wp-byline amp-img {
+	border: 1px solid #0a89c0;
+	border-radius: 50%;
+	position: relative;
+	margin-right: 6px;
+}
+
+.amp-wp-posted-on {
+	text-align: right;
+}
+
+/* Featured image */
+
+.amp-wp-article-featured-image {
+	margin: 0 0 1em;
+}
+.amp-wp-article-featured-image amp-img {
+	margin: 0 auto;
+}
+.amp-wp-article-featured-image.wp-caption .wp-caption-text {
+	margin: 0 18px;
+}
+
+/* Article Content */
+
+.amp-wp-article-content {
+	margin: 0 16px;
+}
+
+.amp-wp-article-content ul,
+.amp-wp-article-content ol {
+	margin-left: 1em;
+}
+
+.amp-wp-article-content .wp-caption {
+	max-width: 100%;
+}
+
+.amp-wp-article-content amp-img {
+	margin: 0 auto;
+}
+
+.amp-wp-article-content amp-img.alignright {
+	margin: 0 0 1em 16px;
+}
+
+.amp-wp-article-content amp-img.alignleft {
+	margin: 0 16px 1em 0;
+}
+
+/* Captions */
+
+.wp-caption {
+	padding: 0;
+}
+
+.wp-caption.alignleft {
+	margin-right: 16px;
+}
+
+.wp-caption.alignright {
+	margin-left: 16px;
+}
+
+.wp-caption .wp-caption-text {
+	border-bottom: 1px solid #707070;
+	color: #b1b1b1;
+	font-size: .875em;
+	line-height: 1.5em;
+	margin: 0;
+	padding: .66em 10px .75em;
+}
+
+/* AMP Media */
+
+.alignwide,
+.alignfull {
+	clear: both;
+}
+
+amp-carousel {
+	background: #707070;
+	margin: 0 -16px 1.5em;
+}
+amp-iframe,
+amp-youtube,
+amp-instagram,
+amp-vine {
+	background: #707070;
+	margin: 0 -16px 1.5em;
+}
+
+.amp-wp-article-content amp-carousel amp-img {
+	border: none;
+}
+
+amp-carousel > amp-img > img {
+	object-fit: contain;
+}
+
+.amp-wp-iframe-placeholder {
+	background: #707070 url( https://static.yomunchan.moe/wp-content/plugins/amp/assets/images/placeholder-icon.png ) no-repeat center 40%;
+	background-size: 48px 48px;
+	min-height: 48px;
+}
+
+/* Article Footer Meta */
+
+.amp-wp-article-footer .amp-wp-meta {
+	display: block;
+}
+
+.amp-wp-tax-category,
+.amp-wp-tax-tag {
+	color: #b1b1b1;
+	font-size: .875em;
+	line-height: 1.5em;
+	margin: 1.5em 16px;
+}
+
+.amp-wp-comments-link {
+	color: #b1b1b1;
+	font-size: .875em;
+	line-height: 1.5em;
+	text-align: center;
+	margin: 2.25em 0 1.5em;
+}
+
+.amp-wp-comments-link a {
+	border-style: solid;
+	border-color: #707070;
+	border-width: 1px 1px 2px;
+	border-radius: 4px;
+	background-color: transparent;
+	color: #0a89c0;
+	cursor: pointer;
+	display: block;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 18px;
+	margin: 0 auto;
+	max-width: 200px;
+	padding: 11px 16px;
+	text-decoration: none;
+	width: 50%;
+	-webkit-transition: background-color 0.2s ease;
+			transition: background-color 0.2s ease;
+}
+
+/* AMP Footer */
+
+.amp-wp-footer {
+	border-top: 1px solid #707070;
+	margin: calc(1.5em - 1px) 0 0;
+}
+
+.amp-wp-footer div {
+	margin: 0 auto;
+	max-width: calc(840px - 32px);
+	padding: 1.25em 16px 1.25em;
+	position: relative;
+}
+
+.amp-wp-footer h2 {
+	font-size: 1em;
+	line-height: 1.375em;
+	margin: 0 0 .5em;
+}
+
+.amp-wp-footer p {
+	color: #b1b1b1;
+	font-size: .8em;
+	line-height: 1.5em;
+	margin: 0 85px 0 0;
+}
+
+.amp-wp-footer a {
+	text-decoration: none;
+}
+
+.back-to-top {
+	bottom: 1.275em;
+	font-size: .8em;
+	font-weight: 600;
+	line-height: 2em;
+	position: absolute;
+	right: 16px;
+}
+			</style><header id="top" class="amp-wp-header"><div>
+		<a href="https://static.yomunchan.moe/">
+										<amp-img src="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/10/cropped-yomunchan_icon-32x32.png" width="32" height="32" class="amp-wp-site-icon"></amp-img><span class="amp-site-title">
+				æ&#156;&#137;æ&#156;¨é&#133;±ç&#154;&#132;å°&#143;å±&#139;			</span>
+		</a>
+
+					</div>
+</header><article class="amp-wp-article"><header class="amp-wp-article-header"><h1 class="amp-wp-title">TinaX Framework è&#135;ªå&#138;¨å&#140;&#150;æ&#158;&#132;å»ºå®&#158;è·µ</h1>
+			<div class="amp-wp-meta amp-wp-byline">
+					<amp-img src="https://secure.gravatar.com/avatar/45019eb1dd8b43e939d42804cb2e3269?s=24&d=mm&r=g" alt="yomunsam" width="24" height="24" layout="fixed"></amp-img><span class="amp-wp-author author vcard">yomunsam</span>
+	</div>
+<div class="amp-wp-meta amp-wp-posted-on">
+	<time datetime="2019-10-06T19:26:06+00:00">
+		5æ&#156;&#136; ago	</time></div>
+	</header><div class="amp-wp-article-content">
+		
+<p>å&#136;&#154;æ&#137;&#141;æ&#156;&#137;å°&#143;ä¼&#153;ä¼´é&#151;®ï¼&#140;TinaXå&#156;¨æ&#158;&#132;å»ºæ¯&#141;å&#140;&#133;ä¹&#139;å&#137;&#141;é&#131;½å¾&#151;æ&#137;&#139;å&#138;¨æ&#137;&#147;å&#140;&#133;èµ&#132;æº&#144;ï¼&#140;é&#130;£ä¹&#136;å¦&#130;æ&#158;&#156;è¦&#129;æ&#148;¾å&#156;¨DevOpså·¥å&#133;·ä¸­ï¼&#140;åº&#148;è¯¥å¦&#130;ä½&#149;è®©å®&#131;è&#135;ªå&#138;¨æ&#137;&#147;å&#140;&#133;å&#145;¢ï¼&#159;</p>
+
+
+
+
+
+
+
+<p>å&#133;¶å®&#158;è¿&#153;ä¸ªä¸&#141;æ&#152;¯ä»&#128;ä¹&#136;å¤&#141;æ&#157;&#130;ç&#154;&#132;äº&#139;æ&#131;&#133;ï¼&#140;æ&#136;&#145;ä»¬è&#135;ªå·±ç&#154;&#132;é¡¹ç&#155;®ä¸­ä¸&#128;ç&#155;´å&#156;¨ä½¿ç&#148;¨Unity Cloud Build Serviceæ&#157;¥è&#135;ªå&#138;¨å&#140;&#150;æ&#158;&#132;å»ºTinaXé¡¹ç&#155;®ã&#128;&#130;è&#128;&#140;å®&#158;ç&#142;°è¿&#153;ä¸&#128;ç&#130;¹ä¹&#159;å&#143;ªé&#156;&#128;è¦&#129;è&#135;ªå·±å&#156;¨å·¥ç¨&#139;ä¸­å&#134;&#153;ä¸&#128;ä¸ªè&#132;&#154;æ&#156;¬ï¼&#140;è®©å&#133;¶å&#156;¨æ&#137;§è¡&#140;æ&#158;&#132;å»ºä¹&#139;å&#137;&#141;è¿&#144;è¡&#140;ï¼&#140;è&#135;ªå&#138;¨æ&#137;§è¡&#140;ä¸&#128;äº&#155;å&#135;&#134;å¤&#135;æ&#147;&#141;ä½&#156;å&#141;³å&#143;¯ã&#128;&#130;</p>
+
+
+
+<p>é&#130;£ä¹&#136;ï¼&#140;ç&#155;´æ&#142;¥è´´ä»£ç &#129;å¦&#130;ä¸&#139;ï¼&#154;</p>
+
+
+
+<pre class="EnlighterJSRAW" data-enlighter-language="csharp" data-enlighter-theme="godzilla" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="TinaX Example" data-enlighter-group="tinax6.5.x">using UnityEngine;
+using TinaXEditor.VFSKit;
+using TinaX.VFSKit;
+
+namespace ExampleEditor
+{
+    public static class CloudBuildHandle
+    {
+
+        /// <summary>
+        /// å¤&#132;ç&#144;&#134;iOSç&#154;&#132;ç¼&#150;è¯&#145;
+        /// </summary>
+        public static void Build_iOS_Handle()
+        {
+            var xPlatform = TinaX.Const.PlatformConst.E_Platform.iOS;
+            var uPlatform = UnityEditor.BuildTarget.iOS;
+
+            Debug.Log("å¼&#128;å§&#139; äº&#145;ç¼&#150;è¯&#145;å&#137;&#141;ç½®å¤&#132;ç&#144;&#134;å·¥ä½&#156;");
+            // å&#138; ä¸&#128;ä¸ªæ­¥éª¤ï¼&#140;ç&#148;&#159;æ&#136;&#144;Xluaä»£ç &#129;
+            Debug.Log("æ¸&#133;ç&#144;&#134;Xluaä»£ç &#129;");
+            CSObjectWrapEditor.Generator.ClearAll();
+            Debug.Log("é&#135;&#141;æ&#150;°ç&#148;&#159;æ&#136;&#144;Xluaä»£ç &#129;");
+            CSObjectWrapEditor.Generator.GenAll();
+
+            //ç¬¬ä¸&#128;æ­¥ï¼&#140;æ&#137;&#147;ABå&#140;&#133;
+            Debug.Log("èµ&#132;æº&#144;æ&#137;&#147;å&#140;&#133;å·¥ä½&#156;");
+
+            var packPath = $"{TinaX.Setup.Framework_AssetSystem_Pack_Path}/{xPlatform.ToString().ToLower()}/";
+            var packer = new XVFSPacker();  //æ&#158;&#132;å»ºä¸&#128;ä¸ªæ&#137;&#147;å&#140;&#133;å¯¹è±¡
+            packer.AddPackPlan(new VFSPackPlan()    //æ·»å&#138; æ&#137;&#147;å&#140;&#133;è®¡å&#136;&#146;
+            {
+                Platform = uPlatform,
+                XPlatform = xPlatform,
+                ClearOutputFolders = false, //å&#143;&#141;æ­£äº&#145;æ&#158;&#132;å»ºæ&#156;&#137;Clearé&#128;&#137;é¡¹
+                CopyToStreamingAssets = true,   //è¿&#153;å&#132;¿ç&#155;´æ&#142;¥ä¼&#154;å¤&#141;å&#136;¶è¿&#155;å&#142;»ï¼&#140;å°±ä¸&#141;é&#156;&#128;è¦&#129;æ&#137;&#139;å&#138;¨æ&#147;&#141;ä½&#156;äº&#134;
+                OutputPath = packPath,
+                AssetCompressType = VFSPackPlan.CompressType.LZ4
+            });
+
+            //å¼&#128;å§&#139;æ&#137;&#147;å&#140;&#133;
+            packer.StartPacker(TinaX.Config.GetTinaXConfig<VFSConfigModel>(TinaX.Conf.ConfigPath.vfs).GetPerfect());
+            Debug.Log("æµ&#129;ç¨&#139;æ&#137;§è¡&#140;ç»&#147;æ&#157;&#159;");
+
+        }
+    }
+}</pre>
+
+
+
+<p>å¦&#130;æ&#158;&#156;ä½¿ç&#148;¨TinaX 6.4.xå&#143;&#138;ä»¥å&#137;&#141;ç&#137;&#136;æ&#156;¬ï¼&#140;å¤&#132;ç&#144;&#134;ä»£ç &#129;å¦&#130;ä¸&#139;ï¼&#136;æ&#156;&#137;ç&#130;¹ä¹±ï¼&#137;ï¼&#154;</p>
+
+
+
+<pre class="EnlighterJSRAW" data-enlighter-language="csharp" data-enlighter-theme="godzilla" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="TinaX Example" data-enlighter-group="tinax6.4.x">using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using TinaXEditor;
+
+namespace ExampleEditor
+{
+    /// <summary>
+    /// äº&#145;ç¼&#150;è¯&#145;ç³»ç»&#159;å¤&#132;ç&#144;&#134;
+    /// </summary>
+    public static class CloudBuildHandle
+    {
+        //è¦&#129;å¤&#132;ç&#144;&#134;å&#133;¶ä»&#150;å¹³å&#143;°ç&#154;&#132;è¯&#157;ï¼&#140;ç&#155;´æ&#142;¥å¤&#141;å&#136;¶ä¸&#128;ä»½æ&#148;¹ï¼&#140;ä¸&#141;è¦&#129;å&#129;&#154;å°&#129;è£&#133;
+
+        /// <summary>
+        /// å¤&#132;ç&#144;&#134;windows64ç&#154;&#132;ç¼&#150;è¯&#145;
+        /// </summary>
+        public static void Build_Windows64_Handle()
+        {
+            Debug.Log("å¼&#128;å§&#139; äº&#145;ç¼&#150;è¯&#145;å&#137;&#141;ç½®å¤&#132;ç&#144;&#134;å·¥ä½&#156;");
+            // å&#138; ä¸&#128;ä¸ªæ­¥éª¤ï¼&#140;ç&#148;&#159;æ&#136;&#144;Xluaä»£ç &#129;
+            Debug.Log("æ¸&#133;ç&#144;&#134;Xluaä»£ç &#129;");
+            CSObjectWrapEditor.Generator.ClearAll();
+            Debug.Log("é&#135;&#141;æ&#150;°ç&#148;&#159;æ&#136;&#144;Xluaä»£ç &#129;");
+            CSObjectWrapEditor.Generator.GenAll();
+
+            //ç¬¬ä¸&#128;æ­¥ï¼&#140;æ&#137;&#147;ABå&#140;&#133;
+            Debug.Log("èµ&#132;æº&#144;æ&#137;&#147;å&#140;&#133;å·¥ä½&#156;");
+
+            var packMgr = new AssetPackageMgr();
+            var packPath = TinaX.Setup.Framework_AssetSystem_Pack_Path + "/" + TinaX.Const.PlatformConst.E_Platform.Windows64.ToString().ToLower() + "/";
+            Debug.Log("èµ&#132;æº&#144;æ&#137;&#147;å&#140;&#133;è·¯å¾&#132;ï¼&#154;" + packPath);
+            packMgr.PackGlobal(packPath, TinaX.Platform.GetBuildTarget(TinaX.Const.PlatformConst.E_Platform.Windows64), true, true, false, false, true);
+
+            
+            //æ&#137;§è¡&#140;å¤&#141;å&#136;¶æµ&#129;ç¨&#139;
+            var pathInStreamingAssets = "Assets/StreamingAssets/vfs/" + TinaX.Const.PlatformConst.E_Platform.Windows64.ToString().ToLower();
+
+            Debug.Log("æ&#137;§è¡&#140;ç§»å&#138;¨æµ&#129;ç¨&#139;ï¼&#140;ä»&#142;" + packPath + "  å&#136;°  " + pathInStreamingAssets);
+
+            var target_path = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), pathInStreamingAssets);
+            System.IO.Directory.CreateDirectory(System.IO.Directory.GetParent(target_path).ToString());
+            Debug.Log("æ&#150;°å»ºç&#155;®å½&#149;ï¼&#154;" + System.IO.Directory.GetParent(target_path).ToString());
+            System.IO.Directory.Move(System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), packPath), target_path);
+
+            Debug.Log("æµ&#129;ç¨&#139;æ&#137;§è¡&#140;ç»&#147;æ&#157;&#159;");
+
+        }
+        
+    }
+}</pre>
+
+
+
+<p>ä¹&#139;å&#144;&#142;ï¼&#140;ä»¥Unity Cloud Build Serviceä¸ºä¾&#139;ï¼&#140;å&#156;¨Build Configç&#154;&#132; Advanced Options ä¸­ï¼&#140;å°&#134;ä¹&#139;å&#137;&#141;å&#134;&#153;å¥½ç&#154;&#132;ä»£ç &#129;å¡«å&#133;¥ Pre-Export Methodé&#128;&#137;é¡¹ä¸­ï¼&#140;æ ¼å¼&#143;ä¸ºâ&#128;&#156;å&#145;½å&#144;&#141;ç©ºé&#151;´.ç±»å&#144;&#141;.æ&#150;¹æ³&#149;å&#144;&#141;â&#128;&#157;ï¼&#140;å¦&#130; <code>ExampleEditor.CloudBuildHandle.Build_iOS_Handle </code></p>
+
+
+
+<figure class="wp-block-image"><amp-img src="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/10/Snipaste_2019-10-06_19-33-03.png" alt="" class="wp-image-428 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height amp-wp-enforced-sizes" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/10/Snipaste_2019-10-06_19-33-03.png 749w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/10/Snipaste_2019-10-06_19-33-03-150x70.png 150w, https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/10/Snipaste_2019-10-06_19-33-03-300x141.png 300w" object-fit="contain" width="600" height="400" layout="intrinsic"><noscript><img src="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/10/Snipaste_2019-10-06_19-33-03.png" alt="" class="wp-image-428 amp-wp-unknown-size amp-wp-unknown-width amp-wp-unknown-height" sizes="(max-width: 749px) 100vw, 749px" width="600" height="400"></noscript></amp-img></figure><p>å&#144;&#140;æ ·ç&#154;&#132;ï¼&#140;å&#156;¨Jenkinsä¸­ï¼&#140;æ&#136;&#145;ä»¬ä¹&#159;å&#143;¯ä»¥ä½¿ç&#148;¨ç±»ä¼¼ç&#154;&#132;æ&#150;¹æ³&#149;ï¼&#140;å&#156;¨å&#145;½ä»¤è¡&#140;å&#144;¯å&#138;¨Unityç&#154;&#132;æ&#151;¶å&#128;&#153;å&#144;¯å&#138;¨å¯¹åº&#148;ç&#154;&#132;å¤&#132;ç&#144;&#134;è&#132;&#154;æ&#156;¬ã&#128;&#130;</p>
+
+
+
+<p></p>
+
+
+
+<hr class="wp-block-separator"><p>æ³¨æ&#132;&#143;ï¼&#154;2019å¹´10æ&#156;&#136;7æ&#151;¥ï¼&#140;Bugä¿®æ­£ï¼&#154;å&#156;¨TinaX 6.5.xç&#154;&#132;æ¡&#136;ä¾&#139;ä»£ç &#129;ä¸­ï¼&#140;æ&#136;&#145;ä»¬é&#128;&#154;è¿&#135;<code>TinaX.Config.GetTinaXConfig(TinaX.Conf.ConfigPath.vfs)</code> è¿&#153;ä¸&#128;è¡&#140;ä»£ç &#129;æ&#139;¿å&#136;°TinaX VFSé&#133;&#141;ç½®æ&#150;&#135;ä»¶ç&#154;&#132;å¯¹è±¡ã&#128;&#130;</p>
+
+
+
+<p>è¿&#153;ä¸ªå&#134;&#153;æ³&#149;ä¹&#139;å&#137;&#141;æ&#152;¯æ²¡é&#151;®é¢&#152;ç&#154;&#132;ï¼&#140;ä½&#134;æ&#152;¯å&#156;¨TinaX6.5.xä¸­ï¼&#140;æ&#136;&#145;ä»¬æ&#139;¿å&#136;°ç&#154;&#132;è¿&#153;ä¸ªé&#133;&#141;ç½®æ&#150;&#135;ä»¶æ&#152;¯ä¸&#141;å®&#140;æ&#149;´ç&#154;&#132;â&#128;&#148;â&#128;&#148;å®&#131;å&#143;ªæ&#156;&#137;å¼&#128;å&#143;&#145;è&#128;&#133;è&#135;ªå·±ç&#154;&#132;é&#133;&#141;ç½®ã&#128;&#130;è&#128;&#140;å®&#158;é&#153;&#133;ä¸&#138;TinaXå&#134;&#133;é&#131;¨ä¹&#159;ä¼&#154;æ&#156;&#137;ä¸&#128;ä¸ªå&#134;&#153;æ­»ç&#154;&#132;é&#133;&#141;ç½®æ&#150;&#135;ä»¶ï¼&#140;æ¯&#148;å¦&#130;å&#156;¨æ&#136;&#145;ä»¬ä½¿ç&#148;¨Luaæ&#151;¶ï¼&#140;TinaXé&#156;&#128;è¦&#129;å°&#134;è&#135;ªå·±å&#134;&#133;é&#131;¨ç&#154;&#132;Luaä»£ç &#129;ä¸&#128;èµ·æ&#137;&#147;å&#140;&#133;ã&#128;&#130;</p>
+
+
+
+<p>è&#128;&#140;å¦&#130;æ&#158;&#156;ç&#155;´æ&#142;¥ä½¿ç&#148;¨<code>TinaX.Config.GetTinaXConfig(TinaX.Conf.ConfigPath.vfs)</code> ä¼ ç»&#153;XVFSPackerç&#154;&#132;è¯&#157;ï¼&#140;XVFSPackerå°±å&#143;ªä¼&#154;å¯¹å¼&#128;å&#143;&#145;è&#128;&#133;å®&#154;ä¹&#137;ç&#154;&#132;é&#131;¨å&#136;&#134;èµ&#132;æº&#144;è¿&#155;è¡&#140;æ&#137;&#147;å&#140;&#133;ï¼&#140;è&#128;&#140;å¿½ç&#149;¥äº&#134;æ¡&#134;æ&#158;¶å&#134;&#133;é&#131;¨ç&#154;&#132;èµ&#132;æº&#144;ï¼&#140;è¿&#153;æ ·æ&#137;&#147;å&#135;ºæ&#157;¥ç&#154;&#132;å&#140;&#133;å°±ä¼&#154;ç¼ºå¤±é&#131;¨å&#136;&#134;èµ&#132;æº&#144;å¯¼è&#135;´æ&#151; æ³&#149;ä½¿ç&#148;¨ã&#128;&#130;</p>
+
+
+
+<p>æ&#137;&#128;ä»¥é&#156;&#128;è¦&#129;æ&#148;¹æ&#136;&#144;å¦&#130;ä¸&#139;å&#134;&#153;æ³&#149;</p>
+
+
+
+<pre class="EnlighterJSRAW" data-enlighter-language="csharp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">TinaX.Config.GetTinaXConfig<VFSConfigModel>(TinaX.Conf.ConfigPath.vfs).GetPerfect();
+</pre>
+
+
+
+<p>å&#144;&#142;é&#157;¢å¤&#154;å&#135;ºæ&#157;¥ç&#154;&#132;.GetPerfect()æ&#152;¯ä¸&#128;ä¸ªæ&#137;©å±&#149;æ&#150;¹æ³&#149;ï¼&#140;å°&#134;æ¡&#134;æ&#158;¶å&#134;&#133;é&#131;¨å®&#154;ä¹&#137;ç&#154;&#132;é&#133;&#141;ç½®ä¸&#142;å¼&#128;å&#143;&#145;è&#128;&#133;å®&#154;ä¹&#137;ç&#154;&#132;é&#133;&#141;ç½®å&#144;&#136;å¹¶ä¹&#139;å&#144;&#142;ï¼&#140;è¿&#148;å&#155;&#158;å&#144;&#136;å¹¶å&#144;&#142;ç&#154;&#132;ç»&#147;æ&#158;&#156;ã&#128;&#130;</p>
+
+
+
+<p>é&#153;¤äº&#134;æ&#137;©å±&#149;æ&#150;¹æ³&#149;ä¹&#139;å¤&#150;ï¼&#140;è¿&#152;æ&#156;&#137;å&#143;¦ä¸&#128;ç§&#141;å&#134;&#153;æ³&#149;:</p>
+
+
+
+<pre class="EnlighterJSRAW" data-enlighter-language="csharp" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">using TinaX.VFSKit
+
+var final_conf = VFSConfHelper.GetPerfectConfig(TinaX.Config.GetTinaXConfig<VFSConfigModel>(TinaX.Conf.ConfigPath.vfs));</pre>
+	</div>
+
+	<footer class="amp-wp-article-footer"><div class="amp-wp-meta amp-wp-tax-category">
+		Categories: <a href="https://static.yomunchan.moe/corala/emmm" rel="category tag">æ&#150;&#135;å­&#151;</a>	</div>
+
+		<div class="amp-wp-meta amp-wp-comments-link">
+		<a href="https://static.yomunchan.moe/archives/427#respond">
+			Leave a Comment		</a>
+	</div>
+	</footer></article><footer class="amp-wp-footer"><div>
+		<h2>æ&#156;&#137;æ&#156;¨é&#133;±ç&#154;&#132;å°&#143;å±&#139;</h2>
+		<a href="#top" class="back-to-top">Back to top</a>
+	</div>
+</footer></body></html>
