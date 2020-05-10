@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><title>[Golang]æ&#144;­å»ºä¸&#128;ä¸ªVSCode â&#128;&#156;å¤&#159;æµªâ&#128;&#157;ç&#154;&#132;å¼&#128;å&#143;&#145;ç&#142;¯å¢&#131;-æ&#156;&#137;æ&#156;¨é&#133;±ç&#154;&#132;å°&#143;å±&#139;</title><link rel="shortcut icon" href="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/10/yomunchan_icon.png"><link type="text/css" href="https://static.yomunchan.moe/wp-content/themes/lolimeow/assets/css/themes.min.css" rel="stylesheet"><link href="https://static.yomunchan.moe/wp-content/themes/lolimeow/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet"><link type="text/css" href="https://static.yomunchan.moe/wp-content/themes/lolimeow/assets/css/animate.min.css" rel="stylesheet"><link type="text/css" href="https://static.yomunchan.moe/wp-content/themes/lolimeow/assets/css/style.css" rel="stylesheet"><script src="https://static.yomunchan.moe/wp-content/themes/lolimeow/assets/vendor/jquery/jquery.min.js"></script><link rel="manifest" href="/superpwa-manifest.json"><meta name="theme-color" content="#4c4c4c"><link rel="dns-prefetch" href="//s.w.org"><link rel="stylesheet" id="wp-block-library-css" href="https://static.yomunchan.moe/wp-includes/css/dist/block-library/style.min.css" type="text/css" media="all"><link rel="stylesheet" id="enlighterjs-css" href="https://static.yomunchan.moe/wp-content/plugins/enlighter/cache/enlighterjs.min.css" type="text/css" media="all"><meta name="keywords" content="æ&#150;&#135;å­&#151;"><meta name="description" itemprop="description" content="å¼&#128;ç¯&#135;å&#144;&#144;æ§½ï¼&#154;Golandå¤ªè´µäº&#134;ï¼&#129;æ&#137;&#128;ä»¥æ&#136;&#145;è¦&#129;ç&#148;¨VSCode!"><link rel="amphtml" href="https://static.yomunchan.moe/archives/227/amp"><link rel="icon" href="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/10/cropped-yomunchan_icon-32x32.png" sizes="32x32"><link rel="icon" href="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/10/cropped-yomunchan_icon-192x192.png" sizes="192x192"><link rel="apple-touch-icon" href="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/10/cropped-yomunchan_icon-180x180.png"><meta name="msapplication-TileImage" content="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/10/cropped-yomunchan_icon-270x270.png"></head><body data-rsssl="1">
+
+<header class="header-global"><nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom"><div class="container">
+        <a class="navbar-brand mr-lg-5" href="https://static.yomunchan.moe">
+         <img src="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/10/yomunchan_icon.png" alt="æ&#156;&#137;æ&#156;¨é&#133;±ç&#154;&#132;å°&#143;å±&#139;" class="headerlogo"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="navbar_global">
+          <div class="navbar-collapse-header">
+            <div class="row">
+              <div class="col-6 collapse-brand">
+                <a href="https://static.yomunchan.moe">
+                   <img src="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/10/yomunchan_icon.png" alt="æ&#156;&#137;æ&#156;¨é&#133;±ç&#154;&#132;å°&#143;å±&#139;" class="headerlogo"></a>
+              </div>
+              <div class="col-6 collapse-close">
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+                  <span></span>
+                  <span></span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <ul class="navbar-nav navbar-nav-hover align-items-lg-center ml-lg-auto"><li class="nav-item"><a href="https://static.yomunchan.moe" class="nav-link">é¦&#150;é¡µ</a></li>
+<li class="nav-item"><a href="https://static.yomunchan.moe/aboutme" class="nav-link">å&#133;³äº&#142;</a></li>
+<li class="nav-item dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle  nav-link" aria-haspopup="true">æ&#150;&#135;å­&#151; </a>
+<ul class="dropdown-menu"><li class="nav-item"><a href="https://static.yomunchan.moe/corala/emmm/unity" class="dropdown-item">Unity</a></li>
+	<li class="nav-item"><a href="https://static.yomunchan.moe/corala/emmm/ue" class="dropdown-item">Unreal</a></li>
+	<li class="nav-item"><a href="https://static.yomunchan.moe/corala/emmm/balabala" class="dropdown-item">ç&#158;&#142;æ&#138;&#152;è&#133;¾</a></li>
+</ul></li>
+<li class="nav-item"><a href="https://static.yomunchan.moe" class="nav-link">é&#157;&#153;æ&#128;&#129;</a></li>
+<li class="nav-item"><a href="#search" class="nav-link"><i class="fa fa-search"></i>Search</a></li>		   
+		           
+		  </ul></div>
+      </div>	                                               
+    </nav></header><section class="section-profile-cover section-blog-cover section-shaped my-0 " style="background-image: url('https://static.yomunchan.moe/wp-content/themes/lolimeow/assets/images/banner/banner(12).jpg');"><div class="shape shape-style-1 shape-primary alpha-4">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="separator separator-bottom separator-skew">
+        <svg x="0" y="0" viewbox="0 0 2560 100" preserveaspectratio="none"><polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon></svg></div>
+    </section><main class="meowblog"><div class="main-container">
+<div class="container">
+                               
+
+                        <div class="row">
+                              <div class="col-lg-10 col-md-10 ml-auto mr-auto">                                    <div class="post-single">
+                                          <div class="entry-header single-entry-header">
+                                                <h2 class="entry-title wow swing  animated">[Golang]æ&#144;­å»ºä¸&#128;ä¸ªVSCode â&#128;&#156;å¤&#159;æµªâ&#128;&#157;ç&#154;&#132;å¼&#128;å&#143;&#145;ç&#142;¯å¢&#131;</h2>
+                                                <div class="post-meta author-box wow bounceInRight">
+                                                      <div class="thw-autohr-bio-img">
+                                                            <div class="thw-img-border">
+                                                                  <img alt="" src="https://gravatar.loli.net/avatar/45019eb1dd8b43e939d42804cb2e3269?s=60&d=mm&r=g" srcset="https://gravatar.loli.net/avatar/45019eb1dd8b43e939d42804cb2e3269?s=120&d=mm&r=g 2x" class="avatar avatar-60 photo img-fluid" height="60" width="60"></div>
+                                                      </div>
+                                                      <div class="post-meta-content">													  
+                                                            <span class="list-post-date"><i class="fa fa-calendar"></i> Post on 2019-01-22</span>
+                                                            <span class="post-author"><i class="fa fa-user-circle"></i> yomunsam</span>
+                                                            <span class="post-author"><i class="fa fa-comments-o"></i> <a href="#comments">0 Comments</a></span>
+															<span class="list-post-views"><i class="fa fa-street-view"></i> 400 Views</span>
+                                                                                                                  </div>
+                                                </div>
+                                          </div>
+                                          
+
+                                          <div class="entry-content wow bounceInLeft"> 
+										  
+<p>å¼&#128;ç¯&#135;å&#144;&#144;æ§½ï¼&#154;Golandå¤ªè´µäº&#134;ï¼&#129;æ&#137;&#128;ä»¥æ&#136;&#145;è¦&#129;ç&#148;¨VSCode!</p>
+
+
+
+<span id="more-227"></span>
+
+
+
+<p></p><div>é¦&#150;å&#133;&#136;ï¼&#140;å½&#147;ç&#132;¶æ&#152;¯å&#133;&#136;å®&#137;è£&#133;Golangäº&#134;å&#145;&#128;ï¼&#140;ç&#132;¶è&#128;&#140;ç&#148;±äº&#142;Golangæ&#152;¯Googleç&#154;&#132;äº§å&#147;&#129;ï¼&#140;å&#156;¨å&#155;½å&#134;&#133;æ&#152;¯æ&#151; æ³&#149;ç&#155;´æ&#142;¥è®¿é&#151;®Golangç&#154;&#132;å®&#152;ç½&#145;ç&#154;&#132;ï¼&#136;<a href="https://golang.org">https://golang.org</a>ï¼&#137;ã&#128;&#130;ä½&#134;æ&#152;¯è¿&#152;æ&#156;&#137;ä¸ªGoogleå&#156;¨å&#155;½å&#134;&#133;ç&#137;¹å&#156;°å¼&#132;ç&#154;&#132;ä¸&#128;ä¸ªé&#149;&#156;å&#131;&#143;å®&#152;ç½&#145;å&#143;¯ä»¥ç&#148;¨ï¼&#154;<a href="https://golang.google.cn/">https://golang.google.cn/</a></div>
+
+
+
+<figure class="wp-block-image"><img src="https://static.yomunchan.moe/wp-content/uploads/2019/01/image-5-1024x468.png" alt="" class="wp-image-235" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-5-1024x468.png 1024w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-5-150x69.png 150w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-5-300x137.png 300w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-5-768x351.png 768w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-5.png 1992w" sizes="(max-width: 1024px) 100vw, 1024px"><figcaption>æ&#151;©å°±æ&#131;³ä¹°ä¸ªç&#148;µè&#132;&#145;è·&#145;Linuxç&#154;&#132;ï¼&#140;ä½&#134;ä¸&#128;ç&#155;´æ²¡è&#136;&#141;å¾&#151;ï¼&#140;æ&#137;&#128;ä»¥æ&#136;&#145;å°±å&#143;ªè&#131;½é&#128;&#137;Windowsç&#137;&#136;æ&#156;¬äº&#134;å&#152;&#155;</figcaption></figure><p>å®&#137;è£&#133;è¿&#135;ç¨&#139;å°±ä¸&#141;èµ&#152;è¿°äº&#134;ï¼&#140;æ &#135;å&#135;&#134;ç&#154;&#132;Windowså®&#137;è£&#133;å&#140;&#133;å&#152;&#155;ï¼&#140;å®&#137;è£&#133;å¥½äº&#134;ä¹&#139;å&#144;&#142;ï¼&#140;å°±å¼&#128;å§&#139;é&#133;&#141;ç½®å·¥ä½&#156;ç&#142;¯å¢&#131;å&#144;§ã&#128;&#130;</p>
+
+
+
+<hr class="wp-block-separator"><p>ç¬¬ä¸&#128;æ­¥ï¼&#140;æ&#137;¾ä¸ªå&#150;&#156;æ¬¢ç&#154;&#132;ä½&#141;ç½®ï¼&#140;å»ºç«&#139;å¥½å·¥ä½&#156;ç&#155;®å½&#149;</p>
+
+
+
+<figure class="wp-block-image"><img src="https://static.yomunchan.moe/wp-content/uploads/2019/01/image-1.png" alt="" class="wp-image-230" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-1.png 778w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-1-150x70.png 150w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-1-300x140.png 300w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-1-768x358.png 768w" sizes="(max-width: 778px) 100vw, 778px"><figcaption>æ¯&#148;å¦&#130;é&#133;±ç´«<br></figcaption></figure><p>å&#156;¨å·¥ä½&#156;ç&#155;®å½&#149;ä¸&#139;æ&#150;°å»ºä¸&#128;ä¸ªæ&#150;&#135;ä»¶å¤¹â&#128;&#156;binâ&#128;&#157;ï¼&#140;å°±å&#131;&#143;è¿&#153;æ ·</p>
+
+
+
+<figure class="wp-block-image"><img src="https://static.yomunchan.moe/wp-content/uploads/2019/01/image-4.png" alt="" class="wp-image-233" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-4.png 1014w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-4-150x110.png 150w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-4-300x220.png 300w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-4-768x562.png 768w" sizes="(max-width: 1014px) 100vw, 1014px"></figure><p></p>
+
+
+
+<p>ç&#155;®å½&#149;å¤§æ¦&#130;å°±å»ºå¥½äº&#134;ï¼&#140;ç&#142;°å&#156;¨æ&#136;&#145;ä»¬æ&#138;&#138;ç&#155;®å½&#149;ç&#155;¸å&#133;³ç&#154;&#132;ä¸&#156;è¥¿æ·»å&#138; è¿&#155;ç&#142;¯å¢&#131;å&#143;&#152;é&#135;&#143;ã&#128;&#130;</p>
+
+
+
+<p>å&#143;³é&#148;®â&#128;&#156;æ­¤ç&#148;µè&#132;&#145;â&#128;&#157; -> â&#128;&#156;å±&#158;æ&#128;§â&#128;&#157; -> â&#128;&#156;é«&#152;çº§ç³»ç»&#159;è®¾ç½®â&#128;&#157; -> â&#128;&#156;ç&#142;¯å¢&#131;å&#143;&#152;é&#135;&#143;â&#128;&#157;</p>
+
+
+
+<figure class="wp-block-image"><img src="https://static.yomunchan.moe/wp-content/uploads/2019/01/image-2-1024x818.png" alt="" class="wp-image-231" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-2-1024x818.png 1024w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-2-150x120.png 150w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-2-300x240.png 300w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-2-768x614.png 768w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-2.png 1549w" sizes="(max-width: 1024px) 100vw, 1024px"><figcaption>å°±å&#131;&#143;è¿&#153;æ ·å&#150;µ</figcaption></figure><figure class="wp-block-image"><img src="https://static.yomunchan.moe/wp-content/uploads/2019/01/image-3-1024x397.png" alt="" class="wp-image-232" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-3-1024x397.png 1024w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-3-150x58.png 150w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-3-300x116.png 300w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-3-768x298.png 768w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-3.png 1181w" sizes="(max-width: 1024px) 100vw, 1024px"><figcaption>ä¸ªäººå&#150;&#156;æ¬¢ï¼&#140;æ&#138;&#138;é&#133;&#141;ç½®æ&#148;¾å&#156;¨ç&#148;¨æ&#136;·å&#143;&#152;é&#135;&#143;é&#135;&#140;ï¼&#140;å½&#147;ç&#132;¶ï¼&#140;æ&#148;¾ç&#148;¨æ&#136;·å&#143;&#152;é&#135;&#143;é&#135;&#140;è¿&#152;æ&#152;¯ç³»ç»&#159;å&#143;&#152;é&#135;&#143;é&#131;½è¡&#140;</figcaption></figure><p>é¦&#150;å&#133;&#136;ï¼&#140;å&#156;¨Pathé¡¹ä¸­å&#138; ä¸&#128;æ&#157;¡è·¯å¾&#132;ï¼&#140;ä¹&#159;å°±æ&#152;¯æ&#136;&#145;ä»¬å&#136;&#154;å&#136;&#154;å»ºç«&#139;ç&#154;&#132;å·¥ä½&#156;ç©ºé&#151;´é&#135;&#140;ç&#154;&#132;binç&#155;®å½&#149;</p>
+
+
+
+<p></p>
+
+
+
+<p>å&#155; ä¸ºGolangç&#142;¯å¢&#131;ä¸&#139;æ&#156;&#137;äº&#155;å·¥å&#133;·ä¼&#154;è¢«ç¼&#150;è¯&#145;å&#136;°è¿&#153;ä¸ªç&#155;®å½&#149;ä¸&#139;ï¼&#140;æ·»å&#138; å&#136;°PATHç&#142;¯å¢&#131;å&#143;&#152;é&#135;&#143;ä¹&#139;å&#144;&#142;æ&#136;&#145;ä»¬å°±å&#143;¯ä»¥å&#156;¨å&#145;½ä»¤è¡&#140;é&#135;&#140;ä½¿ç&#148;¨è¿&#153;äº&#155;ä¸&#156;è¥¿äº&#134;ã&#128;&#130;</p>
+
+
+
+<figure class="wp-block-image"><img src="https://static.yomunchan.moe/wp-content/uploads/2019/01/image-6-1024x603.png" alt="" class="wp-image-237" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-6-1024x603.png 1024w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-6-150x88.png 150w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-6-300x177.png 300w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-6-768x452.png 768w" sizes="(max-width: 1024px) 100vw, 1024px"></figure><p>ç&#132;¶å&#144;&#142;ï¼&#140;å¦&#130;æ&#158;&#156;ä¹&#139;å&#137;&#141;å®&#137;è£&#133;Goç&#154;&#132;å®&#137;è£&#133;å&#140;&#133;ç&#154;&#132;é&#130;£ä¸&#128;æ­¥å¾&#136;é¡ºå&#136;©ç&#154;&#132;è¯&#157;ï¼&#140;æ&#136;&#145;ä»¬å&#143;¯ä»¥å&#156;¨ç&#148;¨æ&#136;·å&#143;&#152;é&#135;&#143;ä¸­ç&#156;&#139;å&#136;°å®&#131;è&#135;ªå&#138;¨æ·»å&#138; äº&#134;è¿&#153;ä¸&#128;æ&#157;¡ï¼&#154;</p>
+
+
+
+<figure class="wp-block-image"><img src="https://static.yomunchan.moe/wp-content/uploads/2019/01/image-7.png" alt="" class="wp-image-238" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-7.png 857w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-7-150x37.png 150w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-7-300x73.png 300w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-7-768x187.png 768w" sizes="(max-width: 857px) 100vw, 857px"><figcaption>GOPATHåº&#148;è¯¥æ&#140;&#135;å&#144;&#145;æ&#136;&#145;ä»¬ç&#154;&#132;ä»£ç &#129;å·¥ä½&#156;ç©ºé&#151;´</figcaption></figure><p>æ&#136;&#145;ä»¬æ&#138;&#138;è¿&#153;ä¸ªè·¯å¾&#132;æ&#148;¹å&#136;°æ&#136;&#145;ä»¬ä¸&#128;å¼&#128;å§&#139;å&#136;&#155;å»ºå¥½ç&#154;&#132;å·¥ä½&#156;ç©ºé&#151;´ä¸­ã&#128;&#130;</p>
+
+
+
+<figure class="wp-block-image"><img src="https://static.yomunchan.moe/wp-content/uploads/2019/01/image-8.png" alt="" class="wp-image-239" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-8.png 988w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-8-150x27.png 150w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-8-300x53.png 300w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-8-768x136.png 768w" sizes="(max-width: 988px) 100vw, 988px"><figcaption>å°±å&#131;&#143;è¿&#153;æ ·<br></figcaption></figure><p>ç&#132;¶å&#144;&#142;æ&#136;&#145;ä»¬æ&#150;°å»ºä¸&#128;ä¸ªå&#143;«GOBINç&#154;&#132;å&#143;&#152;é&#135;&#143;ï¼&#140;å&#144;&#140;æ ·æ&#140;&#135;å&#144;&#145;æ&#136;&#145;ä»¬å·¥ä½&#156;ç©ºé&#151;´ç&#155;®å½&#149;ä¸&#139;ç&#154;&#132;binç&#155;®å½&#149;</p>
+
+
+
+<figure class="wp-block-image"><img src="https://static.yomunchan.moe/wp-content/uploads/2019/01/image-9-1024x263.png" alt="" class="wp-image-240" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-9-1024x263.png 1024w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-9-150x38.png 150w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-9-300x77.png 300w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-9-768x197.png 768w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-9.png 1306w" sizes="(max-width: 1024px) 100vw, 1024px"></figure><p>æ&#136;&#145;ä»¬å&#136;&#154;å&#136;&#154;å®&#137;è£&#133;ç&#154;&#132;æ&#151;¶å&#128;&#153;ï¼&#140;å®&#137;è£&#133;å&#140;&#133;è&#135;ªå&#138;¨ç»&#153;æ&#136;&#145;ä»¬å&#136;&#155;å»ºäº&#134;ä¸&#128;ä¸ªå&#143;«GOROOTç&#154;&#132;ç&#142;¯å¢&#131;å&#143;&#152;é&#135;&#143;ï¼&#140;è¿&#153;é&#135;&#140;æ&#140;&#135;å&#144;&#145;ç&#154;&#132;æ&#152;¯Golangç&#154;&#132;å®&#137;è£&#133;è·¯å¾&#132;ï¼&#140;é&#128;&#154;å¸¸ä¸&#141;ç&#148;¨ç®¡å®&#131;å°±å¥½</p>
+
+
+
+<figure class="wp-block-image"><img src="https://static.yomunchan.moe/wp-content/uploads/2019/01/image-10.png" alt="" class="wp-image-241" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-10.png 526w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-10-150x66.png 150w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-10-300x132.png 300w" sizes="(max-width: 526px) 100vw, 526px"></figure><p></p>
+
+
+
+<p>æ&#156;&#128;å&#144;&#142;ï¼&#140;é&#135;&#141;å&#144;¯ä¸&#128;ä¸&#139;ç&#148;µè&#132;&#145;ï¼&#140;è®©ç&#155;¸å&#133;³ç&#154;&#132;é&#133;&#141;ç½®ç&#148;&#159;æ&#149;&#136;</p>
+
+
+
+<p></p>
+
+
+
+<hr class="wp-block-separator"><p>ç&#132;¶å&#144;&#142;ï¼&#140;å°±å¼&#128;å§&#139;æ&#138;&#152;è&#133;¾VSCodeç&#154;&#132;é&#131;¨å&#136;&#134;äº&#134;ã&#128;&#130;</p>
+
+
+
+<p>é¦&#150;å&#133;&#136;ï¼&#140;ç&#148;¨vscodeæ&#137;&#147;å¼&#128;æ&#136;&#145;ä»¬ç&#154;&#132;å·¥ä½&#156;ç&#155;®å½&#149;ã&#128;&#130;</p>
+
+
+
+<p>ç¬¬ä¸&#128;ä»¶äº&#139;ï¼&#140;å&#133;&#136;è£&#133;ä¸&#138;å¾®è½¯å®¶å¼&#128;å&#143;&#145;ç&#154;&#132;è¿&#153;ä¸ªå&#143;«Goç&#154;&#132;æ&#137;©å±&#149;æ&#143;&#146;ä»¶</p>
+
+
+
+<figure class="wp-block-image"><img src="https://static.yomunchan.moe/wp-content/uploads/2019/01/image-11-1024x768.png" alt="" class="wp-image-242" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-11-1024x768.png 1024w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-11-150x113.png 150w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-11-300x225.png 300w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-11-768x576.png 768w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-11.png 2048w" sizes="(max-width: 1024px) 100vw, 1024px"></figure><p>ç&#132;¶å&#144;&#142;ï¼&#140;å»ºç«&#139;srcç&#155;®å½&#149;ï¼&#140;ä»¥å&#144;&#142;æ&#137;&#128;æ&#156;&#137;ç&#154;&#132;ä»£ç &#129;å·¥ç¨&#139;å°±é&#131;½æ&#148;¾å&#156;¨è¿&#153;é&#135;&#140;äº&#134;</p>
+
+
+
+<figure class="wp-block-image"><img src="https://static.yomunchan.moe/wp-content/uploads/2019/01/image-12.png" alt="" class="wp-image-243" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-12.png 402w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-12-150x77.png 150w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-12-300x154.png 300w" sizes="(max-width: 402px) 100vw, 402px"></figure><p>æ&#136;&#145;ä»¬å&#156;¨srcä¸&#139;é&#157;¢é&#154;&#143;ä¾¿å»ºç«&#139;ä¸&#128;ä¸ªxx.goç&#154;&#132;æ&#150;&#135;ä»¶ï¼&#140;ç&#132;¶å&#144;&#142;é&#154;&#143;ä¾¿æ&#137;&#147;å&#135; ä¸ªå­&#151;ï¼&#136;æ&#156;&#128;å&#144;&#142;è®°å¾&#151;æ&#138;&#138;è¿&#153;ä¸ªæ&#150;&#135;ä»¶å&#136; æ&#142;&#137;ï¼&#137;ä¹&#139;å&#144;&#142;ï¼&#140;æ&#136;&#145;ä»¬å&#143;&#145;ç&#142;°ï¼&#140;VSCodeç&#154;&#132;å&#143;³ä¸&#139;è§&#146;å¼¹å&#135;ºäº&#134;ä¸&#128;å &#134;å¼¹çª&#151;</p>
+
+
+
+<figure class="wp-block-image"><img src="https://static.yomunchan.moe/wp-content/uploads/2019/01/image-13-1024x768.png" alt="" class="wp-image-244" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-13-1024x768.png 1024w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-13-150x113.png 150w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-13-300x225.png 300w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-13-768x576.png 768w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-13.png 2048w" sizes="(max-width: 1024px) 100vw, 1024px"></figure><p>é&#154;&#143;ä¾¿ç&#130;¹å&#133;¶ä¸­æ&#159;&#144;ä¸ªInstall All</p>
+
+
+
+<figure class="wp-block-image"><img src="https://static.yomunchan.moe/wp-content/uploads/2019/01/image-14.png" alt="" class="wp-image-245" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-14.png 318w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-14-150x70.png 150w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-14-300x140.png 300w" sizes="(max-width: 318px) 100vw, 318px"><figcaption><br></figcaption></figure><p>å¼&#128;å§&#139;å®&#137;è£&#133;è¿&#153;ä¸ªæ&#137;©å±&#149;æ&#137;&#128;é&#156;&#128;ç&#154;&#132;å&#144;&#132;ç§&#141;æ&#143;&#146;ä»¶å·¥å&#133;·ã&#128;&#130;</p>
+
+
+
+<p>ä¸&#141;è¿&#135;ï¼&#140;å¾&#136;é&#129;&#151;éª¸ï¼&#140;ç&#148;±äº&#142;â&#128;&#156;å¤§æ¸&#133;è&#135;ªæ&#156;&#137;å&#155;½åº&#134;å&#156;¨â&#128;&#157;ç­&#137;å&#142;&#159;å&#155; ï¼&#140;æ&#136;&#145;ä»¬æ²¡æ³&#149;å¾&#136;æ&#132;&#137;å¿«ç&#154;&#132;å®&#140;æ&#136;&#144;å®&#137;è£&#133;ã&#128;&#130;</p>
+
+
+
+<figure class="wp-block-image"><img src="https://static.yomunchan.moe/wp-content/uploads/2019/01/image-15.png" alt="" class="wp-image-247" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-15.png 910w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-15-150x81.png 150w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-15-300x162.png 300w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-15-768x414.png 768w" sizes="(max-width: 910px) 100vw, 910px"><figcaption>æ&#156;&#137;å&#135; ä¸ªå®&#137;è£&#133;æ&#136;&#144;å&#138;&#159;äº&#134;ï¼&#140;ä¸&#141;è¿&#135;å¤§é&#131;¨å&#136;&#134;é&#131;½å®&#137;è£&#133;å¤±è´¥äº&#134;<br></figcaption></figure><p>æ&#137;&#128;ä»¥æ&#142;¥ä¸&#139;æ&#157;¥å°±æ&#152;¯é&#135;&#141;ç&#130;¹äº&#134;</p>
+
+
+
+<p></p>
+
+
+
+<p>é¦&#150;å&#133;&#136;ï¼&#140;å&#156;¨srcç&#155;®å½&#149;ä¸&#139;å»ºç«&#139;â&#128;&#156;golang.org/xâ&#128;&#157;ç&#155;®å½&#149;</p>
+
+
+
+<figure class="wp-block-image"><img src="https://static.yomunchan.moe/wp-content/uploads/2019/01/image-16.png" alt="" class="wp-image-249" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-16.png 431w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-16-150x96.png 150w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-16-300x192.png 300w" sizes="(max-width: 431px) 100vw, 431px"></figure><p>ç&#132;¶å&#144;&#142;æ&#138;&#138; <a href="https://github.com/golang/tools">https://github.com/golang/tools</a> è¿&#153;ä¸ªä»&#147;åº&#147;cloneè¿&#155;å&#142;»</p>
+
+
+
+<p>é¡ºä¾¿æ&#138;&#138; <a href="https://github.com/golang/lint">https://github.com/golang/lint</a> è¿&#153;ä¸ªä»&#147;åº&#147;cloneè¿&#155;å&#142;»</p>
+
+
+
+<p>å¤§æ¦&#130;å°±æ&#152;¯è¿&#153;æ ·</p>
+
+
+
+<figure class="wp-block-image"><img src="https://static.yomunchan.moe/wp-content/uploads/2019/01/image-17.png" alt="" class="wp-image-250" srcset="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-17.png 439w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-17-150x124.png 150w,https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2019/01/image-17-300x247.png 300w" sizes="(max-width: 439px) 100vw, 439px"></figure><p></p>
+
+
+
+<p>ç&#132;¶å&#144;&#142;æ&#140;¨ä¸ªå®&#137;è£&#133;ä¹&#139;å&#137;&#141;æ²¡å®&#137;è£&#133;æ&#136;&#144;å&#138;&#159;ç&#154;&#132;ä¸&#156;è¥¿</p>
+
+
+
+<ul><li>go install github.com/mdempsky/gocode</li><li>go install github.com/ramya-rao-a/go-outline</li><li>go install github.com/acroca/go-symbols</li><li>go install golang.org/x/tools/cmd/guru</li><li>go install golang.org/x/tools/cmd/gorename</li><li>go install  github.com/stamblerre/gocode </li><li>go install  github.com/rogpeppe/godef </li></ul></div>
+                                    </div>
+                                    <div class="post-footer clearfix wow bounceInDown">
+                                          <div class="post-tags">
+                                            <div class="article-categories"></div>
+                                          </div>
+                                    </div>
+
+                              <div class="thw-author-box author-box thw-sept wow rollIn"> 
+                                    <div class="thw-autohr-bio-img">
+                                          <div class="thw-img-border">
+                                                <img alt="" src="https://gravatar.loli.net/avatar/45019eb1dd8b43e939d42804cb2e3269?s=80&d=mm&r=g" srcset="https://gravatar.loli.net/avatar/45019eb1dd8b43e939d42804cb2e3269?s=160&d=mm&r=g 2x" class="avatar avatar-80 photo img-fluid" height="80" width="80"></div>
+                                    </div>
+                                    <div class="author-info">
+                                          <h4>yomunsam</h4>
+                                          <p>æ&#150;&#135;ç« ä½&#156;è&#128;&#133;ä¿¡æ&#129;¯...</p>
+                                    </div>
+                              </div> 
+							                                <nav class="post-navigation thw-sept wow bounceInUp"><div class="post-previous">
+									<a href="https://static.yomunchan.moe/archives/256" rel="next"><span><i class="fa fa-angle-left"></i> Previous Post</span><h4>ã&#128;&#144;Unityã&#128;&#145;è&#135;ªå·±å&#138;¨æ&#137;&#139;å&#129;&#154;ä¸&#128;ä¸ªå&#137;§æ&#131;&#133;å¯¹è¯&#157;ç³»ç»&#159;å&#144;§</h4></a>									      
+                                    </div>
+                                    <div class="post-next">
+									<a href="https://static.yomunchan.moe/archives/218" rel="prev"><span>Next Post <i class="fa fa-angle-right"></i></span> <h4>æ&#136;&#145;ï¼&#140;å&#141;&#154;å®¢ï¼&#140;æ&#148;¹å&#138;¨</h4></a>                                    </div>       
+                              </nav><div id="comments" class="comments-area thw-sept wow bounceInUp">
+  <h3 class="comments-heading"> </h3>
+  <ul class="comments-list"></ul><div class="pagenav text-center"></div>
+									</div>	
+	
+								
+<h3 class="title-normal thw-sept text-center wow swing" id="respond_com">ç&#149;&#153;ä¸&#139;ä½ ç&#154;&#132;è¯&#132;è®º</h3>
+<div class="clearfix text-center">
+									*è¯&#132;è®ºæ&#148;¯æ&#140;&#129;ä»£ç &#129;é«&#152;äº®<pre class="prettyprint linenums">ä»£ç &#129;</pre>
+									</div>
+<div id="respond">
+<form id="commentform" name="commentform" action="https://static.yomunchan.moe/wp-comments-post.php" method="post">                                   
+									
+<div class="row justify-content-center mb10"><div class="col-md-4"><a id="cancel-comment-reply-link" href="javascript:;" class="btn btn-sm btn-info" style="display:none;">å&#143;&#150;æ¶&#136;å&#155;&#158;å¤&#141;</a></div></div>
+ 
+ 	
+                                          <div class="row" id="comment-author-info">
+                                                <div class="col-md-4">
+                                                <div class="form-group">
+												<input type="text" name="author" id="author" class="form-control" value="" placeholder="æ&#152;µç§° *" tabindex="1"></div>
+                                          </div>
+                                          <div class="col-md-4">
+                                                <div class="form-group">
+												<input type="email" name="email" id="email" class="form-control" value="" placeholder="é&#130;®ç®± *" tabindex="2"></div>
+                                          </div>
+                                          <div class="col-md-4">
+                                                <div class="form-group">
+                                                <input type="text" name="url" id="url" class="form-control" value="" placeholder="ç½&#145;å&#157;&#128;" size="22" tabindex="3"></div>
+                                          </div>
+										   </div>   
+                                          <div class="row">
+                                          <div class="col-md-12">
+                                                <div class="form-group">
+												<textarea class="form-control  required-field" rows="5" name="comment" id="comment" tabindex="4" placeholder="ä½ å&#143;¯ä»¥å&#156;¨è¿&#153;é&#135;&#140;è¾&#147;å&#133;¥è¯&#132;è®ºå&#134;&#133;å®¹..."></textarea></div>
+                                          </div>
+                                    </div>
+                                    <div class="clearfix text-center">
+									<div class="comt-tips"><input type="hidden" name="comment_post_ID" value="227" id="comment_post_ID"><input type="hidden" name="comment_parent" id="comment_parent" value="0"></div>
+                                          <button class="btn btn-1 btn-outline-success" name="submit" type="submit" id="submit" tabindex="5">å&#143;&#145;è¡¨è¯&#132;è®º</button> 
+                                    </div>									
+                                    </form>									
+				
+</div>								</div>				
+</div>
+</div> 					  
+</div>     
+</main><div class=" container">
+                    <div class="row wow fadeInUp animated">
+ <div class="col-lg-12">	
+<h3 class="title-normal thw-sept text-center">æ&#142;¨è&#141;&#144;ã&#131;¾(â&#128;¢Ï&#137;â&#128;¢`)o</h3>	 </div>						
+<div class="col-md-4"><div class="card card-blog"><div class="card-header card-header-image"><a href="https://static.yomunchan.moe/archives/525"><img class="img img-raised" src="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2020/03/1c574b215c5739b4.jpg"></a></div><div class="card-body"><h4 class="card-title"><a href="https://static.yomunchan.moe/archives/525" title="ä»&#139;ç»&#141;æ&#150;°TinaX VFSæ¨¡å&#157;&#151;ï¼&#154;ç&#155;®æ &#135;æ&#152;¯ç®&#128;æ´&#129;è&#128;&#140;å¼ºå¤§ç&#154;&#132;Unityèµ&#132;æº&#144;ç®¡ç&#144;&#134;æ¡&#134;æ&#158;¶">ä»&#139;ç»&#141;æ&#150;°TinaX VFSæ¨¡å&#157;&#151;ï¼&#154;ç&#155;®æ &#135;æ&#152;¯ç®&#128;â&#128;¦</a></h4></div></div></div><div class="col-md-4"><div class="card card-blog"><div class="card-header card-header-image"><a href="https://static.yomunchan.moe/archives/489"><img class="img img-raised" src="https://static.yomunchan.moe/wp-content/themes/lolimeow/assets/images/rand/rand%20(13).jpg" alt="Unity Engineç&#154;&#132;ScriptableSingleton"></a></div><div class="card-body"><h4 class="card-title"><a href="https://static.yomunchan.moe/archives/489" title="Unity Engineç&#154;&#132;ScriptableSingleton">Unity Engineç&#154;&#132;ScriptableSinglâ&#128;¦</a></h4></div></div></div><div class="col-md-4"><div class="card card-blog"><div class="card-header card-header-image"><a href="https://static.yomunchan.moe/archives/480"><img class="img img-raised" src="https://yomunchan-blog.oss-cn-hongkong.aliyuncs.com/wp-content/uploads/2020/02/Snipaste_2020-02-01_19-34-50-380x250.png"></a></div><div class="card-body"><h4 class="card-title"><a href="https://static.yomunchan.moe/archives/480" title="ç&#158;&#142;æ&#138;&#152;è&#133;¾ï¼&#154;ç&#148;¨Unityæ&#146;¸çº¯HTML5ç§»å&#138;¨æ¸¸æ&#136;&#143;/åº&#148;ç&#148;¨">ç&#158;&#142;æ&#138;&#152;è&#133;¾ï¼&#154;ç&#148;¨Unityæ&#146;¸çº¯HTML5ç§»å&#138;¨â&#128;¦</a></h4></div></div></div>	</div>
+                    </div>		
+			  <footer class="footer"><div class="container">
+      <div class="row row-grid align-items-center">
+        <div class="col-lg-12 text-lg-center btn-wrapper justify-content-center">
+				<a target="_blank" href="https://github.com/yomunsam/" class="btn btn-neutral btn-icon-only btn-github btn-round btn-lg" data-toggle="tooltip" data-original-title="Github">            <i class="fa fa-github"></i>          </a>		<a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=me@yomunchan.moe" target="_blank" class="btn btn-neutral btn-icon-only btn-mail btn-round btn-lg wow fadeInUpBig" data-toggle="tooltip" data-original-title="Emailï¼&#154;me@yomunchan.moe"><i class="fa fa-envelope"></i></a>						  
+        </div>
+      </div>
+      <hr><div class="row align-items-center justify-content-md-between">
+
+	      <div class="col-md-12 ">
+          <ul class="nav nav-footer justify-content-center"><li class="nav-item"><a href="https://static.yomunchan.moe/sitemap.xml" class="nav-link" target="_blank">ç½&#145;ç«&#153;å&#156;°å&#155;¾</a></li>
+          </ul></div>
+        <div class="col-md-12">
+          <div class="copyright text-center">
+            Â© 2020 <a href="https://static.yomunchan.moe" target="_blank">æ&#156;&#137;æ&#156;¨é&#133;±ç&#154;&#132;å°&#143;å±&#139; </a>. Theme by <a href="https://www.boxmoe.com" target="_blank">LoLiMeow</a> 50 queries in 0.328 s  Nekonya Studio <div>			</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer><div id="search"> 
+	<span class="close">X</span>
+	<form role="search" id="searchform" method="get" action="https://static.yomunchan.moe/">
+		<input type="search" name="s" value="" placeholder="è¾&#147;å&#133;¥æ&#144;&#156;ç´¢å&#133;³é&#148;®è¯&#141;..."></form>
+</div>
+    <div id="lolijump"><img src="https://static.yomunchan.moe/wp-content/themes/lolimeow/assets/images/lolijump.gif"></div>  
+  <script language="javascript">
+lastScrollY=0;
+function heartBeat0(){
+diffY=document.body.scrollTop;
+percent=.1*(diffY-lastScrollY);
+if(percent>0)percent=Math.ceil(percent);
+else percent=Math.floor(percent);
+document.all.lolijump.style.pixelTop+=percent;
+lastScrollY=lastScrollY+percent;}
+window.setInterval("heartBeat0()",1);
+$('#lolijump').click(function(){
+        $('html, body').animate({                
+            scrollTop: 0
+        }, 500);
+    });
+</script><script src="https://static.yomunchan.moe/wp-content/themes/lolimeow/assets/vendor/popper/popper.min.js"></script><script src="https://static.yomunchan.moe/wp-content/themes/lolimeow/assets/vendor/bootstrap/bootstrap.min.js"></script><script src="https://static.yomunchan.moe/wp-content/themes/lolimeow/assets/vendor/headroom/headroom.min.js"></script><script src="https://static.yomunchan.moe/wp-content/themes/lolimeow/assets/js/wow.min.js"></script><script src="https://static.yomunchan.moe/wp-content/themes/lolimeow/assets/js/theme.js"></script><script type="text/javascript">
+/* <![CDATA[ */
+var superpwa_sw = {"url":"\/superpwa-sw.js"};
+/* ]]> */
+</script><script type="text/javascript" src="https://static.yomunchan.moe/wp-content/plugins/super-progressive-web-apps/public/js/register-sw.js"></script><script type="text/javascript" src="https://static.yomunchan.moe/wp-content/plugins/enlighter/resources/enlighterjs/enlighterjs.min.js"></script><script type="text/javascript">
+!function(n,o){"undefined"!=typeof EnlighterJS?(n.EnlighterJSINIT=function(){EnlighterJS.init("pre.EnlighterJSRAW", "code.EnlighterJSRAW", {"indent":4,"ampersandCleanup":true,"linehover":true,"rawcodeDbclick":true,"textOverflow":"break","linenumbers":true,"theme":"droide","language":"csharp","retainCssClasses":false,"collapse":false,"toolbarOuter":"","toolbarTop":"{BTN_RAW}{BTN_COPY}{BTN_WINDOW}{BTN_WEBSITE}","toolbarBottom":""})})():(o&&(o.error||o.log)||function(){})("Error: EnlighterJS resources not loaded yet!")}(window,console);
+</script><script src="https://static.yomunchan.moe/wp-content/themes/lolimeow/assets/js/custom.js"></script><script src="https://static.yomunchan.moe/wp-content/themes/lolimeow/assets/vendor/prettify/prettify.js"></script><script src="https://static.yomunchan.moe/wp-content/themes/lolimeow/assets/vendor/fancybox/fancybox.js"></script></body></html>
